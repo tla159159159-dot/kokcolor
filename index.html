@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>색칠공부 · 콕콕</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Noto+Sans+KR:wght@400;500;700;800&family=Gaegu:wght@700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#241B3E; --muted:#7C7595; --bg:#FAF8FF; --surface:#FFFFFF; --surface-2:#F7F3FE; --paper:#FFFFFF; --line:#ECE6F8;
+    --brand:#7C4DFF; --brand-ink:#6A38F0; --brand-soft:#F0EAFF;
+    --pink:#FF5FA2; --berry:#FF5FA2; --coral:#FF9F45; --teal:#1FC7B6; --sun:#FFC53D;
+    --grad:linear-gradient(120deg,#7C4DFF 0%,#FF5FA2 55%,#FF9F45 100%);
+    --grad-soft:linear-gradient(120deg,#EFE8FF,#FFE9F2 55%,#FFF1E4);
+    --r-xl:28px; --r-lg:22px; --r:16px; --r-sm:12px;
+    --sh-sm:0 1px 2px rgba(36,27,62,.06);
+    --sh:0 10px 30px rgba(36,27,62,.09);
+    --sh-lg:0 24px 60px rgba(36,27,62,.16);
+    --glow:0 12px 30px rgba(124,77,255,.34);
+    box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+    --ink:#F1EEFA; --muted:#A79FC0; --bg:#13101F; --surface:#1D1930; --surface-2:#231E39; --line:#332C4E; --brand-soft:#271F49; }}
+  :root[data-theme="dark"]{ --ink:#F1EEFA; --muted:#A79FC0; --bg:#13101F; --surface:#1D1930; --surface-2:#231E39; --line:#332C4E; --brand-soft:#271F49; }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:76px}
+  html,body{min-height:100%}
+  body{margin:0;color:var(--ink);font-family:'Noto Sans KR',system-ui,-apple-system,sans-serif;line-height:1.5;-webkit-tap-highlight-color:transparent;
+    background:radial-gradient(65% 45% at 12% -5%,#F1E8FF 0%,transparent 60%),radial-gradient(55% 42% at 105% 4%,#FFE6F1 0%,transparent 55%),radial-gradient(45% 40% at 90% 100%,#FFF0DF 0%,transparent 55%),var(--bg);
+    background-attachment:fixed}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 18px 40px}
+  .promo{position:relative;display:flex;align-items:center;gap:16px;text-decoration:none;overflow:hidden;
+    margin:6px 0 22px;padding:20px 24px;border-radius:20px;color:#fff;
+    background:linear-gradient(120deg,#8B5CF6 0%,#C05CE0 45%,#FF6FA6 100%);
+    box-shadow:0 12px 28px rgba(139,92,246,.28);transition:transform .14s,box-shadow .2s}
+  .promo:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(139,92,246,.36)}
+  .promo::after{content:"";position:absolute;right:-30px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.12)}
+  .promo-ad{position:absolute;top:12px;right:14px;z-index:2;font-family:'Noto Sans KR',sans-serif;font-size:10px;font-weight:700;letter-spacing:.5px;color:rgba(255,255,255,.9);background:rgba(255,255,255,.2);padding:3px 8px;border-radius:6px}
+  .promo-txt{position:relative;z-index:1;flex:1;min-width:0}
+  .promo-title{font-family:'Noto Sans KR',sans-serif;font-weight:800;font-size:20px;display:block;line-height:1.3;letter-spacing:-.4px;color:#fff;text-shadow:0 1px 3px rgba(80,30,120,.28)}
+  .promo-sub{display:block;margin-top:6px;font-family:'Noto Sans KR',sans-serif;font-weight:500;font-size:13px;line-height:1.5;letter-spacing:-.2px;color:rgba(255,255,255,.96)}
+  .promo-btn{position:relative;z-index:1;flex:0 0 auto;font-family:'Noto Sans KR',sans-serif;font-weight:700;font-size:14px;letter-spacing:-.2px;color:#7C3AED;background:#fff;
+    padding:12px 22px;border-radius:999px;box-shadow:0 6px 16px rgba(60,20,110,.2);transition:transform .14s;white-space:nowrap}
+  .promo:hover .promo-btn{transform:translateX(3px)}
+  @media (max-width:600px){
+    .promo{flex-direction:column;align-items:flex-start;gap:12px;padding:18px 18px;margin:4px 0 18px}
+    .promo-title{font-size:18px}
+    .promo-btn{width:100%;text-align:center}
+  }
+  :focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:10px}
+  .hide{display:none!important}
+  a{color:inherit}
+
+  /* motion */
+  @keyframes aurora{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  @keyframes floatB{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-10px) rotate(4deg)}}
+  @keyframes bob{0%,100%{transform:translateY(0) rotate(-1.5deg)}50%{transform:translateY(-10px) rotate(1.5deg)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes pop{0%{transform:scale(1)}42%{transform:scale(1.05)}100%{transform:scale(1)}}
+  @keyframes wob{0%,100%{transform:translateX(0)}25%{transform:translateX(-3px)}75%{transform:translateX(3px)}}
+  @keyframes fall{to{transform:translate(var(--dx),280px) rotate(340deg);opacity:0}}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 4px;margin-bottom:4px;
+    background:color-mix(in srgb,var(--bg) 78%,transparent);backdrop-filter:saturate(160%) blur(12px);border-radius:0 0 18px 18px}
+  .brand{display:flex;align-items:center;gap:10px}
+  .brand-mark{width:34px;height:34px;border-radius:11px;background:var(--grad);background-size:160% 160%;animation:aurora 7s ease infinite;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:var(--glow)}
+  .brand-name{font-family:'Black Han Sans',sans-serif;font-size:24px;letter-spacing:-.5px}
+  .brand-tag{font-size:12px;color:var(--muted);padding-left:9px;border-left:1px solid var(--line)}
+  @media (max-width:560px){ .brand-tag{display:none} }
+  .nav-cta{font-family:'Jua',sans-serif;font-size:14px;border-radius:999px;padding:10px 20px;color:#fff;background:var(--brand);border:none;box-shadow:var(--sh-sm);cursor:pointer;transition:transform .12s,background .15s}
+  .nav-cta:hover{background:var(--brand-ink)}
+  .nav-cta:hover{transform:translateY(-2px)}
+
+  /* hero */
+  .hero{position:relative;overflow:hidden;border-radius:var(--r-xl);margin-bottom:30px;padding:8px;background:var(--surface);border:1px solid var(--line);box-shadow:var(--sh)}
+  .hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden;border-radius:var(--r-xl)}
+  .hero-bg .blob{position:absolute;border-radius:50%;filter:blur(46px);opacity:.55}
+  .hero-bg .b1{width:340px;height:340px;background:#C7B4FF;left:-70px;top:-90px;animation:float 9s ease-in-out infinite}
+  .hero-bg .b2{width:300px;height:300px;background:#FFB4D6;right:-60px;top:-40px;animation:float 11s ease-in-out infinite reverse}
+  .hero-bg .b3{width:280px;height:280px;background:#FFD9A6;right:20%;bottom:-120px;animation:float 13s ease-in-out infinite}
+  .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:center;padding:34px 34px 30px}
+  @media (max-width:820px){ .hero-inner{grid-template-columns:1fr;text-align:center;padding:28px 22px} }
+  .eyebrow{display:inline-block;font-family:'Jua',sans-serif;font-size:13px;color:var(--brand-ink);background:#fff;border:1px solid var(--line);padding:7px 15px;border-radius:999px;box-shadow:var(--sh-sm);animation:fadeUp .5s .05s both}
+  .hero-title{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:52px;line-height:1.08;letter-spacing:-1.5px;margin:16px 0 12px;animation:fadeUp .5s .1s both}
+  @media (max-width:560px){ .hero-title{font-size:38px} }
+  .grad-text{background:var(--grad);background-size:180% 180%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:aurora 6s ease infinite}
+  .hero-sub{font-size:16px;color:var(--muted);margin:0 0 22px;animation:fadeUp .5s .15s both}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .5s .2s both}
+  @media (max-width:820px){ .hero-cta{justify-content:center} }
+  .btn-primary{display:inline-flex;align-items:center;gap:8px;font-family:'Jua',sans-serif;font-size:16px;color:#fff;background:var(--grad);background-size:170% 170%;border:none;border-radius:999px;padding:15px 28px;box-shadow:var(--glow);cursor:pointer;text-decoration:none;transition:transform .12s,box-shadow .2s;animation:aurora 6s ease infinite}
+  .btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 44px rgba(124,77,255,.46)}
+  .btn-ghost{display:inline-flex;align-items:center;gap:8px;font-family:'Jua',sans-serif;font-size:16px;color:var(--brand-ink);background:#fff;border:1.5px solid var(--brand-soft);border-radius:999px;padding:15px 26px;box-shadow:var(--sh-sm);cursor:pointer;text-decoration:none;transition:transform .12s,border-color .2s}
+  .btn-ghost:hover{transform:translateY(-3px);border-color:var(--brand)}
+  .hero-stats{display:flex;gap:22px;margin-top:26px;flex-wrap:wrap;animation:fadeUp .5s .28s both}
+  @media (max-width:820px){ .hero-stats{justify-content:center;gap:18px} }
+  .stat{display:flex;flex-direction:column;line-height:1}
+  .stat b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:30px;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .stat span{font-size:12.5px;color:var(--muted);margin-top:5px}
+
+  .hero-mascot{position:relative;display:flex;align-items:center;justify-content:center;min-height:230px}
+  .float-wrap{animation:bob 5s ease-in-out infinite;filter:drop-shadow(0 20px 26px rgba(108,60,240,.28))}
+  .mascot{width:200px;height:auto;display:block}
+  @media (max-width:820px){ .mascot{width:168px} .hero-mascot{min-height:200px;margin-top:6px} }
+  .orbit{position:absolute;font-size:30px}
+  .orbit.o1{top:6%;left:8%;animation:floatB 6s ease-in-out infinite}
+  .orbit.o2{top:14%;right:6%;font-size:34px;animation:floatB 7s ease-in-out infinite reverse}
+  .orbit.o3{bottom:16%;left:2%;animation:float 5.5s ease-in-out infinite}
+  .orbit.o4{bottom:6%;right:10%;font-size:32px;animation:floatB 8s ease-in-out infinite}
+
+  /* mode bar */
+  .modebar{display:flex;gap:10px;margin-bottom:20px;overflow-x:auto;padding:2px 2px 4px}
+  .mode{flex:0 0 auto;font-family:'Jua',sans-serif;font-size:15px;padding:11px 20px;border-radius:999px;background:var(--surface);border:1px solid var(--line);color:var(--muted);box-shadow:var(--sh-sm);cursor:pointer;transition:transform .1s}
+  .mode.on{background:var(--brand);color:#fff;border-color:var(--brand);box-shadow:var(--sh-sm)}
+  .mode:active{transform:translateY(1px)}
+  .ic{width:19px;height:19px;vertical-align:-4px;margin-right:7px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+  button .ic{margin-right:6px}
+
+  /* stage */
+  .stage{display:grid;grid-template-columns:minmax(0,1fr) 328px;gap:22px;align-items:start}
+  @media (max-width:900px){ .stage{grid-template-columns:1fr} }
+  .paper-card,.panel,.pack{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--sh)}
+  .paper-card{padding:16px}
+  .paper-inner{position:relative;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;background:var(--paper)}
+  .host{display:block;width:100%;height:auto}
+  #drawCanvas{background:#fff;touch-action:none;cursor:crosshair;aspect-ratio:1/1}
+  #dotHost svg,#stickerHost svg{display:block;width:100%;height:auto;background:#fff}
+  #stickerHost{position:relative}
+
+  /* panel */
+  .panel{padding:18px}
+  .panel h2{font-family:'Jua',sans-serif;font-weight:400;margin:0 0 14px;font-size:20px}
+  .current{display:flex;align-items:center;gap:11px;background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);padding:11px 13px;margin-bottom:16px}
+  .current .nowdot{width:34px;height:34px;border-radius:10px;border:2px solid var(--surface);box-shadow:0 0 0 1px var(--line)}
+  .current small{color:var(--muted);font-size:11.5px;display:block}
+  .current b{font-size:15px;font-weight:700}
+  .swatches{display:grid;grid-template-columns:repeat(6,1fr);gap:9px}
+  .sw{aspect-ratio:1;border-radius:10px;border:1px solid rgba(36,27,62,.1);cursor:pointer;transition:transform .09s,box-shadow .12s;box-shadow:var(--sh-sm)}
+  .sw:hover{transform:translateY(-3px) scale(1.05)}
+  .sw.on{transform:translateY(-3px) scale(1.08);box-shadow:0 0 0 2px var(--surface),0 0 0 4px var(--brand)}
+  .sw.eraser{background:var(--surface);display:flex;align-items:center;justify-content:center;font-size:15px;border-style:dashed;border-color:var(--muted)}
+  .sw.picker{display:flex;align-items:center;justify-content:center;font-size:14px;position:relative;overflow:hidden;background:conic-gradient(from 0deg,#FF5FA2,#FFC53D,#1FC7B6,#4DA8F0,#7C4DFF,#FF5FA2)}
+  .sw.picker input{position:absolute;inset:0;opacity:0;cursor:pointer}
+  .sw.rainbow{display:flex;align-items:center;justify-content:center;font-size:15px;background:conic-gradient(from 0deg,#FF5A5F,#FFD93D,#57C97D,#4DABF7,#7C4DFF,#FF5FA2,#FF5A5F)}
+  .subhead{font-weight:700;font-size:13.5px;color:var(--muted);margin:0 2px 10px}
+  .brushes{display:grid;grid-template-columns:1fr 1fr 1fr;gap:9px}
+  .brush{display:flex;flex-direction:column;align-items:center;gap:7px;font-size:12.5px;padding:12px 4px;color:var(--muted)}
+  .brush.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+  .brush .dotw{background:currentColor;border-radius:50%;display:block}
+  .tray{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+  .tray .stk{aspect-ratio:1;display:flex;align-items:center;justify-content:center;font-size:23px;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;cursor:pointer;transition:transform .09s,box-shadow .12s}
+  .tray .stk:hover{transform:translateY(-3px);box-shadow:var(--sh)}
+  .tray .stk.on{border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-soft)}
+  .placed{position:absolute;font-size:46px;cursor:grab;user-select:none;touch-action:none;transform:translate(-50%,-50%);filter:drop-shadow(0 3px 3px rgba(0,0,0,.22))}
+  .placed.sel{outline:2px dashed var(--pink);outline-offset:4px;border-radius:8px}
+  .placed .rm{position:absolute;right:-12px;top:-14px;width:24px;height:24px;border-radius:50%;background:var(--pink);color:#fff;font-size:14px;display:none;align-items:center;justify-content:center;box-shadow:var(--sh-sm)}
+  .placed.sel .rm{display:flex}
+  .dotpick{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .dotpick .dp{font-family:'Jua',sans-serif;font-size:15px;padding:13px 6px;border-radius:var(--r-sm);background:var(--surface-2);border:1px solid var(--line);cursor:pointer;text-align:center;color:var(--ink)}
+  .dotpick .dp.on{border-color:var(--brand);background:var(--brand-soft);color:var(--brand-ink)}
+  .dnode{cursor:pointer}
+  .dnum{font-family:'Noto Sans KR',sans-serif;font-weight:700;font-size:15px;fill:var(--ink);pointer-events:none;text-anchor:middle;dominant-baseline:central}
+  .dwrong{animation:wob .3s}
+
+  /* buttons */
+  .tools{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+  button{font-family:'Noto Sans KR',sans-serif;font-weight:700;font-size:14px;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:var(--r-sm);padding:12px;box-shadow:var(--sh-sm);transition:transform .05s,box-shadow .14s,background .14s,color .14s}
+  button:hover{box-shadow:var(--sh)}
+  button:active{transform:translateY(1px)}
+  button .i{margin-right:5px}
+  .b-save{background:var(--grad);background-size:150% 150%;color:#fff;border-color:transparent;box-shadow:var(--glow)}
+  .b-print{background:#EAF4FE;color:#3C93da;border-color:transparent}
+  .b-buy{background:var(--grad);background-size:150% 150%;color:#fff;border-color:transparent;box-shadow:var(--glow)}
+
+  /* packs */
+  .pack-area{margin-top:38px}
+  .section-title{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:30px;letter-spacing:-.5px;margin:0 2px 6px}
+  .section-title .grad-text{padding-right:2px}
+  .section-sub{color:var(--muted);font-size:14.5px;margin:0 2px 22px}
+  .pack{padding:20px;margin-bottom:20px}
+  .pack.locked-pack{background:linear-gradient(180deg,var(--surface),var(--surface-2))}
+  .pack-head{display:flex;align-items:center;gap:10px;margin:0 2px 16px;flex-wrap:wrap}
+  .pack-head .pname{font-family:'Jua',sans-serif;font-size:21px}
+  .badge{font-size:11.5px;font-weight:700;border-radius:999px;padding:5px 12px;color:var(--brand-ink);background:var(--brand-soft)}
+  .badge.free{background:#E6F7EE;color:#1CA362}
+  .badge.have{background:#EAF4FE;color:#3C93da}
+  .pack-head .spacer{flex:1}
+  .mini-btn{font-size:13px;padding:10px 15px}
+  .mini-unlock{background:var(--pink);color:#fff;border-color:transparent;box-shadow:0 8px 20px rgba(255,95,162,.3)}
+  .mini-btn.gold-lock{background:var(--gold-soft);color:var(--gold-deep);border-color:var(--gold2)}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:14px}
+  .thumb{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:10px 10px 8px;cursor:pointer;text-align:center;transition:transform .14s,box-shadow .14s,border-color .14s;position:relative}
+  .thumb:hover{transform:translateY(-5px) rotate(-1deg);box-shadow:var(--sh-lg)}
+  .thumb.on{border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-soft),var(--sh)}
+  .thumb svg{width:100%;height:auto;display:block;border-radius:11px;background:#fff}
+  .thumb .t-name{font-family:'Jua',sans-serif;font-size:14.5px;margin-top:7px}
+  .thumb.locked svg{filter:grayscale(1) opacity(.4)}
+  .lock{position:absolute;inset:10px 10px 34px;border-radius:11px;background:rgba(36,27,62,.05);display:flex;align-items:center;justify-content:center;font-size:27px}
+  .free-tag{position:absolute;top:6px;left:6px;background:var(--leaf);color:#fff;font-size:10.5px;font-weight:700;padding:3px 8px;border-radius:999px;box-shadow:var(--sh-sm)}
+
+  /* reward (kids) */
+  .reward{margin-top:34px;background:var(--surface);border:2px dashed var(--brand);border-radius:var(--r-xl);padding:20px 22px;box-shadow:var(--sh-sm)}
+  .reward-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+  .reward-mascot{font-size:34px}
+  .reward-title{font-family:'Jua',sans-serif;font-size:20px}
+  .reward-sub{font-size:13px;color:var(--muted);margin-top:2px}
+  .reward-count{margin-left:auto;display:flex;align-items:baseline;gap:4px}
+  .reward-count b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:34px;color:var(--brand)}
+  .reward-count span{font-size:13px;color:var(--muted)}
+  .star-board{display:flex;flex-wrap:wrap;gap:10px;min-height:52px;align-items:center}
+  .star-board .empty{font-size:14px;color:var(--muted)}
+  .star-board .st{font-size:34px;animation:pop .4s ease}
+
+  /* points */
+  .nav-cta .np-star{margin-right:2px}
+  .nav-cta b{font-variant-numeric:tabular-nums}
+  .point-box{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:16px}
+  .pb-row{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--muted)}
+  .pb-row b{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:22px;color:var(--brand)}
+  .pb-bar{height:12px;border-radius:999px;background:var(--line);overflow:hidden;margin:10px 0}
+  .pb-bar span{display:block;height:100%;width:0;border-radius:999px;background:var(--grad);transition:width .5s ease}
+  .pb-hint{font-size:12.5px;color:var(--muted);text-align:center;margin:10px 0 0}
+  .pb-hint b{color:var(--brand)}
+
+  /* gold plans */
+  :root{ --gold1:#F6D06B; --gold2:#E8B23A; --gold-deep:#9A6B12; --gold-soft:#FFF7E3; }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ --gold-soft:#2A2415; } }
+  :root[data-theme="dark"]{ --gold-soft:#2A2415; }
+  .plans{margin-top:38px}
+  .plans-title{font-family:'Jua',sans-serif;font-size:24px;text-align:center;margin:0 0 4px}
+  .plans-sub{text-align:center;color:var(--muted);font-size:14px;margin:0 0 22px}
+  .plan-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:680px;margin:0 auto}
+  @media (max-width:600px){ .plan-grid{grid-template-columns:1fr} }
+  .plan{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);padding:24px 22px;box-shadow:var(--sh);position:relative}
+  .plan-name{font-family:'Jua',sans-serif;font-size:18px;color:var(--muted)}
+  .plan-price{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:20px;margin:6px 0 16px}
+  .plan-price b{font-size:34px}
+  .plan-price span{font-size:14px;color:var(--muted)}
+  .plan-feat{list-style:none;padding:0;margin:0 0 18px}
+  .plan-feat li{font-size:13.5px;color:var(--ink);padding:7px 0 7px 24px;position:relative;border-top:1px solid var(--line)}
+  .plan-feat li:first-child{border-top:none}
+  .plan-feat li::before{content:"✓";position:absolute;left:0;color:var(--leaf);font-weight:700}
+  .plan-cur{text-align:center;font-size:13px;color:var(--muted);font-weight:700;padding:12px;background:var(--surface-2);border-radius:var(--r-sm)}
+  .plan-gold{border:2px solid var(--gold2);background:linear-gradient(180deg,var(--gold-soft),var(--surface));box-shadow:0 14px 34px rgba(232,178,58,.28)}
+  .plan-gold .plan-name{color:var(--gold-deep)}
+  .plan-gold .plan-feat li::before{color:var(--gold2)}
+  .plan-crown{position:absolute;top:-16px;right:20px;font-size:30px;filter:drop-shadow(0 4px 6px rgba(232,178,58,.5))}
+  .plan-btn{width:100%;padding:14px;font-family:'Jua',sans-serif;font-size:15px;color:#5A3E00;border:none;border-radius:var(--r-sm);cursor:pointer;background:linear-gradient(120deg,var(--gold1),var(--gold2));box-shadow:0 8px 20px rgba(232,178,58,.4);transition:transform .12s}
+  .plan-btn:hover{transform:translateY(-2px)}
+  /* gold modal */
+  .gold-card{border:2px solid var(--gold2)}
+  .gold-card .mIcon{filter:drop-shadow(0 4px 8px rgba(232,178,58,.5))}
+  .gold-price{font-family:'Black Han Sans',sans-serif;font-weight:400;text-align:center;margin-bottom:14px;color:var(--gold-deep)}
+  .gold-price b{font-size:32px}
+  .gold-price span{font-size:14px;color:var(--muted)}
+  .gold-benefits li b{color:var(--gold-deep)}
+  .gold-benefits svg{stroke:var(--gold2)}
+  .gold-fullbtn{width:100%;padding:15px;font-size:15px;font-family:'Jua',sans-serif;color:#5A3E00;border:none;border-radius:var(--r-sm);cursor:pointer;background:linear-gradient(120deg,var(--gold1),var(--gold2));box-shadow:0 8px 20px rgba(232,178,58,.4)}
+  .gold-note{font-size:12px;color:var(--muted);text-align:center;margin:10px 0 0}
+  /* gold nav badge */
+  .nav-cta.gold{background:linear-gradient(120deg,var(--gold1),var(--gold2));color:#5A3E00}
+  .nav-cta.gold:hover{background:linear-gradient(120deg,var(--gold1),var(--gold2))}
+
+  /* premium persuasion */
+  .lock-cta{margin:8px 2px 2px;padding:14px 16px;border:1px dashed var(--brand);border-radius:var(--r);background:var(--brand-soft);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .lock-cta .lc-txt{flex:1;min-width:180px}
+  .lock-cta b{font-size:14px;color:var(--brand-ink)}
+  .lock-cta span{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+  .modal-benefits{text-align:left;margin:0 0 16px;padding:0;list-style:none}
+  .modal-benefits li{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;color:var(--ink);margin-bottom:8px}
+  .modal-benefits svg{width:18px;height:18px;flex:0 0 auto;stroke:var(--brand);stroke-width:2.2;fill:none;stroke-linecap:round;stroke-linejoin:round;margin-top:1px}
+
+  /* cta band */
+  .cta-band{margin-top:34px;border-radius:var(--r-xl);padding:38px 34px;position:relative;overflow:hidden;color:#fff;background:var(--grad);background-size:180% 180%;animation:aurora 8s ease infinite;box-shadow:var(--sh-lg)}
+  .cta-band::after{content:"";position:absolute;right:-40px;top:-40px;width:220px;height:220px;background:rgba(255,255,255,.14);border-radius:50%}
+  .cta-inner{position:relative;z-index:1;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+  .cta-inner h2{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:28px;margin:0 0 6px;letter-spacing:-.5px}
+  .cta-inner p{margin:0;opacity:.94;font-size:15px}
+  .btn-white{display:inline-flex;align-items:center;gap:8px;font-family:'Jua',sans-serif;font-size:16px;color:var(--brand-ink);background:#fff;border:none;border-radius:999px;padding:15px 28px;box-shadow:0 12px 30px rgba(0,0,0,.18);cursor:pointer;text-decoration:none;transition:transform .12s}
+  .btn-white:hover{transform:translateY(-3px)}
+
+  /* modal */
+  .modal{position:fixed;inset:0;background:rgba(36,27,62,.55);display:none;align-items:center;justify-content:center;z-index:80;padding:18px;backdrop-filter:blur(4px)}
+  .modal.show{display:flex}
+  .sheet-card{background:var(--surface);border-radius:var(--r-xl);border:1px solid var(--line);max-width:400px;width:100%;padding:28px;box-shadow:var(--sh-lg);position:relative}
+  .sheet-card .mIcon{font-size:44px;text-align:center;margin-bottom:8px}
+  .sheet-card h3{font-family:'Jua',sans-serif;font-size:24px;margin:0 0 8px;text-align:center}
+  .sheet-card p{font-size:14px;color:var(--muted);margin:0 0 16px;line-height:1.6;text-align:center}
+  .price{font-family:'Black Han Sans',sans-serif;font-weight:400;font-size:22px;text-align:center;margin-bottom:16px;color:var(--brand)}
+  .code-row{display:flex;gap:8px;margin-bottom:10px}
+  .code-row input{flex:1;font-family:'Noto Sans KR',sans-serif;font-size:15px;padding:13px;border-radius:var(--r-sm);border:1px solid var(--line);background:var(--surface-2);color:var(--ink);min-width:0}
+  .code-row input:focus{outline:none;border-color:var(--brand)}
+  .full-btn{width:100%;padding:15px;font-size:15px}
+  .msg{font-size:13px;margin-top:10px;min-height:18px;text-align:center}
+  .msg.err{color:var(--pink)}.msg.ok{color:#1CA362}
+  .close-x{position:absolute;right:16px;top:14px;cursor:pointer;font-size:20px;color:var(--muted);border:none;background:none;box-shadow:none;padding:4px}
+  .divider{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12.5px;margin:18px 0 12px}
+  .divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line)}
+
+  /* toast/confetti/footer */
+  .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;font-weight:700;font-size:15px;padding:13px 24px;border-radius:999px;opacity:0;pointer-events:none;transition:.28s;z-index:95;box-shadow:var(--sh-lg)}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .confetti{position:fixed;top:32%;width:10px;height:14px;border-radius:3px;opacity:.95;z-index:92;pointer-events:none;animation:fall 1.05s ease-in forwards}
+  .cheer{position:fixed;inset:0;z-index:94;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity .3s}
+  .cheer.show{opacity:1}
+  .cheer-in{display:flex;flex-direction:column;align-items:center;gap:12px;transform:scale(.7);transition:transform .34s cubic-bezier(.2,1.4,.4,1)}
+  .cheer.show .cheer-in{transform:scale(1)}
+  .cheer-mascot{width:120px;animation:bob 1.6s ease-in-out infinite;filter:drop-shadow(0 14px 22px rgba(108,60,240,.34))}
+  .cheer-msg{font-family:'Jua',sans-serif;font-size:22px;color:#fff;background:var(--brand);padding:10px 22px;border-radius:999px;box-shadow:var(--glow)}
+  .site-footer{margin-top:26px;padding:26px 20px 8px;text-align:center}
+  .foot-mascot{width:64px;height:auto;display:block;margin:0 auto;animation:bob 4s ease-in-out infinite}
+  .foot-brand{font-family:'Jua',sans-serif;font-size:22px;margin-top:6px}
+  .art .fill{fill:#fff;stroke:var(--ink);stroke-width:5;stroke-linejoin:round;stroke-linecap:round;cursor:pointer;transition:fill .12s}
+  .art .fill:hover{filter:brightness(.96)}
+  .art .fill.pop{transform-box:fill-box;transform-origin:center;animation:pop .28s ease}
+  .art .ln{fill:none;stroke:var(--ink);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+  .art .dk{fill:var(--ink);pointer-events:none}
+  .art .wt{fill:#fff;stroke:var(--ink);stroke-width:4;pointer-events:none}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  /* ---------- 모바일 최적화 ---------- */
+  @media (max-width:900px){
+    .stage{gap:16px}
+    /* 색 패널을 그림 아래 카드로, 탭 크기 키움 */
+    .panel{padding:16px}
+    .swatches{grid-template-columns:repeat(8,1fr);gap:10px}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 14px 36px}
+    .hero{margin-bottom:22px}
+    .hero-inner{padding:24px 18px}
+    .hero-title{font-size:32px}
+    .hero-sub{font-size:14px}
+    .hero-sub br{display:none}
+    .btn-primary,.btn-ghost{padding:14px 20px;font-size:15px}
+    .hero-cta{width:100%;flex-direction:column}
+    .hero-cta .btn-primary,.hero-cta .btn-ghost{width:100%;justify-content:center}
+    .hero-stats{gap:14px;justify-content:space-between;width:100%}
+    .stat b{font-size:26px}
+    .modebar{gap:8px;margin:0 -14px 16px;padding:2px 14px 6px}
+    .mode{font-size:14px;padding:11px 16px}
+    .paper-card{padding:10px;border-radius:22px}
+    .panel{border-radius:22px}
+    /* 스와치·지우개·붓 = 손가락 크기 */
+    .swatches{grid-template-columns:repeat(7,1fr);gap:9px}
+    .sw{border-radius:12px}
+    .tools{gap:9px}
+    button{padding:14px 10px;font-size:14.5px}
+    .section-title{font-size:22px}
+    .grid{grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:11px}
+    .thumb .t-name{font-size:13.5px}
+    .tray{grid-template-columns:repeat(5,1fr)}
+    .tray .stk{font-size:22px}
+    .reward{padding:16px}
+    .reward-count b{font-size:28px}
+    .plans-title{font-size:22px}
+    .plan{padding:20px 18px}
+    .sheet-card{padding:22px 18px}
+    .brand-name{font-size:22px}
+    .nav-cta{padding:9px 15px;font-size:13px}
+  }
+  @media (max-width:380px){
+    .swatches{grid-template-columns:repeat(6,1fr)}
+    .hero-title{font-size:28px}
+  }
+  /* 큰 손가락 터치 대상 최소 크기 (모바일) */
+  @media (hover:none){
+    .sw{min-height:38px}
+    .mode,button{min-height:44px}
+    .thumb{min-height:44px}
+  }
+
+  #printSheets{display:none}
+  @media print{
+    body{background:#fff}
+    .promo,.nav,.hero,aside.panel,.pack-area,.tools,.modebar,.cta-band,.site-footer,.toast,.modal,.confetti{display:none!important}
+    .stage{display:block}
+    .paper-card{border:none;box-shadow:none;padding:0}
+    .paper-inner{border:none}
+    .art .fill,.art .ln,.art .dk,.art .wt{stroke:#000}
+    body.print-pack .stage{display:none}
+    body.print-pack #printSheets{display:block}
+    body.print-pack #printSheets .sheet{page-break-after:always;text-align:center;padding:12px}
+    body.print-pack #printSheets .sheet .cap{font-family:'Jua',sans-serif;font-size:22px;margin-bottom:6px}
+    body.print-pack #printSheets svg{width:92%;height:auto;margin:0 auto}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <div class="brand">
+      <span class="brand-mark">🖍️</span>
+      <span class="brand-name">콕콕</span>
+      <span class="brand-tag">어린이 색칠놀이</span>
+    </div>
+    <button class="nav-cta" id="navPremium"><span class="np-star">👑</span> 골드</button>
+  </nav>
+
+  <a class="promo" href="https://moodtest.kr/" target="_blank" rel="noopener">
+    <span class="promo-ad">AD</span>
+    <div class="promo-txt">
+      <b class="promo-title">나는 어떤 엄마 스타일일까?</b>
+      <span class="promo-sub">1분이면 끝나는 무료 심리테스트 · 가입 없이 바로 결과</span>
+    </div>
+    <span class="promo-btn">무료로 해보기 →</span>
+  </a>
+
+  <header class="hero">
+    <div class="hero-bg" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="eyebrow">✨ 우리 아이 첫 색칠 놀이터</span>
+        <h1 class="hero-title">칠하고 <span class="grad-text">그리고</span><br>꾸미는 재미</h1>
+        <p class="hero-sub">그림 <b>48</b>종 · 색 <b>42</b>가지에 낙서판·점잇기·스티커까지,<br>아이 눈높이 놀이를 한 곳에서 즐겨요.</p>
+        <div class="hero-cta">
+          <a class="btn-primary" href="#modebar">무료로 시작하기 →</a>
+          <button class="btn-ghost" id="luckyBtn">🎲 오늘의 그림 뽑기</button>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><b>48</b><span>그림 전부 무료</span></div>
+          <div class="stat"><b>42</b><span>색상</span></div>
+          <div class="stat"><b>4</b><span>놀이 모드</span></div>
+          <div class="stat"><b>∞</b><span>내 색 만들기</span></div>
+        </div>
+      </div>
+      <div class="hero-mascot" aria-hidden="true">
+        <div class="float-wrap">
+          <svg class="mascot" viewBox="0 0 150 180" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="mBody" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8E68FF"/><stop offset="1" stop-color="#6A38F0"/></linearGradient>
+              <linearGradient id="mTip" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE38A"/><stop offset="1" stop-color="#FFC02E"/></linearGradient>
+            </defs>
+            <ellipse cx="75" cy="168" rx="42" ry="8" fill="#6A38F0" opacity=".16"/>
+            <path d="M34 96 q-24 -4 -28 -30" stroke="#6A38F0" stroke-width="11" fill="none" stroke-linecap="round"/>
+            <path d="M116 100 q24 4 26 24" stroke="#6A38F0" stroke-width="11" fill="none" stroke-linecap="round"/>
+            <rect x="33" y="54" width="84" height="98" rx="22" fill="url(#mBody)"/>
+            <path d="M45 56 L75 14 L105 56 Z" fill="url(#mTip)"/>
+            <rect x="66" y="30" width="18" height="26" rx="5" fill="#FFD34D"/>
+            <rect x="33" y="92" width="84" height="36" fill="#fff" opacity=".95"/>
+            <rect x="33" y="92" width="84" height="6" fill="#FF5FA2"/><rect x="33" y="122" width="84" height="6" fill="#FF5FA2"/>
+            <circle cx="60" cy="78" r="6.5" fill="#2A2140"/><circle cx="90" cy="78" r="6.5" fill="#2A2140"/>
+            <circle cx="57.5" cy="75.5" r="2.2" fill="#fff"/><circle cx="87.5" cy="75.5" r="2.2" fill="#fff"/>
+            <circle cx="49" cy="88" r="6" fill="#FF9BC0" opacity=".7"/><circle cx="101" cy="88" r="6" fill="#FF9BC0" opacity=".7"/>
+            <path d="M64 88 q11 10 22 0" stroke="#2A2140" stroke-width="3.6" fill="none" stroke-linecap="round"/>
+            <ellipse cx="56" cy="154" rx="13" ry="8" fill="#5A2FD0"/><ellipse cx="94" cy="154" rx="13" ry="8" fill="#5A2FD0"/>
+          </svg>
+        </div>
+        <span class="orbit o1">⭐</span><span class="orbit o2">🖍️</span><span class="orbit o3">💜</span><span class="orbit o4">🌈</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="modebar" id="modebar">
+    <button class="mode on" data-m="color"><svg class="ic" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.5-.9 1-1.7-.6-1 .2-2.3 1.5-2.3H17a4 4 0 0 0 4-4c0-5-4-8-9-8Z"/><circle cx="7.5" cy="11.5" r="1.2" fill="currentColor" stroke="none"/><circle cx="12" cy="8" r="1.2" fill="currentColor" stroke="none"/><circle cx="16" cy="11" r="1.2" fill="currentColor" stroke="none"/></svg>색칠하기</button>
+    <button class="mode" data-m="draw"><svg class="ic" viewBox="0 0 24 24"><path d="M4 20l4-1L20 7a2 2 0 0 0-3-3L5 16l-1 4Z"/><path d="M15 6l3 3"/></svg>낙서판</button>
+    <button class="mode" data-m="dots"><svg class="ic" viewBox="0 0 24 24"><path d="M5 6l7 3 7-4M5 6l4 12 3-9M19 5l-3 14-4-10"/><circle cx="5" cy="6" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="5" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="19" r="1.6" fill="currentColor" stroke="none"/></svg>점잇기</button>
+    <button class="mode" data-m="sticker"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5V14l-6 6H5.5A1.5 1.5 0 0 1 4 18.5Z"/><path d="M14 20v-4.5A1.5 1.5 0 0 1 15.5 14H20"/></svg>스티커</button>
+  </div>
+
+  <div class="stage">
+    <div class="paper-card"><div class="paper-inner">
+      <div class="host" id="paper"></div>
+      <canvas class="host hide" id="drawCanvas" width="760" height="760"></canvas>
+      <div class="host hide" id="dotHost"></div>
+      <div class="host hide" id="stickerHost"></div>
+    </div></div>
+    <aside class="panel">
+      <div id="paletteSec">
+        <h2 id="paletteTitle">🎨 색 고르기</h2>
+        <div class="current"><span class="nowdot" id="nowdot"></span><div><small>지금 색</small><b id="nowname">까망</b></div></div>
+        <div class="swatches" id="swatches"></div>
+      </div>
+      <div id="brushSec" class="hide">
+        <div class="subhead">✏️ 붓 굵기</div>
+        <div class="brushes">
+          <button class="brush" data-w="8"><span class="dotw" style="width:8px;height:8px"></span>가늘게</button>
+          <button class="brush on" data-w="18"><span class="dotw" style="width:16px;height:16px"></span>보통</button>
+          <button class="brush" data-w="34"><span class="dotw" style="width:26px;height:26px"></span>굵게</button>
+        </div>
+      </div>
+      <div id="stickerSec" class="hide">
+        <div class="subhead">🧸 스티커를 눌러 붙이고, 빈 하늘을 탭하면 그 자리에 붙어요</div>
+        <div class="tray" id="tray"></div>
+        <div class="subhead" style="margin-top:12px">🎨 배경 색</div>
+      </div>
+      <div id="dotSec" class="hide">
+        <div class="subhead">🔢 숫자 순서대로 점을 이어요</div>
+        <div class="dotpick" id="dotpick"></div>
+      </div>
+
+      <div class="tools" id="toolsColor">
+        <button id="undo"><svg class="ic" viewBox="0 0 24 24"><path d="M9 7 4 12l5 5"/><path d="M4 12h11a5 5 0 0 1 0 10h-3"/></svg>되돌리기</button>
+        <button id="clear"><svg class="ic" viewBox="0 0 24 24"><path d="M4 15l7-7 6 6-6 6H7z"/><path d="M9 20h10"/></svg>전체 지우기</button>
+        <button id="save" class="b-save"><svg class="ic" viewBox="0 0 24 24"><path d="M12 4v10m0 0 4-4m-4 4-4-4"/><path d="M5 18h14"/></svg>그림 저장</button>
+        <button id="print" class="b-print"><svg class="ic" viewBox="0 0 24 24"><path d="M7 9V4h10v5"/><path d="M6 18H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1"/><rect x="7" y="15" width="10" height="6" rx="1"/></svg>인쇄하기</button>
+      </div>
+      <div class="tools hide" id="toolsDraw">
+        <button id="drawClear"><svg class="ic" viewBox="0 0 24 24"><path d="M4 15l7-7 6 6-6 6H7z"/><path d="M9 20h10"/></svg>전체 지우기</button>
+        <button id="drawSave" class="b-save"><svg class="ic" viewBox="0 0 24 24"><path d="M12 4v10m0 0 4-4m-4 4-4-4"/><path d="M5 18h14"/></svg>그림 저장</button>
+      </div>
+      <div class="tools hide" id="toolsSticker">
+        <button id="stkClear"><svg class="ic" viewBox="0 0 24 24"><path d="M4 15l7-7 6 6-6 6H7z"/><path d="M9 20h10"/></svg>전체 지우기</button>
+        <button id="stkSave" class="b-save"><svg class="ic" viewBox="0 0 24 24"><path d="M12 4v10m0 0 4-4m-4 4-4-4"/><path d="M5 18h14"/></svg>그림 저장</button>
+      </div>
+      <div class="tools hide" id="toolsDots">
+        <button id="dotAgain"><svg class="ic" viewBox="0 0 24 24"><path d="M9 7 4 12l5 5"/><path d="M4 12h11a5 5 0 0 1 0 10h-3"/></svg>다시</button>
+        <button id="dotNext" class="b-print"><svg class="ic" viewBox="0 0 24 24"><path d="M5 12h13m-6-6 6 6-6 6"/></svg>다음 그림</button>
+      </div>
+    </aside>
+  </div>
+
+  <div class="pack-area" id="packSection">
+    <div class="section-title">🖼️ 그림 고르기</div>
+    <div class="section-sub">그림 48종 전부 무료! 화면에서 마음껏 칠하고 저장하세요</div>
+    <div id="packArea"></div>
+  </div>
+
+  <section class="reward">
+    <div class="reward-head">
+      <span class="reward-mascot">🖍️</span>
+      <div>
+        <div class="reward-title">오늘 내가 만든 작품</div>
+        <div class="reward-sub">그림을 저장하면 별 스티커를 모아요 ⭐</div>
+      </div>
+      <div class="reward-count"><b id="starCount">0</b><span>개</span></div>
+    </div>
+    <div class="star-board" id="starBoard"></div>
+  </section>
+
+  <section class="plans" id="plans">
+    <h2 class="plans-title">인쇄 요금제</h2>
+    <p class="plans-sub">화면 색칠·놀이·저장은 모두 무료예요. 종이로 인쇄해서 색칠하는 양만 골라요.</p>
+    <div class="plan-grid">
+      <div class="plan">
+        <div class="plan-name">무료</div>
+        <div class="plan-price"><b>0</b>원</div>
+        <ul class="plan-feat">
+          <li>화면 색칠·낙서·점잇기·스티커 <b>전부</b></li>
+          <li>그림 저장 무제한</li>
+          <li>낱장 인쇄 <b>주 3장</b> (골라서)</li>
+        </ul>
+        <div class="plan-cur">지금 이용 중</div>
+      </div>
+      <div class="plan plan-gold">
+        <div class="plan-crown">👑</div>
+        <div class="plan-name">골드</div>
+        <div class="plan-price"><b>2,900</b>원<span>/월</span></div>
+        <ul class="plan-feat">
+          <li>무료 혜택 <b>전부 포함</b></li>
+          <li>낱장 인쇄 <b>무제한</b> 🖨️</li>
+          <li>팩 <b>전체 도안</b> 한 번에 출력</li>
+        </ul>
+        <button class="plan-btn" id="goldBtn">골드 시작하기</button>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="foot-mascot-wrap">
+      <svg class="foot-mascot" viewBox="0 0 150 180" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="75" cy="168" rx="42" ry="8" fill="#6A38F0" opacity=".14"/>
+        <rect x="33" y="54" width="84" height="98" rx="22" fill="#7C4DFF"/>
+        <path d="M45 56 L75 14 L105 56 Z" fill="#FFC53D"/>
+        <rect x="33" y="92" width="84" height="36" fill="#fff" opacity=".95"/>
+        <rect x="33" y="92" width="84" height="6" fill="#FF5FA2"/><rect x="33" y="122" width="84" height="6" fill="#FF5FA2"/>
+        <circle cx="60" cy="78" r="6.5" fill="#2A2140"/><circle cx="90" cy="78" r="6.5" fill="#2A2140"/>
+        <circle cx="49" cy="88" r="5.5" fill="#FF9BC0"/><circle cx="101" cy="88" r="5.5" fill="#FF9BC0"/>
+        <path d="M64 88 q11 10 22 0" stroke="#2A2140" stroke-width="3.6" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <div class="foot-brand">또 놀러 와요! 🌈</div>
+  </footer>
+</div>
+
+<div class="modal" id="goldModal">
+  <div class="sheet-card gold-card">
+    <button class="close-x" id="goldClose">✕</button>
+    <div class="mIcon">👑</div>
+    <h3>골드로 인쇄 무제한</h3>
+    <p id="goldDesc">무료는 종이 인쇄가 주 3장까지예요. 골드가 되면 언제든 마음껏 인쇄할 수 있어요.</p>
+    <div class="gold-price"><b>2,900</b>원 <span>/ 월</span></div>
+    <ul class="modal-benefits gold-benefits">
+      <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>종이 인쇄 <b>무제한</b></span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>팩 전체 도안도 마음껏 출력</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>화면 색칠·놀이·저장은 계속 무료</span></li>
+    </ul>
+    <button class="full-btn gold-fullbtn" id="goldBuyBtn">골드 시작하기 · 월 2,900원</button>
+    <p class="gold-note">언제든 해지할 수 있어요 · 화면 색칠·놀이는 계속 무료</p>
+    <div class="msg" id="goldMsg"></div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<div id="printSheets"></div>
+
+<script>
+/* =========================================================
+   운영자 설정 — 화면은 전부 무료, 인쇄만 과금(골드)
+   ========================================================= */
+const PRINT_FREE_PER_WEEK = 3;                          // 무료: 주 몇 장까지 인쇄 가능
+const GOLD_PRICE = "월 2,900원";                         // 표시 가격
+const PAY_URL   = "https://your-payment-link.example";  // 골드 결제 링크(토스·카카오페이 등)로 교체
+/* ========================================================= */
+
+/* 색 이름(현재 색 표시용) */
+const COLORS = [
+ ["#E63946","진빨강"],["#FF5A5F","빨강"],["#FF7A8A","산호"],["#FF8FA3","분홍"],["#FFB4C2","연분홍"],["#FFD1DC","베이비핑크"],
+ ["#FF7B00","진주황"],["#FF9F1C","주황"],["#FFB347","살구주황"],["#FFC048","호박"],["#FFD93D","노랑"],["#FFE55C","레몬"],
+ ["#F4E04D","개나리"],["#C9E265","연둣빛"],["#9BE36B","연두"],["#7BC96F","풀잎"],["#57C97D","초록"],["#2ECC71","진초록"],
+ ["#1E8F5E","숲색"],["#0F6B44","솔잎"],["#8FE3E0","민트"],["#4ECDC4","청록"],["#2BB3A6","진청록"],["#A5D8FF","연하늘"],
+ ["#74C0FC","하늘"],["#4DABF7","파랑"],["#3B82F6","진파랑"],["#2456C0","남색"],["#16367A","곤색"],["#E0C3FC","라벤더"],
+ ["#C3AAF7","연보라"],["#9B7BE6","보라"],["#7048E8","진보라"],["#FDE1C4","살구빛"],["#F1C79B","살구"],["#E9B08A","베이지"],
+ ["#D79A6A","갈색"],["#9C6B43","고동"],["#6B4A2E","진갈색"],["#FFFFFF","하양"],["#C9CDD4","연회색"],["#8A8F98","회색"],["#38343F","까망"]
+];
+
+/* ---------- 도형 헬퍼 ---------- */
+function rays(cx,cy,rIn,rOut,n,name){ let s="";
+  for(let i=0;i<n;i++){ const a=i*2*Math.PI/n, p=(r,an)=>`${(cx+r*Math.cos(an)).toFixed(1)},${(cy+r*Math.sin(an)).toFixed(1)}`;
+    s+=`<polygon class="fill" data-n="${name}" points="${p(rIn,a-0.17)} ${p(rOut,a)} ${p(rIn,a+0.17)}"/>`; } return s; }
+function star(cx,cy,ro,ri,n){ let p=[];
+  for(let i=0;i<n*2;i++){ const r=i%2?ri:ro, a=-Math.PI/2+i*Math.PI/n; p.push(`${(cx+r*Math.cos(a)).toFixed(1)},${(cy+r*Math.sin(a)).toFixed(1)}`);} return p.join(" "); }
+
+const A = 'class="art" viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg"';
+const BG = c => `<rect class="fill" data-n="배경" x="8" y="8" width="344" height="344" rx="26"/>`;
+
+/* ---------- 도안 30종 ---------- */
+const PACKS = [
+{ id:"basic", name:"기본 그림", emoji:"⭐", premium:false, pics:[
+  {id:"flower", name:"꽃", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="언덕" d="M8 300 q90 -34 172 -6 q86 30 172 -2 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>
+    <circle class="fill" data-n="해" cx="302" cy="58" r="24"/><g class="ln"><path d="M302 20 v-10 M340 58 h10 M275 31 l-7 -7 M329 31 l7 -7"/></g>
+    <path class="fill" data-n="줄기" d="M174 300 q-6 -84 6 -150 q12 66 6 150 Z"/>
+    <path class="fill" data-n="잎" d="M180 236 q-52 -30 -78 -6 q30 26 78 12 Z"/>
+    <path class="ln" d="M164 232 q-30 -6 -54 -2"/>
+    <path class="fill" data-n="잎" d="M180 262 q50 -26 74 0 q-30 24 -74 8 Z"/>
+    <path class="ln" d="M196 258 q28 -4 50 2"/>
+    <g data-n="꽃잎">
+    <path class="fill" data-n="꽃잎" d="M180 150 q-26 -58 0 -78 q26 20 0 78 Z"/>
+    <path class="fill" data-n="꽃잎" d="M180 150 q49 -33 70 -20 q-8 24 -70 20 Z"/>
+    <path class="fill" data-n="꽃잎" d="M180 150 q30 51 20 74 q-24 -4 -20 -74 Z"/>
+    <path class="fill" data-n="꽃잎" d="M180 150 q-30 51 -20 74 q24 -4 20 -74 Z"/>
+    <path class="fill" data-n="꽃잎" d="M180 150 q-49 -33 -70 -20 q8 24 70 20 Z"/>
+    </g>
+    <circle class="fill" data-n="꽃술" cx="180" cy="150" r="30"/>
+    <g class="ln"><circle cx="180" cy="150" r="16" fill="none"/></g>
+    <circle class="dk" cx="171" cy="146" r="3"/><circle class="dk" cx="189" cy="146" r="3"/>
+    <path class="ln" d="M170 158 q10 8 20 0"/>
+    <circle class="fill" data-n="작은꽃" cx="292" cy="292" r="10"/><g class="ln"><path d="M292 292 l0 -16 M292 292 l14 8 M292 292 l-14 8"/></g></svg>`},
+  {id:"tree", name:"나무", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="언덕" d="M8 302 q92 -30 172 -4 q84 28 172 -4 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>
+    <circle class="fill" data-n="해" cx="306" cy="56" r="22"/><g class="ln"><path d="M306 24 v-8 M338 56 h8 M282 32 l-6 -6"/></g>
+    <path class="fill" data-n="나무기둥" d="M162 316 q-4 -70 4 -110 q6 -6 28 0 q10 44 4 110 Z"/>
+    <g class="ln"><path d="M172 250 q10 6 18 0 M170 286 q12 8 22 0"/></g>
+    <path class="fill" data-n="나뭇잎" d="M180 96 q-58 -6 -66 46 q-40 8 -30 52 q-18 26 14 42 q20 22 50 8 q30 16 52 -6 q34 -8 22 -46 q26 -30 -6 -54 q-6 -42 -36 -42 Z"/>
+    <circle class="fill" data-n="사과" cx="140" cy="150" r="13"/><path class="ln" d="M140 137 q4 -8 12 -8"/>
+    <circle class="fill" data-n="사과" cx="216" cy="142" r="13"/><path class="ln" d="M216 129 q4 -8 12 -8"/>
+    <circle class="fill" data-n="사과" cx="182" cy="192" r="13"/><path class="ln" d="M182 179 q4 -8 12 -8"/>
+    <ellipse class="fill" data-n="덤불" cx="286" cy="300" rx="30" ry="20"/><circle class="fill" data-n="꽃" cx="286" cy="292" r="7"/></svg>`},
+  {id:"house", name:"우리집", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="하늘구름" d="M78 108 q-6 -30 22 -34 q10 -22 34 -10 q26 -6 26 22 q22 4 8 26 Z"/>
+    <circle class="fill" data-n="해" cx="308" cy="52" r="22"/><g class="ln"><path d="M308 20 v-8 M340 52 h8"/></g>
+    <path class="fill" data-n="잔디" d="M8 300 q92 -26 172 -2 q84 24 172 -4 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>
+    <rect class="fill" data-n="굴뚝" x="228" y="132" width="24" height="46" rx="4"/><path class="fill" data-n="연기" d="M240 128 q-14 -10 0 -22 q14 -10 0 -22"/>
+    <path class="fill" data-n="지붕" d="M74 200 L180 112 L286 200 q6 8 -6 8 H80 q-12 0 -6 -8 Z"/>
+    <path class="fill" data-n="벽" d="M98 200 h164 v100 a8 8 0 0 1 -8 8 H106 a8 8 0 0 1 -8 -8 Z"/>
+    <path class="fill" data-n="문" d="M148 308 v-56 a32 32 0 0 1 64 0 v56 Z"/>
+    <circle class="dk" cx="200" cy="282" r="4"/>
+    <circle class="fill" data-n="창문" cx="132" cy="238" r="24"/><g class="ln"><path d="M132 214 v48 M108 238 h48"/></g>
+    <path class="fill" data-n="화분꽃" d="M286 308 v-26"/><circle class="fill" data-n="화분꽃" cx="286" cy="276" r="12"/>
+    <rect class="fill" data-n="화분" x="274" y="308" width="24" height="4"/></svg>`},
+  {id:"rainbow", name:"무지개", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="60" cy="70" r="26"/><g class="ln"><path d="M60 32 v-10 M22 70 h-10 M31 41 l-8 -8 M89 41 l8 -8"/></g>
+    <path class="fill" data-n="빨강" d="M20 300 A160 160 0 0 1 340 300 L312 300 A132 132 0 0 0 48 300 Z"/>
+    <path class="fill" data-n="주황" d="M48 300 A132 132 0 0 1 312 300 L288 300 A108 108 0 0 0 72 300 Z"/>
+    <path class="fill" data-n="노랑" d="M72 300 A108 108 0 0 1 288 300 L264 300 A84 84 0 0 0 96 300 Z"/>
+    <path class="fill" data-n="초록" d="M96 300 A84 84 0 0 1 264 300 L240 300 A60 60 0 0 0 120 300 Z"/>
+    <path class="fill" data-n="파랑" d="M120 300 A60 60 0 0 1 240 300 L216 300 A36 36 0 0 0 144 300 Z"/>
+    <g class="ln"><path d="M250 96 q12 -12 24 0 M258 96 q8 -8 16 0"/></g>
+    <path class="fill" data-n="구름" d="M56 316 q-26 4 -26 -18 q-6 -22 20 -22 q6 -18 28 -8 q22 -8 26 16 q22 2 12 30 Z"/>
+    <path class="fill" data-n="구름" d="M262 316 q-26 4 -26 -18 q-6 -22 20 -22 q6 -18 28 -8 q22 -8 26 16 q22 2 12 30 Z"/></svg>`},
+  {id:"car", name:"자동차", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="308" cy="54" r="22"/><g class="ln"><path d="M308 22 v-8 M340 54 h8"/></g>
+    <path class="fill" data-n="구름" d="M92 96 q-6 -26 20 -28 q10 -18 30 -8 q22 -6 22 18 Z"/>
+    <path class="fill" data-n="길" d="M8 292 H352 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>
+    <g class="ln" stroke-dasharray="18 16"><line x1="30" y1="322" x2="330" y2="322"/></g>
+    <path class="fill" data-n="자동차" d="M46 268 q-4 -44 30 -50 q22 -44 58 -46 h44 q40 2 58 50 q34 6 34 46 q0 14 -14 14 H60 q-14 0 -14 -14 Z"/>
+    <path class="fill" data-n="앞창문" d="M132 176 q-18 2 -30 40 h30 Z"/>
+    <path class="fill" data-n="뒷창문" d="M148 174 h40 q26 2 34 42 h-74 Z"/>
+    <path class="ln" d="M140 176 v40"/>
+    <circle class="fill" data-n="바퀴" cx="108" cy="282" r="30"/><circle class="fill" data-n="바퀴" cx="252" cy="282" r="30"/>
+    <circle class="wt" cx="108" cy="282" r="13"/><circle class="wt" cx="252" cy="282" r="13"/>
+    <circle class="fill" data-n="전조등" cx="292" cy="242" r="11"/>
+    <ellipse class="fill" data-n="문손잡이" cx="180" cy="250" rx="14" ry="6"/></svg>`},
+  {id:"sun", name:"해님", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="구름" d="M78 312 q-28 4 -28 -20 q-6 -24 22 -24 q6 -20 30 -8 q24 -8 28 18 q24 2 12 34 Z"/>
+    ${rays(180,164,88,130,14,"햇살")}
+    <circle class="fill" data-n="해" cx="180" cy="164" r="78"/>
+    <circle class="fill" data-n="볼" cx="140" cy="182" r="13"/><circle class="fill" data-n="볼" cx="220" cy="182" r="13"/>
+    <path class="dk" d="M150 152 a10 10 0 0 1 20 0 Z"/><path class="dk" d="M190 152 a10 10 0 0 1 20 0 Z"/>
+    <path class="ln" d="M146 196 q34 30 68 0"/>
+    <path class="ln" d="M120 132 q14 -10 28 -2 M212 130 q14 -8 28 2"/></svg>`}
+]},
+
+{ id:"animal", name:"귀여운 동물", emoji:"🐾", premium:false, pics:[
+  {id:"bear", name:"곰돌이", svg:`<svg ${A}>${BG()}
+    <path class="ln" d="M286 116 q14 40 -28 66"/><circle class="fill" data-n="풍선" cx="286" cy="82" r="34"/>
+    <ellipse class="fill" data-n="몸통" cx="176" cy="256" rx="88" ry="76"/><ellipse class="fill" data-n="배" cx="176" cy="268" rx="52" ry="50"/>
+    <ellipse class="fill" data-n="팔" cx="94" cy="228" rx="26" ry="36" transform="rotate(22 94 228)"/><ellipse class="fill" data-n="팔" cx="258" cy="214" rx="24" ry="34" transform="rotate(-30 258 214)"/>
+    <ellipse class="fill" data-n="다리" cx="132" cy="324" rx="32" ry="24"/><ellipse class="fill" data-n="다리" cx="220" cy="324" rx="32" ry="24"/>
+    <circle class="fill" data-n="얼굴" cx="176" cy="140" r="78"/>
+    <circle class="fill" data-n="귀" cx="122" cy="80" r="30"/><circle class="fill" data-n="귀" cx="230" cy="80" r="30"/><circle class="fill" data-n="귀안" cx="122" cy="80" r="13"/><circle class="fill" data-n="귀안" cx="230" cy="80" r="13"/>
+    <ellipse class="fill" data-n="주둥이" cx="176" cy="168" rx="48" ry="38"/>
+    <circle class="dk" cx="150" cy="128" r="7"/><circle class="dk" cx="202" cy="128" r="7"/><ellipse class="dk" cx="176" cy="150" rx="13" ry="9"/>
+    <path class="ln" d="M176 159 v9 M176 168 q-16 12 -30 2 M176 168 q16 12 30 2"/></svg>`},
+  {id:"cat", name:"고양이", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="꼬리" d="M242 300 q66 6 60 -66 q-2 -34 -30 -30 q20 6 18 30 q4 50 -50 48 Z"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="252" rx="80" ry="72"/><ellipse class="fill" data-n="배" cx="180" cy="264" rx="42" ry="46"/>
+    <ellipse class="fill" data-n="발" cx="146" cy="308" rx="20" ry="12"/><ellipse class="fill" data-n="발" cx="214" cy="308" rx="20" ry="12"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="148" r="66"/>
+    <polygon class="fill" data-n="귀" points="120,120 108,58 168,106"/><polygon class="fill" data-n="귀" points="240,120 252,58 192,106"/><polygon class="fill" data-n="귀안" points="126,110 120,76 152,102"/><polygon class="fill" data-n="귀안" points="234,110 240,76 208,102"/>
+    <circle class="dk" cx="156" cy="146" r="8"/><circle class="dk" cx="204" cy="146" r="8"/><polygon class="dk" points="174,164 186,164 180,174"/>
+    <path class="ln" d="M180 174 v8 M180 182 q-12 10 -22 2 M180 182 q12 10 22 2"/>
+    <g class="ln"><line x1="120" y1="160" x2="86" y2="152"/><line x1="120" y1="172" x2="86" y2="172"/><line x1="240" y1="160" x2="274" y2="152"/><line x1="240" y1="172" x2="274" y2="172"/></g></svg>`},
+  {id:"puppy", name:"강아지", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="귀" cx="114" cy="150" rx="28" ry="54" transform="rotate(-12 114 150)"/><ellipse class="fill" data-n="귀" cx="246" cy="150" rx="28" ry="54" transform="rotate(12 246 150)"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="278" rx="70" ry="58"/><ellipse class="fill" data-n="배" cx="180" cy="288" rx="40" ry="38"/>
+    <ellipse class="fill" data-n="발" cx="146" cy="322" rx="22" ry="13"/><ellipse class="fill" data-n="발" cx="214" cy="322" rx="22" ry="13"/>
+    <ellipse class="fill" data-n="꼬리" cx="258" cy="248" rx="14" ry="26" transform="rotate(32 258 248)"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="150" r="64"/><circle class="fill" data-n="무늬" cx="150" cy="132" r="24"/>
+    <ellipse class="fill" data-n="주둥이" cx="180" cy="176" rx="40" ry="30"/>
+    <circle class="dk" cx="150" cy="134" r="8"/><circle class="dk" cx="206" cy="134" r="8"/><ellipse class="dk" cx="180" cy="162" rx="12" ry="9"/>
+    <path class="ln" d="M180 171 v8 M180 179 q-12 10 -22 2 M180 179 q12 10 22 2"/></svg>`},
+  {id:"rabbit", name:"토끼", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="귀" cx="152" cy="86" rx="22" ry="64"/><ellipse class="fill" data-n="귀" cx="208" cy="86" rx="22" ry="64"/><ellipse class="fill" data-n="귀안" cx="152" cy="90" rx="11" ry="46"/><ellipse class="fill" data-n="귀안" cx="208" cy="90" rx="11" ry="46"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="278" rx="66" ry="60"/><ellipse class="fill" data-n="배" cx="180" cy="288" rx="36" ry="40"/>
+    <circle class="fill" data-n="꼬리" cx="248" cy="292" r="18"/>
+    <ellipse class="fill" data-n="발" cx="146" cy="322" rx="22" ry="13"/><ellipse class="fill" data-n="발" cx="214" cy="322" rx="22" ry="13"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="174" r="62"/>
+    <circle class="dk" cx="158" cy="170" r="8"/><circle class="dk" cx="202" cy="170" r="8"/><ellipse class="fill" data-n="코" cx="180" cy="188" rx="9" ry="6"/>
+    <path class="ln" d="M180 194 v8 M180 202 q-10 8 -18 2 M180 202 q10 8 18 2"/>
+    <g class="ln"><line x1="150" y1="196" x2="120" y2="190"/><line x1="210" y1="196" x2="240" y2="190"/></g></svg>`},
+  {id:"lion", name:"사자", svg:`<svg ${A}>${BG()}
+    ${rays(180,172,84,112,14,"갈기")}
+    <circle class="fill" data-n="귀" cx="128" cy="120" r="18"/><circle class="fill" data-n="귀" cx="232" cy="120" r="18"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="172" r="72"/>
+    <ellipse class="fill" data-n="주둥이" cx="180" cy="200" rx="42" ry="32"/>
+    <circle class="dk" cx="156" cy="166" r="8"/><circle class="dk" cx="204" cy="166" r="8"/>
+    <polygon class="dk" points="172,188 188,188 180,198"/>
+    <path class="ln" d="M180 198 v8 M180 206 q-14 10 -24 2 M180 206 q14 10 24 2"/>
+    <g class="ln"><line x1="140" y1="200" x2="112" y2="196"/><line x1="140" y1="210" x2="112" y2="212"/><line x1="220" y1="200" x2="248" y2="196"/><line x1="220" y1="210" x2="248" y2="212"/></g></svg>`},
+  {id:"panda", name:"판다", svg:`<svg ${A}>${BG()}
+    <rect class="fill" data-n="대나무" x="286" y="150" width="14" height="150" rx="7"/><g class="ln"><line x1="286" y1="196" x2="300" y2="196"/><line x1="286" y1="240" x2="300" y2="240"/><path d="M286 176 q-24 -6 -30 -26"/><path d="M300 214 q24 -6 30 -26"/></g>
+    <ellipse class="fill" data-n="몸통" cx="176" cy="256" rx="84" ry="72"/>
+    <ellipse class="fill" data-n="팔" cx="104" cy="250" rx="24" ry="34" transform="rotate(20 104 250)"/><ellipse class="fill" data-n="팔" cx="252" cy="250" rx="24" ry="34" transform="rotate(-20 252 250)"/>
+    <ellipse class="fill" data-n="다리" cx="138" cy="322" rx="30" ry="22"/><ellipse class="fill" data-n="다리" cx="216" cy="322" rx="30" ry="22"/>
+    <circle class="fill" data-n="귀" cx="126" cy="86" r="26"/><circle class="fill" data-n="귀" cx="234" cy="86" r="26"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="140" r="72"/>
+    <ellipse class="fill" data-n="눈무늬" cx="152" cy="134" rx="20" ry="26" transform="rotate(-18 152 134)"/><ellipse class="fill" data-n="눈무늬" cx="208" cy="134" rx="20" ry="26" transform="rotate(18 208 134)"/>
+    <circle class="wt" cx="152" cy="134" r="9"/><circle class="dk" cx="152" cy="136" r="5"/><circle class="wt" cx="208" cy="134" r="9"/><circle class="dk" cx="208" cy="136" r="5"/>
+    <ellipse class="dk" cx="180" cy="162" rx="12" ry="8"/><path class="ln" d="M180 170 v8 M180 178 q-12 10 -22 2 M180 178 q12 10 22 2"/></svg>`}
+]},
+
+{ id:"sea", name:"바다 친구들", emoji:"🌊", premium:false, pics:[
+  {id:"fish", name:"물고기", svg:`<svg ${A}>${BG()}
+    <rect class="fill" data-n="바다풀" x="52" y="250" width="16" height="102" rx="8" transform="rotate(-10 60 300)"/><rect class="fill" data-n="바다풀" x="74" y="272" width="16" height="80" rx="8" transform="rotate(9 82 312)"/><rect class="fill" data-n="바다풀" x="292" y="256" width="16" height="96" rx="8" transform="rotate(10 300 300)"/>
+    <polygon class="fill" data-n="꼬리" points="248,190 322,146 306,190 322,234"/>
+    <polygon class="fill" data-n="지느러미" points="150,132 214,120 196,152"/><polygon class="fill" data-n="지느러미" points="150,248 214,262 196,228"/>
+    <ellipse class="fill" data-n="몸통" cx="166" cy="190" rx="102" ry="66"/>
+    <circle class="wt" cx="112" cy="168" r="16"/><circle class="dk" cx="108" cy="170" r="7"/><path class="ln" d="M78 202 q18 16 40 6"/>
+    <circle class="fill" data-n="물방울" cx="70" cy="118" r="13"/><circle class="fill" data-n="물방울" cx="46" cy="90" r="9"/><circle class="fill" data-n="물방울" cx="60" cy="150" r="7"/></svg>`},
+  {id:"whale", name:"고래", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="꼬리" points="78,206 34,168 62,206 34,244"/>
+    <ellipse class="fill" data-n="몸통" cx="188" cy="214" rx="120" ry="80"/>
+    <path class="fill" data-n="배" d="M104 250 a96 96 0 0 0 168 0 Z"/>
+    <polygon class="fill" data-n="지느러미" points="170,282 210,282 186,314"/>
+    <g class="ln"><path d="M250 150 q-6 -30 14 -44 M250 150 q6 -26 34 -30"/></g>
+    <circle class="fill" data-n="물방울" cx="258" cy="96" r="12"/><circle class="fill" data-n="물방울" cx="286" cy="112" r="9"/>
+    <circle class="dk" cx="270" cy="196" r="7"/><path class="ln" d="M250 224 q30 18 56 -2"/></svg>`},
+  {id:"octopus", name:"문어", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="다리" d="M96 214 V300 a13 13 0 0 0 26 0 a13 13 0 0 1 26 0 a13 13 0 0 0 26 0 a13 13 0 0 1 26 0 a13 13 0 0 0 26 0 a13 13 0 0 1 26 0 V214 Z"/>
+    <g class="ln"><circle cx="112" cy="300" r="5"/><circle cx="150" cy="306" r="5"/><circle cx="188" cy="300" r="5"/><circle cx="226" cy="306" r="5"/></g>
+    <ellipse class="fill" data-n="머리" cx="180" cy="168" rx="86" ry="80"/>
+    <circle class="fill" data-n="볼" cx="132" cy="182" r="12"/><circle class="fill" data-n="볼" cx="228" cy="182" r="12"/>
+    <circle class="wt" cx="152" cy="156" r="16"/><circle class="dk" cx="154" cy="158" r="7"/><circle class="wt" cx="208" cy="156" r="16"/><circle class="dk" cx="206" cy="158" r="7"/>
+    <path class="ln" d="M160 192 q20 16 40 0"/></svg>`},
+  {id:"crab", name:"게", svg:`<svg ${A}>${BG()}
+    <g class="ln" stroke-width="6"><path d="M96 220 q-40 4 -52 40 M104 240 q-40 12 -44 50 M112 258 q-34 20 -30 52"/><path d="M264 220 q40 4 52 40 M256 240 q40 12 44 50 M248 258 q34 20 30 52"/></g>
+    <path class="fill" data-n="집게" d="M96 178 q-34 -8 -44 14 q-4 20 18 20 q-2 -14 12 -12 q10 8 -2 16 q22 6 26 -18 Z"/>
+    <path class="fill" data-n="집게" d="M264 178 q34 -8 44 14 q4 20 -18 20 q2 -14 -12 -12 q-10 8 2 16 q-22 6 -26 -18 Z"/>
+    <ellipse class="fill" data-n="등딱지" cx="180" cy="228" rx="92" ry="58"/>
+    <g class="ln"><line x1="164" y1="182" x2="160" y2="160"/><line x1="196" y1="182" x2="200" y2="160"/></g>
+    <circle class="wt" cx="160" cy="150" r="12"/><circle class="dk" cx="160" cy="150" r="6"/><circle class="wt" cx="200" cy="150" r="12"/><circle class="dk" cx="200" cy="150" r="6"/>
+    <path class="ln" d="M150 236 q30 20 60 0"/></svg>`},
+  {id:"turtle", name:"거북이", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="몸통" cx="180" cy="248" rx="116" ry="40"/>
+    <ellipse class="fill" data-n="다리" cx="104" cy="276" rx="26" ry="18"/><ellipse class="fill" data-n="다리" cx="256" cy="276" rx="26" ry="18"/>
+    <circle class="fill" data-n="머리" cx="288" cy="216" r="27"/>
+    <ellipse class="fill" data-n="꼬리" cx="70" cy="228" rx="18" ry="11"/>
+    <ellipse class="fill" data-n="등딱지" cx="180" cy="196" rx="98" ry="74"/>
+    <g class="ln"><polygon points="180,150 208,176 196,214 164,214 152,176" fill="none"/><line x1="180" y1="150" x2="180" y2="122"/><line x1="208" y1="176" x2="248" y2="164"/><line x1="196" y1="214" x2="214" y2="252"/><line x1="164" y1="214" x2="146" y2="252"/><line x1="152" y1="176" x2="112" y2="164"/></g>
+    <circle class="dk" cx="296" cy="210" r="6"/><path class="ln" d="M300 224 q10 6 4 12"/></svg>`},
+  {id:"starfish", name:"불가사리", svg:`<svg ${A}>${BG()}
+    <g class="ln"><path d="M70 320 q40 -14 80 -2 M300 300 q-30 -18 -66 -10"/></g>
+    <polygon class="fill" data-n="몸통" points="${star(180,192,122,52,5)}"/>
+    <circle class="fill" data-n="무늬" cx="180" cy="150" r="10"/><circle class="fill" data-n="무늬" cx="128" cy="214" r="10"/><circle class="fill" data-n="무늬" cx="232" cy="214" r="10"/><circle class="fill" data-n="무늬" cx="150" cy="272" r="9"/><circle class="fill" data-n="무늬" cx="210" cy="272" r="9"/>
+    <circle class="dk" cx="164" cy="188" r="7"/><circle class="dk" cx="196" cy="188" r="7"/><path class="ln" d="M162 206 q18 14 36 0"/></svg>`}
+]},
+
+{ id:"sky", name:"하늘을 나는", emoji:"🚀", premium:true, pics:[
+  {id:"rocket", name:"로켓", free:true, svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="별" cx="62" cy="70" r="10"/><circle class="fill" data-n="별" cx="300" cy="92" r="8"/><circle class="fill" data-n="별" cx="86" cy="300" r="7"/><circle class="fill" data-n="별" cx="292" cy="298" r="9"/>
+    <polygon class="fill" data-n="불꽃" points="150,272 210,272 194,326 180,302 166,326"/>
+    <polygon class="fill" data-n="날개" points="140,208 106,272 140,266"/><polygon class="fill" data-n="날개" points="220,208 254,272 220,266"/>
+    <rect class="fill" data-n="로켓" x="138" y="120" width="84" height="152" rx="42"/>
+    <polygon class="fill" data-n="고깔" points="138,132 180,58 222,132"/>
+    <circle class="fill" data-n="창문" cx="180" cy="170" r="26"/><circle class="ln" cx="180" cy="170" r="18"/></svg>`},
+  {id:"plane", name:"비행기", free:true, svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="구름" d="M250 100 a26 26 0 0 1 4 -52 a26 26 0 0 1 46 -2 a22 22 0 0 1 16 56 Z"/><path class="fill" data-n="구름" d="M56 300 a22 22 0 0 1 4 -44 a22 22 0 0 1 40 -2 a20 20 0 0 1 14 48 Z"/>
+    <ellipse class="fill" data-n="날개" cx="178" cy="214" rx="72" ry="24"/>
+    <polygon class="fill" data-n="꼬리" points="70,182 92,120 120,170"/>
+    <ellipse class="fill" data-n="비행기" cx="186" cy="180" rx="116" ry="38"/>
+    <circle class="wt" cx="128" cy="178" r="8"/><circle class="wt" cx="158" cy="178" r="8"/><circle class="wt" cx="188" cy="178" r="8"/><circle class="wt" cx="218" cy="178" r="8"/>
+    <circle class="fill" data-n="조종석" cx="272" cy="172" r="16"/></svg>`},
+  {id:"balloon", name:"열기구", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="구름" d="M64 300 a22 22 0 0 1 4 -44 a22 22 0 0 1 40 -2 a20 20 0 0 1 14 48 Z"/>
+    <ellipse class="fill" data-n="풍선" cx="180" cy="150" rx="90" ry="100"/>
+    <path class="fill" data-n="줄무늬" d="M152 62 q-24 88 0 176 q-20 -12 -30 -50 q-10 -46 6 -96 q8 -20 24 -30 Z"/>
+    <path class="fill" data-n="줄무늬" d="M208 62 q24 88 0 176 q20 -12 30 -50 q10 -46 -6 -96 q-8 -20 -24 -30 Z"/>
+    <g class="ln"><line x1="150" y1="244" x2="166" y2="292"/><line x1="210" y1="244" x2="194" y2="292"/></g>
+    <path class="fill" data-n="바구니" d="M158 292 h44 l-6 34 h-32 Z"/></svg>`},
+  {id:"butterfly", name:"나비", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="날개" cx="112" cy="150" rx="72" ry="62"/><ellipse class="fill" data-n="날개" cx="248" cy="150" rx="72" ry="62"/>
+    <ellipse class="fill" data-n="아래날개" cx="124" cy="250" rx="54" ry="50"/><ellipse class="fill" data-n="아래날개" cx="236" cy="250" rx="54" ry="50"/>
+    <circle class="fill" data-n="무늬" cx="98" cy="140" r="18"/><circle class="fill" data-n="무늬" cx="262" cy="140" r="18"/><circle class="fill" data-n="무늬" cx="118" cy="252" r="13"/><circle class="fill" data-n="무늬" cx="242" cy="252" r="13"/>
+    <rect class="fill" data-n="몸통" x="168" y="116" width="24" height="152" rx="12"/><circle class="fill" data-n="머리" cx="180" cy="102" r="20"/>
+    <g class="ln"><path d="M172 88 q-16 -22 -32 -26"/><path d="M188 88 q16 -22 32 -26"/></g>
+    <circle class="dk" cx="138" cy="60" r="5"/><circle class="dk" cx="222" cy="60" r="5"/><circle class="dk" cx="172" cy="100" r="4"/><circle class="dk" cx="188" cy="100" r="4"/><path class="ln" d="M172 110 q8 8 16 0"/></svg>`},
+  {id:"bee", name:"꿀벌", svg:`<svg ${A}>${BG()}
+    <g class="ln"><path d="M120 108 q-18 -26 -40 -28 M240 108 q18 -26 40 -28"/></g><circle class="dk" cx="78" cy="76" r="6"/><circle class="dk" cx="282" cy="76" r="6"/>
+    <ellipse class="fill" data-n="날개" cx="120" cy="150" rx="42" ry="30" transform="rotate(-18 120 150)"/><ellipse class="fill" data-n="날개" cx="240" cy="150" rx="42" ry="30" transform="rotate(18 240 150)"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="210" rx="86" ry="74"/>
+    <path class="fill" data-n="줄무늬" d="M126 176 a86 74 0 0 1 108 0 v22 a74 62 0 0 0 -108 0 Z"/>
+    <path class="fill" data-n="줄무늬" d="M120 224 a92 78 0 0 0 120 0 v22 a80 66 0 0 1 -120 0 Z"/>
+    <circle class="dk" cx="158" cy="150" r="7"/><circle class="dk" cx="202" cy="150" r="7"/><path class="ln" d="M164 168 q16 12 32 0"/></svg>`},
+  {id:"chick", name:"병아리", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="304" cy="58" r="24"/>
+    <path class="fill" data-n="잔디" d="M8 300 H352 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>
+    <g class="ln"><path d="M180 130 q4 -22 18 -24"/><path d="M180 130 q-4 -24 -18 -26"/></g>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="212" rx="92" ry="82"/>
+    <ellipse class="fill" data-n="날개" cx="236" cy="222" rx="30" ry="42" transform="rotate(10 236 222)"/>
+    <polygon class="fill" data-n="부리" points="108,196 76,206 108,216"/>
+    <circle class="wt" cx="134" cy="182" r="13"/><circle class="dk" cx="132" cy="184" r="6"/>
+    <g class="ln"><path d="M156 294 v18 M156 312 l-14 8 M156 312 l14 8 M156 312 l0 10"/><path d="M206 294 v18 M206 312 l-14 8 M206 312 l14 8 M206 312 l0 10"/></g></svg>`}
+]},
+
+{ id:"snack", name:"맛있는 간식", emoji:"🍦", premium:true, pics:[
+  {id:"icecream", name:"아이스크림", free:true, svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="콘" points="150,224 210,224 180,332"/>
+    <g class="ln"><line x1="164" y1="236" x2="180" y2="290"/><line x1="196" y1="236" x2="180" y2="290"/><line x1="158" y1="252" x2="202" y2="252"/><line x1="166" y1="278" x2="194" y2="278"/></g>
+    <circle class="fill" data-n="딸기맛" cx="180" cy="212" r="48"/>
+    <circle class="fill" data-n="바닐라맛" cx="180" cy="162" r="44"/>
+    <circle class="fill" data-n="초코맛" cx="180" cy="120" r="40"/>
+    <path class="ln" d="M180 94 v-14"/><circle class="fill" data-n="체리" cx="180" cy="72" r="13"/></svg>`},
+  {id:"cupcake", name:"컵케이크", free:true, svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="컵" d="M110 236 h140 l-20 92 h-100 Z"/>
+    <g class="ln"><line x1="146" y1="240" x2="134" y2="324"/><line x1="180" y1="240" x2="180" y2="324"/><line x1="214" y1="240" x2="226" y2="324"/></g>
+    <path class="fill" data-n="크림" d="M104 236 q6 -54 46 -66 q10 -34 44 -20 q40 -8 42 40 q28 6 8 46 Z"/>
+    <circle class="fill" data-n="장식" cx="146" cy="200" r="7"/><circle class="fill" data-n="장식" cx="180" cy="182" r="7"/><circle class="fill" data-n="장식" cx="214" cy="204" r="7"/><circle class="fill" data-n="장식" cx="196" cy="222" r="6"/>
+    <path class="ln" d="M180 150 v-14"/><circle class="fill" data-n="체리" cx="180" cy="126" r="14"/></svg>`},
+  {id:"donut", name:"도넛", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="도넛" fill-rule="evenodd" d="M180 96 a86 86 0 1 0 0.1 0 Z M180 148 a34 34 0 1 0 0.1 0 Z"/>
+    <path class="fill" data-n="아이싱" d="M96 178 a84 84 0 0 1 168 0 a34 34 0 0 0 -32 22 q-10 -16 -22 -2 q-12 -16 -24 -2 q-12 -16 -24 -2 q-12 -16 -22 -0 a34 34 0 0 0 -44 -14 Z"/>
+    <circle class="dk" cx="150" cy="128" r="4"/><circle class="dk" cx="184" cy="120" r="4"/><circle class="dk" cx="216" cy="132" r="4"/><circle class="dk" cx="132" cy="156" r="4"/><circle class="dk" cx="230" cy="162" r="4"/><circle class="dk" cx="200" cy="150" r="4"/></svg>`},
+  {id:"candy", name:"막대사탕", svg:`<svg ${A}>${BG()}
+    <rect class="fill" data-n="막대" x="174" y="176" width="12" height="150" rx="6"/>
+    <circle class="fill" data-n="사탕" cx="180" cy="140" r="72"/>
+    <path class="ln" d="M180 140 m-52 0 a52 52 0 1 1 104 0 a40 40 0 1 1 -80 0 a28 28 0 1 1 56 0 a16 16 0 1 1 -32 0"/></svg>`},
+  {id:"watermelon", name:"수박", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="껍질" d="M52 152 A128 128 0 0 0 308 152 Z"/>
+    <path class="fill" data-n="수박속" d="M74 160 A106 106 0 0 0 286 160 Z"/>
+    <g class="dk"><ellipse cx="150" cy="196" rx="6" ry="10" transform="rotate(20 150 196)"/><ellipse cx="196" cy="188" rx="6" ry="10" transform="rotate(-14 196 188)"/><ellipse cx="176" cy="224" rx="6" ry="10"/><ellipse cx="224" cy="210" rx="6" ry="10" transform="rotate(18 224 210)"/><ellipse cx="124" cy="220" rx="6" ry="10" transform="rotate(-18 124 220)"/></g></svg>`},
+  {id:"strawberry", name:"딸기", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="딸기" d="M180 130 C118 126 96 186 122 240 C142 288 180 318 180 318 C180 318 218 288 238 240 C264 186 242 126 180 130 Z"/>
+    <polygon class="fill" data-n="잎" points="${star(180,124,34,15,6)}"/>
+    <g class="dk"><ellipse cx="150" cy="196" rx="4" ry="7"/><ellipse cx="182" cy="192" rx="4" ry="7"/><ellipse cx="212" cy="200" rx="4" ry="7"/><ellipse cx="164" cy="228" rx="4" ry="7"/><ellipse cx="198" cy="228" rx="4" ry="7"/><ellipse cx="180" cy="262" rx="4" ry="7"/></g></svg>`}
+]},
+
+{ id:"dino", name:"공룡 나라", emoji:"🦕", premium:true, pics:[
+  {id:"brachio", name:"목긴공룡", free:true, svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="꼬리" d="M84 236 q-70 4 -84 -14 q22 -4 24 -20 q34 10 66 6 Z"/>
+    <rect class="fill" data-n="다리" x="108" y="248" width="26" height="72" rx="10"/><rect class="fill" data-n="다리" x="150" y="252" width="26" height="70" rx="10"/><rect class="fill" data-n="다리" x="196" y="252" width="26" height="70" rx="10"/><rect class="fill" data-n="다리" x="238" y="248" width="26" height="72" rx="10"/>
+    <ellipse class="fill" data-n="몸통" cx="176" cy="222" rx="104" ry="58"/>
+    <path class="fill" data-n="목" d="M214 196 q22 -104 64 -118 q22 6 16 28 q-34 8 -46 96 q-6 22 -34 -6 Z"/>
+    <ellipse class="fill" data-n="머리" cx="288" cy="92" rx="30" ry="24"/>
+    <circle class="dk" cx="298" cy="86" r="5"/><path class="ln" d="M300 100 q10 4 6 12"/>
+    <circle class="fill" data-n="무늬" cx="150" cy="212" r="12"/><circle class="fill" data-n="무늬" cx="196" cy="230" r="12"/><circle class="fill" data-n="무늬" cx="120" cy="228" r="10"/></svg>`},
+  {id:"trex", name:"티라노", free:true, svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="꼬리" d="M104 256 q-72 14 -88 54 q24 -6 32 -22 q30 -10 68 -14 Z"/>
+    <ellipse class="fill" data-n="몸통" cx="168" cy="220" rx="76" ry="94"/>
+    <rect class="fill" data-n="다리" x="140" y="286" width="30" height="48" rx="10"/><rect class="fill" data-n="다리" x="184" y="286" width="30" height="48" rx="10"/>
+    <ellipse class="fill" data-n="팔" cx="214" cy="214" rx="14" ry="22" transform="rotate(30 214 214)"/>
+    <path class="fill" data-n="머리" d="M176 150 q40 -50 92 -34 q26 10 22 34 q-2 20 -26 24 l-40 4 q-40 4 -48 -32 Z"/>
+    <g class="ln"><path d="M214 178 l6 12 M230 178 l6 12 M246 176 l5 12"/></g>
+    <circle class="dk" cx="236" cy="132" r="6"/>
+    <g class="ln"><path d="M132 150 l10 -14 M150 138 l10 -16 M170 132 l8 -16"/></g>
+    <circle class="fill" data-n="무늬" cx="150" cy="230" r="12"/><circle class="fill" data-n="무늬" cx="180" cy="250" r="12"/></svg>`},
+  {id:"tricera", name:"트리케라톱스", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="꼬리" d="M76 240 q-58 2 -72 -14 q20 -4 22 -18 q30 8 56 6 Z"/>
+    <rect class="fill" data-n="다리" x="100" y="256" width="26" height="64" rx="10"/><rect class="fill" data-n="다리" x="140" y="260" width="26" height="60" rx="10"/><rect class="fill" data-n="다리" x="184" y="260" width="26" height="60" rx="10"/>
+    <ellipse class="fill" data-n="몸통" cx="150" cy="234" rx="94" ry="56"/>
+    <ellipse class="fill" data-n="프릴" cx="250" cy="196" rx="60" ry="64"/>
+    <ellipse class="fill" data-n="머리" cx="292" cy="216" rx="34" ry="34"/>
+    <polygon class="fill" data-n="뿔" points="272,150 262,96 292,142"/>
+    <polygon class="fill" data-n="뿔" points="300,150 320,100 316,150"/>
+    <polygon class="fill" data-n="뿔" points="316,224 344,214 318,236"/>
+    <circle class="dk" cx="300" cy="210" r="5"/><path class="ln" d="M318 226 q8 4 4 12"/>
+    <g class="ln"><circle cx="236" cy="160" r="5" fill="none"/><circle cx="264" cy="150" r="5" fill="none"/><circle cx="220" cy="200" r="5" fill="none"/></g></svg>`},
+  {id:"stego", name:"스테고", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="꼬리" d="M74 244 q-60 6 -74 -12 q20 -4 22 -18 q30 8 58 4 Z"/>
+    <g class="ln"><path d="M20 236 l-10 -16 M14 226 l-14 -10 M20 250 l-14 8"/></g>
+    <ellipse class="fill" data-n="몸통" cx="176" cy="238" rx="106" ry="52"/>
+    <polygon class="fill" data-n="등판" points="120,196 106,150 148,190"/>
+    <polygon class="fill" data-n="등판" points="156,188 150,138 190,184"/>
+    <polygon class="fill" data-n="등판" points="196,184 200,136 232,186"/>
+    <polygon class="fill" data-n="등판" points="234,190 252,150 262,196"/>
+    <rect class="fill" data-n="다리" x="118" y="268" width="26" height="56" rx="10"/><rect class="fill" data-n="다리" x="160" y="270" width="26" height="54" rx="10"/><rect class="fill" data-n="다리" x="204" y="270" width="26" height="54" rx="10"/>
+    <ellipse class="fill" data-n="머리" cx="288" cy="238" rx="30" ry="24"/>
+    <circle class="dk" cx="298" cy="232" r="5"/><path class="ln" d="M300 246 q8 4 4 10"/></svg>`},
+  {id:"nest", name:"공룡알 둥지", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="둥지" cx="180" cy="256" rx="128" ry="60"/>
+    <ellipse class="fill" data-n="알" cx="132" cy="220" rx="34" ry="44"/>
+    <ellipse class="fill" data-n="알" cx="228" cy="220" rx="34" ry="44"/>
+    <ellipse class="fill" data-n="알" cx="180" cy="206" rx="36" ry="48"/>
+    <circle class="fill" data-n="무늬" cx="132" cy="212" r="9"/><circle class="fill" data-n="무늬" cx="120" cy="234" r="7"/><circle class="fill" data-n="무늬" cx="228" cy="212" r="9"/><circle class="fill" data-n="무늬" cx="240" cy="232" r="7"/><circle class="fill" data-n="무늬" cx="180" cy="198" r="9"/><circle class="fill" data-n="무늬" cx="168" cy="222" r="7"/>
+    <path class="ln" d="M60 262 q40 22 120 22 q80 0 120 -22"/>
+    <g class="ln"><path d="M70 246 l22 8 M110 270 l24 4 M250 270 l24 -6 M290 246 l-22 8"/></g></svg>`},
+  {id:"babydino", name:"아기공룡", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="몸통" cx="180" cy="196" rx="60" ry="58"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="214" rx="34" ry="34"/>
+    <ellipse class="fill" data-n="팔" cx="124" cy="206" rx="16" ry="12"/><ellipse class="fill" data-n="팔" cx="236" cy="206" rx="16" ry="12"/>
+    <path class="fill" data-n="알껍질" d="M112 250 l14 -18 l16 16 l16 -18 l16 18 l16 -16 l14 18 v60 a20 20 0 0 1 -20 20 h-72 a20 20 0 0 1 -20 -20 Z"/>
+    <g class="ln"><path d="M158 138 l8 -16 M180 132 l6 -16 M202 138 l8 -16"/></g>
+    <circle class="dk" cx="160" cy="170" r="7"/><circle class="dk" cx="200" cy="170" r="7"/>
+    <ellipse class="dk" cx="180" cy="188" rx="8" ry="6"/>
+    <path class="ln" d="M164 202 q16 14 32 0"/></svg>`}
+]},
+
+{ id:"princess", name:"공주와 친구들", emoji:"👑", premium:false, pics:[
+  {id:"princess", name:"공주님", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="왕관" d="M150 78 l8 22 l22 -18 l22 18 l8 -22 v20 h-60 Z"/>
+    <circle class="fill" data-n="보석" cx="180" cy="86" r="6"/>
+    <path class="fill" data-n="머리" d="M126 118 q0 -22 54 -22 q54 0 54 22 q10 70 -14 96 q-14 -14 -40 -14 q-26 0 -40 14 q-24 -26 -14 -96 Z"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="140" r="42"/>
+    <circle class="dk" cx="166" cy="138" r="5"/><circle class="dk" cx="194" cy="138" r="5"/>
+    <circle class="fill" data-n="볼" cx="158" cy="150" r="7"/><circle class="fill" data-n="볼" cx="202" cy="150" r="7"/>
+    <path class="ln" d="M170 156 q10 8 20 0"/>
+    <path class="fill" data-n="드레스" d="M180 196 q-22 0 -30 18 l-40 96 q60 26 140 0 l-40 -96 q-8 -18 -30 -18 Z"/>
+    <path class="ln" d="M150 250 q30 16 60 0 M140 286 q40 20 80 0"/>
+    <circle class="fill" data-n="목걸이" cx="180" cy="200" r="6"/></svg>`},
+  {id:"castle", name:"성", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="달" cx="300" cy="60" r="20"/>
+    <path class="fill" data-n="언덕" d="M8 306 q90 -24 172 -2 q84 22 172 -4 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>
+    <rect class="fill" data-n="탑" x="70" y="150" width="54" height="158"/>
+    <rect class="fill" data-n="탑" x="236" y="150" width="54" height="158"/>
+    <rect class="fill" data-n="본관" x="128" y="184" width="104" height="124"/>
+    <path class="fill" data-n="지붕" d="M64 150 L97 104 L130 150 Z"/>
+    <path class="fill" data-n="지붕" d="M230 150 L263 104 L296 150 Z"/>
+    <path class="fill" data-n="지붕" d="M122 184 L180 128 L238 184 Z"/>
+    <g class="ln"><path d="M97 104 v-16 l14 6"/><path d="M263 104 v-16 l14 6"/><path d="M180 128 v-18 l14 6"/></g>
+    <path class="fill" data-n="성문" d="M156 308 v-52 a24 24 0 0 1 48 0 v52 Z"/>
+    <rect class="fill" data-n="창문" x="86" y="196" width="22" height="34" rx="11"/>
+    <rect class="fill" data-n="창문" x="252" y="196" width="22" height="34" rx="11"/></svg>`},
+  {id:"unicorn", name:"유니콘", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="별" cx="70" cy="80" r="8"/><circle class="fill" data-n="별" cx="300" cy="110" r="7"/><circle class="fill" data-n="별" cx="86" cy="280" r="6"/>
+    <path class="fill" data-n="몸통" d="M120 236 q-16 40 8 68 h26 q-8 -26 6 -44 q30 12 66 0 q14 18 6 44 h26 q22 -30 8 -70 q10 -40 -36 -52 q-60 -14 -104 12 q-30 18 -20 42 Z"/>
+    <path class="fill" data-n="얼굴" d="M96 176 q-24 -16 -18 -44 q22 8 34 20 q30 -18 66 -6 q40 14 34 56 q-6 36 -52 36 q-50 0 -64 -30 q-8 -18 0 -32 Z"/>
+    <polygon class="fill" data-n="뿔" points="120,120 132,74 146,118"/>
+    <path class="fill" data-n="갈기" d="M150 96 q28 -12 30 12 q22 -12 26 14 q20 -6 18 22 q-30 8 -50 -6 q-30 -20 -24 -42 Z"/>
+    <circle class="dk" cx="120" cy="150" r="5"/>
+    <path class="ln" d="M92 160 q-10 4 -14 12"/>
+    <circle class="fill" data-n="볼" cx="112" cy="166" r="7"/></svg>`},
+  {id:"crown", name:"보석 왕관", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="반짝" cx="72" cy="90" r="8"/><circle class="fill" data-n="반짝" cx="292" cy="96" r="8"/><circle class="fill" data-n="반짝" cx="84" cy="270" r="7"/><circle class="fill" data-n="반짝" cx="286" cy="264" r="7"/>
+    <path class="fill" data-n="왕관" d="M72 236 L96 132 L138 196 L180 108 L222 196 L264 132 L288 236 Z"/>
+    <rect class="fill" data-n="받침" x="72" y="236" width="216" height="34" rx="10"/>
+    <circle class="fill" data-n="보석" cx="96" cy="132" r="12"/><circle class="fill" data-n="보석" cx="180" cy="108" r="14"/><circle class="fill" data-n="보석" cx="264" cy="132" r="12"/>
+    <circle class="fill" data-n="큰보석" cx="180" cy="253" r="13"/>
+    <circle class="fill" data-n="작은보석" cx="120" cy="253" r="8"/><circle class="fill" data-n="작은보석" cx="240" cy="253" r="8"/></svg>`},
+  {id:"mermaid", name:"인어공주", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="물방울" d="M70 300 q-14 -20 0 -36 q14 16 0 36 Z"/><circle class="fill" data-n="물방울" cx="300" cy="120" r="10"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="120" r="38"/>
+    <path class="fill" data-n="머리" d="M142 120 q-16 -46 38 -50 q54 4 38 50 q6 40 -14 60 q-10 -20 -24 -20 q-14 0 -24 20 q-20 -20 -14 -60 Z"/>
+    <circle class="dk" cx="168" cy="118" r="5"/><circle class="dk" cx="192" cy="118" r="5"/>
+    <circle class="fill" data-n="볼" cx="158" cy="128" r="6"/><circle class="fill" data-n="볼" cx="202" cy="128" r="6"/>
+    <path class="ln" d="M170 134 q10 8 20 0"/>
+    <path class="fill" data-n="몸" d="M156 168 q24 16 48 0 q10 40 -8 70 q-16 -8 -32 0 q-18 -30 -8 -70 Z"/>
+    <path class="fill" data-n="지느러미" d="M164 232 q16 10 32 0 q30 30 12 74 q-28 -22 -28 8 q0 -30 -28 -8 q-18 -44 12 -74 Z"/>
+    <path class="ln" d="M168 250 q12 8 24 0 M166 280 q14 8 28 0"/>
+    <path class="fill" data-n="조개" d="M150 200 a14 14 0 0 1 28 0 Z"/></svg>`},
+  {id:"frog", name:"개구리 왕자", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="연잎" d="M60 316 a70 30 0 0 1 140 0 l-14 0 a4 4 0 0 0 -8 0 Z"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="238" rx="86" ry="72"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="256" rx="50" ry="46"/>
+    <circle class="fill" data-n="눈받침" cx="140" cy="166" r="28"/><circle class="fill" data-n="눈받침" cx="220" cy="166" r="28"/>
+    <circle class="wt" cx="140" cy="166" r="15"/><circle class="wt" cx="220" cy="166" r="15"/>
+    <circle class="dk" cx="140" cy="168" r="7"/><circle class="dk" cx="220" cy="168" r="7"/>
+    <path class="fill" data-n="왕관" d="M156 118 l6 16 l18 -12 l18 12 l6 -16 v16 h-48 Z"/>
+    <path class="ln" d="M138 226 q42 30 84 0"/>
+    <ellipse class="fill" data-n="발" cx="120" cy="306" rx="26" ry="14"/><ellipse class="fill" data-n="발" cx="240" cy="306" rx="26" ry="14"/></svg>`}
+]},
+
+{ id:"bug", name:"숲속 친구들", emoji:"🐞", premium:false, pics:[
+  {id:"ladybug", name:"무당벌레", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="잎" d="M40 300 q40 -30 90 -20 q-30 30 -90 20 Z"/>
+    <g class="ln"><path d="M150 118 q-8 -20 -26 -24 M210 118 q8 -20 26 -24"/></g>
+    <circle class="dk" cx="120" cy="88" r="6"/><circle class="dk" cx="240" cy="88" r="6"/>
+    <circle class="fill" data-n="머리" cx="180" cy="130" r="34"/>
+    <circle class="wt" cx="168" cy="126" r="8"/><circle class="wt" cx="192" cy="126" r="8"/><circle class="dk" cx="168" cy="127" r="4"/><circle class="dk" cx="192" cy="127" r="4"/>
+    <path class="ln" d="M164 144 q16 12 32 0"/>
+    <ellipse class="fill" data-n="등" cx="180" cy="238" rx="92" ry="82"/>
+    <path class="ln" d="M180 156 v164"/>
+    <circle class="dk" cx="140" cy="210" r="12"/><circle class="dk" cx="222" cy="210" r="12"/><circle class="dk" cx="150" cy="266" r="12"/><circle class="dk" cx="212" cy="266" r="12"/><circle class="dk" cx="180" cy="240" r="12"/></svg>`},
+  {id:"snail", name:"달팽이", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="잔디" d="M8 314 H352 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>
+    <path class="fill" data-n="몸" d="M60 300 q-16 -40 30 -46 q10 -50 70 -40 q-6 46 -40 52 q40 6 46 34 q-2 8 -12 8 H74 q-14 0 -14 -8 Z"/>
+    <path class="fill" data-n="껍질" d="M180 214 a68 68 0 1 1 -0.1 0 Z"/>
+    <path class="ln" d="M180 214 a44 44 0 1 0 26 40 a26 26 0 1 0 -34 -20 a12 12 0 1 0 18 8"/>
+    <g class="ln"><path d="M78 214 l-8 -22 M96 210 l6 -24"/></g>
+    <circle class="dk" cx="70" cy="188" r="5"/><circle class="dk" cx="102" cy="184" r="5"/>
+    <circle class="fill" data-n="볼" cx="86" cy="256" r="8"/>
+    <path class="ln" d="M74 262 q12 8 22 2"/></svg>`},
+  {id:"dragonfly", name:"잠자리", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="별" cx="70" cy="90" r="7"/><circle class="fill" data-n="별" cx="292" cy="270" r="7"/>
+    <ellipse class="fill" data-n="윗날개" cx="118" cy="150" rx="60" ry="24" transform="rotate(-18 118 150)"/>
+    <ellipse class="fill" data-n="윗날개" cx="242" cy="150" rx="60" ry="24" transform="rotate(18 242 150)"/>
+    <ellipse class="fill" data-n="아랫날개" cx="126" cy="196" rx="52" ry="20" transform="rotate(16 126 196)"/>
+    <ellipse class="fill" data-n="아랫날개" cx="234" cy="196" rx="52" ry="20" transform="rotate(-16 234 196)"/>
+    <circle class="fill" data-n="머리" cx="180" cy="128" r="26"/>
+    <circle class="dk" cx="170" cy="122" r="6"/><circle class="dk" cx="190" cy="122" r="6"/>
+    <path class="ln" d="M172 138 q8 6 16 0"/>
+    <path class="fill" data-n="몸통" d="M170 150 h20 l-4 150 h-12 Z"/>
+    <g class="ln"><line x1="172" y1="196" x2="188" y2="196"/><line x1="172" y1="228" x2="188" y2="228"/><line x1="174" y1="260" x2="186" y2="260"/></g></svg>`},
+  {id:"mushroom", name:"버섯", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="잔디" d="M8 314 H352 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>
+    <path class="fill" data-n="갓" d="M70 200 q0 -96 110 -96 q110 0 110 96 q0 14 -14 14 H84 q-14 0 -14 -14 Z"/>
+    <circle class="fill" data-n="점" cx="132" cy="150" r="16"/><circle class="fill" data-n="점" cx="200" cy="132" r="20"/><circle class="fill" data-n="점" cx="238" cy="176" r="14"/>
+    <path class="fill" data-n="기둥" d="M146 214 q0 60 8 92 q26 10 52 0 q8 -32 8 -92 Z"/>
+    <circle class="dk" cx="160" cy="250" r="5"/><circle class="dk" cx="200" cy="250" r="5"/>
+    <path class="ln" d="M168 264 q12 10 24 0"/>
+    <path class="fill" data-n="작은버섯" d="M256 300 q0 -26 28 -26 q28 0 28 26 Z"/><rect class="fill" data-n="작은기둥" x="272" y="300" width="24" height="14"/></svg>`},
+  {id:"caterpillar", name:"애벌레", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="잎" d="M250 120 q40 -20 70 6 q-40 26 -70 -6 Z"/>
+    <circle class="fill" data-n="몸1" cx="90" cy="230" r="34"/>
+    <circle class="fill" data-n="몸2" cx="140" cy="242" r="32"/>
+    <circle class="fill" data-n="몸3" cx="188" cy="234" r="32"/>
+    <circle class="fill" data-n="몸4" cx="234" cy="244" r="30"/>
+    <circle class="fill" data-n="머리" cx="284" cy="228" r="38"/>
+    <g class="ln"><path d="M276 192 l-8 -18 M296 192 l10 -16"/></g>
+    <circle class="dk" cx="272" cy="222" r="6"/><circle class="dk" cx="298" cy="222" r="6"/>
+    <circle class="fill" data-n="볼" cx="270" cy="240" r="8"/>
+    <path class="ln" d="M280 248 q10 8 20 2"/>
+    <g class="ln"><line x1="90" y1="264" x2="90" y2="284"/><line x1="140" y1="274" x2="140" y2="292"/><line x1="188" y1="266" x2="188" y2="286"/><line x1="234" y1="274" x2="234" y2="292"/></g></svg>`},
+  {id:"acorn", name:"도토리", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="잔디" d="M8 314 H352 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>
+    <path class="fill" data-n="깍지" d="M112 168 q0 -20 68 -20 q68 0 68 20 q0 26 -68 26 q-68 0 -68 -26 Z"/>
+    <path class="fill" data-n="열매" d="M120 180 q0 90 60 118 q60 -28 60 -118 Z"/>
+    <path class="ln" d="M180 148 v-16"/>
+    <g class="ln"><path d="M124 172 h112 M132 184 h96"/></g>
+    <circle class="dk" cx="162" cy="230" r="5"/><circle class="dk" cx="198" cy="230" r="5"/>
+    <circle class="fill" data-n="볼" cx="150" cy="242" r="7"/><circle class="fill" data-n="볼" cx="210" cy="242" r="7"/>
+    <path class="ln" d="M164 248 q16 12 32 0"/></svg>`}
+]}
+];
+
+PACKS.forEach(p=>p.premium=false); // 화면 색칠은 전부 무료 (인쇄만 유료)
+const allPics = PACKS.flatMap(p=>p.pics.map(pic=>({pic, pack:p})));
+function picById(id){ return allPics.find(x=>x.pic.id===id); }
+
+const KEY="coloring-kok-v3", GKEY="coloring-kok-gold", WKEY="coloring-kok-print";
+let saved={}, curId=PACKS[0].pics[0].id, color=COLORS[1][0], colorName=COLORS[1][1], undo=[];
+let isGold=false;
+try{ isGold=localStorage.getItem(GKEY)==="1"; }catch(e){}
+function packOpen(pk){ return true; } // 화면 색칠은 전부 무료
+/* 주간 인쇄 카운트 (무료: 주 N장) */
+function weekId(){ const d=new Date(); const o=new Date(d.getFullYear(),0,1); return d.getFullYear()+"-"+Math.floor(((d-o)/86400000+o.getDay()+1)/7); }
+function printsThisWeek(){ try{ const w=JSON.parse(localStorage.getItem(WKEY)||"{}"); return w.id===weekId()?(w.n||0):0; }catch(e){ return 0; } }
+function bumpPrints(){ try{ localStorage.setItem(WKEY,JSON.stringify({id:weekId(),n:printsThisWeek()+1})); }catch(e){} }
+function printsLeft(){ return Math.max(0, PRINT_FREE_PER_WEEK - printsThisWeek()); }
+/* 인쇄 게이트: 골드면 무제한, 아니면 주 N장 */
+function tryPrint(run){
+  if(isGold){ run(); return; }
+  if(printsLeft()<=0){ openGold(); return; }
+  bumpPrints(); run();
+  const left=printsLeft();
+  showToast(left>0?`인쇄했어요! 이번 주 ${left}장 남았어요 🖨️`:"이번 주 무료 인쇄를 모두 썼어요");
+  renderGoldUI();
+}
+try{ const p=JSON.parse(localStorage.getItem(KEY)||"{}"); saved=p.saved||{}; if(p.cur&&picById(p.cur)) curId=p.cur; }catch(e){}
+
+const paper=document.getElementById("paper"), toastEl=document.getElementById("toast");
+const reduce = matchMedia("(prefers-reduced-motion:reduce)").matches;
+function persist(){ try{ localStorage.setItem(KEY, JSON.stringify({saved,cur:curId})); }catch(e){} }
+function snapshot(svg){ const a=[]; svg.querySelectorAll(".fill").forEach(f=>a.push(f.style.fill||"")); return a; }
+function restore(svg,a){ if(!a)return; svg.querySelectorAll(".fill").forEach((f,i)=>{ if(a[i]) f.style.fill=a[i]; }); }
+
+function loadPicture(id){
+  const found=picById(id); if(!found) return;
+  if(found.pack.premium && !packOpen(found.pack) && !found.pic.free){ openUnlock(found.pack); return; }
+  curId=id; undo=[];
+  paper.innerHTML=found.pic.svg;
+  const svg=paper.querySelector("svg");
+  restore(svg, saved[id]);
+  svg.querySelectorAll(".fill").forEach(el=>{
+    el.addEventListener("click",()=>{
+      undo.push({el,prev:el.style.fill||""}); if(undo.length>80) undo.shift();
+      el.style.fill = rainbowOn ? nextRainbow() : color;
+      saved[id]=snapshot(svg); persist();
+      if(!reduce){ el.classList.remove("pop"); void el.getBBox(); el.classList.add("pop"); setTimeout(()=>el.classList.remove("pop"),300); }
+    });
+  });
+  document.querySelectorAll(".thumb").forEach(t=>t.classList.toggle("on", t.dataset.id===id));
+  persist();
+}
+
+/* 팔레트 */
+const swWrap=document.getElementById("swatches"), nowdot=document.getElementById("nowdot"), nowname=document.getElementById("nowname");
+function paintNow(){ nowdot.style.background=color; nowname.textContent=colorName; }
+COLORS.forEach(([c,nm],i)=>{ const b=document.createElement("div"); b.className="sw"+(c===color?" on":""); b.style.background=c; b.title=nm; b.tabIndex=0;
+  const pick=()=>{color=c;colorName=nm;setActive(b);paintNow();};
+  b.addEventListener("click",pick); b.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();pick();}});
+  swWrap.appendChild(b); });
+const eraser=document.createElement("div"); eraser.className="sw eraser"; eraser.textContent="🧽"; eraser.title="지우개"; eraser.tabIndex=0;
+const erase=()=>{color="#ffffff";colorName="지우개";setActive(eraser);paintNow();};
+eraser.addEventListener("click",erase); eraser.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();erase();}});
+swWrap.appendChild(eraser);
+const picker=document.createElement("label"); picker.className="sw picker"; picker.title="내 색 고르기";
+picker.innerHTML='🎨<input type="color" value="#ff6f91" aria-label="내 색 고르기">';
+const pinput=picker.querySelector("input");
+pinput.addEventListener("input",()=>{ rainbowOn=false; color=pinput.value; colorName="내 색"; setActive(picker); paintNow(); });
+swWrap.appendChild(picker);
+/* 무지개 붓 */
+const RAINBOW=["#FF5A5F","#FF9F1C","#FFD93D","#57C97D","#4DABF7","#7C4DFF","#FF5FA2"];
+let rainbowOn=false, rbIdx=0;
+function nextRainbow(){ const c=RAINBOW[rbIdx%RAINBOW.length]; rbIdx++; return c; }
+const rainbow=document.createElement("div"); rainbow.className="sw rainbow"; rainbow.textContent="🌈"; rainbow.title="무지개 붓"; rainbow.tabIndex=0;
+const rbPick=()=>{ rainbowOn=true; colorName="무지개"; nowdot.style.background="conic-gradient(from 0deg,#FF5A5F,#FFD93D,#57C97D,#4DABF7,#7C4DFF,#FF5FA2,#FF5A5F)"; nowname.textContent="무지개 🌈"; setActive(rainbow); };
+rainbow.addEventListener("click",rbPick); rainbow.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();rbPick();}});
+swWrap.appendChild(rainbow);
+function setActive(el){ document.querySelectorAll(".sw").forEach(s=>s.classList.remove("on")); el.classList.add("on"); }
+// 일반 색 선택 시 무지개 끄기
+swWrap.addEventListener("click",e=>{ const s=e.target.closest(".sw"); if(s&&!s.classList.contains("rainbow")&&!s.classList.contains("picker")) rainbowOn=false; });
+paintNow();
+
+/* 팩 렌더 */
+const packArea=document.getElementById("packArea");
+function renderPacks(){
+  packArea.innerHTML="";
+  PACKS.forEach(pk=>{
+    const open = packOpen(pk);
+    const sec=document.createElement("div"); sec.className="pack"+(open?"":" locked-pack");
+    const head=document.createElement("div"); head.className="pack-head";
+    head.innerHTML=`<span class="pname">${pk.emoji} ${pk.name}</span>`+
+      (pk.premium?`<span class="badge ${open?'have':''}">${open?'이용중':'프리미엄'}</span>`:`<span class="badge free">무료</span>`)+
+      `<span class="spacer"></span>`;
+    const btn=document.createElement("button");
+    btn.className="mini-btn"+(isGold?"":" gold-lock");
+    btn.innerHTML='<svg class="ic" viewBox="0 0 24 24"><path d="M7 9V4h10v5"/><path d="M6 18H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1"/><rect x="7" y="15" width="10" height="6" rx="1"/></svg>전체 인쇄'+(isGold?"":" 👑");
+    btn.addEventListener("click",()=>printPack(pk));
+    head.appendChild(btn); sec.appendChild(head);
+    const grid=document.createElement("div"); grid.className="grid";
+    pk.pics.forEach(pic=>{
+      const picOpen = open || pic.free;
+      const t=document.createElement("div");
+      t.className="thumb"+(pic.id===curId?" on":"")+(picOpen?"":" locked"); t.dataset.id=pic.id; t.tabIndex=0;
+      t.innerHTML=pic.svg+`<div class="t-name">${pic.name}</div>`
+        +(picOpen?"":`<div class="lock">🔒</div>`)
+        +((!open&&pic.free)?`<div class="free-tag">무료 체험</div>`:"");
+      const go=()=> picOpen ? loadPicture(pic.id) : openUnlock(pk);
+      t.addEventListener("click",go); t.addEventListener("keydown",e=>{if(e.key==="Enter"){go();}});
+      grid.appendChild(t);
+    });
+    sec.appendChild(grid);
+    packArea.appendChild(sec);
+  });
+}
+
+/* 도구 */
+document.getElementById("undo").addEventListener("click",()=>{
+  const l=undo.pop(); if(!l)return; l.el.style.fill=l.prev; saved[curId]=snapshot(paper.querySelector("svg")); persist();
+});
+document.getElementById("clear").addEventListener("click",()=>{
+  const svg=paper.querySelector("svg"); svg.querySelectorAll(".fill").forEach(f=>f.style.fill="");
+  undo=[]; delete saved[curId]; persist(); showToast("깨끗해졌어요! ✨");
+});
+document.getElementById("print").addEventListener("click",()=>tryPrint(()=>window.print()));
+document.getElementById("save").addEventListener("click",savePng);
+
+async function savePng(){
+  const svg=paper.querySelector("svg").cloneNode(true);
+  const st=document.createElementNS("http://www.w3.org/2000/svg","style");
+  st.textContent=".fill{fill:#fff;stroke:#38343F;stroke-width:5;stroke-linejoin:round;stroke-linecap:round}.ln{fill:none;stroke:#38343F;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.dk{fill:#38343F}.wt{fill:#fff;stroke:#38343F;stroke-width:4}";
+  svg.insertBefore(st,svg.firstChild); svg.setAttribute("width","780"); svg.setAttribute("height","780");
+  const xml=new XMLSerializer().serializeToString(svg);
+  const url="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(xml);
+  const img=new Image();
+  img.onload=()=>{ const c=document.createElement("canvas"); c.width=780;c.height=780;
+    const ctx=c.getContext("2d"); ctx.fillStyle="#fff"; ctx.fillRect(0,0,780,780); ctx.drawImage(img,0,0,780,780);
+    c.toBlob(async blob=>{
+      const name="내색칠_"+(picById(curId)?.pic.name||"그림")+".png";
+      try{ const dl=window.claude&&await claude.use("downloads");
+        if(dl){ await dl.save({filename:name,data:blob}); awardStar(); return; }
+      }catch(e){ if(e&&e.code==="declined") return; }
+      const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name; a.click();
+      setTimeout(()=>URL.revokeObjectURL(a.href),1000); awardStar();
+    },"image/png");
+  }; img.src=url;
+}
+
+/* 팩 전체(빈 도안) 인쇄 */
+const printSheets=document.getElementById("printSheets");
+function printPack(pk){
+  if(!isGold){ openGold(); return; } // 전체 도안 인쇄는 골드 전용
+  printSheets.innerHTML=pk.pics.map(p=>`<div class="sheet"><div class="cap">${p.name}</div>${p.svg}</div>`).join("");
+  document.body.classList.add("print-pack");
+  const done=()=>{ document.body.classList.remove("print-pack"); printSheets.innerHTML=""; window.removeEventListener("afterprint",done); };
+  window.addEventListener("afterprint",done); window.print();
+  setTimeout(()=>{ if(document.body.classList.contains("print-pack")) done(); },1500);
+}
+
+/* 팩은 전부 무료 — 포인트 잠금 없음 */
+function openUnlock(){ openGold(); }
+
+/* 골드(인쇄 무제한) 모달 */
+const goldModal=document.getElementById("goldModal"), goldMsg=document.getElementById("goldMsg"), navPremium=document.getElementById("navPremium");
+function renderGoldUI(){
+  if(isGold){ navPremium.classList.add("gold"); navPremium.innerHTML='<span class="np-star">👑</span> 골드 이용중'; }
+  else{ navPremium.classList.add("gold"); navPremium.innerHTML='<span class="np-star">👑</span> 골드'; }
+  const gb=document.getElementById("goldBtn");
+  if(gb){ gb.textContent = isGold?"골드 이용 중 👑":"골드 시작하기"; gb.disabled=isGold; gb.style.opacity=isGold?.6:1; }
+}
+function openGold(){
+  document.getElementById("goldDesc").textContent = isGold
+    ? "이미 골드예요! 인쇄를 마음껏 즐기세요 👑"
+    : `무료는 종이 인쇄가 주 ${PRINT_FREE_PER_WEEK}장까지예요. 골드가 되면 언제든 마음껏 인쇄할 수 있어요.`;
+  goldMsg.textContent=""; goldMsg.className="msg";
+  goldModal.classList.add("show");
+}
+function closeGold(){ goldModal.classList.remove("show"); }
+document.getElementById("goldClose").addEventListener("click",closeGold);
+goldModal.addEventListener("click",e=>{ if(e.target===goldModal) closeGold(); });
+document.getElementById("goldBtn").addEventListener("click",openGold);
+document.getElementById("goldBuyBtn").addEventListener("click",()=>{
+  if(isGold){ closeGold(); return; }
+  window.open(PAY_URL,"_blank","noopener");
+  goldMsg.textContent="결제 창을 열었어요. 결제가 끝나면 자동으로 골드가 켜져요."; goldMsg.className="msg";
+});
+renderGoldUI();
+
+/* 토스트 · 반짝이 */
+let toT;
+function showToast(m){ toastEl.textContent=m; toastEl.classList.add("show"); clearTimeout(toT); toT=setTimeout(()=>toastEl.classList.remove("show"),1800); }
+function sparkle(){ if(reduce) return; const cols=["#FF6F91","#FFCB3D","#57C97D","#6EC1F0","#9B7BE6","#FF9F43"];
+  for(let i=0;i<18;i++){ const d=document.createElement("div"); d.className="confetti";
+    d.style.left=(50+(Math.random()*44-22))+"%"; d.style.background=cols[i%cols.length];
+    d.style.setProperty("--dx",(Math.random()*180-90)+"px"); d.style.animationDelay=(Math.random()*0.12)+"s";
+    document.body.appendChild(d); setTimeout(()=>d.remove(),1300); } }
+
+/* 마스코트 축하 */
+const MASCOT_SVG=`<svg viewBox="0 0 150 180" xmlns="http://www.w3.org/2000/svg">
+  <rect x="33" y="54" width="84" height="98" rx="22" fill="#7C4DFF"/><path d="M45 56 L75 14 L105 56 Z" fill="#FFC53D"/>
+  <rect x="33" y="92" width="84" height="36" fill="#fff"/><rect x="33" y="92" width="84" height="6" fill="#FF5FA2"/><rect x="33" y="122" width="84" height="6" fill="#FF5FA2"/>
+  <circle cx="60" cy="78" r="6.5" fill="#2A2140"/><circle cx="90" cy="78" r="6.5" fill="#2A2140"/>
+  <circle cx="49" cy="88" r="5.5" fill="#FF9BC0"/><circle cx="101" cy="88" r="5.5" fill="#FF9BC0"/>
+  <path d="M64 88 q11 10 22 0" stroke="#2A2140" stroke-width="3.6" fill="none" stroke-linecap="round"/></svg>`;
+function cheer(msg){
+  showToast(msg); sparkle();
+  if(reduce) return;
+  const o=document.createElement("div"); o.className="cheer";
+  o.innerHTML=`<div class="cheer-in"><div class="cheer-mascot">${MASCOT_SVG}</div><div class="cheer-msg">${msg}</div></div>`;
+  document.body.appendChild(o); requestAnimationFrame(()=>o.classList.add("show"));
+  setTimeout(()=>{ o.classList.remove("show"); setTimeout(()=>o.remove(),300); },1600);
+}
+
+/* 칭찬 스티커판 */
+const SKEY="coloring-kok-stars";
+const STARS=["⭐","🌈","🦄","🐶","🌟","🎨","🍭","🐤","💖","🚀"];
+const starBoard=document.getElementById("starBoard"), starCount=document.getElementById("starCount");
+let stars=0;
+try{ const s=JSON.parse(localStorage.getItem(SKEY)||"{}"); if(s.d===new Date().toDateString()) stars=s.n||0; }catch(e){}
+function renderStars(){
+  starCount.textContent=stars;
+  if(stars===0){ starBoard.innerHTML='<span class="empty">아직 없어요 — 그림을 칠하고 저장해봐요!</span>'; return; }
+  starBoard.innerHTML="";
+  for(let i=0;i<stars;i++){ const s=document.createElement("span"); s.className="st"; s.textContent=STARS[i%STARS.length]; starBoard.appendChild(s); }
+}
+function awardStar(){
+  showToast("그림을 저장했어요! 🎉"); sparkle();
+  stars++; try{ localStorage.setItem(SKEY,JSON.stringify({d:new Date().toDateString(),n:stars})); }catch(e){}
+  renderStars();
+  const last=starBoard.lastChild; if(last&&last.scrollIntoView) last.scrollIntoView({block:"nearest"});
+}
+renderStars();
+
+/* ================= 놀거리 모드 ================= */
+let mode="color";
+function show(id,on){ document.getElementById(id).classList.toggle("hide",!on); }
+function setMode(m){
+  mode=m;
+  document.querySelectorAll(".mode").forEach(b=>b.classList.toggle("on",b.dataset.m===m));
+  ["paper","drawCanvas","dotHost","stickerHost"].forEach(id=>document.getElementById(id).classList.toggle("hide",
+    id!==({color:"paper",draw:"drawCanvas",dots:"dotHost",sticker:"stickerHost"})[m]));
+  show("paletteSec", m==="color"||m==="draw"||m==="sticker");
+  show("brushSec", m==="draw"); show("stickerSec", m==="sticker"); show("dotSec", m==="dots");
+  show("toolsColor", m==="color"); show("toolsDraw", m==="draw"); show("toolsSticker", m==="sticker"); show("toolsDots", m==="dots");
+  show("packSection", m==="color");
+  document.getElementById("paletteTitle").textContent = m==="sticker" ? "🎨 배경 색 고르기" : "🎨 색 고르기";
+  if(m==="draw") initDraw();
+  if(m==="dots" && !dotState.loaded) loadDot(0);
+  if(m==="sticker") initSticker();
+}
+document.querySelectorAll(".mode").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.m)));
+
+async function saveBlob(blob,name){
+  try{ const dl=window.claude&&await claude.use("downloads"); if(dl){ await dl.save({filename:name,data:blob}); awardStar(); return; } }
+  catch(e){ if(e&&e.code==="declined") return; }
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name; a.click(); setTimeout(()=>URL.revokeObjectURL(a.href),1000); awardStar();
+}
+
+/* ---- 낙서판 ---- */
+const drawCanvas=document.getElementById("drawCanvas"), dctx=drawCanvas.getContext("2d");
+let drawStarted=false, drawing=false, lastX=0,lastY=0, brush=18;
+function initDraw(){ if(drawStarted) return; dctx.fillStyle="#fff"; dctx.fillRect(0,0,760,760); dctx.lineJoin="round"; dctx.lineCap="round"; drawStarted=true; }
+function cpos(e){ const r=drawCanvas.getBoundingClientRect(); return [(e.clientX-r.left)/r.width*760,(e.clientY-r.top)/r.height*760]; }
+function penColor(){ if(colorName==="지우개") return "#ffffff"; if(rainbowOn) return nextRainbow(); return color; }
+function paintDot(x,y){ dctx.fillStyle=penColor(); dctx.beginPath(); dctx.arc(x,y,brush/2,0,7); dctx.fill(); }
+function paintLine(x1,y1,x2,y2){ dctx.strokeStyle=penColor(); dctx.lineWidth=brush; dctx.beginPath(); dctx.moveTo(x1,y1); dctx.lineTo(x2,y2); dctx.stroke(); }
+drawCanvas.addEventListener("pointerdown",e=>{ if(mode!=="draw")return; drawing=true; drawCanvas.setPointerCapture(e.pointerId); [lastX,lastY]=cpos(e); paintDot(lastX,lastY); });
+drawCanvas.addEventListener("pointermove",e=>{ if(!drawing)return; const [x,y]=cpos(e); paintLine(lastX,lastY,x,y); lastX=x; lastY=y; });
+drawCanvas.addEventListener("pointerup",()=>drawing=false);
+drawCanvas.addEventListener("pointercancel",()=>drawing=false);
+document.querySelectorAll(".brush").forEach(b=>b.addEventListener("click",()=>{ brush=+b.dataset.w; document.querySelectorAll(".brush").forEach(x=>x.classList.remove("on")); b.classList.add("on"); }));
+document.getElementById("drawClear").addEventListener("click",()=>{ dctx.fillStyle="#fff"; dctx.fillRect(0,0,760,760); showToast("깨끗해졌어요! ✨"); });
+document.getElementById("drawSave").addEventListener("click",()=>drawCanvas.toBlob(b=>saveBlob(b,"내낙서.png"),"image/png"));
+
+/* ---- 숫자 점잇기 ---- */
+const DOTS=[
+ {name:"⭐ 별", pts:Array.from({length:10},(_,i)=>{const r=i%2?52:120,a=-Math.PI/2+i*Math.PI/5;return [+(180+r*Math.cos(a)).toFixed(1),+(180+r*Math.sin(a)).toFixed(1)];})},
+ {name:"💖 하트", pts:[[180,124],[212,96],[252,100],[270,134],[250,178],[210,222],[180,254],[150,222],[110,178],[90,134],[108,100],[148,96]]},
+ {name:"🐟 물고기", pts:[[118,142],[180,120],[240,142],[262,172],[300,140],[300,222],[262,190],[240,220],[180,240],[118,220]]},
+ {name:"🏠 집", pts:[[100,196],[180,116],[260,196],[260,300],[200,300],[200,244],[160,244],[160,300],[100,300]]}
+];
+let dotState={cur:0,next:0,done:false,loaded:false};
+const dotHost=document.getElementById("dotHost");
+function loadDot(i){
+  dotState={cur:i,next:0,done:false,loaded:true};
+  const pts=DOTS[i].pts;
+  let svg=`<svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg"><path id="dline" fill="none" stroke="var(--ink)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" d=""/>`;
+  pts.forEach((p,k)=>{ svg+=`<g class="dnode" data-k="${k}"><circle cx="${p[0]}" cy="${p[1]}" r="15" fill="#fff" stroke="var(--berry)" stroke-width="3"/><text class="dnum" x="${p[0]}" y="${p[1]}">${k+1}</text></g>`; });
+  dotHost.innerHTML=svg+`</svg>`;
+  dotHost.querySelectorAll(".dnode").forEach(g=>g.addEventListener("click",()=>tapDot(+g.dataset.k)));
+  document.querySelectorAll(".dp").forEach((b,bi)=>b.classList.toggle("on",bi===i));
+}
+function tapDot(k){
+  if(dotState.done) return;
+  const g=dotHost.querySelector(`.dnode[data-k="${k}"]`);
+  if(k!==dotState.next){ g.classList.remove("dwrong"); void g.getBBox(); g.classList.add("dwrong"); return; }
+  const pts=DOTS[dotState.cur].pts, path=dotHost.querySelector("#dline");
+  let d=(path.getAttribute("d")||"")+(dotState.next===0?"M":"L")+pts[k][0]+" "+pts[k][1]+" ";
+  path.setAttribute("d",d);
+  g.querySelector("circle").setAttribute("fill","var(--sun)");
+  dotState.next++;
+  if(dotState.next>=pts.length){ path.setAttribute("d",d+"Z"); dotState.done=true; cheer("완성! 잘했어요 🎉"); }
+}
+const dotpick=document.getElementById("dotpick");
+DOTS.forEach((d,i)=>{ const b=document.createElement("button"); b.className="dp"+(i===0?" on":""); b.textContent=d.name; b.addEventListener("click",()=>loadDot(i)); dotpick.appendChild(b); });
+document.getElementById("dotAgain").addEventListener("click",()=>loadDot(dotState.cur));
+document.getElementById("dotNext").addEventListener("click",()=>loadDot((dotState.cur+1)%DOTS.length));
+
+/* ---- 스티커 꾸미기 ---- */
+const stickerHost=document.getElementById("stickerHost");
+let selectedEmoji="🌳", cascade=0;
+const STK_SCENE=`<svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg">
+  <rect id="skyBg" x="0" y="0" width="360" height="360" fill="#EAF6FF"/>
+  <circle class="sfill" data-n="해" cx="300" cy="54" r="30" fill="#FFE7A0"/>
+  <path class="sfill" data-n="구름" d="M64 96 a24 24 0 0 1 4 -48 a24 24 0 0 1 42 -2 a20 20 0 0 1 14 50 Z" fill="#FFFFFF"/>
+  <path class="sfill" data-n="잔디" d="M0 252 H360 V360 H0 Z" fill="#DEF3D6"/>
+  <ellipse class="sfill" data-n="연못" cx="110" cy="304" rx="72" ry="30" fill="#CDEBFF"/>
+</svg>`;
+let stkInit=false;
+function initSticker(){
+  if(stkInit) return; stkInit=true;
+  stickerHost.innerHTML=STK_SCENE;
+  stickerHost.querySelectorAll(".sfill").forEach(el=>{ el.style.cursor="pointer"; el.addEventListener("click",e=>{ e.stopPropagation(); if(mode==="sticker") el.setAttribute("fill", penColor()); }); });
+  const sky=stickerHost.querySelector("#skyBg"); sky.style.cursor="copy";
+  sky.addEventListener("click",e=>{ const r=stickerHost.getBoundingClientRect(); addSticker(selectedEmoji,(e.clientX-r.left)/r.width*100,(e.clientY-r.top)/r.height*100); });
+  const EMO=["🌳","🌸","🦋","🐶","🐱","🎈","⭐","🍎","🦆","🐟","🌈","🐞","🦄","🚗","☁️","🌻","🐰","🍓","🌼","🐝"];
+  const tray=document.getElementById("tray");
+  EMO.forEach((em,i)=>{ const b=document.createElement("div"); b.className="stk"+(i===0?" on":""); b.textContent=em;
+    b.addEventListener("click",()=>{ selectedEmoji=em; document.querySelectorAll(".tray .stk").forEach(x=>x.classList.remove("on")); b.classList.add("on"); addSticker(em); });
+    tray.appendChild(b); });
+}
+function addSticker(em,xPct,yPct){
+  const s=document.createElement("div"); s.className="placed"; s.dataset.em=em; s.textContent=em;
+  const rm=document.createElement("span"); rm.className="rm"; rm.textContent="✕"; s.appendChild(rm);
+  let x,y;
+  if(xPct==null){ cascade=(cascade+1)%9; x=30+cascade*5; y=28+cascade*5; }
+  else { x=Math.max(4,Math.min(96,xPct)); y=Math.max(6,Math.min(94,yPct)); }
+  s.style.left=x+"%"; s.style.top=y+"%"; stickerHost.appendChild(s);
+  let dragging=false,ox=0,oy=0,moved=false;
+  s.addEventListener("pointerdown",e=>{ if(e.target===rm) return; e.preventDefault(); dragging=true; moved=false; s.setPointerCapture(e.pointerId);
+    const r=stickerHost.getBoundingClientRect(); ox=e.clientX-(r.left+parseFloat(s.style.left)/100*r.width); oy=e.clientY-(r.top+parseFloat(s.style.top)/100*r.height); s.style.cursor="grabbing"; });
+  s.addEventListener("pointermove",e=>{ if(!dragging)return; moved=true; const r=stickerHost.getBoundingClientRect();
+    let nx=(e.clientX-ox-r.left)/r.width*100, ny=(e.clientY-oy-r.top)/r.height*100;
+    s.style.left=Math.max(4,Math.min(96,nx))+"%"; s.style.top=Math.max(6,Math.min(94,ny))+"%"; });
+  s.addEventListener("pointerup",()=>{ dragging=false; s.style.cursor="grab"; if(!moved){ document.querySelectorAll(".placed").forEach(p=>{if(p!==s)p.classList.remove("sel");}); s.classList.toggle("sel"); } });
+  rm.addEventListener("click",e=>{ e.stopPropagation(); s.remove(); });
+}
+document.getElementById("stkClear").addEventListener("click",()=>{ stickerHost.querySelectorAll(".placed").forEach(p=>p.remove()); showToast("스티커를 모두 치웠어요! ✨"); });
+document.getElementById("stkSave").addEventListener("click",()=>{
+  const svg=stickerHost.querySelector("svg").cloneNode(true); svg.setAttribute("width","760"); svg.setAttribute("height","760");
+  const xml=new XMLSerializer().serializeToString(svg), url="data:image/svg+xml;charset=utf-8,"+encodeURIComponent(xml);
+  const img=new Image();
+  img.onload=()=>{ const c=document.createElement("canvas"); c.width=760;c.height=760; const ctx=c.getContext("2d");
+    ctx.fillStyle="#fff"; ctx.fillRect(0,0,760,760); ctx.drawImage(img,0,0,760,760);
+    ctx.textAlign="center"; ctx.textBaseline="middle"; ctx.font="72px serif";
+    stickerHost.querySelectorAll(".placed").forEach(p=>{ ctx.fillText(p.dataset.em, parseFloat(p.style.left)/100*760, parseFloat(p.style.top)/100*760); });
+    c.toBlob(b=>saveBlob(b,"내스티커.png"),"image/png");
+  }; img.src=url;
+});
+
+/* 오늘의 그림 뽑기 — 열린 그림 중 랜덤 */
+document.getElementById("luckyBtn").addEventListener("click",()=>{
+  const pool=allPics.filter(x=>packOpen(x.pack)||x.pic.free).map(x=>x.pic.id).filter(id=>id!==curId);
+  if(!pool.length) return;
+  const pick=pool[Math.floor(Math.random()*pool.length)];
+  setMode("color"); loadPicture(pick);
+  document.getElementById("modebar").scrollIntoView({behavior:"smooth",block:"start"});
+  showToast("오늘은 이 그림 어때요? 🎲");
+});
+
+renderPacks(); loadPicture(curId); setMode("color");
+</script>
+</body>
+</html>
