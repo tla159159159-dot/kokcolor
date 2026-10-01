@@ -1,6 +1,9 @@
 const { getSession } = require("./_session");
-module.exports = (req, res) => {
-  const s = getSession(req);
+const { status } = require("./_db");
+module.exports = async (req, res) => {
   res.setHeader("Cache-Control", "no-store");
-  res.json(s ? { loggedIn: true, uid: s.uid, gold: false } : { loggedIn: false });
+  const s = getSession(req);
+  if (!s) return res.json({ loggedIn: false });
+  try { res.json({ loggedIn: true, uid: s.uid, ...(await status(s.uid)) }); }
+  catch (e) { res.json({ loggedIn: true, uid: s.uid, gold: false, printsLeft: null, dbError: true }); }
 };

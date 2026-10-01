@@ -1125,7 +1125,7 @@ function picById(id){ return allPics.find(x=>x.pic.id===id); }
 const KEY="coloring-kok-v3", GKEY="coloring-kok-gold", WKEY="coloring-kok-print";
 let saved={}, curId=PACKS[0].pics[0].id, color=COLORS[1][0], colorName=COLORS[1][1], undo=[];
 let isGold=false;
-try{ isGold=localStorage.getItem(GKEY)==="1"; }catch(e){}
+// 골드 여부는 서버(/api/me)가 알려줌
 function packOpen(pk){ return true; } // 화면 색칠은 전부 무료
 /* 주간 인쇄 카운트 (무료: 주 N장) */
 function weekId(){ const d=new Date(); const o=new Date(d.getFullYear(),0,1); return d.getFullYear()+"-"+Math.floor(((d-o)/86400000+o.getDay()+1)/7); }
@@ -1137,14 +1137,20 @@ function needLogin(){
   if(me.loggedIn) return false;
   document.getElementById("loginModal").classList.add("show"); return true;
 }
-function tryPrint(run){
+async function tryPrint(run){
   if(needLogin()) return;
   if(isGold){ run(); return; }
-  if(printsLeft()<=0){ showToast("이번 주 무료 인쇄를 모두 썼어요"); openGold(); return; }
-  bumpPrints(); run();
-  const left=printsLeft();
-  showToast(left>0?`인쇄했어요! 이번 주 ${left}장 남았어요 🖨️`:"이번 주 무료 인쇄를 모두 썼어요");
-  renderGoldUI();
+  let r=null;
+  try{ const res=await fetch("/api/print",{method:"POST",credentials:"same-origin"}); if(res.ok||res.status===401) r=await res.json(); }catch(e){}
+  if(!r){ // 서버 장애 시 기기 기준으로 대신 셈
+    if(printsLeft()<=0){ showToast("이번 주 무료 인쇄를 모두 썼어요"); openGold(); return; }
+    bumpPrints(); r={ok:true,printsLeft:printsLeft()};
+  }
+  if(r.reason==="login"){ me.loggedIn=false; needLogin(); return; }
+  if(r.gold){ isGold=true; renderGoldUI(); run(); return; }
+  if(!r.ok){ showToast("이번 주 무료 인쇄를 모두 썼어요"); openGold(); return; }
+  run();
+  showToast(r.printsLeft>0?`인쇄했어요! 이번 주 ${r.printsLeft}장 남았어요 🖨️`:"이번 주 무료 인쇄를 모두 썼어요");
 }
 try{ const p=JSON.parse(localStorage.getItem(KEY)||"{}"); saved=p.saved||{}; if(p.cur&&picById(p.cur)) curId=p.cur; }catch(e){}
 
@@ -1322,7 +1328,7 @@ renderGoldUI();
 fetch("/api/me",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(d=>{
   if(!d) return; me=d;
   const a=document.getElementById("navLogin");
-  if(d.loggedIn){ a.href="/api/logout"; a.classList.add("out"); a.textContent="로그아웃"; }
+  if(d.loggedIn){ a.href="/api/logout"; a.classList.add("out"); a.textContent="로그아웃"; if(d.gold){ isGold=true; renderGoldUI(); } }
   renderBuyBtn();
 }).catch(()=>{});
 { const params=new URLSearchParams(location.search), q=params.get("login");
