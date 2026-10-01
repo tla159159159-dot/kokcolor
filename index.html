@@ -93,6 +93,8 @@
   .kk-bubble{width:14px;height:12px;background:#191919;border-radius:50%;position:relative}
   .kk-bubble:after{content:"";position:absolute;left:3px;bottom:-3px;border:3px solid transparent;border-top-color:#191919;border-left-color:#191919}
   .nav-login.out .kk-bubble{display:none}
+  .nav-login[hidden]{display:none}
+  #goldBuyBtn.kk{background:#FEE500!important;color:#191919!important;display:inline-flex;align-items:center;justify-content:center;gap:8px}
   .nav-cta:hover{transform:translateY(-2px)}
 
   /* hero */
@@ -1285,23 +1287,32 @@ goldModal.addEventListener("click",e=>{ if(e.target===goldModal) closeGold(); })
 document.getElementById("goldBtn").addEventListener("click",openGold);
 document.getElementById("goldBuyBtn").addEventListener("click",()=>{
   if(isGold){ closeGold(); return; }
+  if(!me.loggedIn){ location.href="/api/kakao-login?next=gold"; return; }
   if(!PAY_URL){ goldMsg.textContent="골드는 곧 열려요! 지금은 매주 3장까지 무료로 인쇄할 수 있어요."; goldMsg.className="msg"; return; }
   window.open(PAY_URL,"_blank","noopener");
   goldMsg.textContent="결제 창을 열었어요."; goldMsg.className="msg";
 });
-if(!PAY_URL) document.getElementById("goldBuyBtn").textContent="골드 오픈 준비 중 · 곧 만나요";
+let me={loggedIn:false};
+function renderBuyBtn(){
+  const b=document.getElementById("goldBuyBtn");
+  b.innerHTML = !me.loggedIn ? '<span class="kk-bubble"></span> 카카오로 시작하기 · 월 2,900원'
+    : PAY_URL ? "골드 시작하기 · 월 2,900원" : "골드 오픈 준비 중 · 곧 만나요";
+  b.classList.toggle("kk", !me.loggedIn);
+}
+renderBuyBtn();
 renderGoldUI();
 
 /* 카카오 로그인 상태 */
-let me={loggedIn:false};
 fetch("/api/me",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(d=>{
   if(!d) return; me=d;
   const a=document.getElementById("navLogin");
-  if(d.loggedIn){ a.href="/api/logout"; a.classList.add("out"); a.innerHTML='<span class="kk-bubble"></span>로그아웃'; }
+  if(d.loggedIn){ a.href="/api/logout"; a.classList.add("out"); a.textContent="로그아웃"; }
+  renderBuyBtn();
 }).catch(()=>{});
-{ const q=new URLSearchParams(location.search).get("login");
+{ const params=new URLSearchParams(location.search), q=params.get("login");
   if(q){ history.replaceState(null,"",location.pathname);
-    setTimeout(()=>showToast(q==="ok"?"카카오 로그인 완료! 🎉":"로그인을 못 했어요. 다시 시도해 주세요."),300); } }
+    setTimeout(()=>showToast(q==="ok"?"카카오 로그인 완료! 🎉":"로그인을 못 했어요. 다시 시도해 주세요."),300);
+    if(q==="ok" && params.get("next")==="gold") setTimeout(openGold,600); } }
 
 /* 토스트 · 반짝이 */
 let toT;
