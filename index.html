@@ -623,7 +623,7 @@
    ========================================================= */
 const PRINT_FREE_PER_WEEK = 3;                          // 무료: 주 몇 장까지 인쇄 가능
 const GOLD_PRICE = "월 2,900원";                         // 표시 가격
-const PAY_URL   = "https://your-payment-link.example";  // 골드 결제 링크(토스·카카오페이 등)로 교체
+const PAY_URL   = "";  // 결제 연동 후 결제 링크 입력 — 비어 있으면 "오픈 준비 중"으로 표시
 /* ========================================================= */
 
 /* 색 이름(현재 색 표시용) */
@@ -1275,9 +1275,11 @@ goldModal.addEventListener("click",e=>{ if(e.target===goldModal) closeGold(); })
 document.getElementById("goldBtn").addEventListener("click",openGold);
 document.getElementById("goldBuyBtn").addEventListener("click",()=>{
   if(isGold){ closeGold(); return; }
+  if(!PAY_URL){ goldMsg.textContent="골드는 곧 열려요! 지금은 매주 3장까지 무료로 인쇄할 수 있어요."; goldMsg.className="msg"; return; }
   window.open(PAY_URL,"_blank","noopener");
-  goldMsg.textContent="결제 창을 열었어요. 결제가 끝나면 자동으로 골드가 켜져요."; goldMsg.className="msg";
+  goldMsg.textContent="결제 창을 열었어요."; goldMsg.className="msg";
 });
+if(!PAY_URL) document.getElementById("goldBuyBtn").textContent="골드 오픈 준비 중 · 곧 만나요";
 renderGoldUI();
 
 /* 토스트 · 반짝이 */
