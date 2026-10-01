@@ -21,8 +21,8 @@ function weekId(now = Date.now()) {
 
 async function status(uid) {
   const [goldUntil, used] = await Promise.all([
-    redis("GET", `gold:${uid}`),
-    redis("GET", `prints:${uid}:${weekId()}`),
+    redis("GET", `kok:gold:${uid}`),
+    redis("GET", `kok:prints:${uid}:${weekId()}`),
   ]);
   const gold = Number(goldUntil || 0) > Date.now();
   const n = Number(used || 0);
