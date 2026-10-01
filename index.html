@@ -94,6 +94,7 @@
   .kk-bubble:after{content:"";position:absolute;left:3px;bottom:-3px;border:3px solid transparent;border-top-color:#191919;border-left-color:#191919}
   .nav-login.out .kk-bubble{display:none}
   .nav-login[hidden]{display:none}
+  .kk-login-btn{background:#FEE500!important;color:#191919!important;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
   #goldBuyBtn.kk{background:#FEE500!important;color:#191919!important;display:inline-flex;align-items:center;justify-content:center;gap:8px}
   .nav-cta:hover{transform:translateY(-2px)}
 
@@ -608,6 +609,15 @@
   </footer>
 </div>
 
+<div class="modal" id="loginModal">
+  <div class="sheet-card">
+    <button class="close-x" id="loginClose">✕</button>
+    <div class="mIcon">🖨️</div>
+    <h3>인쇄는 로그인 후 이용할 수 있어요</h3>
+    <p>카카오로 3초 만에 로그인하고 매주 3장 무료로 인쇄하세요.</p>
+    <a class="full-btn kk-login-btn" id="loginGo" href="/api/kakao-login?next=print"><span class="kk-bubble"></span> 카카오로 로그인</a>
+  </div>
+</div>
 <div class="modal" id="goldModal">
   <div class="sheet-card gold-card">
     <button class="close-x" id="goldClose">✕</button>
@@ -1123,9 +1133,14 @@ function printsThisWeek(){ try{ const w=JSON.parse(localStorage.getItem(WKEY)||"
 function bumpPrints(){ try{ localStorage.setItem(WKEY,JSON.stringify({id:weekId(),n:printsThisWeek()+1})); }catch(e){} }
 function printsLeft(){ return Math.max(0, PRINT_FREE_PER_WEEK - printsThisWeek()); }
 /* 인쇄 게이트: 골드면 무제한, 아니면 주 N장 */
+function needLogin(){
+  if(me.loggedIn) return false;
+  document.getElementById("loginModal").classList.add("show"); return true;
+}
 function tryPrint(run){
+  if(needLogin()) return;
   if(isGold){ run(); return; }
-  if(printsLeft()<=0){ openGold(); return; }
+  if(printsLeft()<=0){ showToast("이번 주 무료 인쇄를 모두 썼어요"); openGold(); return; }
   bumpPrints(); run();
   const left=printsLeft();
   showToast(left>0?`인쇄했어요! 이번 주 ${left}장 남았어요 🖨️`:"이번 주 무료 인쇄를 모두 썼어요");
@@ -1255,6 +1270,7 @@ async function savePng(){
 /* 팩 전체(빈 도안) 인쇄 */
 const printSheets=document.getElementById("printSheets");
 function printPack(pk){
+  if(needLogin()) return;
   if(!isGold){ openGold(); return; } // 전체 도안 인쇄는 골드 전용
   printSheets.innerHTML=pk.pics.map(p=>`<div class="sheet"><div class="cap">${p.name}</div>${p.svg}</div>`).join("");
   document.body.classList.add("print-pack");
@@ -1312,7 +1328,11 @@ fetch("/api/me",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(d=
 { const params=new URLSearchParams(location.search), q=params.get("login");
   if(q){ history.replaceState(null,"",location.pathname);
     setTimeout(()=>showToast(q==="ok"?"카카오 로그인 완료! 🎉":"로그인을 못 했어요. 다시 시도해 주세요."),300);
-    if(q==="ok" && params.get("next")==="gold") setTimeout(openGold,600); } }
+    if(q==="ok" && params.get("next")==="gold") setTimeout(openGold,600);
+    if(q==="ok" && params.get("next")==="print") setTimeout(()=>showToast("로그인 완료! 이제 인쇄할 수 있어요 🖨️"),2200); } }
+{ const lm=document.getElementById("loginModal");
+  document.getElementById("loginClose").addEventListener("click",()=>lm.classList.remove("show"));
+  lm.addEventListener("click",e=>{ if(e.target===lm) lm.classList.remove("show"); }); }
 
 /* 토스트 · 반짝이 */
 let toT;

@@ -22,7 +22,8 @@ module.exports = async (req, res) => {
     }).then((r) => r.json());
     if (!me.id) return back("?login=fail");
     setSession(res, { uid: "kakao:" + me.id });
-    back("?login=ok" + (state.endsWith("-gold") ? "&next=gold" : ""));
+    const next = state.split("-")[1];
+    back("?login=ok" + (next ? "&next=" + next : ""));
   } catch (e) {
     back("?login=fail");
   }
