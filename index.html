@@ -317,6 +317,9 @@
   .gold-benefits svg{stroke:var(--gold2)}
   .gold-fullbtn{width:100%;padding:15px;font-size:15px;font-family:'Jua',sans-serif;color:#5A3E00;border:none;border-radius:var(--r-sm);cursor:pointer;background:linear-gradient(120deg,var(--gold1),var(--gold2));box-shadow:0 8px 20px rgba(232,178,58,.4)}
   [hidden]{display:none!important}
+  .pack-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 12px;margin-bottom:6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.pack-chips::-webkit-scrollbar{display:none}
+  .pack-chips button{flex:none;font:inherit;font-size:14px;padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap}
+  .pack-chips button:active{transform:scale(.95)}.pack{scroll-margin-top:76px}
   .card-form{display:grid;gap:10px;margin-top:12px;text-align:left}.card-form label{display:grid;gap:4px;font-size:13px;color:var(--muted)}
   .card-form input:not([type=checkbox]){font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);width:100%;box-sizing:border-box}
   .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card-form .cf-agree{display:flex;gap:8px;align-items:flex-start;color:var(--ink)}.cf-agree a{color:inherit}
@@ -1776,9 +1779,14 @@ paintNow();
 const packArea=document.getElementById("packArea");
 function renderPacks(){
   packArea.innerHTML="";
-  PACKS.forEach(pk=>{
+  const m=new Date().getMonth(), season=m===9?"halloween":(m>=10?"xmas":null); // 10월 할로윈, 11~12월 크리스마스를 맨 위로
+  const chips=document.createElement("nav"); chips.className="pack-chips"; chips.setAttribute("aria-label","테마 바로가기");
+  chips.innerHTML=[...PACKS].sort((x,y)=>(y.id===season)-(x.id===season)).map(pk=>`<button type="button" data-go="${pk.id}">${pk.emoji} ${pk.name}</button>`).join("");
+  chips.addEventListener("click",e=>{ const b=e.target.closest("[data-go]"); if(!b) return; const el=document.getElementById("pk-"+b.dataset.go); if(el){ el.scrollIntoView({behavior:"smooth",block:"start"}); ev("theme_chip",{theme:b.dataset.go}); } });
+  packArea.appendChild(chips);
+  [...PACKS].sort((x,y)=>(y.id===season)-(x.id===season)).forEach(pk=>{
     const open = packOpen(pk);
-    const sec=document.createElement("div"); sec.className="pack"+(open?"":" locked-pack");
+    const sec=document.createElement("div"); sec.className="pack"+(open?"":" locked-pack"); sec.id="pk-"+pk.id;
     const head=document.createElement("div"); head.className="pack-head";
     head.innerHTML=`<span class="pname">${pk.emoji} ${pk.name}</span>`+
       (pk.premium?`<span class="badge ${open?'have':''}">${open?'이용중':'프리미엄'}</span>`:`<span class="badge free">무료</span>`)+
