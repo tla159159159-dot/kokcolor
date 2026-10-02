@@ -60,7 +60,7 @@ const urls = [];
 for (const p of packs) {
   const t = THEME[p.id];
   fs.mkdirSync(path.join(OUT, KO[p.id]), { recursive: true });
-  redirects.push({ source: `/doan/${p.id}.html`, destination: encodeURI(themeUrl(p)), permanent: true });
+  redirects.push({ source: `/doan/${p.id}`, destination: encodeURI(themeUrl(p)), permanent: true });
   const names = p.pics.map(x => x.name).join("·");
   // 테마 페이지
   fs.writeFileSync(path.join(OUT, KO[p.id] + ".html"), page({
@@ -77,7 +77,7 @@ for (const p of packs) {
   // 그림 페이지
   p.pics.forEach((x, i) => {
     const others = p.pics.filter(o => o.id !== x.id);
-    redirects.push({ source: `/doan/${p.id}/${x.id}.html`, destination: encodeURI(picUrl(p, x)), permanent: true });
+    redirects.push({ source: `/doan/${p.id}/${x.id}`, destination: encodeURI(picUrl(p, x)), permanent: true });
     fs.writeFileSync(path.join(OUT, KO[p.id], slug(x.name) + ".html"), page({
       title: `${x.name} 색칠공부 도안 | 무료 색칠·인쇄 - 콕콕`,
       desc: `${x.name} 색칠공부 도안을 화면에서 무료로 바로 색칠하고, 종이로 인쇄해서 칠할 수도 있어요. ${t.kw} 모음 콕콕.`,
