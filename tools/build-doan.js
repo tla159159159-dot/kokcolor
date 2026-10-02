@@ -34,6 +34,7 @@ const page = ({ title, desc, canon, h1, body, crumbs }) => `<!DOCTYPE html>
 <meta property="og:type" content="website"><meta property="og:site_name" content="콕콕">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${abs(canon)}"><meta property="og:image" content="${SITE}/og.png">
+<link rel="alternate" type="application/rss+xml" title="콕콕 색칠공부 도안" href="/rss.xml">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#7C4DFF">
 <script type="application/ld+json">${JSON.stringify({ "@context": "https://schema.org", "@type": "BreadcrumbList",
@@ -100,6 +101,25 @@ fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="
 ${urls.map(u => `  <url><loc>${abs(u)}</loc><lastmod>${TODAY}</lastmod><priority>${u.split("/").length === 3 ? "0.8" : "0.6"}</priority></url>`).join("\n")}
 </urlset>
 `);
+// rss.xml: 네이버 RSS 제출용 (테마·그림 페이지)
+const now = new Date().toUTCString();
+const items = [];
+for (const p of packs) {
+  const t = THEME[p.id];
+  items.push({ title: `${t.kw} ${p.pics.length}종`, url: themeUrl(p), desc: t.intro });
+  p.pics.forEach(x => items.push({ title: `${x.name} 색칠공부 도안`, url: picUrl(p, x), desc: `${x.name} 색칠공부 도안을 화면에서 무료로 색칠하고 인쇄해요. ${t.kw} 모음.` }));
+}
+fs.writeFileSync(path.join(ROOT, "rss.xml"), `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"><channel>
+<title>콕콕 무료 색칠공부 도안</title>
+<link>${SITE}/</link>
+<description>무료 색칠공부 도안과 유아 색칠놀이 - 공룡·공주·동물 색칠공부 도안을 화면에서 색칠하고 인쇄해요.</description>
+<language>ko</language>
+<lastBuildDate>${now}</lastBuildDate>
+${items.map(i => `<item><title>${esc(i.title)}</title><link>${abs(i.url)}</link><guid>${abs(i.url)}</guid><description>${esc(i.desc)}</description><pubDate>${now}</pubDate></item>`).join("\n")}
+</channel></rss>
+`);
+
 // vercel.json: 확장자 없는 주소 + www 리다이렉트 + 옛 영어 주소 리다이렉트
 fs.writeFileSync(path.join(ROOT, "vercel.json"), JSON.stringify({
   cleanUrls: true,

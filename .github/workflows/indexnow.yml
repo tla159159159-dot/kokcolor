@@ -1,0 +1,15 @@
+name: 색인 요청 (IndexNow)
+on:
+  push:
+    branches: [main]
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - name: Vercel 배포 대기
+        run: sleep 120
+      - name: 네이버·빙 색인 요청
+        run: node tools/indexnow.js
