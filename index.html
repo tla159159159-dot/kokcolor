@@ -89,6 +89,33 @@
   .nav-cta{font-family:'Jua',sans-serif;font-size:14px;border-radius:999px;padding:10px 20px;color:#fff;background:var(--brand);border:none;box-shadow:var(--sh-sm);cursor:pointer;transition:transform .12s,background .15s}
   .nav-cta:hover{background:var(--brand-ink)}
   .nav-right{display:flex;align-items:center;gap:8px}
+  /* 반응·액션 */
+  button:active,.btn-primary:active,.btn-ghost:active,.thumb:active,.mode:active,.sw:active,.dock-btn:active,.nav-cta:active,.nav-login:active{transform:scale(.94)!important;transition:transform .06s}
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .5s ease,transform .5s ease}
+  .reveal.in{opacity:1;transform:none}
+  .burst{position:fixed;width:10px;height:10px;border-radius:50%;pointer-events:none;z-index:90;animation:burst .55s ease-out forwards}
+  @keyframes burst{to{transform:translate(var(--bx),var(--by)) scale(.2);opacity:0}}
+  .progress{display:flex;align-items:center;gap:10px;padding:2px 6px 10px}
+  .pg-bar{flex:1;height:10px;border-radius:999px;background:var(--surface-2);overflow:hidden}
+  .pg-bar i{display:block;height:100%;width:0;background:var(--grad);border-radius:999px;transition:width .35s cubic-bezier(.3,1.4,.5,1)}
+  #pgText{font-family:'Jua',sans-serif;font-size:14px;color:var(--brand-ink);min-width:42px;text-align:right}
+  .progress.done #pgText{color:#1CA362}
+  .thumb.picked{animation:picked .45s ease}
+  @keyframes picked{40%{transform:scale(1.08) rotate(-2deg)}}
+  .theme-links{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px}
+  .theme-links h3{width:100%;margin:0 0 4px;font-family:'Jua',sans-serif;font-weight:400;font-size:17px;color:var(--muted)}
+  .theme-links a{font-size:13.5px;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:9px 13px}
+  .dock{display:none}
+  @media (max-width:600px){
+    .dock{display:flex;gap:8px;position:fixed;left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:60;transform:translateY(140%);transition:transform .3s ease}
+    .dock.show{transform:none}
+    .dock-btn{flex:1;display:flex;align-items:center;justify-content:center;min-height:50px;border-radius:999px;font-family:'Jua',sans-serif;font-size:15px;text-decoration:none;color:var(--ink);background:var(--surface);border:1px solid var(--line);box-shadow:var(--sh-lg);padding:0}
+    .dock-main{flex:1.3;color:#fff;background:var(--grad);border:none}
+    .wrap{padding-bottom:84px}
+    .toast{bottom:calc(76px + env(safe-area-inset-bottom,0px));max-width:calc(100% - 32px);text-align:center}
+  }
+  @media print{ .dock,.progress{display:none!important} }
+  @media (prefers-reduced-motion:reduce){ .reveal{opacity:1;transform:none} }
   .nav-login{display:inline-flex;align-items:center;gap:6px;font-family:'Noto Sans KR',sans-serif;font-weight:700;font-size:13px;color:#191919;background:#FEE500;border-radius:999px;padding:9px 14px;text-decoration:none;white-space:nowrap}
   .nav-login.out{background:var(--surface);color:var(--muted);border:1px solid var(--line)}
   .kk-bubble{width:14px;height:12px;background:#191919;border-radius:50%;position:relative}
@@ -511,7 +538,7 @@
   </div>
 
   <div class="stage">
-    <div class="paper-card"><div class="paper-inner">
+    <div class="paper-card"><div class="progress" id="progress" aria-live="polite"><div class="pg-bar"><i id="pgFill"></i></div><span id="pgText">0%</span></div><div class="paper-inner">
       <div class="host" id="paper"></div>
       <canvas class="host hide" id="drawCanvas" width="760" height="760"></canvas>
       <div class="host hide" id="dotHost"></div>
@@ -563,9 +590,13 @@
   </div>
 
   <div class="pack-area" id="packSection">
-    <h2 class="section-title">🖼️ 색칠공부 도안 고르기</h2>
+    <h2 class="section-title" id="pics">🖼️ 색칠공부 도안 고르기</h2>
     <div class="section-sub">그림 48종 전부 무료! 화면에서 마음껏 칠하고 저장하세요</div>
     <div id="packArea"></div>
+    <nav class="theme-links" aria-label="테마별 색칠공부 도안">
+      <h3>테마별 색칠공부 도안 모아보기</h3>
+      <a href="/doan/dino.html">🦕 공룡 색칠공부</a><a href="/doan/princess.html">👑 공주 색칠공부</a><a href="/doan/animal.html">🐾 동물 색칠공부</a><a href="/doan/sea.html">🌊 바다 동물 색칠공부</a><a href="/doan/sky.html">🚀 로켓·비행기 색칠공부</a><a href="/doan/snack.html">🍦 간식 색칠공부</a><a href="/doan/bug.html">🐞 곤충 색칠공부</a><a href="/doan/basic.html">⭐ 꽃·나무 색칠공부</a>
+    </nav>
   </div>
 
   <section class="reward">
@@ -657,6 +688,7 @@
 <div class="toast" id="toast"></div>
 <div id="printSheets"></div>
 
+<div class="dock" id="dock"><a href="#pics" class="dock-btn">🖼️ 다른 그림</a><button class="dock-btn dock-main" id="dockPrint">🖨️ 인쇄하기</button></div>
 <script>
 /* =========================================================
    운영자 설정 — 화면은 전부 무료, 인쇄만 과금(골드)
@@ -1186,13 +1218,17 @@ function loadPicture(id){
   const svg=paper.querySelector("svg");
   restore(svg, saved[id]);
   svg.querySelectorAll(".fill").forEach(el=>{
-    el.addEventListener("click",()=>{
+    el.addEventListener("click",(ev)=>{
       undo.push({el,prev:el.style.fill||""}); if(undo.length>80) undo.shift();
       el.style.fill = rainbowOn ? nextRainbow() : color;
       saved[id]=snapshot(svg); persist();
       if(!reduce){ el.classList.remove("pop"); void el.getBBox(); el.classList.add("pop"); setTimeout(()=>el.classList.remove("pop"),300); }
+      burst(ev.clientX, ev.clientY, el.style.fill);
+      if(navigator.vibrate) try{ navigator.vibrate(8); }catch(e){}
+      updateProgress(true);
     });
   });
+  updateProgress(false);
   document.querySelectorAll(".thumb").forEach(t=>t.classList.toggle("on", t.dataset.id===id));
   persist();
 }
@@ -1348,6 +1384,7 @@ fetch("/api/me",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(d=
   const a=document.getElementById("navLogin");
   if(d.loggedIn){ a.href="/api/logout"; a.classList.add("out"); a.textContent="로그아웃"; if(d.gold){ isGold=true; renderGoldUI(); } }
   renderBuyBtn();
+  if(window.__pendingPrint){ window.__pendingPrint=false; history.replaceState(null,"",location.pathname); tryPrint(()=>window.print()); }
 }).catch(()=>{});
 { const params=new URLSearchParams(location.search), q=params.get("login");
   if(q){ history.replaceState(null,"",location.pathname);
@@ -1540,7 +1577,54 @@ document.getElementById("luckyBtn").addEventListener("click",()=>{
   showToast("오늘은 이 그림 어때요? 🎲");
 });
 
-renderPacks(); loadPicture(curId); setMode("color");
+/* ---------- 반응·진행률 ---------- */
+function burst(x,y,col){
+  if(reduce||!x) return;
+  const cols=[col,"#FFCB3D","#FF6F91","#6EC1F0"];
+  for(let i=0;i<8;i++){ const d=document.createElement("div"); d.className="burst";
+    const a=i/8*Math.PI*2, r=28+Math.random()*18;
+    d.style.left=(x-5)+"px"; d.style.top=(y-5)+"px"; d.style.background=cols[i%cols.length];
+    d.style.setProperty("--bx",Math.cos(a)*r+"px"); d.style.setProperty("--by",Math.sin(a)*r+"px");
+    document.body.appendChild(d); setTimeout(()=>d.remove(),600); }
+}
+let celebrated={};
+function updateProgress(fromTap){
+  const svg=paper.querySelector("svg"); if(!svg) return;
+  const parts=[...svg.querySelectorAll(".fill")].filter(f=>f.dataset.n!=="배경");
+  const done=parts.filter(f=>f.style.fill&&f.style.fill!=="rgb(255, 255, 255)"&&f.style.fill!=="#fff").length;
+  const pct=parts.length?Math.round(done/parts.length*100):0;
+  document.getElementById("pgFill").style.width=pct+"%";
+  document.getElementById("pgText").textContent=pct===100?"완성! 🎉":pct+"%";
+  document.getElementById("progress").classList.toggle("done",pct===100);
+  if(fromTap&&pct===100&&!celebrated[curId]){ celebrated[curId]=1; cheer("다 칠했어요! 정말 멋져요 🎉"); }
+}
+/* 스크롤 등장 */
+if("IntersectionObserver" in window && !reduce){
+  const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } }),{rootMargin:"0px 0px -8% 0px"});
+  const watch=()=>document.querySelectorAll(".pack,.plan,.reward,.section-title,.theme-links").forEach(el=>{ if(!el.classList.contains("reveal")){ el.classList.add("reveal"); io.observe(el); } });
+  window.__watchReveal=watch;
+}
+/* 숫자 카운트업 */
+document.querySelectorAll(".stat b").forEach(b=>{ const n=+b.textContent; if(!n||reduce) return; let i=0; b.textContent="0";
+  const t=setInterval(()=>{ i=Math.min(n,i+Math.ceil(n/18)); b.textContent=i; if(i>=n) clearInterval(t); },40); });
+/* 모바일 하단 버튼 */
+{ const dock=document.getElementById("dock"), hero=document.querySelector(".hero");
+  document.getElementById("dockPrint").addEventListener("click",()=>tryPrint(()=>window.print()));
+  if("IntersectionObserver" in window && hero) new IntersectionObserver(([e])=>dock.classList.toggle("show",!e.isIntersecting)).observe(hero); }
+/* 그림 고르면 도화지로 이동 */
+document.getElementById("packArea").addEventListener("click",e=>{
+  const t=e.target.closest(".thumb"); if(!t) return;
+  t.classList.remove("picked"); void t.offsetWidth; t.classList.add("picked");
+  if(matchMedia("(max-width:900px)").matches) document.querySelector(".paper-card").scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});
+});
+
+renderPacks();
+/* 딥링크: /?pic=trex(&print=1) */
+const qs=new URLSearchParams(location.search), qPic=qs.get("pic");
+if(qPic && picById(qPic)){ curId=qPic; setTimeout(()=>document.querySelector(".paper-card").scrollIntoView({block:"start"}),300); }
+window.__pendingPrint = qs.get("print")==="1";
+loadPicture(curId); setMode("color");
+if(window.__watchReveal) window.__watchReveal();
 </script>
 </body>
 </html>
