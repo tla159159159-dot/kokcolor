@@ -123,6 +123,7 @@ ${items.map(i => `<item><title>${esc(i.title)}</title><link>${abs(i.url)}</link>
 // vercel.json: 확장자 없는 주소 + www 리다이렉트 + 옛 영어 주소 리다이렉트
 fs.writeFileSync(path.join(ROOT, "vercel.json"), JSON.stringify({
   cleanUrls: true,
+  crons: [{ path: "/api/renew", schedule: "0 1 * * *" }],
   redirects: [
     { source: "/:path*", has: [{ type: "host", value: "www.kokcolor.kr" }], destination: "https://kokcolor.kr/:path*", permanent: true },
     ...redirects,

@@ -124,6 +124,8 @@
   .kk-bubble:after{content:"";position:absolute;left:3px;bottom:-3px;border:3px solid transparent;border-top-color:#191919;border-left-color:#191919}
   .nav-login.out .kk-bubble{display:none}
   .nav-login[hidden]{display:none}
+  .link-btn{background:none!important;border:none!important;box-shadow:none!important;color:var(--muted)!important;font-size:13px!important;text-decoration:underline;padding:8px!important;min-height:0!important;margin:4px auto 0;display:block}
+  .gold-note a{color:inherit}
   .kk-login-btn{background:#FEE500!important;color:#191919!important;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
   #goldBuyBtn.kk{background:#FEE500!important;color:#191919!important;display:inline-flex;align-items:center;justify-content:center;gap:8px}
   .nav-cta:hover{transform:translateY(-2px)}
@@ -682,7 +684,8 @@
       <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>화면 색칠·놀이·저장은 계속 무료</span></li>
     </ul>
     <button class="full-btn gold-fullbtn" id="goldBuyBtn">골드 시작하기 · 월 2,900원</button>
-    <p class="gold-note">언제든 해지할 수 있어요 · 화면 색칠·놀이는 계속 무료</p>
+    <p class="gold-note" id="goldNote">매월 2,900원 자동결제 · 언제든 해지(다음 달부터 결제 안 됨)<br>결제 후 7일 이내 인쇄 기록이 없으면 전액 환불 · 인쇄 이용 시 청약철회 제한 · <a href="/refund.html" target="_blank">환불정책</a></p>
+    <button class="link-btn" id="goldCancel" hidden>정기결제 해지하기</button>
     <div class="msg" id="goldMsg"></div>
   </div>
 </div>
@@ -697,7 +700,6 @@
    ========================================================= */
 const PRINT_FREE_PER_WEEK = 3;                          // 무료: 주 몇 장까지 인쇄 가능
 const GOLD_PRICE = "월 2,900원";                         // 표시 가격
-const PAY_URL   = "";  // 결제 연동 후 결제 링크 입력 — 비어 있으면 "오픈 준비 중"으로 표시
 /* ========================================================= */
 
 /* 색 이름(현재 색 표시용) */
@@ -1353,8 +1355,9 @@ function renderGoldUI(){
   if(gb){ gb.textContent = isGold?"골드 이용 중 👑":"골드 시작하기"; gb.disabled=isGold; gb.style.opacity=isGold?.6:1; }
 }
 function openGold(){
+  const gc=document.getElementById("goldCancel"); gc.hidden=!(isGold&&me.subActive); gc.dataset.confirm=""; gc.textContent="정기결제 해지하기";
   document.getElementById("goldDesc").textContent = isGold
-    ? "이미 골드예요! 인쇄를 마음껏 즐기세요 👑"
+    ? (me.goldUntil?`골드 이용 중이에요 👑 ${new Date(me.goldUntil).getMonth()+1}월 ${new Date(me.goldUntil).getDate()}일까지 · `+(me.subActive?"자동 연장돼요":"해지됨"):"이미 골드예요! 인쇄를 마음껏 즐기세요 👑")
     : `무료는 종이 인쇄가 주 ${PRINT_FREE_PER_WEEK}장까지예요. 골드가 되면 언제든 마음껏 인쇄할 수 있어요.`;
   goldMsg.textContent=""; goldMsg.className="msg";
   goldModal.classList.add("show");
@@ -1366,15 +1369,32 @@ document.getElementById("goldBtn").addEventListener("click",openGold);
 document.getElementById("goldBuyBtn").addEventListener("click",()=>{
   if(isGold){ closeGold(); return; }
   if(!me.loggedIn){ location.href="/api/kakao-login?next=gold"; return; }
-  if(!PAY_URL){ goldMsg.textContent="골드는 곧 열려요! 지금은 매주 3장까지 무료로 인쇄할 수 있어요."; goldMsg.className="msg"; return; }
-  window.open(PAY_URL,"_blank","noopener");
-  goldMsg.textContent="결제 창을 열었어요."; goldMsg.className="msg";
+  if(!me.tossClientKey){ goldMsg.textContent="골드는 곧 열려요! 지금은 매주 3장까지 무료로 인쇄할 수 있어요."; goldMsg.className="msg"; return; }
+  startBilling();
+});
+function loadToss(){ return window.TossPayments ? Promise.resolve() : new Promise((ok,no)=>{ const sc=document.createElement("script"); sc.src="https://js.tosspayments.com/v2/standard"; sc.onload=ok; sc.onerror=no; document.head.appendChild(sc); }); }
+async function startBilling(){
+  goldMsg.textContent="결제창을 여는 중이에요…"; goldMsg.className="msg";
+  try{
+    await loadToss();
+    const payment=TossPayments(me.tossClientKey).payment({customerKey:me.customerKey});
+    await payment.requestBillingAuth({ method:"CARD", successUrl:location.origin+"/api/billing-success", failUrl:location.origin+"/api/billing-fail" });
+  }catch(e){ goldMsg.textContent= e&&e.code==="USER_CANCEL" ? "결제를 취소했어요." : "결제창을 열지 못했어요. 잠시 후 다시 시도해 주세요."; }
+}
+document.getElementById("goldCancel").addEventListener("click",async e=>{
+  const b=e.currentTarget;
+  if(b.dataset.confirm!=="1"){ b.dataset.confirm="1"; b.textContent="정말 해지할까요? 한 번 더 누르면 해지돼요"; return; }
+  const r=await fetch("/api/cancel",{method:"POST",credentials:"same-origin"}).then(r=>r.json()).catch(()=>null);
+  if(r&&r.ok){ me.subActive=false; b.hidden=true; const d=r.goldUntil?new Date(r.goldUntil):null;
+    goldMsg.textContent="해지했어요. "+(d?`${d.getMonth()+1}월 ${d.getDate()}일까지는 골드가 그대로예요.`:""); goldMsg.className="msg"; }
+  else { goldMsg.textContent="해지하지 못했어요. 잠시 후 다시 시도해 주세요."; }
 });
 let me={loggedIn:false};
 function renderBuyBtn(){
   const b=document.getElementById("goldBuyBtn");
+  if(isGold){ b.textContent="골드 이용 중 👑 · 닫기"; b.classList.remove("kk"); return; }
   b.innerHTML = !me.loggedIn ? '<span class="kk-bubble"></span> 카카오로 시작하기 · 월 2,900원'
-    : PAY_URL ? "골드 시작하기 · 월 2,900원" : "골드 오픈 준비 중 · 곧 만나요";
+    : me.tossClientKey ? "카드 등록하고 골드 시작 · 월 2,900원" : "골드 오픈 준비 중 · 곧 만나요";
   b.classList.toggle("kk", !me.loggedIn);
 }
 renderBuyBtn();
@@ -1388,6 +1408,9 @@ fetch("/api/me",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(d=
   renderBuyBtn();
   if(window.__pendingPrint){ window.__pendingPrint=false; history.replaceState(null,"",location.pathname); tryPrint(()=>window.print()); }
 }).catch(()=>{});
+{ const g=new URLSearchParams(location.search).get("gold");
+  if(g){ history.replaceState(null,"",location.pathname);
+    setTimeout(()=>{ if(g==="ok") cheer("골드가 됐어요! 이제 마음껏 인쇄해요 👑"); else if(g!=="cancel") showToast("결제를 마치지 못했어요. 다시 시도해 주세요."); },500); } }
 { const params=new URLSearchParams(location.search), q=params.get("login");
   if(q){ history.replaceState(null,"",location.pathname);
     setTimeout(()=>showToast(q==="ok"?"카카오 로그인 완료! 🎉":"로그인을 못 했어요. 다시 시도해 주세요."),300);
