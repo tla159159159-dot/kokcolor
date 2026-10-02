@@ -1,0 +1,5 @@
+{
+  "redirects": [
+    { "source": "/:path*", "has": [{ "type": "host", "value": "www.kokcolor.kr" }], "destination": "https://kokcolor.kr/:path*", "permanent": true }
+  ]
+}
