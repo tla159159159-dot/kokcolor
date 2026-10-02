@@ -226,6 +226,7 @@
   button:hover{box-shadow:var(--sh)}
   button:active{transform:translateY(1px)}
   button .i{margin-right:5px}
+  .b-share{grid-column:1/-1}
   .b-save{background:var(--grad);background-size:150% 150%;color:#fff;border-color:transparent;box-shadow:var(--glow)}
   .b-print{background:#EAF4FE;color:#3C93da;border-color:transparent}
   .b-buy{background:var(--grad);background-size:150% 150%;color:#fff;border-color:transparent;box-shadow:var(--glow)}
@@ -577,6 +578,7 @@
         <button id="clear"><svg class="ic" viewBox="0 0 24 24"><path d="M4 15l7-7 6 6-6 6H7z"/><path d="M9 20h10"/></svg>전체 지우기</button>
         <button id="save" class="b-save"><svg class="ic" viewBox="0 0 24 24"><path d="M12 4v10m0 0 4-4m-4 4-4-4"/><path d="M5 18h14"/></svg>그림 저장</button>
         <button id="print" class="b-print"><svg class="ic" viewBox="0 0 24 24"><path d="M7 9V4h10v5"/><path d="M6 18H5a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1"/><rect x="7" y="15" width="10" height="6" rx="1"/></svg>인쇄하기</button>
+        <button id="share" class="b-share"><svg class="ic" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="m8.6 13.5 6.8 4M15.4 6.5l-6.8 4"/></svg>친구에게 이 도안 보내기</button>
       </div>
       <div class="tools hide" id="toolsDraw">
         <button id="drawClear"><svg class="ic" viewBox="0 0 24 24"><path d="M4 15l7-7 6 6-6 6H7z"/><path d="M9 20h10"/></svg>전체 지우기</button>
@@ -1555,6 +1557,9 @@ document.getElementById("clear").addEventListener("click",()=>{
 });
 document.getElementById("print").addEventListener("click",()=>tryPrint(()=>window.print()));
 document.getElementById("save").addEventListener("click",savePng);
+document.getElementById("share").addEventListener("click",async e=>{ const b=e.currentTarget, p=picById(curId), nm=p?p.pic.name:"색칠공부";
+  const url=location.origin+"/?pic="+encodeURIComponent(curId), data={title:nm+" 색칠공부 도안 - 콕콕",text:"아이랑 같이 칠해요! 무료 "+nm+" 색칠공부 🖍️",url};
+  try{ if(navigator.share){ await navigator.share(data); return; } await navigator.clipboard.writeText(data.text+" "+url); b.lastChild.textContent="링크 복사됨! 카톡에 붙여넣어요"; setTimeout(()=>b.lastChild.textContent="친구에게 이 도안 보내기",2500); }catch(_){} });
 
 async function savePng(){
   const svg=paper.querySelector("svg").cloneNode(true);
