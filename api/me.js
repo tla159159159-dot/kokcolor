@@ -1,6 +1,5 @@
 const { getSession } = require("./_session");
 const { status, redis } = require("./_db");
-const { customerKeyFor } = require("./_toss");
 module.exports = async (req, res) => {
   res.setHeader("Cache-Control", "no-store");
   const s = getSession(req);
@@ -8,7 +7,7 @@ module.exports = async (req, res) => {
   try {
     const sub = JSON.parse((await redis("GET", `kok:sub:${s.uid}`)) || "null");
     res.json({ loggedIn: true, uid: s.uid, ...(await status(s.uid)), subActive: !!(sub && sub.active),
-      customerKey: customerKeyFor(s.uid), tossClientKey: process.env.TOSS_CLIENT_KEY || null });
+      payReady: !!process.env.NICEPAY_CLIENT_KEY });
   }
   catch (e) { res.json({ loggedIn: true, uid: s.uid, gold: false, printsLeft: null, dbError: true }); }
 };

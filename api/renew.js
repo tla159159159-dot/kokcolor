@@ -1,6 +1,6 @@
 // 매일 1번(Vercel Cron) — 결제일이 된 구독을 자동 결제. 실패하면 3일까지 재시도 후 해지
 const { redis } = require("./_db");
-const { chargeMonth, DAY } = require("./_toss");
+const { chargeMonth, DAY } = require("./_nice");
 module.exports = async (req, res) => {
   if (req.headers.authorization !== `Bearer ${process.env.CRON_SECRET}`) return res.status(401).end();
   const due = await redis("ZRANGEBYSCORE", "kok:subs", "0", String(Date.now() + DAY / 2));

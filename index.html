@@ -316,6 +316,10 @@
   .gold-benefits li b{color:var(--gold-deep)}
   .gold-benefits svg{stroke:var(--gold2)}
   .gold-fullbtn{width:100%;padding:15px;font-size:15px;font-family:'Jua',sans-serif;color:#5A3E00;border:none;border-radius:var(--r-sm);cursor:pointer;background:linear-gradient(120deg,var(--gold1),var(--gold2));box-shadow:0 8px 20px rgba(232,178,58,.4)}
+  [hidden]{display:none!important}
+  .card-form{display:grid;gap:10px;margin-top:12px;text-align:left}.card-form label{display:grid;gap:4px;font-size:13px;color:var(--muted)}
+  .card-form input:not([type=checkbox]){font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);width:100%;box-sizing:border-box}
+  .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card-form .cf-agree{display:flex;gap:8px;align-items:flex-start;color:var(--ink)}.cf-agree a{color:inherit}
   .gold-note{font-size:12px;color:var(--muted);text-align:center;margin:10px 0 0}
   /* gold nav badge */
   .nav-cta.gold{background:linear-gradient(120deg,var(--gold1),var(--gold2));color:#5A3E00}
@@ -687,6 +691,16 @@
       <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>화면 색칠·놀이·저장은 계속 무료</span></li>
     </ul>
     <button class="full-btn gold-fullbtn" id="goldBuyBtn">골드 시작하기 · 월 2,900원</button>
+    <form class="card-form" id="cardForm" hidden autocomplete="on">
+      <label>카드번호<input name="cardNo" inputmode="numeric" autocomplete="cc-number" maxlength="19" placeholder="숫자만 입력" required></label>
+      <div class="cf-row"><label>유효기간(월)<input name="expMonth" inputmode="numeric" autocomplete="cc-exp-month" maxlength="2" placeholder="MM" required></label>
+      <label>유효기간(년)<input name="expYear" inputmode="numeric" autocomplete="cc-exp-year" maxlength="4" placeholder="YY" required></label></div>
+      <div class="cf-row"><label>생년월일 6자리<input name="idNo" inputmode="numeric" maxlength="10" placeholder="YYMMDD" required></label>
+      <label>비밀번호 앞 2자리<input name="cardPw" type="password" inputmode="numeric" maxlength="2" placeholder="••" required></label></div>
+      <label class="cf-agree"><input type="checkbox" name="agree" required><span>매월 2,900원 자동결제와 <a href="/terms.html" target="_blank">이용약관</a>·<a href="/refund.html" target="_blank">환불정책</a>에 동의해요</span></label>
+      <button class="full-btn gold-fullbtn" id="cardSubmit">카드 등록하고 2,900원 결제</button>
+      <p class="gold-note">카드정보는 저장하지 않고 암호화해 나이스페이먼츠로만 보내요.</p>
+    </form>
     <p class="gold-note" id="goldNote">매월 2,900원 자동결제 · 언제든 해지(다음 달부터 결제 안 됨)<br>결제 후 7일 이내 인쇄 기록이 없으면 전액 환불 · 인쇄 이용 시 청약철회 제한 · <a href="/refund.html" target="_blank">환불정책</a></p>
     <button class="link-btn" id="goldCancel" hidden>정기결제 해지하기</button>
     <div class="msg" id="goldMsg"></div>
@@ -1866,19 +1880,19 @@ document.getElementById("goldBtn").addEventListener("click",openGold);
 document.getElementById("goldBuyBtn").addEventListener("click",()=>{
   if(isGold){ closeGold(); return; }
   if(!me.loggedIn){ location.href="/api/kakao-login?next=gold"; return; }
-  if(!me.tossClientKey){ goldMsg.textContent="골드는 곧 열려요! 지금은 매주 3장까지 무료로 인쇄할 수 있어요."; goldMsg.className="msg"; return; }
-  startBilling();
-});
-function loadToss(){ return window.TossPayments ? Promise.resolve() : new Promise((ok,no)=>{ const sc=document.createElement("script"); sc.src="https://js.tosspayments.com/v2/standard"; sc.onload=ok; sc.onerror=no; document.head.appendChild(sc); }); }
-async function startBilling(){
+  if(!me.payReady){ goldMsg.textContent="골드는 곧 열려요! 지금은 매주 3장까지 무료로 인쇄할 수 있어요."; goldMsg.className="msg"; return; }
   ev("begin_checkout",{value:2900,currency:"KRW"});
-  goldMsg.textContent="결제창을 여는 중이에요…"; goldMsg.className="msg";
-  try{
-    await loadToss();
-    const payment=TossPayments(me.tossClientKey).payment({customerKey:me.customerKey});
-    await payment.requestBillingAuth({ method:"CARD", successUrl:location.origin+"/api/billing-success", failUrl:location.origin+"/api/billing-fail" });
-  }catch(e){ goldMsg.textContent= e&&e.code==="USER_CANCEL" ? "결제를 취소했어요." : "결제창을 열지 못했어요. 잠시 후 다시 시도해 주세요."; }
-}
+  document.getElementById("goldBuyBtn").hidden=true; const f=document.getElementById("cardForm"); f.hidden=false; f.cardNo.focus();
+});
+document.getElementById("cardForm").addEventListener("submit",async e=>{
+  e.preventDefault(); const f=e.currentTarget, btn=document.getElementById("cardSubmit");
+  if(btn.disabled) return; btn.disabled=true; goldMsg.textContent="결제하는 중이에요… 창을 닫지 마세요"; goldMsg.className="msg";
+  const body={cardNo:f.cardNo.value,expMonth:f.expMonth.value,expYear:f.expYear.value,idNo:f.idNo.value,cardPw:f.cardPw.value};
+  const r=await fetch("/api/nice-register",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}).then(r=>r.json()).catch(()=>({ok:false}));
+  f.cardPw.value="";
+  if(r.ok){ location.href="/?gold=ok"; return; }
+  btn.disabled=false; goldMsg.textContent=r.msg||"결제하지 못했어요. 잠시 후 다시 시도해 주세요."; goldMsg.className="msg";
+});
 document.getElementById("goldCancel").addEventListener("click",async e=>{
   const b=e.currentTarget;
   if(b.dataset.confirm!=="1"){ b.dataset.confirm="1"; b.textContent="정말 해지할까요? 한 번 더 누르면 해지돼요"; return; }
@@ -1892,7 +1906,7 @@ function renderBuyBtn(){
   const b=document.getElementById("goldBuyBtn");
   if(isGold){ b.textContent="골드 이용 중 👑 · 닫기"; b.classList.remove("kk"); return; }
   b.innerHTML = !me.loggedIn ? '<span class="kk-bubble"></span> 카카오로 시작하기 · 월 2,900원'
-    : me.tossClientKey ? "카드 등록하고 골드 시작 · 월 2,900원" : "골드 오픈 준비 중 · 곧 만나요";
+    : me.payReady ? "카드 등록하고 골드 시작 · 월 2,900원" : "골드 오픈 준비 중 · 곧 만나요";
   b.classList.toggle("kk", !me.loggedIn);
 }
 renderBuyBtn();
