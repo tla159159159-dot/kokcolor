@@ -324,6 +324,9 @@
   .work{font:inherit;font-size:13px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:8px;cursor:pointer;color:#38343F;display:grid;gap:4px;transition:transform .12s}
   .work:active{transform:scale(.96)}.work svg{width:100%;height:auto;display:block}
   .work .fill{stroke:#38343F;stroke-width:5;stroke-linejoin:round}.work .fill:not([style]){fill:#fff}.work .ln{fill:none;stroke:#38343F;stroke-width:5;stroke-linecap:round}.work .dk{fill:#38343F}.work .wt{fill:#fff;stroke:#38343F;stroke-width:4}
+  .faq{margin:8px 0 28px}.faq details{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin-top:10px}
+  .faq summary{cursor:pointer;font-weight:700;list-style:none}.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"＋";float:right;color:var(--muted)}.faq details[open] summary::after{content:"－"}
+  .faq p{margin:10px 0 0;color:var(--muted);line-height:1.7}
   .pack-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 12px;margin-bottom:6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.pack-chips::-webkit-scrollbar{display:none}
   .pack-chips button{flex:none;font:inherit;font-size:14px;padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap}
   .pack-chips button:active{transform:scale(.95)}.pack{scroll-margin-top:76px}
@@ -664,6 +667,17 @@
       </div>
     </div>
   </section>
+
+  <section class="faq" id="faq">
+    <h2 class="plans-title">자주 묻는 질문</h2>
+    <details><summary>콕콕 색칠공부는 무료인가요?</summary><p>네. 화면에서 색칠하고 그림을 저장하는 건 모두 무료예요. 종이 인쇄는 카카오 로그인 후 매주 3장까지 무료이고, 골드(월 2,900원)는 인쇄가 무제한이에요.</p></details>
+    <details><summary>몇 살 아이에게 맞나요?</summary><p>선이 굵고 칸이 넓어서 3~7세 유아가 혼자 칠하기 좋아요. 칸을 누르면 색이 바로 채워져서 손이 서툰 아이도 쉽게 완성할 수 있어요.</p></details>
+    <details><summary>회원가입을 해야 하나요?</summary><p>화면 색칠은 가입 없이 바로 할 수 있어요. 종이로 인쇄할 때만 카카오 로그인이 필요해요.</p></details>
+    <details><summary>색칠공부 도안은 몇 종류인가요?</summary><p>공룡·공주·동물·바다·탈것·할로윈·크리스마스 등 17개 테마, 102종 도안이 있고 계속 늘어나요.</p></details>
+    <details><summary>휴대폰이나 태블릿에서도 되나요?</summary><p>네. 휴대폰·태블릿·컴퓨터 어디서나 손가락이나 마우스로 바로 칠할 수 있어요.</p></details>
+    <details><summary>칠한 그림은 저장되나요?</summary><p>칠하던 그림은 자동으로 저장돼 "내 작품"에서 이어서 칠할 수 있고, 그림 저장 버튼으로 이미지 파일로도 받을 수 있어요. 카카오 로그인하면 다른 기기에서도 이어서 칠할 수 있어요.</p></details>
+  </section>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"콕콕 색칠공부는 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네. 화면에서 색칠하고 그림을 저장하는 건 모두 무료예요. 종이 인쇄는 카카오 로그인 후 매주 3장까지 무료이고, 골드(월 2,900원)는 인쇄가 무제한이에요."}},{"@type":"Question","name":"몇 살 아이에게 맞나요?","acceptedAnswer":{"@type":"Answer","text":"선이 굵고 칸이 넓어서 3~7세 유아가 혼자 칠하기 좋아요. 칸을 누르면 색이 바로 채워져서 손이 서툰 아이도 쉽게 완성할 수 있어요."}},{"@type":"Question","name":"회원가입을 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"화면 색칠은 가입 없이 바로 할 수 있어요. 종이로 인쇄할 때만 카카오 로그인이 필요해요."}},{"@type":"Question","name":"색칠공부 도안은 몇 종류인가요?","acceptedAnswer":{"@type":"Answer","text":"공룡·공주·동물·바다·탈것·할로윈·크리스마스 등 17개 테마, 102종 도안이 있고 계속 늘어나요."}},{"@type":"Question","name":"휴대폰이나 태블릿에서도 되나요?","acceptedAnswer":{"@type":"Answer","text":"네. 휴대폰·태블릿·컴퓨터 어디서나 손가락이나 마우스로 바로 칠할 수 있어요."}},{"@type":"Question","name":"칠한 그림은 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"칠하던 그림은 자동으로 저장돼 \"내 작품\"에서 이어서 칠할 수 있고, 그림 저장 버튼으로 이미지 파일로도 받을 수 있어요. 카카오 로그인하면 다른 기기에서도 이어서 칠할 수 있어요."}}]}</script>
 
   <footer class="site-footer">
     <div class="foot-mascot-wrap">

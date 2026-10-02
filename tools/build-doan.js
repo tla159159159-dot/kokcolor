@@ -66,7 +66,7 @@ fs.mkdirSync(OUT, { recursive: true });
 fs.copyFileSync(path.join(__dirname, "doan.css"), path.join(ROOT, "doan.css"));
 fs.rmSync(path.join(ROOT, "doan"), { recursive: true, force: true });
 const redirects = [];
-const urls = [];
+const urls = [], imgOf = {};
 
 for (const p of packs) {
   const t = THEME[p.id];
@@ -82,9 +82,9 @@ for (const p of packs) {
     crumbs: [["홈", "/"], ["색칠공부 도안", "/#pics"], [t.kw, themeUrl(p)]],
     body: `<p class="intro">${t.intro}</p>
 <a class="big-cta" href="/?pic=${p.pics[0].id}">🎨 지금 바로 무료로 색칠하기</a>
-<ul class="grid">${p.pics.map(x => `<li><a href="${picUrl(p, x)}">${svgA11y(x.svg, x.name + " 색칠공부 도안")}<span>${x.name} 색칠공부</span></a></li>`).join("")}</ul>`,
+<ul class="grid">${p.pics.map(x => `<li><a href="${picUrl(p, x)}"><img src="/img/${x.id}.png" alt="${esc(x.name)} 색칠공부 도안" width="400" height="400" loading="lazy" decoding="async"><span>${x.name} 색칠공부</span></a></li>`).join("")}</ul>`,
   }));
-  urls.push(themeUrl(p));
+  urls.push(themeUrl(p)); imgOf[themeUrl(p)] = p.pics.map(x => x.id); p.pics.forEach(x => { imgOf[picUrl(p, x)] = [x.id]; });
   // 그림 페이지
   p.pics.forEach((x, i) => {
     const others = p.pics.filter(o => o.id !== x.id);
@@ -95,7 +95,7 @@ for (const p of packs) {
       canon: picUrl(p, x), og: `/og/${x.id}.jpg`,
       h1: `${x.name} 색칠공부 도안`,
       crumbs: [["홈", "/"], [t.kw, themeUrl(p)], [x.name, picUrl(p, x)]],
-      body: `<div class="hero-pic">${svgA11y(x.svg, x.name + " 색칠공부 도안")}</div>
+      body: `<div class="hero-pic"><img src="/img/${x.id}.png" alt="${esc(x.name)} 색칠공부 도안 - 유아 색칠놀이 무료 인쇄" width="800" height="800" fetchpriority="high"></div>
 <div class="cta-row"><a class="big-cta" href="/?pic=${x.id}">🎨 화면에서 색칠하기</a><a class="ghost-cta" href="/?pic=${x.id}&amp;print=1">🖨️ 종이로 인쇄하기</a></div>
 <p class="intro">${x.name} 그림은 ${t.kw} ${p.pics.length}종 중 하나예요. 칸을 누르면 바로 색이 채워져서 아직 손이 서툰 유아도 쉽게 완성할 수 있어요. 색칠은 무료이고, 카카오 로그인하면 매주 3장까지 무료로 인쇄할 수 있어요.</p>
 <h2>같은 테마 도안</h2>
@@ -106,9 +106,9 @@ for (const p of packs) {
 }
 
 fs.writeFileSync(path.join(ROOT, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url><loc>${SITE}/</loc><lastmod>${TODAY}</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-${urls.map(u => `  <url><loc>${abs(u)}</loc><lastmod>${TODAY}</lastmod><priority>${u.split("/").length === 3 ? "0.8" : "0.6"}</priority></url>`).join("\n")}
+${urls.map(u => `  <url><loc>${abs(u)}</loc><lastmod>${TODAY}</lastmod><priority>${u.split("/").length === 3 ? "0.8" : "0.6"}</priority>${(imgOf[u] || []).map(i => `<image:image><image:loc>${SITE}/img/${i}.png</image:loc></image:image>`).join("")}</url>`).join("\n")}
 </urlset>
 `);
 // rss.xml: 네이버 RSS 제출용 (테마·그림 페이지)

@@ -15,11 +15,11 @@ h2{font-family:'Jua',sans-serif;font-weight:400;font-size:22px;margin:30px 0 10p
 .big-cta:active,.ghost-cta:active{transform:scale(.96)}
 .cta-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0 20px}.cta-row .big-cta{margin:0}
 .hero-pic{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:14px;max-width:520px;margin:0 auto}
-.hero-pic svg{width:100%;height:auto;display:block;background:#fff;border-radius:16px}
+.hero-pic svg,.hero-pic img{width:100%;height:auto;display:block;background:#fff;border-radius:16px}
 .grid{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
 .grid a{display:block;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:10px;text-align:center;text-decoration:none;transition:transform .14s,box-shadow .14s}
 .grid a:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(36,27,62,.12)}
-.grid svg{width:100%;height:auto;display:block;background:#fff;border-radius:12px}
+.grid svg,.grid img{width:100%;height:auto;display:block;background:#fff;border-radius:12px}
 .grid span{display:block;font-family:'Jua',sans-serif;margin-top:6px}
 svg .fill{fill:#fff;stroke:#2A2140;stroke-width:5;stroke-linejoin:round;stroke-linecap:round}svg .ln{fill:none;stroke:#2A2140;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}svg .dk{fill:#2A2140}svg .wt{fill:#fff;stroke:#2A2140;stroke-width:4}
 .foot{margin-top:40px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);text-align:center}
