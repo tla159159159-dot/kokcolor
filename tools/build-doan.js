@@ -56,6 +56,7 @@ const page = ({ title, desc, canon, h1, body, crumbs, og = "/og.png" }) => `<!DO
 <nav class="crumb">${crumbs.map((c, i) => i < crumbs.length - 1 ? `<a href="${c[1]}">${c[0]}</a> › ` : `<span>${c[0]}</span>`).join("")}</nav>
 <h1>${h1}</h1>
 ${body}
+<aside class="family"><b>함께 보면 좋은 곳</b><a href="https://www.dojangkwang.co.kr/?utm_source=kokcolor&amp;utm_medium=crosslink&amp;utm_campaign=doan" target="_blank" rel="noopener">✏️ 도장쾅 한글·숫자 학습지</a><a href="https://bamtol.co.kr/?utm_source=kokcolor&amp;utm_medium=crosslink&amp;utm_campaign=doan" target="_blank" rel="noopener">🌙 밤톨 자장가·동화</a><a href="https://mommoment.kr/?utm_source=kokcolor&amp;utm_medium=crosslink&amp;utm_campaign=doan" target="_blank" rel="noopener">💬 맘먼트 엄마 커뮤니티</a></aside>
 <footer class="foot"><nav class="themes">${packs.map(p => `<a href="${themeUrl(p)}">${p.emoji} ${THEME[p.id].kw}</a>`).join("")}</nav>
 <p><a href="/terms.html">이용약관</a> · <a href="/privacy.html">개인정보처리방침</a> · <a href="/refund.html">환불정책</a></p>
 <p>© 2026 콕콕 kokcolor.kr · CKT컴퍼니</p></footer>
