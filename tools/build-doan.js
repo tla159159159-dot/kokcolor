@@ -30,7 +30,7 @@ const abs = u => SITE + encodeURI(u);
 const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 const svgA11y = (svg, label) => svg.replace("<svg ", `<svg role="img" aria-label="${esc(label)}" `);
 
-const page = ({ title, desc, canon, h1, body, crumbs }) => `<!DOCTYPE html>
+const page = ({ title, desc, canon, h1, body, crumbs, og = "/og.png" }) => `<!DOCTYPE html>
 <html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTFDM2WQQ2"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-KTFDM2WQQ2");</script>
 <title>${esc(title)}</title>
@@ -38,7 +38,7 @@ const page = ({ title, desc, canon, h1, body, crumbs }) => `<!DOCTYPE html>
 <link rel="canonical" href="${abs(canon)}">
 <meta property="og:type" content="website"><meta property="og:site_name" content="콕콕">
 <meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}">
-<meta property="og:url" content="${abs(canon)}"><meta property="og:image" content="${SITE}/og.png">
+<meta property="og:url" content="${abs(canon)}"><meta property="og:image" content="${SITE}${og}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">
 <link rel="alternate" type="application/rss+xml" title="콕콕 색칠공부 도안" href="/rss.xml">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#7C4DFF">
@@ -72,7 +72,7 @@ for (const p of packs) {
   fs.writeFileSync(path.join(OUT, KO[p.id] + ".html"), page({
     title: `${t.kw} ${p.pics.length}종 | 무료 색칠·인쇄 - 콕콕`,
     desc: `${t.kw} ${p.pics.length}종(${names})을 화면에서 무료로 색칠하고 종이로 인쇄해요. 가입 없이 바로 시작!`,
-    canon: themeUrl(p),
+    canon: themeUrl(p), og: `/og/t-${p.id}.jpg`,
     h1: `${p.emoji} ${t.kw} <small>${p.pics.length}종</small>`,
     crumbs: [["홈", "/"], ["색칠공부 도안", "/#pics"], [t.kw, themeUrl(p)]],
     body: `<p class="intro">${t.intro}</p>
@@ -87,7 +87,7 @@ for (const p of packs) {
     fs.writeFileSync(path.join(OUT, KO[p.id], slug(x.name) + ".html"), page({
       title: `${x.name} 색칠공부 도안 | 무료 색칠·인쇄 - 콕콕`,
       desc: `${x.name} 색칠공부 도안을 화면에서 무료로 바로 색칠하고, 종이로 인쇄해서 칠할 수도 있어요. ${t.kw} 모음 콕콕.`,
-      canon: picUrl(p, x),
+      canon: picUrl(p, x), og: `/og/${x.id}.jpg`,
       h1: `${x.name} 색칠공부 도안`,
       crumbs: [["홈", "/"], [t.kw, themeUrl(p)], [x.name, picUrl(p, x)]],
       body: `<div class="hero-pic">${svgA11y(x.svg, x.name + " 색칠공부 도안")}</div>

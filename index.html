@@ -1561,7 +1561,8 @@ document.getElementById("clear").addEventListener("click",()=>{
 document.getElementById("print").addEventListener("click",()=>tryPrint(()=>window.print()));
 document.getElementById("save").addEventListener("click",savePng);
 document.getElementById("share").addEventListener("click",async e=>{ ev("share",{pic:curId}); const b=e.currentTarget, p=picById(curId), nm=p?p.pic.name:"색칠공부";
-  const url=location.origin+"/?pic="+encodeURIComponent(curId), data={title:nm+" 색칠공부 도안 - 콕콕",text:"아이랑 같이 칠해요! 무료 "+nm+" 색칠공부 🖍️",url};
+  const KO={basic:"꽃나무",animal:"동물",sea:"바다동물",sky:"하늘",snack:"간식",dino:"공룡",princess:"공주",bug:"곤충",ride:"탈것",fruit:"과일채소",halloween:"할로윈",xmas:"크리스마스"};
+  const url=p&&KO[p.pack.id]?location.origin+"/색칠공부/"+KO[p.pack.id]+"/"+p.pic.name.trim().replace(/\s+/g,"-"):location.origin+"/?pic="+encodeURIComponent(curId), data={title:nm+" 색칠공부 도안 - 콕콕",text:"아이랑 같이 칠해요! 무료 "+nm+" 색칠공부 🖍️",url};
   try{ if(navigator.share){ await navigator.share(data); return; } await navigator.clipboard.writeText(data.text+" "+url); b.lastChild.textContent="링크 복사됨! 카톡에 붙여넣어요"; setTimeout(()=>b.lastChild.textContent="친구에게 이 도안 보내기",2500); }catch(_){} });
 
 async function savePng(){
