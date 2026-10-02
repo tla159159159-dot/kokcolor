@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T720PTYZW4"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-T720PTYZW4");</script>
 <title>무료 색칠공부 도안 | 유아 색칠놀이·인쇄 - 콕콕</title>
 <meta name="description" content="무료 색칠공부 도안 72종을 가입 없이 바로 색칠해요. 유아 색칠놀이부터 공주·동물·공룡 도안 인쇄, 낙서판·점잇기·스티커까지 콕콕에서 즐겨요.">
 <meta name="keywords" content="색칠공부, 색칠공부 도안, 아이 색칠놀이, 유아 색칠, 무료 색칠공부, 색칠 도안 인쇄, 점잇기">
@@ -1439,7 +1440,9 @@ function needLogin(){
   if(me.loggedIn) return false;
   document.getElementById("loginModal").classList.add("show"); return true;
 }
+const ev=(n,p)=>{ try{ gtag("event",n,p||{}); }catch(e){} };
 async function tryPrint(run){
+  ev("print_click",{pic:curId});
   if(needLogin()) return;
   if(isGold){ run(); return; }
   let r=null;
@@ -1557,11 +1560,12 @@ document.getElementById("clear").addEventListener("click",()=>{
 });
 document.getElementById("print").addEventListener("click",()=>tryPrint(()=>window.print()));
 document.getElementById("save").addEventListener("click",savePng);
-document.getElementById("share").addEventListener("click",async e=>{ const b=e.currentTarget, p=picById(curId), nm=p?p.pic.name:"색칠공부";
+document.getElementById("share").addEventListener("click",async e=>{ ev("share",{pic:curId}); const b=e.currentTarget, p=picById(curId), nm=p?p.pic.name:"색칠공부";
   const url=location.origin+"/?pic="+encodeURIComponent(curId), data={title:nm+" 색칠공부 도안 - 콕콕",text:"아이랑 같이 칠해요! 무료 "+nm+" 색칠공부 🖍️",url};
   try{ if(navigator.share){ await navigator.share(data); return; } await navigator.clipboard.writeText(data.text+" "+url); b.lastChild.textContent="링크 복사됨! 카톡에 붙여넣어요"; setTimeout(()=>b.lastChild.textContent="친구에게 이 도안 보내기",2500); }catch(_){} });
 
 async function savePng(){
+  ev("save_png",{pic:curId});
   const svg=paper.querySelector("svg").cloneNode(true);
   const st=document.createElementNS("http://www.w3.org/2000/svg","style");
   st.textContent=".fill{fill:#fff;stroke:#38343F;stroke-width:5;stroke-linejoin:round;stroke-linecap:round}.ln{fill:none;stroke:#38343F;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.dk{fill:#38343F}.wt{fill:#fff;stroke:#38343F;stroke-width:4}";
@@ -1625,6 +1629,7 @@ document.getElementById("goldBuyBtn").addEventListener("click",()=>{
 });
 function loadToss(){ return window.TossPayments ? Promise.resolve() : new Promise((ok,no)=>{ const sc=document.createElement("script"); sc.src="https://js.tosspayments.com/v2/standard"; sc.onload=ok; sc.onerror=no; document.head.appendChild(sc); }); }
 async function startBilling(){
+  ev("begin_checkout",{value:2900,currency:"KRW"});
   goldMsg.textContent="결제창을 여는 중이에요…"; goldMsg.className="msg";
   try{
     await loadToss();
@@ -1661,10 +1666,11 @@ fetch("/api/me",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(d=
 }).catch(()=>{});
 { const g=new URLSearchParams(location.search).get("gold");
   if(g){ history.replaceState(null,"",location.pathname);
-    setTimeout(()=>{ if(g==="ok") cheer("골드가 됐어요! 이제 마음껏 인쇄해요 👑"); else if(g!=="cancel") showToast("결제를 마치지 못했어요. 다시 시도해 주세요."); },500); } }
+    setTimeout(()=>{ if(g==="ok"){ ev("purchase",{value:2900,currency:"KRW",transaction_id:"gold_"+Date.now()}); } if(g==="ok") cheer("골드가 됐어요! 이제 마음껏 인쇄해요 👑"); else if(g!=="cancel") showToast("결제를 마치지 못했어요. 다시 시도해 주세요."); },500); } }
 { const params=new URLSearchParams(location.search), q=params.get("login");
   if(q){ history.replaceState(null,"",location.pathname);
     setTimeout(()=>showToast(q==="ok"?"카카오 로그인 완료! 🎉":"로그인을 못 했어요. 다시 시도해 주세요."),300);
+    if(q==="ok") ev("login",{method:"kakao"});
     if(q==="ok" && params.get("next")==="gold") setTimeout(openGold,600);
     if(q==="ok" && params.get("next")==="print") setTimeout(()=>showToast("로그인 완료! 이제 인쇄할 수 있어요 🖨️"),2200); } }
 { const lm=document.getElementById("loginModal");

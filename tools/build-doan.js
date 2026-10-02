@@ -32,6 +32,7 @@ const svgA11y = (svg, label) => svg.replace("<svg ", `<svg role="img" aria-label
 
 const page = ({ title, desc, canon, h1, body, crumbs }) => `<!DOCTYPE html>
 <html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T720PTYZW4"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-T720PTYZW4");</script>
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${abs(canon)}">
