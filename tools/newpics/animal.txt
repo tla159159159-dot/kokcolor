@@ -1,0 +1,53 @@
+  {id:"elephant", name:"코끼리", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="귀" cx="100" cy="146" rx="54" ry="64"/><ellipse class="fill" data-n="귀" cx="260" cy="146" rx="54" ry="64"/>
+    <ellipse class="fill" data-n="귀안" cx="96" cy="148" rx="32" ry="42"/><ellipse class="fill" data-n="귀안" cx="264" cy="148" rx="32" ry="42"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="272" rx="84" ry="62"/>
+    <ellipse class="fill" data-n="다리" cx="136" cy="324" rx="28" ry="20"/><ellipse class="fill" data-n="다리" cx="224" cy="324" rx="28" ry="20"/>
+    <g class="ln"><path d="M124 332 v8 M136 334 v8 M148 332 v8 M212 332 v8 M224 334 v8 M236 332 v8"/></g>
+    <circle class="fill" data-n="머리" cx="180" cy="148" r="70"/>
+    <circle class="fill" data-n="볼" cx="130" cy="176" r="12"/><circle class="fill" data-n="볼" cx="230" cy="176" r="12"/>
+    <circle class="dk" cx="152" cy="136" r="8"/><circle class="dk" cx="208" cy="136" r="8"/><circle class="wt" cx="155" cy="133" r="3"/><circle class="wt" cx="211" cy="133" r="3"/>
+    <path class="fill" data-n="코" d="M160 168 Q154 236 176 254 Q198 270 214 246 Q218 234 206 232 Q196 246 186 238 Q178 222 200 168 Z"/>
+    <g class="ln"><path d="M166 196 q10 4 22 0 M170 216 q8 4 18 0"/></g>
+    <circle class="fill" data-n="물방울" cx="236" cy="216" r="10"/><circle class="fill" data-n="물방울" cx="256" cy="196" r="8"/></svg>`},
+  {id:"giraffe", name:"기린", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="60" cy="60" r="24"/><g class="ln"><path d="M60 26 v-10 M94 60 h10 M84 36 l7 -7"/></g>
+    ${GR("땅",318)}
+    <path class="ln" d="M72 214 q-16 22 -16 46"/><ellipse class="fill" data-n="꼬리털" cx="56" cy="270" rx="10" ry="14"/>
+    <rect class="fill" data-n="다리" x="84" y="236" width="22" height="96" rx="11"/><rect class="fill" data-n="다리" x="114" y="236" width="22" height="94" rx="11"/>
+    <rect class="fill" data-n="다리" x="172" y="236" width="22" height="96" rx="11"/><rect class="fill" data-n="다리" x="202" y="236" width="22" height="94" rx="11"/>
+    <ellipse class="fill" data-n="몸통" cx="150" cy="224" rx="82" ry="46"/>
+    <path class="fill" data-n="목" d="M196 224 L224 96 h34 L240 226 Z"/>
+    <g class="ln"><line x1="250" y1="62" x2="246" y2="32"/><line x1="268" y1="64" x2="270" y2="34"/></g>
+    <circle class="fill" data-n="뿔" cx="246" cy="28" r="9"/><circle class="fill" data-n="뿔" cx="270" cy="30" r="9"/>
+    <ellipse class="fill" data-n="귀" cx="216" cy="70" rx="20" ry="10" transform="rotate(-20 216 70)"/>
+    <ellipse class="fill" data-n="머리" cx="258" cy="84" rx="40" ry="28"/>
+    <ellipse class="fill" data-n="주둥이" cx="292" cy="94" rx="24" ry="19"/>
+    <circle class="dk" cx="262" cy="78" r="7"/><circle class="wt" cx="264" cy="76" r="2.5"/>
+    <circle class="dk" cx="302" cy="88" r="3"/><path class="ln" d="M282 104 q12 8 24 0"/>
+    <circle class="fill" data-n="무늬" cx="112" cy="210" r="14"/><circle class="fill" data-n="무늬" cx="160" cy="200" r="12"/><circle class="fill" data-n="무늬" cx="150" cy="244" r="13"/>
+    <circle class="fill" data-n="무늬" cx="196" cy="236" r="11"/><circle class="fill" data-n="무늬" cx="225" cy="182" r="11"/><circle class="fill" data-n="무늬" cx="236" cy="132" r="10"/></svg>`},
+  {id:"monkey", name:"원숭이", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="꼬리" d="M236 300 q70 4 64 -60 q-4 -36 -34 -28 q22 8 18 30 q2 44 -48 38 Z"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="262" rx="70" ry="64"/><ellipse class="fill" data-n="배" cx="180" cy="274" rx="42" ry="44"/>
+    <ellipse class="fill" data-n="팔" cx="108" cy="250" rx="22" ry="38" transform="rotate(20 108 250)"/><ellipse class="fill" data-n="팔" cx="252" cy="250" rx="22" ry="38" transform="rotate(-20 252 250)"/>
+    <ellipse class="fill" data-n="다리" cx="140" cy="322" rx="28" ry="18"/><ellipse class="fill" data-n="다리" cx="220" cy="322" rx="28" ry="18"/>
+    <circle class="fill" data-n="귀" cx="104" cy="142" r="28"/><circle class="fill" data-n="귀" cx="256" cy="142" r="28"/><circle class="fill" data-n="귀안" cx="104" cy="142" r="14"/><circle class="fill" data-n="귀안" cx="256" cy="142" r="14"/>
+    <circle class="fill" data-n="머리" cx="180" cy="140" r="70"/>
+    <path class="ln" d="M172 72 q4 -16 16 -12 q-10 4 -6 12"/>
+    <path class="fill" data-n="얼굴" d="M180 112 q-20 -20 -42 -6 q-20 14 -12 40 q-14 26 6 44 q16 14 48 14 q32 0 48 -14 q20 -18 6 -44 q8 -26 -12 -40 q-22 -14 -42 6 Z"/>
+    <circle class="dk" cx="158" cy="136" r="8"/><circle class="dk" cx="202" cy="136" r="8"/><circle class="wt" cx="161" cy="133" r="3"/><circle class="wt" cx="205" cy="133" r="3"/>
+    <circle class="dk" cx="174" cy="162" r="3"/><circle class="dk" cx="186" cy="162" r="3"/>
+    <path class="ln" d="M152 176 q28 24 56 0"/></svg>`},
+  {id:"fox", name:"여우", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="꼬리" d="M230 310 Q320 320 316 230 Q312 180 270 176 Q296 210 280 250 Q264 290 230 290 Z"/>
+    <path class="fill" data-n="꼬리끝" d="M316 230 Q312 180 270 176 Q284 192 286 212 Q300 214 316 230 Z"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="278" rx="66" ry="58"/><ellipse class="fill" data-n="배" cx="180" cy="272" rx="34" ry="42"/>
+    <ellipse class="fill" data-n="발" cx="148" cy="326" rx="22" ry="13"/><ellipse class="fill" data-n="발" cx="212" cy="326" rx="22" ry="13"/>
+    <polygon class="fill" data-n="귀" points="104,126 112,40 166,104"/><polygon class="fill" data-n="귀" points="256,126 248,40 194,104"/>
+    <polygon class="fill" data-n="귀안" points="116,112 120,66 148,100"/><polygon class="fill" data-n="귀안" points="244,112 240,66 212,100"/>
+    <path class="fill" data-n="얼굴" d="M98 118 Q106 196 180 222 Q254 196 262 118 Q240 96 180 100 Q120 96 98 118 Z"/>
+    <path class="fill" data-n="턱" d="M115 172 Q150 152 180 176 Q210 152 245 172 Q226 208 180 222 Q134 208 115 172 Z"/>
+    <circle class="dk" cx="148" cy="142" r="8"/><circle class="dk" cx="212" cy="142" r="8"/><circle class="wt" cx="151" cy="139" r="3"/><circle class="wt" cx="215" cy="139" r="3"/>
+    <ellipse class="dk" cx="180" cy="184" rx="10" ry="7"/>
+    <path class="ln" d="M180 191 v6 M180 197 q-10 8 -18 2 M180 197 q10 8 18 2"/></svg>`},

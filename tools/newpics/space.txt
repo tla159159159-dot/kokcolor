@@ -1,0 +1,53 @@
+  {id:"satellite", name:"인공위성", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="행성" cx="296" cy="294" r="40"/><path class="ln" d="M262 280 q34 -8 68 4 M264 310 q30 8 60 -2"/>
+    <polygon class="fill" data-n="별" points="${star(60,60,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(60,300,16,7,5)}"/><polygon class="fill" data-n="별" points="${star(300,50,12,5,5)}"/>
+    <g transform="rotate(-20 180 180)">
+      <rect class="fill" data-n="연결대" x="96" y="172" width="168" height="16" rx="4"/>
+      <rect class="fill" data-n="태양전지판" x="40" y="140" width="80" height="80" rx="6"/>
+      <rect class="fill" data-n="태양전지판" x="240" y="140" width="80" height="80" rx="6"/>
+      <g class="ln"><path d="M67 140 v80 M94 140 v80 M40 180 h80 M267 140 v80 M294 140 v80 M240 180 h80"/></g>
+      <path class="ln" d="M180 100 v-34"/><circle class="fill" data-n="안테나" cx="180" cy="58" r="10"/>
+      <path class="fill" data-n="접시" d="M140 104 q40 -40 80 0 Z"/>
+      <rect class="fill" data-n="몸체" x="136" y="120" width="88" height="110" rx="16"/>
+      <rect class="fill" data-n="목" x="160" y="100" width="40" height="20" rx="4"/>
+      <circle class="dk" cx="162" cy="166" r="7"/><circle class="dk" cx="198" cy="166" r="7"/><path class="ln" d="M170 186 q10 10 20 0"/>
+      <ellipse class="fill" data-n="볼" cx="150" cy="186" rx="8" ry="6"/><ellipse class="fill" data-n="볼" cx="210" cy="186" rx="8" ry="6"/>
+      <rect class="fill" data-n="띠" x="136" y="206" width="88" height="14"/>
+    </g></svg>`},
+  {id:"earth", name:"지구", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(48,54,16,7,5)}"/><polygon class="fill" data-n="별" points="${star(316,314,16,7,5)}"/><polygon class="fill" data-n="별" points="${star(54,310,12,5,5)}"/>
+    <circle class="fill" data-n="달" cx="300" cy="64" r="34"/><circle class="fill" data-n="달무늬" cx="290" cy="56" r="8"/><circle class="fill" data-n="달무늬" cx="312" cy="76" r="6"/>
+    <circle class="fill" data-n="바다" cx="176" cy="186" r="128"/>
+    <path class="fill" data-n="땅" d="M104 104 q30 -34 72 -30 q18 14 2 32 q-30 6 -32 32 q-18 28 -50 20 q-16 -20 8 -54 Z"/>
+    <path class="fill" data-n="땅" d="M220 86 q40 10 58 46 q-14 18 -38 6 q-24 0 -32 -22 q-6 -22 12 -30 Z"/>
+    <path class="fill" data-n="땅" d="M74 210 q28 -10 44 14 q12 30 -4 52 q-20 0 -32 -20 q-12 -20 -8 -46 Z"/>
+    <path class="fill" data-n="땅" d="M240 236 q30 -14 50 2 q-10 36 -46 54 q-20 -8 -4 -56 Z"/>
+    <path class="fill" data-n="구름" d="M150 296 q-18 0 -16 -14 q2 -12 16 -10 q8 -12 24 -4 q16 -4 18 12 q12 4 4 16 Z"/>
+    <circle class="dk" cx="148" cy="188" r="9"/><circle class="dk" cx="204" cy="188" r="9"/><circle class="wt" cx="151" cy="184" r="3"/><circle class="wt" cx="207" cy="184" r="3"/>
+    <path class="ln" d="M160 216 q16 16 32 0"/>
+    <ellipse class="fill" data-n="볼" cx="126" cy="214" rx="14" ry="9"/><ellipse class="fill" data-n="볼" cx="226" cy="214" rx="14" ry="9"/></svg>`},
+  {id:"shootingstar", name:"별똥별", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="행성" cx="290" cy="292" r="34"/><ellipse class="fill" data-n="고리" cx="290" cy="292" rx="52" ry="12" transform="rotate(-18 290 292)"/><path class="fill" data-n="행성" d="M257 290 a34 34 0 0 1 64 -18 q-30 16 -64 18 Z"/>
+    <polygon class="fill" data-n="작은별" points="${star(300,60,16,7,5)}"/><polygon class="fill" data-n="작은별" points="${star(60,300,14,6,5)}"/><polygon class="fill" data-n="작은별" points="${star(180,320,10,4,5)}"/>
+    <path class="fill" data-n="꼬리" d="M190 124 q-70 -60 -150 -86 q-16 -2 -12 12 q80 40 146 102 Z"/>
+    <path class="fill" data-n="꼬리" d="M166 156 q-60 -40 -132 -54 q-14 0 -10 14 q70 22 130 70 Z"/>
+    <path class="fill" data-n="꼬리" d="M160 196 q-50 -22 -110 -24 q-14 4 -8 16 q60 6 112 34 Z"/>
+    <polygon class="fill" data-n="별" points="${star(220,176,92,46,5)}"/>
+    <circle class="dk" cx="204" cy="176" r="7"/><circle class="dk" cx="238" cy="176" r="7"/><path class="ln" d="M210 196 q11 11 22 0"/>
+    <ellipse class="fill" data-n="볼" cx="190" cy="196" rx="10" ry="7"/><ellipse class="fill" data-n="볼" cx="252" cy="196" rx="10" ry="7"/></svg>`},
+  {id:"rover", name:"탐사로봇", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="행성" cx="300" cy="64" r="34"/><polygon class="fill" data-n="별" points="${star(54,56,16,7,5)}"/><polygon class="fill" data-n="별" points="${star(200,40,12,5,5)}"/>
+    <path class="fill" data-n="땅" d="M8 280 q80 -20 170 -4 q90 16 174 -6 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>
+    <path class="fill" data-n="돌" d="M300 300 q4 -24 26 -20 q14 6 10 22 Z"/><path class="fill" data-n="돌" d="M24 312 q2 -18 20 -16 q12 4 10 18 Z"/>
+    <rect class="fill" data-n="태양전지판" x="66" y="160" width="228" height="20" rx="6"/>
+    <rect class="fill" data-n="목" x="122" y="96" width="16" height="66" rx="4"/>
+    <rect class="fill" data-n="머리" x="92" y="56" width="76" height="48" rx="16"/>
+    <circle class="fill" data-n="눈" cx="116" cy="80" r="14"/><circle class="fill" data-n="눈" cx="146" cy="80" r="14"/>
+    <circle class="dk" cx="118" cy="82" r="6"/><circle class="dk" cx="148" cy="82" r="6"/>
+    <path class="ln" d="M252 160 v-40"/><circle class="fill" data-n="안테나" cx="252" cy="112" r="10"/>
+    <rect class="fill" data-n="몸체" x="86" y="180" width="188" height="66" rx="14"/>
+    <path class="ln" d="M164 216 q16 14 32 0"/>
+    <circle class="fill" data-n="불빛" cx="114" cy="210" r="10"/><circle class="fill" data-n="불빛" cx="246" cy="210" r="10"/>
+    <path class="ln" d="M100 246 l-20 24 M180 246 v24 M260 246 l20 24"/>
+    <circle class="fill" data-n="바퀴" cx="80" cy="282" r="28"/><circle class="fill" data-n="바퀴" cx="180" cy="282" r="28"/><circle class="fill" data-n="바퀴" cx="280" cy="282" r="28"/>
+    <circle class="wt" cx="80" cy="282" r="11"/><circle class="wt" cx="180" cy="282" r="11"/><circle class="wt" cx="280" cy="282" r="11"/></svg>`},

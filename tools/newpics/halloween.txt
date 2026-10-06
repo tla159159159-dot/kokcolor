@@ -1,0 +1,56 @@
+  {id:"blackcat", name:"검은고양이", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="달" cx="270" cy="84" r="50"/><circle class="fill" data-n="달무늬" cx="252" cy="70" r="10"/><circle class="fill" data-n="달무늬" cx="288" cy="102" r="7"/>
+    <polygon class="fill" data-n="별" points="${star(66,62,18,8,5)}"/>
+    ${GR("담장",300)}
+    <path class="fill" data-n="꼬리" d="M240 296 q70 0 62 -70 q-4 -30 -30 -26 q18 8 16 28 q4 48 -48 46 Z"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="248" rx="76" ry="66"/>
+    <ellipse class="fill" data-n="발" cx="146" cy="306" rx="22" ry="13"/><ellipse class="fill" data-n="발" cx="214" cy="306" rx="22" ry="13"/>
+    <polygon class="fill" data-n="귀" points="122,124 112,62 168,108"/><polygon class="fill" data-n="귀" points="238,124 248,62 192,108"/>
+    <polygon class="fill" data-n="귀안" points="128,114 122,80 152,104"/><polygon class="fill" data-n="귀안" points="232,114 238,80 208,104"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="150" r="64"/>
+    <ellipse class="fill" data-n="눈" cx="154" cy="146" rx="15" ry="17"/><ellipse class="fill" data-n="눈" cx="206" cy="146" rx="15" ry="17"/>
+    <ellipse class="dk" cx="154" cy="148" rx="5" ry="11"/><ellipse class="dk" cx="206" cy="148" rx="5" ry="11"/>
+    <polygon class="dk" points="174,170 186,170 180,178"/>
+    <path class="ln" d="M180 178 v6 M180 184 q-12 10 -22 2 M180 184 q12 10 22 2"/>
+    <g class="ln"><line x1="122" y1="166" x2="90" y2="158"/><line x1="122" y1="178" x2="90" y2="180"/><line x1="238" y1="166" x2="270" y2="158"/><line x1="238" y1="178" x2="270" y2="180"/></g>
+    <path class="fill" data-n="리본" d="M180 218 l-26 -14 v28 Z M180 218 l26 -14 v28 Z"/><circle class="fill" data-n="방울" cx="180" cy="226" r="10"/></svg>`},
+  {id:"spiderweb", name:"거미줄", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="거미줄" points="160,12 264,55 307,160 264,265 160,308 56,265 13,160 56,55"/>
+    <polygon class="fill" data-n="거미줄" points="160,52 236,84 268,160 236,236 160,268 84,236 52,160 84,84"/>
+    <polygon class="fill" data-n="거미줄" points="160,92 208,112 228,160 208,208 160,228 112,208 92,160 112,112"/>
+    <polygon class="fill" data-n="거미줄" points="160,128 183,137 192,160 183,183 160,192 137,183 128,160 137,137"/>
+    <g class="ln"><path d="M160 12 V308 M13 160 H307 M56 55 L264 265 M264 55 L56 265"/></g>
+    <path class="ln" d="M252 160 V250"/>
+    <g class="ln"><path d="M226 276 q-26 -16 -38 4 M222 292 q-30 0 -36 22 M278 276 q26 -16 38 4 M282 292 q30 0 36 22 M232 306 q-16 14 -14 32 M272 306 q16 14 14 32"/></g>
+    <ellipse class="fill" data-n="거미" cx="252" cy="292" rx="34" ry="30"/>
+    <circle class="fill" data-n="거미머리" cx="252" cy="256" r="22"/>
+    <circle class="dk" cx="244" cy="254" r="5"/><circle class="dk" cx="260" cy="254" r="5"/><path class="ln" d="M245 265 q7 6 14 0"/>
+    <polygon class="fill" data-n="별" points="${star(310,50,20,9,5)}"/>
+    <polygon class="fill" data-n="별" points="${star(56,318,16,7,5)}"/></svg>`},
+  {id:"cauldron", name:"마법솥", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(310,50,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(50,56,18,8,5)}"/>
+    ${GR("땅",304)}
+    <rect class="fill" data-n="솥다리" x="92" y="200" width="22" height="100" rx="8"/><rect class="fill" data-n="솥다리" x="246" y="200" width="22" height="100" rx="8"/>
+    <path class="fill" data-n="불꽃" d="M130 304 q-20 -26 4 -46 q6 18 16 16 q-4 -24 18 -36 q4 26 20 32 q12 -8 6 -24 q26 20 14 58 Z"/>
+    <path class="fill" data-n="불꽃" d="M186 304 q-8 -22 10 -40 q8 16 18 12 q2 -20 18 -26 q-2 26 14 28 q8 -8 4 -22 q20 22 6 48 Z"/>
+    <g transform="translate(0,-30)"><path class="fill" data-n="솥" d="M70 128 h220 q18 44 0 84 q-30 32 -110 32 q-80 0 -110 -32 q-18 -40 0 -84 Z"/>
+    <path class="fill" data-n="물약" d="M84 128 q20 -30 46 -14 q20 -22 46 -4 q22 -20 48 0 q26 -16 48 14 Z"/>
+        <rect class="fill" data-n="솥테두리" x="58" y="120" width="244" height="26" rx="13"/>
+    <circle class="dk" cx="150" cy="176" r="8"/><circle class="dk" cx="210" cy="176" r="8"/>
+    <path class="ln" d="M164 194 q16 16 32 0"/>
+    <ellipse class="fill" data-n="볼" cx="122" cy="194" rx="15" ry="10"/><ellipse class="fill" data-n="볼" cx="238" cy="194" rx="15" ry="10"/></g>
+    <circle class="fill" data-n="방울" cx="128" cy="50" r="14"/><circle class="fill" data-n="방울" cx="190" cy="36" r="20"/><circle class="fill" data-n="방울" cx="246" cy="56" r="12"/></svg>`},
+  {id:"broom", name:"마녀빗자루", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="달" cx="270" cy="88" r="56"/><circle class="fill" data-n="달무늬" cx="250" cy="70" r="12"/><circle class="fill" data-n="달무늬" cx="292" cy="110" r="8"/>
+    <polygon class="fill" data-n="별" points="${star(64,60,20,9,5)}"/><polygon class="fill" data-n="별" points="${star(124,110,14,6,5)}"/>
+    <path class="fill" data-n="구름" d="M60 320 q-26 4 -26 -18 q-6 -22 20 -22 q6 -18 28 -8 q22 -8 26 16 q22 2 12 32 Z"/>
+    <path class="fill" data-n="구름" d="M250 330 q-26 4 -26 -18 q-6 -22 20 -22 q6 -18 28 -8 q22 -8 26 16 q22 2 12 32 Z"/>
+    <g transform="translate(-24,14) rotate(-24 180 200)">
+      <rect class="fill" data-n="손잡이" x="50" y="188" width="178" height="24" rx="12"/>
+      <path class="fill" data-n="빗자루털" d="M232 184 q56 -26 116 -34 q-16 50 0 100 q-60 -8 -116 -34 Z"/>
+      <path class="ln" d="M252 200 q44 -12 80 -20 M252 200 q44 12 80 20 M252 200 h86"/>
+      <rect class="fill" data-n="끈" x="216" y="172" width="30" height="56" rx="10"/>
+      <path class="fill" data-n="리본" d="M196 212 l-30 22 l20 6 l-4 16 l24 -38 Z"/>
+      <path class="fill" data-n="리본" d="M196 212 l14 34 l8 -14 l14 6 Z"/>
+    </g>
+</svg>`},

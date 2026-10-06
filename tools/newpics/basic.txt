@@ -1,0 +1,47 @@
+  {id:"cloud", name:"구름", svg:`<svg ${A}>${BG()}
+    ${rays(270,96,44,66,10,"햇살")}
+    <circle class="fill" data-n="해" cx="270" cy="96" r="36"/>
+    <path class="fill" data-n="작은구름" d="M40 92 a18 18 0 0 1 6 -34 a22 22 0 0 1 40 -6 a18 18 0 0 1 12 40 Z"/>
+    <path class="fill" data-n="구름" d="M80 236 a40 40 0 0 1 10 -80 a54 54 0 0 1 100 -24 a46 46 0 0 1 78 34 a38 38 0 0 1 12 70 Q180 252 80 236 Z"/>
+    <circle class="fill" data-n="볼" cx="128" cy="206" r="13"/><circle class="fill" data-n="볼" cx="232" cy="206" r="13"/>
+    <circle class="dk" cx="150" cy="186" r="8"/><circle class="dk" cx="210" cy="186" r="8"/><circle class="wt" cx="152" cy="183" r="3"/><circle class="wt" cx="212" cy="183" r="3"/>
+    <path class="ln" d="M160 210 q20 18 40 0"/>
+    <path class="fill" data-n="빗방울" d="M120 268 q-16 24 -12 34 a13 13 0 0 0 24 0 q4 -10 -12 -34 Z"/>
+    <path class="fill" data-n="빗방울" d="M180 282 q-16 24 -12 34 a13 13 0 0 0 24 0 q4 -10 -12 -34 Z"/>
+    <path class="fill" data-n="빗방울" d="M240 268 q-16 24 -12 34 a13 13 0 0 0 24 0 q4 -10 -12 -34 Z"/></svg>`},
+  {id:"umbrella", name:"우산", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="빗방울" d="M44 96 q-12 18 -9 26 a10 10 0 0 0 18 0 q3 -8 -9 -26 Z"/>
+    <path class="fill" data-n="빗방울" d="M316 70 q-12 18 -9 26 a10 10 0 0 0 18 0 q3 -8 -9 -26 Z"/>
+    <path class="fill" data-n="빗방울" d="M60 236 q-12 18 -9 26 a10 10 0 0 0 18 0 q3 -8 -9 -26 Z"/>
+    <path class="fill" data-n="빗방울" d="M300 222 q-12 18 -9 26 a10 10 0 0 0 18 0 q3 -8 -9 -26 Z"/>
+    <path class="fill" data-n="웅덩이" d="M70 326 q0 -16 60 -16 h100 q60 0 60 16 q0 14 -60 14 H130 q-60 0 -60 -14 Z"/>
+    <path class="fill" data-n="손잡이" d="M173 176 V290 a24 24 0 0 0 48 0 v-8 a7 7 0 0 0 -14 0 v8 a10 10 0 0 1 -20 0 V176 Z"/>
+    <circle class="fill" data-n="꼭지" cx="180" cy="62" r="11"/>
+    <path class="fill" data-n="우산" d="M180 70 A114 110 0 0 0 66 180 a28.5 22 0 0 1 57 0 Q120 110 180 70 Z"/>
+    <path class="fill" data-n="우산" d="M180 70 A114 110 0 0 1 294 180 a28.5 22 0 0 0 -57 0 Q240 110 180 70 Z"/>
+    <path class="fill" data-n="우산무늬" d="M180 70 Q120 110 123 180 a28.5 22 0 0 1 57 0 Z"/>
+    <path class="fill" data-n="우산무늬" d="M180 70 Q240 110 237 180 a28.5 22 0 0 0 -57 0 Z"/></svg>`},
+  {id:"kite", name:"연", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="언덕" d="M8 302 q92 -30 172 -4 q84 28 172 -4 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>
+    <circle class="fill" data-n="해" cx="306" cy="56" r="22"/><g class="ln"><path d="M306 24 v-8 M338 56 h8 M283 33 l-6 -6"/></g>
+    <path class="ln" d="M190 170 Q250 240 300 300"/>
+    <path class="fill" data-n="구름" d="M40 104 a18 18 0 0 1 6 -34 a22 22 0 0 1 40 -6 a18 18 0 0 1 12 40 Z"/>
+    <path class="fill" data-n="구름" d="M262 244 a18 18 0 0 1 6 -34 a22 22 0 0 1 40 -6 a18 18 0 0 1 12 40 Z"/>
+    <path class="ln" d="M180 250 q-40 26 -10 50 q30 22 -20 40"/>
+    <polygon class="fill" data-n="연" points="180,40 90,130 180,130"/>
+    <polygon class="fill" data-n="연" points="180,40 270,130 180,130"/>
+    <polygon class="fill" data-n="연" points="90,130 180,250 180,130"/>
+    <polygon class="fill" data-n="연" points="270,130 180,250 180,130"/>
+    <polygon class="fill" data-n="리본" points="134,262 182,290 182,262 134,290"/>
+    <polygon class="fill" data-n="리본" points="156,306 204,334 204,306 156,334"/></svg>`},
+  {id:"heart", name:"하트", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="작은하트" d="M60 106 c-26 -16 -26 -38 -11 -42 c6 -2 11 2 11 8 c0 -6 5 -10 11 -8 c15 4 15 26 -11 42 Z"/>
+    <path class="fill" data-n="작은하트" d="M300 96 c-26 -16 -26 -38 -11 -42 c6 -2 11 2 11 8 c0 -6 5 -10 11 -8 c15 4 15 26 -11 42 Z"/>
+    <path class="fill" data-n="작은하트" d="M64 322 c-26 -16 -26 -38 -11 -42 c6 -2 11 2 11 8 c0 -6 5 -10 11 -8 c15 4 15 26 -11 42 Z"/>
+    <path class="fill" data-n="작은하트" d="M298 330 c-26 -16 -26 -38 -11 -42 c6 -2 11 2 11 8 c0 -6 5 -10 11 -8 c15 4 15 26 -11 42 Z"/>
+    <polygon class="fill" data-n="반짝이" points="${star(46,200,18,7,4)}"/>
+    <polygon class="fill" data-n="반짝이" points="${star(316,200,18,7,4)}"/>
+    <path class="fill" data-n="하트" d="M180 308 C60 228 46 134 108 100 C150 80 176 110 180 132 C184 110 210 80 252 100 C314 134 300 228 180 308 Z"/>
+    <circle class="fill" data-n="볼" cx="130" cy="196" r="14"/><circle class="fill" data-n="볼" cx="230" cy="196" r="14"/>
+    <circle class="dk" cx="150" cy="172" r="9"/><circle class="dk" cx="210" cy="172" r="9"/><circle class="wt" cx="153" cy="168" r="3"/><circle class="wt" cx="213" cy="168" r="3"/>
+    <path class="ln" d="M160 200 q20 20 40 0"/></svg>`},

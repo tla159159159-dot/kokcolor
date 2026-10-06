@@ -24,13 +24,13 @@ const html = (title, sub, svgs, size) => `<!doctype html><meta charset="utf-8"><
   const shot = async (h, f) => { await p.setContent(h, { waitUntil: "networkidle" }); await p.evaluate(() => document.fonts.ready); await p.screenshot({ path: path.join(OUT, f), type: "jpeg", quality: 82 }); };
   for (const k of packs) {
     await shot(html(`${k.name.replace(/\s/g, "")}<br>색칠공부`, `도안 ${k.pics.length}종 · 인쇄 가능`, k.pics.slice(0, 2).map(x => x.svg), 230), `t-${k.id}.jpg`);
-    for (const x of k.pics) {
+    for (const x of k.pics) { if (fs.existsSync(path.join(IMG, x.id + ".png"))) continue; // 이미 만든 건 건너뜀
       await p.setViewportSize({ width: 800, height: 800 });
       await p.setContent(`<!doctype html><meta charset="utf-8"><link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet"><style>${lineCss}</style>${x.svg}<div class="wm">콕콕 kokcolor.kr</div>`, { waitUntil: "networkidle" });
       await p.evaluate(() => document.fonts.ready); await p.screenshot({ path: path.join(IMG, x.id + ".png") });
       await p.setViewportSize({ width: 1200, height: 630 });
     }
-    for (const x of k.pics) await shot(html(`${x.name}<br>색칠공부 도안`, "유아 색칠놀이 · 인쇄", [x.svg], 440), `${x.id}.jpg`);
+    for (const x of k.pics) if (!fs.existsSync(path.join(OUT, x.id + ".jpg"))) await shot(html(`${x.name}<br>색칠공부 도안`, "유아 색칠놀이 · 인쇄", [x.svg], 440), `${x.id}.jpg`);
   }
   await b.close(); console.log("og:", fs.readdirSync(OUT).length);
 })();

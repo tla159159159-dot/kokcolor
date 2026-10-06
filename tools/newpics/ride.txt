@@ -1,0 +1,61 @@
+  {id:"ambulance", name:"구급차", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="구름" d="M64 92 q-6 -26 20 -28 q10 -18 30 -8 q22 -6 22 18 q14 4 6 18 Z"/>
+    <path class="fill" data-n="길" d="M8 296 H352 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>
+    <g class="ln" stroke-dasharray="18 16"><line x1="30" y1="328" x2="330" y2="328"/></g>
+    <rect class="fill" data-n="경광등" x="112" y="112" width="44" height="26" rx="12"/>
+    <path class="fill" data-n="차체" d="M34 270 V150 a14 14 0 0 1 14 -14 H222 q14 0 22 12 L280 200 q8 10 26 12 q24 4 24 26 V270 q0 12 -12 12 H46 q-12 0 -12 -12 Z"/>
+    <path class="fill" data-n="창문" d="M232 154 L268 204 H232 Z"/>
+    <rect class="fill" data-n="줄무늬" x="34" y="226" width="296" height="18"/>
+    <path class="fill" data-n="십자" d="M110 166 h22 v-22 h24 v22 h22 v24 h-22 v22 h-24 v-22 h-22 Z"/>
+    <path class="ln" d="M222 150 V270"/><rect class="dk" x="238" y="210" width="16" height="6" rx="3"/>
+    <ellipse class="fill" data-n="전조등" cx="324" cy="222" rx="8" ry="10"/>
+    <circle class="fill" data-n="바퀴" cx="96" cy="282" r="30"/><circle class="fill" data-n="바퀴" cx="268" cy="282" r="30"/>
+    <circle class="wt" cx="96" cy="282" r="12"/><circle class="wt" cx="268" cy="282" r="12"/></svg>`},
+  {id:"excavator", name:"포크레인", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="60" cy="60" r="22"/><g class="ln"><path d="M60 28 v-8 M92 60 h8 M83 37 l6 -6"/></g>
+    ${GR("땅",300)}
+    <ellipse class="fill" data-n="흙더미" cx="310" cy="300" rx="38" ry="22"/>
+    <rect class="fill" data-n="뒷부분" x="32" y="196" width="40" height="48" rx="10"/>
+    <rect class="fill" data-n="몸체" x="52" y="204" width="176" height="56" rx="12"/>
+    <path class="fill" data-n="운전석" d="M112 204 V132 a10 10 0 0 1 10 -10 H184 q14 0 18 14 L220 204 Z"/>
+    <path class="fill" data-n="창문" d="M128 190 V138 H180 q8 0 10 8 L202 190 Z"/>
+    <polygon class="fill" data-n="붐" points="206,216 262,92 290,104 232,226"/>
+    <polygon class="fill" data-n="암" points="266,92 292,86 330,188 306,196"/>
+    <path class="fill" data-n="버킷" d="M296 188 H344 Q346 240 300 248 Q284 226 296 188 Z"/>
+    <g class="ln"><path d="M308 248 l-4 12 M324 242 l2 12"/></g>
+    <circle class="wt" cx="276" cy="98" r="9"/><circle class="wt" cx="318" cy="192" r="8"/><circle class="wt" cx="220" cy="220" r="8"/>
+    <rect class="fill" data-n="바퀴띠" x="36" y="262" width="210" height="52" rx="26"/>
+    <circle class="fill" data-n="바퀴" cx="66" cy="288" r="16"/><circle class="fill" data-n="바퀴" cx="114" cy="288" r="12"/><circle class="fill" data-n="바퀴" cx="168" cy="288" r="12"/><circle class="fill" data-n="바퀴" cx="216" cy="288" r="16"/></svg>`},
+  {id:"bicycle", name:"자전거", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="60" cy="60" r="22"/><g class="ln"><path d="M60 28 v-8 M92 60 h8 M83 37 l6 -6"/></g>
+    <path class="fill" data-n="구름" d="M196 84 q-6 -26 20 -28 q10 -18 30 -8 q22 -6 22 18 q14 4 6 18 Z"/>
+    ${GR("길",306)}
+    <circle class="fill" data-n="타이어" cx="94" cy="244" r="60"/><circle class="fill" data-n="바퀴" cx="94" cy="244" r="44"/>
+    <circle class="fill" data-n="타이어" cx="270" cy="244" r="60"/><circle class="fill" data-n="바퀴" cx="270" cy="244" r="44"/>
+    <g class="ln"><path d="M94 200 V288 M50 244 H138 M63 213 L125 275 M125 213 L63 275 M270 200 V288 M226 244 H314 M239 213 L301 275 M301 213 L239 275"/></g>
+    <path class="fill" data-n="몸체" d="M88 248 L154 146 H262 L186 262 Z M118 236 L172 244 L164 172 Z M180 162 L186 238 L236 162 Z"/>
+    <polygon class="fill" data-n="앞바퀴살대" points="248,150 262,146 276,244 262,248"/>
+    <path class="fill" data-n="핸들" d="M246 148 L238 110 H274 a9 9 0 0 1 0 18 H256 L262 146 Z"/>
+    <rect class="fill" data-n="안장기둥" x="146" y="126" width="14" height="26" rx="4"/>
+    <path class="fill" data-n="안장" d="M124 128 Q150 110 184 124 Q184 136 168 136 H136 Q122 136 124 128 Z"/>
+    <path class="fill" data-n="바구니" d="M272 84 H332 L322 136 H282 Z"/>
+    <g class="ln"><path d="M280 100 H326 M282 118 H324"/></g>
+    <circle class="fill" data-n="꽃" cx="292" cy="76" r="12"/><circle class="fill" data-n="꽃" cx="316" cy="72" r="12"/>
+    <circle class="fill" data-n="체인바퀴" cx="186" cy="256" r="16"/>
+    <rect class="fill" data-n="페달" x="190" y="276" width="28" height="12" rx="5"/><path class="ln" d="M186 256 L204 282"/>
+    <circle class="wt" cx="94" cy="244" r="8"/><circle class="wt" cx="270" cy="244" r="8"/></svg>`},
+  {id:"scooter", name:"오토바이", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="60" cy="60" r="22"/><g class="ln"><path d="M60 28 v-8 M92 60 h8 M83 37 l6 -6"/></g>
+    <path class="fill" data-n="구름" d="M150 90 q-6 -26 20 -28 q10 -18 30 -8 q22 -6 22 18 q14 4 6 18 Z"/>
+    <path class="fill" data-n="길" d="M8 300 H352 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>
+    <g class="ln" stroke-dasharray="18 16"><line x1="30" y1="330" x2="330" y2="330"/></g>
+    <circle class="fill" data-n="바퀴" cx="92" cy="272" r="36"/><circle class="fill" data-n="바퀴" cx="276" cy="272" r="36"/>
+    <circle class="wt" cx="92" cy="272" r="14"/><circle class="wt" cx="276" cy="272" r="14"/>
+    <polygon class="fill" data-n="손잡이대" points="252,148 266,144 252,96 238,100"/>
+    <rect class="fill" data-n="핸들" x="220" y="86" width="50" height="16" rx="8"/>
+    <path class="fill" data-n="몸체" d="M40 262 Q38 196 110 190 Q170 188 178 244 H226 L244 140 H272 L266 240 Q262 262 240 262 Z"/>
+    <path class="fill" data-n="흙받이" d="M236 254 Q276 214 316 254 V262 H236 Z"/>
+    <path class="fill" data-n="안장" d="M70 190 Q110 162 168 182 Q168 196 152 196 H82 Q66 196 70 190 Z"/>
+    <circle class="fill" data-n="전조등" cx="282" cy="132" r="16"/>
+    <rect class="fill" data-n="발판" x="170" y="244" width="62" height="12" rx="4"/>
+    <circle class="fill" data-n="뒷등" cx="44" cy="226" r="9"/></svg>`},

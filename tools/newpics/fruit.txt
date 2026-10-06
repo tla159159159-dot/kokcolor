@@ -1,0 +1,44 @@
+  {id:"cherry", name:"체리", svg:`<svg ${A}>${BG()}
+    ${GR("식탁",304)}
+    <path class="ln" d="M120 214 q20 -90 76 -136 M244 220 q-10 -80 -48 -142"/>
+    <path class="fill" data-n="잎" d="M198 78 q40 -46 96 -30 q-30 52 -96 30 Z"/><path class="ln" d="M206 76 q36 -14 72 -24"/>
+    <path class="fill" data-n="잎" d="M196 80 q-46 -30 -84 -6 q40 34 84 6 Z"/>
+    <circle class="fill" data-n="체리" cx="116" cy="246" r="58"/><circle class="fill" data-n="체리" cx="250" cy="250" r="56"/>
+    <ellipse class="wt" cx="92" cy="220" rx="10" ry="15" transform="rotate(30 92 220)"/><ellipse class="wt" cx="228" cy="224" rx="10" ry="15" transform="rotate(30 228 224)"/>
+    <circle class="dk" cx="100" cy="248" r="6"/><circle class="dk" cx="132" cy="248" r="6"/><path class="ln" d="M106 266 q10 10 20 0"/>
+    <circle class="dk" cx="234" cy="252" r="6"/><circle class="dk" cx="266" cy="252" r="6"/><path class="ln" d="M240 270 q10 10 20 0"/>
+    <ellipse class="fill" data-n="볼" cx="86" cy="264" rx="10" ry="7"/><ellipse class="fill" data-n="볼" cx="146" cy="264" rx="10" ry="7"/>
+    <ellipse class="fill" data-n="볼" cx="220" cy="268" rx="10" ry="7"/><ellipse class="fill" data-n="볼" cx="280" cy="268" rx="10" ry="7"/></svg>`},
+  {id:"tangerine", name:"귤", svg:`<svg ${A}>${BG()}
+    ${GR("식탁",304)}
+    <path class="fill" data-n="귤" d="M180 86 c80 0 124 52 120 116 c-4 66 -56 108 -120 108 c-64 0 -116 -42 -120 -108 c-4 -64 40 -116 120 -116 Z"/>
+    <ellipse class="wt" cx="112" cy="150" rx="12" ry="20" transform="rotate(30 112 150)"/>
+    <path class="fill" data-n="꼭지" d="M168 90 q12 -16 24 0 q-12 10 -24 0 Z"/>
+    <path class="fill" data-n="잎" d="M186 84 q30 -54 96 -46 q-24 58 -96 46 Z"/><path class="ln" d="M196 80 q40 -22 74 -34"/>
+    <path class="fill" data-n="잎" d="M176 84 q-30 -40 -78 -30 q26 40 78 30 Z"/>
+    <circle class="dk" cx="150" cy="196" r="8"/><circle class="dk" cx="210" cy="196" r="8"/>
+    <path class="ln" d="M164 222 q16 16 32 0"/>
+    <ellipse class="fill" data-n="볼" cx="124" cy="222" rx="16" ry="10"/><ellipse class="fill" data-n="볼" cx="236" cy="222" rx="16" ry="10"/>
+    <path class="fill" data-n="귤조각" d="M276 312 q-4 -42 34 -50 q22 30 -2 50 Z"/>
+    <path class="fill" data-n="귤조각" d="M40 312 q4 -40 38 -46 q16 30 -6 46 Z"/></svg>`},
+  {id:"corn", name:"옥수수", svg:`<svg ${A}>${BG()}
+    ${GR("밭",304)}
+    <path class="fill" data-n="수염" d="M168 52 q-6 -24 12 -32 q18 8 12 32 Z"/>
+    <path class="fill" data-n="옥수수알" d="M180 46 c48 0 62 60 60 130 c-2 64 -24 112 -60 112 c-36 0 -58 -48 -60 -112 c-2 -70 12 -130 60 -130 Z"/>
+    <g class="ln"><path d="M130 94 q50 -10 100 0 M123 132 q57 -10 114 0 M121 232 q59 -10 118 0 M130 268 q50 -10 100 0 M162 50 q-8 40 -10 98 M198 50 q8 40 10 98 M150 214 q0 40 6 74 M210 214 q0 40 -6 74"/></g>
+    <circle class="dk" cx="160" cy="174" r="7"/><circle class="dk" cx="200" cy="174" r="7"/><path class="ln" d="M168 194 q12 12 24 0"/>
+    <ellipse class="fill" data-n="볼" cx="146" cy="194" rx="10" ry="7"/><ellipse class="fill" data-n="볼" cx="214" cy="194" rx="10" ry="7"/>
+    <path class="fill" data-n="껍질" d="M180 312 q-70 -10 -96 -84 q-16 -50 -12 -110 q36 40 50 100 q12 54 58 94 Z"/>
+    <path class="fill" data-n="껍질" d="M180 312 q70 -10 96 -84 q16 -50 12 -110 q-36 40 -50 100 q-12 54 -58 94 Z"/>
+    <path class="ln" d="M104 160 q10 60 50 120 M256 160 q-10 60 -50 120"/></svg>`},
+  {id:"peach", name:"복숭아", svg:`<svg ${A}>${BG()}
+    ${GR("식탁",304)}
+    <path class="fill" data-n="복숭아" d="M180 108 c-40 -36 -116 -18 -116 64 c0 78 60 130 116 130 c56 0 116 -52 116 -130 c0 -82 -76 -100 -116 -64 Z"/>
+    <path class="ln" d="M180 108 q-50 40 -40 100"/>
+    <ellipse class="wt" cx="100" cy="150" rx="11" ry="20" transform="rotate(20 100 150)"/>
+    <path class="fill" data-n="꼭지" d="M174 110 q-2 -26 8 -40 l8 4 q-8 14 -6 36 Z"/>
+    <path class="fill" data-n="잎" d="M186 84 q34 -50 96 -40 q-26 56 -96 40 Z"/><path class="ln" d="M196 80 q40 -20 72 -30"/>
+    <path class="fill" data-n="잎" d="M178 86 q-38 -40 -84 -24 q32 40 84 24 Z"/>
+    <circle class="dk" cx="160" cy="214" r="7"/><circle class="dk" cx="222" cy="214" r="7"/>
+    <path class="ln" d="M180 236 q11 12 22 0"/>
+    <ellipse class="fill" data-n="볼" cx="140" cy="238" rx="14" ry="9"/><ellipse class="fill" data-n="볼" cx="244" cy="238" rx="14" ry="9"/></svg>`},

@@ -1,0 +1,64 @@
+  {id:"prince", name:"왕자님", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="망토" d="M140 188 Q100 250 90 316 H270 Q260 250 220 188 Z"/>
+    <rect class="fill" data-n="다리" x="152" y="268" width="24" height="44" rx="6"/><rect class="fill" data-n="다리" x="184" y="268" width="24" height="44" rx="6"/>
+    <ellipse class="fill" data-n="부츠" cx="160" cy="316" rx="22" ry="12"/><ellipse class="fill" data-n="부츠" cx="200" cy="316" rx="22" ry="12"/>
+    <ellipse class="fill" data-n="팔" cx="134" cy="226" rx="13" ry="34" transform="rotate(14 134 226)"/><ellipse class="fill" data-n="팔" cx="226" cy="226" rx="13" ry="34" transform="rotate(-14 226 226)"/>
+    <circle class="fill" data-n="손" cx="126" cy="262" r="11"/><circle class="fill" data-n="손" cx="234" cy="262" r="11"/>
+    <path class="fill" data-n="옷" d="M146 192 Q180 176 214 192 L222 276 H138 Z"/>
+    <rect class="fill" data-n="허리띠" x="138" y="240" width="84" height="16" rx="6"/>
+    <rect class="fill" data-n="버클" x="170" y="238" width="20" height="20" rx="4"/>
+    <path class="ln" d="M180 192 v44"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="140" r="42"/>
+    <path class="fill" data-n="머리카락" d="M136 138 Q132 90 180 90 Q228 90 224 138 Q212 112 180 114 Q160 114 150 124 Q144 128 136 138 Z"/>
+    <path class="fill" data-n="왕관" d="M148 98 L152 64 L166 80 L180 58 L194 80 L208 64 L212 98 Z"/>
+    <circle class="fill" data-n="보석" cx="180" cy="86" r="7"/>
+    <circle class="dk" cx="166" cy="140" r="5"/><circle class="dk" cx="194" cy="140" r="5"/>
+    <circle class="fill" data-n="볼" cx="156" cy="154" r="7"/><circle class="fill" data-n="볼" cx="204" cy="154" r="7"/>
+    <path class="ln" d="M170 160 q10 8 20 0"/>
+    <polygon class="fill" data-n="별" points="${star(60,80,20,9,5)}"/><polygon class="fill" data-n="별" points="${star(300,90,18,8,5)}"/></svg>`},
+  {id:"carriage", name:"호박마차", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(56,62,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(306,62,18,8,5)}"/>
+    ${GR("길",304)}
+    <ellipse class="fill" data-n="호박" cx="124" cy="180" rx="62" ry="88"/>
+    <ellipse class="fill" data-n="호박" cx="236" cy="180" rx="62" ry="88"/>
+    <ellipse class="fill" data-n="호박" cx="180" cy="178" rx="66" ry="96"/>
+    <path class="fill" data-n="꼭지" d="M172 86 Q170 62 180 52 Q192 58 188 86 Z"/>
+    <path class="fill" data-n="잎" d="M188 70 Q220 46 240 66 Q216 86 188 70 Z"/>
+    <path class="fill" data-n="창문" d="M148 210 V168 a32 32 0 0 1 64 0 V210 Z"/>
+    <g class="ln"><path d="M180 136 V210 M148 180 H212"/></g>
+    <rect class="fill" data-n="받침" x="70" y="256" width="220" height="18" rx="9"/>
+    <circle class="fill" data-n="바퀴" cx="104" cy="284" r="36"/><circle class="fill" data-n="바퀴" cx="256" cy="284" r="36"/>
+    <g class="ln"><path d="M104 248 V320 M68 284 H140 M80 260 L128 308 M128 260 L80 308 M256 248 V320 M220 284 H292 M232 260 L280 308 M280 260 L232 308"/></g>
+    <circle class="fill" data-n="바퀴축" cx="104" cy="284" r="11"/><circle class="fill" data-n="바퀴축" cx="256" cy="284" r="11"/></svg>`},
+  {id:"fairy", name:"요정", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="날개" cx="116" cy="160" rx="52" ry="32" transform="rotate(-30 116 160)"/>
+    <ellipse class="fill" data-n="날개" cx="244" cy="160" rx="52" ry="32" transform="rotate(30 244 160)"/>
+    <ellipse class="fill" data-n="아랫날개" cx="128" cy="222" rx="40" ry="24" transform="rotate(25 128 222)"/>
+    <ellipse class="fill" data-n="아랫날개" cx="232" cy="222" rx="40" ry="24" transform="rotate(-25 232 222)"/>
+    <rect class="fill" data-n="다리" x="162" y="276" width="14" height="34" rx="6"/><rect class="fill" data-n="다리" x="184" y="276" width="14" height="34" rx="6"/>
+    <ellipse class="fill" data-n="신발" cx="166" cy="314" rx="16" ry="10"/><ellipse class="fill" data-n="신발" cx="194" cy="314" rx="16" ry="10"/>
+    <rect class="fill" data-n="팔" x="198" y="184" width="62" height="16" rx="8" transform="rotate(-40 198 192)"/>
+    <rect class="fill" data-n="팔" x="100" y="184" width="62" height="16" rx="8" transform="rotate(-30 162 192)"/>
+    <path class="fill" data-n="드레스" d="M180 172 Q158 172 154 192 L120 270 Q136 284 150 272 Q164 286 180 272 Q196 286 210 272 Q224 284 240 270 L206 192 Q202 172 180 172 Z"/>
+    <path class="ln" d="M150 230 q30 14 60 0"/>
+    <g class="ln"><path d="M244 150 L282 104"/></g>
+    <polygon class="fill" data-n="요술봉별" points="${star(288,94,26,11,5)}"/>
+    <circle class="fill" data-n="손" cx="246" cy="152" r="10"/>
+    <path class="fill" data-n="머리카락" d="M144 128 Q132 70 180 70 Q228 70 216 128 Q226 152 210 160 Q180 150 150 160 Q134 152 144 128 Z"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="128" r="36"/>
+    <path class="fill" data-n="앞머리" d="M146 120 Q150 88 180 88 Q210 88 214 120 Q196 104 180 112 Q164 104 146 120 Z"/>
+    <circle class="fill" data-n="머리띠꽃" cx="210" cy="86" r="12"/>
+    <circle class="dk" cx="168" cy="130" r="5"/><circle class="dk" cx="192" cy="130" r="5"/>
+    <circle class="fill" data-n="볼" cx="158" cy="142" r="6"/><circle class="fill" data-n="볼" cx="202" cy="142" r="6"/>
+    <path class="ln" d="M172 146 q8 6 16 0"/>
+    <circle class="fill" data-n="반짝" cx="60" cy="70" r="9"/><circle class="fill" data-n="반짝" cx="66" cy="300" r="8"/><circle class="fill" data-n="반짝" cx="300" cy="292" r="9"/></svg>`},
+  {id:"glassshoe", name:"유리구두", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="반짝" points="${star(70,72,22,9,4)}"/><polygon class="fill" data-n="반짝" points="${star(292,70,18,7,4)}"/><polygon class="fill" data-n="반짝" points="${star(316,150,12,5,4)}"/>
+    <rect class="fill" data-n="쿠션" x="40" y="236" width="280" height="70" rx="30"/>
+    <circle class="fill" data-n="술" cx="44" cy="306" r="12"/><circle class="fill" data-n="술" cx="316" cy="306" r="12"/><circle class="fill" data-n="술" cx="44" cy="240" r="12"/><circle class="fill" data-n="술" cx="316" cy="240" r="12"/>
+    <path class="fill" data-n="굽" d="M86 160 L98 240 H116 L122 176 Z"/>
+    <path class="fill" data-n="구두" d="M80 112 Q70 150 92 176 Q150 208 196 226 Q240 242 280 242 Q306 242 306 222 Q306 204 278 198 Q236 192 196 162 Q156 128 124 106 Q96 92 80 112 Z"/>
+    <path class="fill" data-n="구두안쪽" d="M92 118 Q104 104 128 120 Q166 146 200 176 Q160 170 120 150 Q94 138 92 118 Z"/>
+    <path class="ln" d="M110 182 Q190 230 290 230"/>
+    <path class="fill" data-n="리본" d="M236 196 L212 178 L214 212 Z"/><path class="fill" data-n="리본" d="M236 196 L262 182 L256 214 Z"/>
+    <circle class="fill" data-n="리본" cx="236" cy="198" r="9"/></svg>`},
