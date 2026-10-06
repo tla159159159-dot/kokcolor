@@ -1966,6 +1966,7 @@ function closeGold(){ goldModal.classList.remove("show"); }
 document.getElementById("goldClose").addEventListener("click",closeGold);
 goldModal.addEventListener("click",e=>{ if(e.target===goldModal) closeGold(); });
 document.getElementById("goldBtn").addEventListener("click",openGold);
+navPremium.addEventListener("click",openGold);
 document.getElementById("goldBuyBtn").addEventListener("click",()=>{
   if(isGold){ closeGold(); return; }
   if(!me.loggedIn){ location.href="/api/kakao-login?next=gold"; return; }
