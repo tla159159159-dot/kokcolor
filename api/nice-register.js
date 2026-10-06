@@ -2,6 +2,7 @@
 const { getSession } = require("./_session");
 const { redis } = require("./_db");
 const { registBid, expireBid, chargeMonth } = require("./_nice");
+const TEST_UID = "kakao:5115936774";
 module.exports = async (req, res) => {
   if (req.method !== "POST") return res.status(405).end();
   const s = getSession(req);
@@ -20,6 +21,8 @@ module.exports = async (req, res) => {
   try {
     const r = await registBid(s.uid, card);
     bid = r.bid;
+    // ponytail: 운영자 계정은 카드 확인만 하고 결제 안 함(빌키 즉시 삭제). 실결제 테스트 끝나면 TEST_UID 지워도 됨
+    if (s.uid === TEST_UID) { await expireBid(bid); return res.json({ ok: false, msg: `✅ 카드 확인 성공 (${r.cardName || "카드"}) · 결제는 안 됐어요` }); }
     const old = JSON.parse((await redis("GET", `kok:sub:${s.uid}`)) || "null");
     const sub = { bid, card: r.cardName, active: true, since: Date.now(), fails: 0 };
     const until = await chargeMonth(s.uid, sub);
