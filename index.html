@@ -411,6 +411,22 @@
     .panel{padding:16px}
     .swatches{grid-template-columns:repeat(8,1fr);gap:10px}
   }
+  /* ---------- 태블릿(패드) ---------- */
+  @media (min-width:601px) and (max-width:1100px){
+    .stage{grid-template-columns:minmax(0,1fr) 250px;gap:16px}
+    .panel{position:sticky;top:76px;padding:14px;max-height:calc(100dvh - 90px);overflow:auto}
+    .swatches{grid-template-columns:repeat(5,1fr);gap:8px}
+    .pack-chips button{font-size:15px;padding:11px 16px}
+    .tools{grid-template-columns:1fr}
+  }
+  /* 도안이 화면 높이를 넘지 않게: 패드 가로·노트북에서 색칠하다 스크롤 안 해도 되도록 */
+  @media (min-width:601px){
+    .paper-inner{max-width:max(320px,calc(100dvh - 250px));margin:0 auto}
+  }
+  /* 터치 기기에서는 hover 들썩임 끄기(눌린 채 멈춰 보이는 현상 방지) */
+  @media (hover:none){
+    .sw:not(.on):hover,.grid a:hover,.fam:hover,.thumb:hover{transform:none}
+  }
   @media (max-width:600px){
     .wrap{padding:0 14px 36px}
     .hero{margin-bottom:22px}
