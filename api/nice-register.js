@@ -7,7 +7,8 @@ module.exports = async (req, res) => {
   if (req.method !== "POST") return res.status(405).end();
   const s = getSession(req);
   if (!s) return res.status(401).json({ ok: false, msg: "로그인이 필요해요." });
-  if (!process.env.NICEPAY_CLIENT_KEY) return res.status(503).json({ ok: false, msg: "골드 오픈 준비 중이에요." });
+  // 콕콕 전용 상점 키 받기 전엔 잠금 — 받으면 Vercel에 NICEPAY_OPEN=1
+  if (!process.env.NICEPAY_CLIENT_KEY || !process.env.NICEPAY_OPEN) return res.status(503).json({ ok: false, msg: "골드 오픈 준비 중이에요." });
   // 카드 대입 공격 방지: 계정당 하루 5번
   const tryKey = `kok:cardtry:${s.uid}:${new Date().toISOString().slice(0, 10)}`;
   if (Number(await redis("INCR", tryKey)) > 5) return res.status(429).json({ ok: false, msg: "오늘은 시도 횟수를 넘었어요. 내일 다시 해 주세요." });
