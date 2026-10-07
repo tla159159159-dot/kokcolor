@@ -62,3 +62,37 @@
     <path class="ln" d="M110 182 Q190 230 290 230"/>
     <path class="fill" data-n="리본" d="M236 196 L212 178 L214 212 Z"/><path class="fill" data-n="리본" d="M236 196 L262 182 L256 214 Z"/>
     <circle class="fill" data-n="리본" cx="236" cy="198" r="9"/></svg>`},
+
+{id:"mirror", name:"마법 거울", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(54,70,20,9,5)}"/><polygon class="fill" data-n="별" points="${star(310,80,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(300,250,14,6,4)}"/><polygon class="fill" data-n="별" points="${star(58,240,14,6,4)}"/>
+    <path class="fill" data-n="받침" d="M120 340 Q124 306 180 302 Q236 306 240 340 Z"/>
+    <rect class="fill" data-n="기둥" x="168" y="270" width="24" height="36" rx="6"/>
+    <ellipse class="fill" data-n="틀" cx="180" cy="168" rx="96" ry="114"/>
+    <ellipse class="fill" data-n="거울" cx="180" cy="172" rx="70" ry="88"/>
+    <g class="ln"><path d="M138 130 l30 -30 M136 160 l52 -52"/></g>
+    <path class="fill" data-n="왕관" d="M146 66 L150 30 L166 48 L180 22 L194 48 L210 30 L214 66 Z"/>
+    <circle class="fill" data-n="보석" cx="180" cy="52" r="7"/>
+    <path class="fill" data-n="하트" d="M180 290 q-22 -14 -22 -30 q0 -14 14 -14 q8 0 8 10 q0 -10 8 -10 q14 0 14 14 q0 16 -22 30 Z"/>
+    <circle class="fill" data-n="보석" cx="90" cy="168" r="10"/><circle class="fill" data-n="보석" cx="270" cy="168" r="10"/>
+    <circle class="dk" cx="160" cy="180" r="6"/><circle class="dk" cx="200" cy="180" r="6"/>
+    <circle class="fill" data-n="볼" cx="148" cy="198" r="8"/><circle class="fill" data-n="볼" cx="212" cy="198" r="8"/>
+    <path class="ln" d="M168 204 q12 10 24 0"/></svg>`},
+  {id:"babydragon", name:"아기 용", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(52,62,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(310,58,16,7,5)}"/>
+    ${GR("풀밭",304)}
+    <path class="fill" data-n="날개" d="M130 190 Q70 130 40 160 Q60 170 52 196 Q76 192 84 214 Q100 200 128 220 Z"/>
+    <path class="fill" data-n="날개" d="M230 190 Q290 130 320 160 Q300 170 308 196 Q284 192 276 214 Q260 200 232 220 Z"/>
+    <path class="fill" data-n="꼬리" d="M226 286 Q290 296 300 260 Q306 240 322 246 Q314 230 296 238 Q280 270 228 262 Z"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="248" rx="62" ry="64"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="258" rx="38" ry="46"/>
+    <g class="ln"><path d="M148 238 h64 M144 260 h72 M148 282 h64"/></g>
+    <ellipse class="fill" data-n="발" cx="138" cy="308" rx="26" ry="14"/><ellipse class="fill" data-n="발" cx="222" cy="308" rx="26" ry="14"/>
+    <ellipse class="fill" data-n="팔" cx="128" cy="244" rx="12" ry="22" transform="rotate(30 128 244)"/><ellipse class="fill" data-n="팔" cx="232" cy="244" rx="12" ry="22" transform="rotate(-30 232 244)"/>
+    <path class="fill" data-n="뿔" d="M140 112 L128 64 L162 100 Z"/><path class="fill" data-n="뿔" d="M220 112 L232 64 L198 100 Z"/>
+    <ellipse class="fill" data-n="머리" cx="180" cy="140" rx="64" ry="54"/>
+    <path class="fill" data-n="볏" d="M168 88 L180 70 L192 88 Z"/>
+    <ellipse class="fill" data-n="주둥이" cx="180" cy="168" rx="36" ry="22"/>
+    <circle class="dk" cx="170" cy="164" r="3"/><circle class="dk" cx="190" cy="164" r="3"/>
+    <circle class="wt" cx="152" cy="130" r="12"/><circle class="dk" cx="154" cy="132" r="7"/><circle class="wt" cx="208" cy="130" r="12"/><circle class="dk" cx="210" cy="132" r="7"/>
+    <circle class="fill" data-n="볼" cx="132" cy="156" r="8"/><circle class="fill" data-n="볼" cx="228" cy="156" r="8"/>
+    <path class="ln" d="M170 176 q10 8 20 0"/></svg>`},

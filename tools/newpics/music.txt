@@ -52,3 +52,24 @@
     <circle class="fill" data-n="마이크머리" cx="180" cy="110" r="62"/>
     <g class="ln"><path d="M122 90 h116 M118 112 h124 M124 134 h112 M152 54 v110 M180 48 v124 M208 54 v110"/></g>
     </g></svg>`},
+
+{id:"saxophone", name:"색소폰", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="음표" d="M290 120 v-60 l30 -8 v52 a12 10 0 1 1 -8 -8 v-28 l-14 4 v48 a12 10 0 1 1 -8 0 Z"/>
+    <polygon class="fill" data-n="별" points="${star(58,250,22,9,5)}"/>
+    <path class="fill" data-n="목관" d="M138 100 q-2 -40 -44 -52 l-4 16 q30 8 30 36 Z"/>
+    <rect class="fill" data-n="마우스피스" x="62" y="40" width="34" height="18" rx="7" transform="rotate(16 79 49)"/>
+    <path class="fill" data-n="몸통" d="M118 96 H162 V258 q0 26 26 26 q24 0 30 -26 L236 184 H284 L262 270 q-14 58 -76 58 q-68 0 -68 -70 Z"/>
+    <path class="fill" data-n="나팔" d="M236 184 L200 150 H322 L284 184 Z"/>
+    <ellipse class="fill" data-n="나팔 입구" cx="261" cy="148" rx="64" ry="18"/>
+    <ellipse class="fill" data-n="띠" cx="140" cy="100" rx="26" ry="9"/>
+    <circle class="fill" data-n="키" cx="140" cy="140" r="11"/><circle class="fill" data-n="키" cx="140" cy="172" r="11"/><circle class="fill" data-n="키" cx="140" cy="204" r="11"/><circle class="fill" data-n="키" cx="140" cy="236" r="11"/>
+    <circle class="fill" data-n="키" cx="200" cy="300" r="11"/><circle class="fill" data-n="키" cx="236" cy="286" r="11"/></svg>`},
+  {id:"triangle", name:"트라이앵글", svg:`<svg ${A}>${BG()}
+    <path class="ln" d="M180 36 V84"/>
+    <rect class="fill" data-n="고리" x="150" y="22" width="60" height="18" rx="8"/>
+    <path class="fill" data-n="트라이앵글" d="M76 262 L180 80 L304 294 L92 294 L112 276 L272 276 L180 114 L98 258 Z"/>
+    <g transform="rotate(-35 270 170)"><rect class="fill" data-n="채" x="264" y="96" width="12" height="150" rx="6"/><circle class="fill" data-n="채 손잡이" cx="270" cy="246" r="12"/></g>
+    <g class="ln"><path d="M60 150 q-14 16 0 32 M40 140 q-24 26 0 52 M316 240 q14 14 0 30"/></g>
+    <path class="fill" data-n="음표" d="M64 96 v-44 l26 -8 v40 a11 9 0 1 1 -7 -7 v-20 l-12 3 v36 a11 9 0 1 1 -7 0 Z"/>
+    <path class="fill" data-n="음표" d="M300 104 v-48 l18 -6 v10 l-10 4 v40 a11 9 0 1 1 -8 0 Z"/>
+    <polygon class="fill" data-n="별" points="${star(312,160,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(54,240,18,8,5)}"/></svg>`},

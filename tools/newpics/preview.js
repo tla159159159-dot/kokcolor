@@ -16,7 +16,7 @@ const css = `body{margin:0;display:flex;flex-wrap:wrap;gap:12px;padding:12px;bac
 .c{background:#fff;padding:6px;text-align:center}svg{width:180px;height:180px;display:block}
 .fill{fill:#fff;stroke:#2a2533;stroke-width:4;stroke-linejoin:round}.ln{fill:none;stroke:#2a2533;stroke-width:4;stroke-linecap:round}.dk{fill:#2a2533}.wt{fill:#fff;stroke:#2a2533;stroke-width:3}`;
 (async () => {
-  const b = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium" }), pg = await b.newPage({ viewport: { width: 1600, height: 400 } });
+  const b = await chromium.launch({ executablePath: "/opt/pw-browsers/chromium" }), pg = await b.newPage({ viewport: { width: 1800, height: 400 } });
   await pg.setContent(`<style>${css}</style>` + pics.map(p => `<div class="c">${p.svg}<div>${p.id} · ${p.name}</div></div>`).join(""));
   await pg.screenshot({ path: process.argv[3], fullPage: true }); await b.close(); console.log("ok", pics.length);
 })();

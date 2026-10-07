@@ -76,13 +76,13 @@ for (const p of packs) {
   const names = p.pics.map(x => x.name).join("·");
   // 테마 페이지
   fs.writeFileSync(path.join(OUT, KO[p.id] + ".html"), page({
-    title: `${t.kw} ${p.pics.length}종 | 무료 색칠·인쇄 - 콕콕`,
-    desc: `${t.kw} ${p.pics.length}종(${names})을 화면에서 무료로 색칠하고 종이로 인쇄해요. 가입 없이 바로 시작!`,
+    title: `${t.kw} ${p.pics.length}종 | 색칠·인쇄 무료 체험 - 콕콕`,
+    desc: `${t.kw} ${p.pics.length}종(${names}). 첫 그림(${p.pics[0].name})은 가입 없이 무료로 색칠해 보고, 골드로 전부 색칠·인쇄해요.`,
     canon: themeUrl(p), og: `/og/t-${p.id}.jpg`,
     h1: `${p.emoji} ${t.kw} <small>${p.pics.length}종</small>`,
     crumbs: [["홈", "/"], ["색칠공부 도안", "/#pics"], [t.kw, themeUrl(p)]],
     body: `<p class="intro">${t.intro}</p>
-<a class="big-cta" href="/?pic=${p.pics[0].id}">🎨 지금 바로 무료로 색칠하기</a>
+<a class="big-cta" href="/?pic=${p.pics[0].id}">🎨 무료 체험 그림 색칠하기</a>
 <ul class="grid">${p.pics.map(x => `<li><a href="${picUrl(p, x)}"><img src="/img/${x.id}.png" alt="${esc(x.name)} 색칠공부 도안" width="400" height="400" loading="lazy" decoding="async"><span>${x.name} 색칠공부</span></a></li>`).join("")}</ul>`,
   }));
   urls.push(themeUrl(p)); imgOf[themeUrl(p)] = p.pics.map(x => x.id); p.pics.forEach(x => { imgOf[picUrl(p, x)] = [x.id]; });
@@ -90,15 +90,16 @@ for (const p of packs) {
   p.pics.forEach((x, i) => {
     const others = p.pics.filter(o => o.id !== x.id);
     redirects.push({ source: `/doan/${p.id}/${x.id}`, destination: encodeURI(picUrl(p, x)), permanent: true });
+    const fr = i === 0; // 테마별 첫 그림만 무료 체험 (index.html 과 같은 규칙)
     fs.writeFileSync(path.join(OUT, KO[p.id], slug(x.name) + ".html"), page({
-      title: `${x.name} 색칠공부 도안 | 무료 색칠·인쇄 - 콕콕`,
-      desc: `${x.name} 색칠공부 도안을 화면에서 무료로 바로 색칠하고, 종이로 인쇄해서 칠할 수도 있어요. ${t.kw} 모음 콕콕.`,
+      title: `${x.name} 색칠공부 도안 | ${fr ? "무료 색칠·인쇄" : "색칠·인쇄"} - 콕콕`,
+      desc: fr ? `${x.name} 색칠공부 도안을 화면에서 무료로 바로 색칠하고, 종이로 인쇄해서 칠할 수도 있어요. ${t.kw} 모음 콕콕.` : `${x.name} 색칠공부 도안을 화면에서 색칠하고 종이로 인쇄해요. ${t.kw}의 첫 그림은 무료 체험, 전체는 골드. 콕콕.`,
       canon: picUrl(p, x), og: `/og/${x.id}.jpg`,
       h1: `${x.name} 색칠공부 도안`,
       crumbs: [["홈", "/"], [t.kw, themeUrl(p)], [x.name, picUrl(p, x)]],
-      body: `<div class="hero-pic"><img src="/img/${x.id}.png" alt="${esc(x.name)} 색칠공부 도안 - 유아 색칠놀이 무료 인쇄" width="800" height="800" fetchpriority="high"></div>
+      body: `<div class="hero-pic"><img src="/img/${x.id}.png" alt="${esc(x.name)} 색칠공부 도안 - 유아 색칠놀이" width="800" height="800" fetchpriority="high"></div>
 <div class="cta-row"><a class="big-cta" href="/?pic=${x.id}">🎨 화면에서 색칠하기</a><a class="ghost-cta" href="/?pic=${x.id}&amp;print=1">🖨️ 종이로 인쇄하기</a></div>
-<p class="intro">${x.name} 그림은 ${t.kw} ${p.pics.length}종 중 하나예요. 칸을 누르면 바로 색이 채워져서 아직 손이 서툰 유아도 쉽게 완성할 수 있어요. 색칠은 무료이고, 카카오 로그인하면 매주 3장까지 무료로 인쇄할 수 있어요.</p>
+<p class="intro">${x.name} 그림은 ${t.kw} ${p.pics.length}종 중 하나예요. 칸을 누르면 바로 색이 채워져서 아직 손이 서툰 유아도 쉽게 완성할 수 있어요. ${fr ? "이 그림은 무료 체험 도안이라 바로 색칠할 수 있고, 카카오 로그인하면 매주 3장까지 무료로 인쇄할 수 있어요." : `이 그림은 골드(월 2,900원) 도안이에요. ${t.kw}의 첫 그림(${p.pics[0].name})은 무료로 해 볼 수 있어요.`}</p>
 <h2>같은 테마 도안</h2>
 <ul class="grid">${others.map(o => `<li><a href="${picUrl(p, o)}">${svgA11y(o.svg, o.name + " 색칠공부 도안")}<span>${o.name}</span></a></li>`).join("")}</ul>`,
     }));
@@ -118,7 +119,7 @@ const items = [];
 for (const p of packs) {
   const t = THEME[p.id];
   items.push({ title: `${t.kw} ${p.pics.length}종`, url: themeUrl(p), desc: t.intro });
-  p.pics.forEach(x => items.push({ title: `${x.name} 색칠공부 도안`, url: picUrl(p, x), desc: `${x.name} 색칠공부 도안을 화면에서 무료로 색칠하고 인쇄해요. ${t.kw} 모음.` }));
+  p.pics.forEach(x => items.push({ title: `${x.name} 색칠공부 도안`, url: picUrl(p, x), desc: `${x.name} 색칠공부 도안을 화면에서 색칠하고 인쇄해요. ${t.kw} 모음.` }));
 }
 fs.writeFileSync(path.join(ROOT, "rss.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0"><channel>

@@ -51,3 +51,35 @@
     <circle class="dk" cx="148" cy="142" r="8"/><circle class="dk" cx="212" cy="142" r="8"/><circle class="wt" cx="151" cy="139" r="3"/><circle class="wt" cx="215" cy="139" r="3"/>
     <ellipse class="dk" cx="180" cy="184" rx="10" ry="7"/>
     <path class="ln" d="M180 191 v6 M180 197 q-10 8 -18 2 M180 197 q10 8 18 2"/></svg>`},
+
+{id:"tiger", name:"호랑이", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="꼬리" d="M256 292 Q324 300 314 238 Q328 232 334 244 Q344 318 262 318 Z"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="294" rx="94" ry="52"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="312" rx="48" ry="30"/>
+    <ellipse class="fill" data-n="발" cx="118" cy="334" rx="28" ry="15"/><ellipse class="fill" data-n="발" cx="242" cy="334" rx="28" ry="15"/>
+    <circle class="fill" data-n="귀" cx="98" cy="78" r="32"/><circle class="fill" data-n="귀" cx="262" cy="78" r="32"/>
+    <circle class="fill" data-n="귀안" cx="98" cy="78" r="16"/><circle class="fill" data-n="귀안" cx="262" cy="78" r="16"/>
+    <circle class="fill" data-n="머리" cx="180" cy="160" r="100"/>
+    <path class="fill" data-n="줄무늬" d="M162 61 L180 104 L198 61 Q180 59 162 61 Z"/>
+    <path class="fill" data-n="줄무늬" d="M81 146 L124 158 L83 174 Q80 160 81 146 Z"/><path class="fill" data-n="줄무늬" d="M88 194 L122 196 L96 216 Q90 206 88 194 Z"/>
+    <path class="fill" data-n="줄무늬" d="M279 146 L236 158 L277 174 Q280 160 279 146 Z"/><path class="fill" data-n="줄무늬" d="M272 194 L238 196 L264 216 Q270 206 272 194 Z"/>
+    <ellipse class="fill" data-n="주둥이" cx="158" cy="208" rx="30" ry="24"/><ellipse class="fill" data-n="주둥이" cx="202" cy="208" rx="30" ry="24"/>
+    <path class="fill" data-n="코" d="M166 184 h28 q0 14 -14 20 q-14 -6 -14 -20 Z"/>
+    <path class="ln" d="M180 204 v10 q-10 12 -22 2 M180 214 q10 12 22 2"/>
+    <circle class="dk" cx="146" cy="148" r="10"/><circle class="dk" cx="214" cy="148" r="10"/><circle class="wt" cx="149" cy="145" r="3.5"/><circle class="wt" cx="217" cy="145" r="3.5"/>
+    <g class="ln"><path d="M140 280 l10 18 M220 280 l-10 18 M164 268 v14 M196 268 v14"/></g></svg>`},
+  {id:"koala", name:"코알라", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="몸통" cx="180" cy="278" rx="80" ry="66"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="294" rx="46" ry="42"/>
+    <ellipse class="fill" data-n="발" cx="128" cy="334" rx="30" ry="15"/><ellipse class="fill" data-n="발" cx="232" cy="334" rx="30" ry="15"/>
+    <ellipse class="fill" data-n="팔" cx="118" cy="268" rx="20" ry="36" transform="rotate(30 118 268)"/>
+    <path class="ln" d="M268 250 L300 196"/>
+    <ellipse class="fill" data-n="잎" cx="296" cy="186" rx="14" ry="30" transform="rotate(30 296 186)"/><ellipse class="fill" data-n="잎" cx="318" cy="216" rx="12" ry="26" transform="rotate(70 318 216)"/>
+    <ellipse class="fill" data-n="팔" cx="244" cy="264" rx="20" ry="36" transform="rotate(-40 244 264)"/>
+    <circle class="fill" data-n="귀" cx="90" cy="104" r="48"/><circle class="fill" data-n="귀" cx="270" cy="104" r="48"/>
+    <circle class="fill" data-n="귀안" cx="90" cy="108" r="26"/><circle class="fill" data-n="귀안" cx="270" cy="108" r="26"/>
+    <circle class="fill" data-n="머리" cx="180" cy="148" r="84"/>
+    <circle class="fill" data-n="볼" cx="124" cy="186" r="13"/><circle class="fill" data-n="볼" cx="236" cy="186" r="13"/>
+    <ellipse class="fill" data-n="코" cx="180" cy="170" rx="24" ry="32"/>
+    <circle class="dk" cx="138" cy="146" r="9"/><circle class="dk" cx="222" cy="146" r="9"/><circle class="wt" cx="141" cy="143" r="3"/><circle class="wt" cx="225" cy="143" r="3"/>
+    <path class="ln" d="M166 214 q14 12 28 0"/></svg>`},

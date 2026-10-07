@@ -56,3 +56,27 @@
     <path class="fill" data-n="하트" d="M161 218 l-14 -14 a8 8 0 0 1 14 -8 a8 8 0 0 1 14 8 Z"/>
     <circle class="fill" data-n="버튼" cx="218" cy="196" r="11"/><circle class="fill" data-n="버튼" cx="218" cy="228" r="11"/>
     <rect class="fill" data-n="버튼" x="132" y="236" width="58" height="14" rx="6"/></svg>`},
+
+{id:"pinata", name:"피냐타", svg:`<svg ${A}>${BG()}
+    <path class="ln" d="M180 8 V48"/>
+    <polygon class="fill" data-n="뿔" points="157.9,129.6 180,46 202.1,129.6"/><polygon class="fill" data-n="뿔" points="211.6,136.6 297.9,131.7 225.2,178.5"/><polygon class="fill" data-n="뿔" points="221.6,189.7 252.9,270.3 185.9,215.6"/><polygon class="fill" data-n="뿔" points="174.1,215.6 107.1,270.3 138.4,189.7"/><polygon class="fill" data-n="뿔" points="134.8,178.5 62.1,131.7 148.4,136.6"/>
+    <circle class="fill" data-n="몸통" cx="180" cy="170" r="58"/>
+    <path class="fill" data-n="줄무늬" d="M124 156 h112 q4 14 0 28 h-112 q-4 -14 0 -28 Z"/>
+    <circle class="dk" cx="160" cy="146" r="7"/><circle class="dk" cx="200" cy="146" r="7"/><circle class="wt" cx="162" cy="143" r="2.5"/><circle class="wt" cx="202" cy="143" r="2.5"/>
+    <path class="ln" d="M164 202 q16 14 32 0"/>
+    <path class="fill" data-n="술" d="M300 128 l20 -6 l-4 10 l14 6 l-14 6 Z"/><path class="fill" data-n="술" d="M60 128 l-20 -6 l4 10 l-14 6 l14 6 Z"/>
+    <rect class="fill" data-n="막대" x="40" y="250" width="16" height="100" rx="7" transform="rotate(-50 48 300)"/>
+    <ellipse class="fill" data-n="사탕" cx="276" cy="300" rx="20" ry="13"/><polygon class="fill" data-n="사탕" points="256,300 240,290 240,310"/><polygon class="fill" data-n="사탕" points="296,300 312,290 312,310"/>
+    <g transform="rotate(25 170 312)"><ellipse class="fill" data-n="사탕" cx="170" cy="312" rx="18" ry="12"/><polygon class="fill" data-n="사탕" points="152,312 138,302 138,322"/><polygon class="fill" data-n="사탕" points="188,312 202,302 202,322"/></g>
+    <polygon class="fill" data-n="별" points="${star(290,46,20,8,5)}"/></svg>`},
+  {id:"cakeslice", name:"조각 케이크", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="접시" cx="186" cy="276" rx="160" ry="44"/>
+    <path class="fill" data-n="빵" d="M56 206 L314 176 V256 L56 286 Z"/>
+    <path class="fill" data-n="크림층" d="M56 244 L314 214 V232 L56 262 Z"/>
+    <polygon class="fill" data-n="윗면" points="56,206 268,124 314,176"/>
+    <path class="fill" data-n="크림" d="M56 206 L314 176 v14 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 Z"/>
+    <path class="fill" data-n="휘핑크림" d="M226 168 q-20 0 -14 -18 q-6 -18 14 -20 q8 -18 26 -8 q18 2 14 18 q12 14 -6 26 Z"/>
+    <path class="fill" data-n="딸기" d="M246 140 q-26 -10 -20 -36 q12 -8 24 2 q14 -10 24 0 q4 26 -28 34 Z"/>
+    <path class="fill" data-n="꼭지" d="M236 102 l10 -14 l6 12 l14 -6 l-6 12 Z"/>
+    <circle class="dk" cx="242" cy="116" r="2.5"/><circle class="dk" cx="256" cy="114" r="2.5"/><circle class="dk" cx="248" cy="128" r="2.5"/>
+    <polygon class="fill" data-n="별" points="${star(70,70,24,10,5)}"/><polygon class="fill" data-n="별" points="${star(130,40,14,6,5)}"/></svg>`},

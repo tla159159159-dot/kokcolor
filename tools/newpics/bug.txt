@@ -54,3 +54,40 @@
     <circle class="wt" cx="282" cy="246" r="9"/><circle class="dk" cx="284" cy="247" r="5"/>
     <path class="ln" d="M292 260 q8 4 14 -2"/>
     <circle class="fill" data-n="무늬" cx="96" cy="210" r="12"/><circle class="fill" data-n="무늬" cx="184" cy="210" r="12"/></svg>`},
+
+{id:"firefly", name:"반딧불이", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="달" d="M300 36 a34 34 0 1 0 22 60 a28 28 0 1 1 -22 -60 Z"/>
+    <polygon class="fill" data-n="별" points="${star(50,58,16,7,5)}"/><polygon class="fill" data-n="별" points="${star(60,300,14,6,5)}"/><polygon class="fill" data-n="별" points="${star(310,290,14,6,5)}"/>
+    <path class="fill" data-n="빛" d="M180 316 Q110 314 112 254 Q120 210 180 210 Q240 210 248 254 Q250 314 180 316 Z"/>
+    <ellipse class="fill" data-n="꼬리" cx="180" cy="258" rx="40" ry="38"/>
+    <g class="ln"><path d="M150 240 h60 M146 262 h68"/></g>
+    <path class="fill" data-n="날개" d="M170 160 Q90 100 70 150 Q66 200 160 200 Z"/>
+    <path class="fill" data-n="날개" d="M190 160 Q270 100 290 150 Q294 200 200 200 Z"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="190" rx="34" ry="42"/>
+    <g class="ln"><path d="M164 96 Q150 66 130 60 M196 96 Q210 66 230 60"/></g>
+    <circle class="fill" data-n="더듬이" cx="128" cy="58" r="9"/><circle class="fill" data-n="더듬이" cx="232" cy="58" r="9"/>
+    <circle class="fill" data-n="머리" cx="180" cy="122" r="34"/>
+    <circle class="wt" cx="166" cy="118" r="9"/><circle class="dk" cx="168" cy="119" r="5"/><circle class="wt" cx="194" cy="118" r="9"/><circle class="dk" cx="196" cy="119" r="5"/>
+    <circle class="fill" data-n="볼" cx="156" cy="136" r="6"/><circle class="fill" data-n="볼" cx="204" cy="136" r="6"/>
+    <path class="ln" d="M172 138 q8 6 16 0"/>
+    <g class="ln"><path d="M100 248 l-16 -6 M260 248 l16 -6 M108 290 l-14 10 M252 290 l14 10 M180 330 v10"/></g></svg>`},
+  {id:"mole", name:"두더지", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="60" cy="60" r="22"/><g class="ln"><path d="M60 26 v-8 M94 60 h8 M84 36 l6 -6"/></g>
+    <path class="fill" data-n="구름" d="M248 86 q-6 -26 20 -28 q10 -18 30 -8 q22 -6 22 18 q14 4 6 18 Z"/>
+    <path class="fill" data-n="꽃" d="M300 236 m-10 0 a10 10 0 1 1 20 0 a10 10 0 1 1 -20 0"/>
+    <path class="ln" d="M300 246 v30"/>
+    ${GR("땅",276)}
+    <path class="fill" data-n="흙더미" d="M60 300 Q80 236 180 232 Q280 236 300 300 Z"/>
+    <path class="fill" data-n="몸통" d="M110 276 Q104 140 180 132 Q256 140 250 276 Z"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="230" rx="44" ry="46"/>
+    <path class="fill" data-n="손" d="M96 250 q-8 -30 16 -36 q22 0 22 22 q0 20 -18 24 Z"/>
+    <path class="fill" data-n="손" d="M264 250 q8 -30 -16 -36 q-22 0 -22 22 q0 20 18 24 Z"/>
+    <g class="ln"><path d="M104 234 l-8 -8 M110 228 l-4 -12 M256 234 l8 -8 M250 228 l4 -12"/></g>
+    <path class="fill" data-n="흙더미" d="M70 300 Q120 268 180 278 Q240 268 290 300 Z"/>
+    <path class="fill" data-n="안전모" d="M126 150 Q126 96 180 96 Q234 96 234 150 Z"/>
+    <rect class="fill" data-n="안전모" x="116" y="144" width="128" height="14" rx="7"/>
+    <circle class="fill" data-n="불빛" cx="180" cy="122" r="12"/>
+    <circle class="dk" cx="160" cy="176" r="5"/><circle class="dk" cx="200" cy="176" r="5"/>
+    <ellipse class="fill" data-n="코" cx="180" cy="196" rx="14" ry="10"/>
+    <circle class="fill" data-n="볼" cx="146" cy="196" r="7"/><circle class="fill" data-n="볼" cx="214" cy="196" r="7"/>
+    <path class="ln" d="M172 210 q8 6 16 0"/></svg>`},

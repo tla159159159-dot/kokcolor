@@ -49,3 +49,28 @@
     <path class="fill" data-n="꽃잎" d="M180 256 q-30 -60 0 -150 q30 90 0 150 Z"/>
     <circle class="fill" data-n="해" cx="60" cy="62" r="24"/><g class="ln"><path d="M60 28 v-8 M94 62 h8 M84 38 l6 -6"/></g>
     <g class="ln"><path d="M40 330 q20 -8 40 0 M260 336 q20 -8 40 0"/></g></svg>`},
+
+{id:"cherryblossom", name:"벚꽃", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="나뭇가지" d="M14 340 q60 -90 150 -150 q60 -44 150 -100 l8 12 q-80 54 -136 92 q30 6 70 -4 l2 14 q-50 14 -92 0 q-80 60 -132 140 Z"/>
+    <ellipse class="fill" data-n="꽃봉오리" cx="250" cy="206" rx="13" ry="18" transform="rotate(40 250 206)"/><ellipse class="fill" data-n="꽃봉오리" cx="56" cy="270" rx="13" ry="18" transform="rotate(-30 56 270)"/>
+    <path class="fill" data-n="작은 꽃잎" d="M292 82 q-24 -14 -14.4 -40 q7.2 4 14.4 -2.4 q7.2 6.4 14.4 2.4 q9.6 26 -14.4 40 Z" transform="rotate(0 292 82)"/><path class="fill" data-n="작은 꽃잎" d="M292 82 q-24 -14 -14.4 -40 q7.2 4 14.4 -2.4 q7.2 6.4 14.4 2.4 q9.6 26 -14.4 40 Z" transform="rotate(72 292 82)"/><path class="fill" data-n="작은 꽃잎" d="M292 82 q-24 -14 -14.4 -40 q7.2 4 14.4 -2.4 q7.2 6.4 14.4 2.4 q9.6 26 -14.4 40 Z" transform="rotate(144 292 82)"/><path class="fill" data-n="작은 꽃잎" d="M292 82 q-24 -14 -14.4 -40 q7.2 4 14.4 -2.4 q7.2 6.4 14.4 2.4 q9.6 26 -14.4 40 Z" transform="rotate(216 292 82)"/><path class="fill" data-n="작은 꽃잎" d="M292 82 q-24 -14 -14.4 -40 q7.2 4 14.4 -2.4 q7.2 6.4 14.4 2.4 q9.6 26 -14.4 40 Z" transform="rotate(288 292 82)"/>
+    <circle class="fill" data-n="꽃술" cx="292" cy="82" r="10"/>
+    <path class="fill" data-n="꽃잎" d="M170 172 q-50.4 -29.4 -30.2 -84 q15.1 8.4 30.2 -5 q15.1 13.4 30.2 5 q20.2 54.6 -30.2 84 Z" transform="rotate(0 170 172)"/><path class="fill" data-n="꽃잎" d="M170 172 q-50.4 -29.4 -30.2 -84 q15.1 8.4 30.2 -5 q15.1 13.4 30.2 5 q20.2 54.6 -30.2 84 Z" transform="rotate(72 170 172)"/><path class="fill" data-n="꽃잎" d="M170 172 q-50.4 -29.4 -30.2 -84 q15.1 8.4 30.2 -5 q15.1 13.4 30.2 5 q20.2 54.6 -30.2 84 Z" transform="rotate(144 170 172)"/><path class="fill" data-n="꽃잎" d="M170 172 q-50.4 -29.4 -30.2 -84 q15.1 8.4 30.2 -5 q15.1 13.4 30.2 5 q20.2 54.6 -30.2 84 Z" transform="rotate(216 170 172)"/><path class="fill" data-n="꽃잎" d="M170 172 q-50.4 -29.4 -30.2 -84 q15.1 8.4 30.2 -5 q15.1 13.4 30.2 5 q20.2 54.6 -30.2 84 Z" transform="rotate(288 170 172)"/>
+    <circle class="fill" data-n="꽃술" cx="170" cy="172" r="22"/>
+    <g class="ln"><path d="M170 150 v-14 M191 165 l12 -6 M184 190 l8 10 M156 190 l-8 10 M149 165 l-12 -6"/></g>
+    <path class="fill" data-n="날리는 꽃잎" d="M70 70 q-18 -14 -4 -30 q4 6 10 4 q10 20 -6 26 Z"/><path class="fill" data-n="날리는 꽃잎" d="M300 270 q-20 -6 -12 -26 q6 4 10 0 q16 14 2 26 Z"/></svg>`},
+  {id:"morningglory", name:"나팔꽃", svg:`<svg ${A}>${BG()}
+    ${GR("땅",310)}
+    <rect class="fill" data-n="지지대" x="292" y="40" width="14" height="272" rx="6"/>
+    <path class="ln" d="M299 300 q-30 -20 0 -40 q30 -20 0 -40 q-30 -20 0 -40 q30 -20 0 -40 q-30 -20 0 -40 q24 -14 6 -36 M290 250 q-60 0 -96 -40 M300 160 q-40 10 -80 -10 M296 110 q-10 -30 -40 -40"/>
+    <path class="fill" data-n="잎" d="M250 152 C 214 130 220 92 252 112 C 284 92 290 130 250 152 Z" transform="rotate(-30 250 130)"/>
+    <path class="fill" data-n="잎" d="M110 300 C 70 270 82 230 112 252 C 142 230 152 270 110 300 Z" transform="rotate(20 110 270)"/>
+    <path class="fill" data-n="잎" d="M330 236 C 300 216 306 186 330 202 C 344 192 350 216 330 236 Z"/>
+    <path class="fill" data-n="꽃봉오리" d="M256 72 q-20 -10 -10 -36 q16 4 22 24 q2 10 -12 12 Z"/>
+    <path class="fill" data-n="꽃대롱" d="M200 252 L210 266 L104 280 L92 196 Z"/>
+    <ellipse class="fill" data-n="작은 꽃" cx="92" cy="238" rx="18" ry="44" transform="rotate(-6 92 238)"/>
+    <path class="fill" data-n="꽃받침" d="M198 248 l16 -8 l4 14 l-4 14 l-16 -6 Z"/>
+    <path class="fill" data-n="꽃대롱" d="M150 160 H186 L176 220 H160 Z"/>
+    <circle class="fill" data-n="큰 꽃잎" cx="168" cy="110" r="70"/>
+    <path class="fill" data-n="꽃 무늬" d="M168 110 L168 48 L183 96 L234 90 L190 118 L210 166 L168 136 L126 166 L146 118 L102 90 L153 96 L168 48 Z"/>
+    <circle class="fill" data-n="꽃술" cx="168" cy="110" r="16"/></svg>`},

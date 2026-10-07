@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTFDM2WQQ2"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-KTFDM2WQQ2");</script>
 <title>무료 색칠공부 도안 | 유아 색칠놀이·인쇄 - 콕콕</title>
-<meta name="description" content="무료 색칠공부 도안 170종을 가입 없이 바로 색칠해요. 유아 색칠놀이부터 공주·동물·공룡 도안 인쇄, 낙서판·점잇기·스티커까지 콕콕에서 즐겨요.">
+<meta name="description" content="색칠공부 도안 204종. 테마마다 무료 체험 도안을 가입 없이 바로 색칠해요. 낙서판·점잇기·스티커 놀이는 모두 무료, 골드는 전체 색칠·인쇄.">
 <meta name="keywords" content="색칠공부, 색칠공부 도안, 아이 색칠놀이, 유아 색칠, 무료 색칠공부, 색칠 도안 인쇄, 점잇기">
 <meta name="naver-site-verification" content="884a96d100b638a0984149cb249aa3a3b84b146a" />
 <link rel="canonical" href="https://kokcolor.kr/">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="콕콕">
 <meta property="og:title" content="무료 색칠공부 도안 | 유아 색칠놀이·인쇄 - 콕콕">
-<meta property="og:description" content="색칠공부 도안 170종 · 색깔 42가지 · 낙서 · 점잇기 · 스티커. 가입 없이 바로 시작해요.">
+<meta property="og:description" content="색칠공부 도안 204종 · 색깔 42가지 · 낙서 · 점잇기 · 스티커. 가입 없이 바로 시작해요.">
 <meta property="og:url" content="https://kokcolor.kr/">
 <meta property="og:image" content="https://kokcolor.kr/og.png">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -21,7 +21,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta name="theme-color" content="#7C4DFF">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"콕콕","alternateName":"콕콕 색칠공부","url":"https://kokcolor.kr/","description":"무료 색칠공부 도안 170종과 유아 색칠놀이, 도안 인쇄, 낙서판·점잇기·스티커를 제공하는 어린이 색칠 사이트","applicationCategory":"EducationalApplication","operatingSystem":"Web","inLanguage":"ko","audience":{"@type":"PeopleAudience","suggestedMinAge":3,"suggestedMaxAge":9},"offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"publisher":{"@type":"Organization","name":"CKT컴퍼니"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"콕콕","alternateName":"콕콕 색칠공부","url":"https://kokcolor.kr/","description":"무료 색칠공부 도안 204종과 유아 색칠놀이, 도안 인쇄, 낙서판·점잇기·스티커를 제공하는 어린이 색칠 사이트","applicationCategory":"EducationalApplication","operatingSystem":"Web","inLanguage":"ko","audience":{"@type":"PeopleAudience","suggestedMinAge":3,"suggestedMaxAge":9},"offers":{"@type":"Offer","price":"0","priceCurrency":"KRW"},"publisher":{"@type":"Organization","name":"CKT컴퍼니"}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Jua&family=Noto+Sans+KR:wght@400;500;700;800&family=Gaegu:wght@700&display=swap" rel="stylesheet">
@@ -409,6 +409,37 @@
   .art .wt{fill:#fff;stroke:var(--ink);stroke-width:4;pointer-events:none}
   @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 
+  /* ---------- 놀이: 미로·짝맞추기·퍼즐·따라그리기 ---------- */
+  #mazeCanvas,#traceCanvas{background:#fff;touch-action:none;aspect-ratio:1/1;cursor:crosshair}
+  #memoryHost,#puzzleHost{position:relative;aspect-ratio:1/1;background:#fff;container-type:inline-size;user-select:none;-webkit-user-select:none}
+  .dotpick.tri{grid-template-columns:repeat(3,1fr)}
+  .gstat{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .gstat span{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-sm);padding:10px;text-align:center;font-size:13px;color:var(--muted)}
+  .gstat i{font-style:normal}
+  .gstat b{display:block;font-family:'Jua',sans-serif;font-weight:400;font-size:26px;color:var(--brand-ink);line-height:1.2}
+  .trname{font-family:'Jua',sans-serif;font-weight:400;color:var(--brand-ink)}
+  .mem-grid{position:absolute;inset:0;display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr);gap:3%;padding:4.5%}
+  .mcard{padding:0;border:0;background:none;box-shadow:none;perspective:700px;min-height:0!important;border-radius:14px}
+  .mcard:hover{box-shadow:none}
+  .mc-in{position:relative;display:block;width:100%;height:100%;transition:transform .45s cubic-bezier(.3,1.3,.5,1);transform-style:preserve-3d}
+  .mcard.flip .mc-in{transform:rotateY(180deg)}
+  .mc-back,.mc-front{position:absolute;inset:0;border-radius:3.5cqw;-webkit-backface-visibility:hidden;backface-visibility:hidden;display:flex;align-items:center;justify-content:center}
+  .mc-back{background:var(--grad);box-shadow:0 4px 10px rgba(124,77,255,.25);color:#fff;font-family:'Jua',sans-serif;font-size:9cqw}
+  .mc-back::after{content:"?";opacity:.9}
+  .mc-front{background:var(--surface-2);border:2px solid var(--line);transform:rotateY(180deg);font-size:12cqw;line-height:1}
+  .mcard.ok .mc-front{background:#E6FAF6;border-color:var(--teal)}
+  .mcard.ok .mc-in{animation:pop .3s ease .45s}
+  .ptile{position:absolute;padding:0;border:0;border-radius:0;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px rgba(124,77,255,.28);transition:left .25s,top .25s,transform .12s;min-height:0!important}
+  .ptile:hover{box-shadow:inset 0 0 0 1px rgba(124,77,255,.28)}
+  .ptile.sel{z-index:2;transform:scale(.92);box-shadow:0 0 0 4px var(--brand),var(--sh)}
+  .pt-img{position:absolute;display:block;pointer-events:none}
+  .pt-img svg{display:block;width:100%;height:100%}
+  #puzzleHost.done .ptile{box-shadow:none}
+  .pz-pics{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+  .pzp{padding:3px;aspect-ratio:1;border-radius:12px;background:var(--surface-2);min-height:0!important}
+  .pzp svg{display:block;width:100%;height:100%;pointer-events:none}
+  .pzp.on{border-color:var(--brand);box-shadow:0 0 0 2px var(--brand-soft)}
+
   /* ---------- 모바일 최적화 ---------- */
   @media (max-width:900px){
     .stage{gap:16px}
@@ -423,6 +454,8 @@
     .swatches{grid-template-columns:repeat(5,1fr);gap:8px}
     .pack-chips button{font-size:15px;padding:11px 16px}
     .tools{grid-template-columns:1fr}
+    .modebar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;overflow:visible}
+    .mode{padding:11px 6px}
   }
   /* 도안이 화면 높이를 넘지 않게: 패드 가로·노트북에서 색칠하다 스크롤 안 해도 되도록 */
   @media (min-width:601px){
@@ -540,15 +573,15 @@
       <div class="hero-copy">
         <h1 class="eyebrow">✨ 무료 색칠공부 · 유아 색칠놀이</h1>
         <p class="hero-title">칠하고 <span class="grad-text">그리고</span><br>꾸미는 재미</p>
-        <p class="hero-sub">그림 <b>170</b>종 · 색 <b>42</b>가지에 낙서판·점잇기·스티커까지,<br> 아이 눈높이 놀이를 한 곳에서 즐겨요.</p>
+        <p class="hero-sub">그림 <b>204</b>종 · 색 <b>42</b>가지에 낙서판·점잇기·스티커까지,<br> 아이 눈높이 놀이를 한 곳에서 즐겨요.</p>
         <div class="hero-cta">
           <a class="btn-primary" href="#modebar">무료로 시작하기 →</a>
           <button class="btn-ghost" id="luckyBtn">🎲 오늘의 그림 뽑기</button>
         </div>
         <div class="hero-stats">
-          <div class="stat"><b>170</b><span>그림 전부 무료</span></div>
+          <div class="stat"><b>204</b><span>색칠 도안</span></div>
           <div class="stat"><b>42</b><span>색상</span></div>
-          <div class="stat"><b>4</b><span>놀이 모드</span></div>
+          <div class="stat"><b>8</b><span>무료 놀이</span></div>
           <div class="stat"><b>∞</b><span>내 색 만들기</span></div>
         </div>
       </div>
@@ -584,6 +617,10 @@
     <button class="mode" data-m="draw"><svg class="ic" viewBox="0 0 24 24"><path d="M4 20l4-1L20 7a2 2 0 0 0-3-3L5 16l-1 4Z"/><path d="M15 6l3 3"/></svg>낙서판</button>
     <button class="mode" data-m="dots"><svg class="ic" viewBox="0 0 24 24"><path d="M5 6l7 3 7-4M5 6l4 12 3-9M19 5l-3 14-4-10"/><circle cx="5" cy="6" r="1.6" fill="currentColor" stroke="none"/><circle cx="19" cy="5" r="1.6" fill="currentColor" stroke="none"/><circle cx="12" cy="19" r="1.6" fill="currentColor" stroke="none"/></svg>점잇기</button>
     <button class="mode" data-m="sticker"><svg class="ic" viewBox="0 0 24 24"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5V14l-6 6H5.5A1.5 1.5 0 0 1 4 18.5Z"/><path d="M14 20v-4.5A1.5 1.5 0 0 1 15.5 14H20"/></svg>스티커</button>
+    <button class="mode" data-m="maze"><svg class="ic" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="2"/><path d="M8 3.5V12h4M12 20.5V16h4.5M16 3.5V9h-4"/></svg>미로찾기</button>
+    <button class="mode" data-m="memory"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="8" height="12" rx="2"/><rect x="13" y="7" width="8" height="12" rx="2"/><path d="M7 9.5v.01M17 11.5l-1.5 2h3L17 15.5"/></svg>짝맞추기</button>
+    <button class="mode" data-m="puzzle"><svg class="ic" viewBox="0 0 24 24"><path d="M4 4h6v2a2 2 0 1 0 4 0V4h6v6h-2a2 2 0 1 0 0 4h2v6h-6v-2a2 2 0 1 0-4 0v2H4z"/></svg>그림퍼즐</button>
+    <button class="mode" data-m="trace"><svg class="ic" viewBox="0 0 24 24"><path d="M5 19c2-9 5-14 7-14s2 6 0 9-5 1-3-2 9-4 10 7" stroke-dasharray="2.5 3"/><path d="M17 15l3 3-3 1z" fill="currentColor"/></svg>따라그리기</button>
   </div>
 
   <div class="stage">
@@ -592,6 +629,10 @@
       <canvas class="host hide" id="drawCanvas" width="760" height="760"></canvas>
       <div class="host hide" id="dotHost"></div>
       <div class="host hide" id="stickerHost"></div>
+      <canvas class="host hide" id="mazeCanvas" width="760" height="760"></canvas>
+      <div class="host hide" id="memoryHost"></div>
+      <div class="host hide" id="puzzleHost"></div>
+      <canvas class="host hide" id="traceCanvas" width="760" height="760"></canvas>
     </div></div>
     <aside class="panel">
       <div id="paletteSec">
@@ -617,6 +658,25 @@
         <div class="dotpick" id="dotpick"></div>
       </div>
 
+      <div id="mazeSec" class="hide">
+        <div class="subhead">🐰 토끼가 당근 🥕까지 가도록 손가락으로 길을 그어요</div>
+        <div class="dotpick tri" id="mazePick"><button class="dp on" data-n="6">쉬움</button><button class="dp" data-n="9">보통</button><button class="dp" data-n="12">어려움</button></div>
+      </div>
+      <div id="memorySec" class="hide">
+        <div class="subhead">👀 카드 두 장을 뒤집어 같은 그림을 찾아요</div>
+        <div class="gstat"><span>뒤집은 횟수 <b id="memMoves">0</b></span><span>찾은 짝 <b><i id="memFound">0</i> / 6</b></span></div>
+      </div>
+      <div id="puzzleSec" class="hide">
+        <div class="subhead">🧩 조각 두 개를 차례로 누르면 자리가 바뀌어요</div>
+        <div class="dotpick" id="pzSize"><button class="dp on" data-n="3">3×3</button><button class="dp" data-n="4">4×4</button></div>
+        <div class="subhead" style="margin-top:14px">🖼️ 그림 고르기</div>
+        <div class="pz-pics" id="pzPics"></div>
+      </div>
+      <div id="traceSec" class="hide">
+        <div class="subhead">✍️ 점선을 따라 그려요 · <b id="traceName" class="trname"></b></div>
+        <div class="dotpick tri" id="tracePick"><button class="dp on" data-i="0">모양</button><button class="dp" data-i="5">한글</button><button class="dp" data-i="15">숫자</button></div>
+      </div>
+
       <div class="tools" id="toolsColor">
         <button id="undo"><svg class="ic" viewBox="0 0 24 24"><path d="M9 7 4 12l5 5"/><path d="M4 12h11a5 5 0 0 1 0 10h-3"/></svg>되돌리기</button>
         <button id="clear"><svg class="ic" viewBox="0 0 24 24"><path d="M4 15l7-7 6 6-6 6H7z"/><path d="M9 20h10"/></svg>전체 지우기</button>
@@ -636,12 +696,26 @@
         <button id="dotAgain"><svg class="ic" viewBox="0 0 24 24"><path d="M9 7 4 12l5 5"/><path d="M4 12h11a5 5 0 0 1 0 10h-3"/></svg>다시</button>
         <button id="dotNext" class="b-print"><svg class="ic" viewBox="0 0 24 24"><path d="M5 12h13m-6-6 6 6-6 6"/></svg>다음 그림</button>
       </div>
+      <div class="tools hide" id="toolsMaze">
+        <button id="mazeNew" class="b-print b-share"><svg class="ic" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/></svg>새 미로</button>
+      </div>
+      <div class="tools hide" id="toolsMemory">
+        <button id="memNew" class="b-print b-share"><svg class="ic" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/></svg>다시하기</button>
+      </div>
+      <div class="tools hide" id="toolsPuzzle">
+        <button id="pzNew" class="b-print b-share"><svg class="ic" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/></svg>새 퍼즐</button>
+      </div>
+      <div class="tools hide" id="toolsTrace">
+        <button id="trClear"><svg class="ic" viewBox="0 0 24 24"><path d="M4 15l7-7 6 6-6 6H7z"/><path d="M9 20h10"/></svg>지우기</button>
+        <button id="trNext" class="b-print"><svg class="ic" viewBox="0 0 24 24"><path d="M5 12h13m-6-6 6 6-6 6"/></svg>다음</button>
+        <button id="trSave" class="b-save b-share"><svg class="ic" viewBox="0 0 24 24"><path d="M12 4v10m0 0 4-4m-4 4-4-4"/><path d="M5 18h14"/></svg>그림 저장</button>
+      </div>
     </aside>
   </div>
 
   <div class="pack-area" id="packSection">
     <h2 class="section-title" id="pics">🖼️ 색칠공부 도안 고르기</h2>
-    <div class="section-sub">그림 170종 전부 무료! 화면에서 마음껏 칠하고 저장하세요</div>
+    <div class="section-sub">테마마다 첫 그림은 무료 체험! 골드는 204종 전부 색칠·인쇄해요</div>
     <div id="packArea"></div>
     <nav class="theme-links" aria-label="테마별 색칠공부 도안">
       <h3>테마별 색칠공부 도안 모아보기</h3>
@@ -676,16 +750,16 @@
   </section>
 
   <section class="plans" id="plans">
-    <h2 class="plans-title">인쇄 요금제</h2>
-    <p class="plans-sub">화면 색칠·놀이·저장은 모두 무료예요. 종이로 인쇄해서 색칠하는 양만 골라요.</p>
+    <h2 class="plans-title">요금제</h2>
+    <p class="plans-sub">놀이 모드는 모두 무료예요. 색칠 도안은 테마마다 1장씩 무료로 해 보고, 골드로 전부 열어요.</p>
     <div class="plan-grid">
       <div class="plan">
         <div class="plan-name">무료</div>
         <div class="plan-price"><b>0</b>원</div>
         <ul class="plan-feat">
-          <li>화면 색칠·낙서·점잇기·스티커 <b>전부</b></li>
-          <li>그림 저장 무제한</li>
-          <li>낱장 인쇄 <b>주 3장</b> (골라서)</li>
+          <li>놀이 모드(낙서·점잇기·스티커 등) <b>전부</b></li>
+          <li>테마마다 무료 체험 도안 <b>1장</b>씩</li>
+          <li>무료 도안 인쇄 <b>주 3장</b></li>
         </ul>
         <div class="plan-cur">지금 이용 중</div>
       </div>
@@ -694,7 +768,7 @@
         <div class="plan-name">골드</div>
         <div class="plan-price"><b>2,900</b>원<span>/월</span></div>
         <ul class="plan-feat">
-          <li>무료 혜택 <b>전부 포함</b></li>
+          <li>도안 <b>204종 전부</b> 색칠 🎨</li>
           <li>낱장 인쇄 <b>무제한</b> 🖨️</li>
           <li>팩 <b>전체 도안</b> 한 번에 출력</li>
         </ul>
@@ -705,14 +779,14 @@
 
   <section class="faq" id="faq">
     <h2 class="plans-title">자주 묻는 질문</h2>
-    <details><summary>콕콕 색칠공부는 무료인가요?</summary><p>네. 화면에서 색칠하고 그림을 저장하는 건 모두 무료예요. 종이 인쇄는 카카오 로그인 후 매주 3장까지 무료이고, 골드(월 2,900원)는 인쇄가 무제한이에요.</p></details>
+    <details><summary>콕콕 색칠공부는 무료인가요?</summary><p>낙서판·점잇기·스티커 같은 놀이 모드는 모두 무료예요. 색칠 도안은 테마마다 1장씩 무료로 해 볼 수 있고, 골드(월 2,900원)는 도안 전부를 색칠하고 인쇄도 무제한이에요.</p></details>
     <details><summary>몇 살 아이에게 맞나요?</summary><p>선이 굵고 칸이 넓어서 3~7세 유아가 혼자 칠하기 좋아요. 칸을 누르면 색이 바로 채워져서 손이 서툰 아이도 쉽게 완성할 수 있어요.</p></details>
     <details><summary>회원가입을 해야 하나요?</summary><p>화면 색칠은 가입 없이 바로 할 수 있어요. 종이로 인쇄할 때만 카카오 로그인이 필요해요.</p></details>
-    <details><summary>색칠공부 도안은 몇 종류인가요?</summary><p>공룡·공주·동물·바다·탈것·할로윈·크리스마스 등 17개 테마, 170종 도안이 있고 계속 늘어나요.</p></details>
+    <details><summary>색칠공부 도안은 몇 종류인가요?</summary><p>공룡·공주·동물·바다·탈것·할로윈·크리스마스 등 17개 테마, 204종 도안이 있고 계속 늘어나요.</p></details>
     <details><summary>휴대폰이나 태블릿에서도 되나요?</summary><p>네. 휴대폰·태블릿·컴퓨터 어디서나 손가락이나 마우스로 바로 칠할 수 있어요.</p></details>
     <details><summary>칠한 그림은 저장되나요?</summary><p>칠하던 그림은 자동으로 저장돼 "내 작품"에서 이어서 칠할 수 있고, 그림 저장 버튼으로 이미지 파일로도 받을 수 있어요. 카카오 로그인하면 다른 기기에서도 이어서 칠할 수 있어요.</p></details>
   </section>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"콕콕 색칠공부는 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"네. 화면에서 색칠하고 그림을 저장하는 건 모두 무료예요. 종이 인쇄는 카카오 로그인 후 매주 3장까지 무료이고, 골드(월 2,900원)는 인쇄가 무제한이에요."}},{"@type":"Question","name":"몇 살 아이에게 맞나요?","acceptedAnswer":{"@type":"Answer","text":"선이 굵고 칸이 넓어서 3~7세 유아가 혼자 칠하기 좋아요. 칸을 누르면 색이 바로 채워져서 손이 서툰 아이도 쉽게 완성할 수 있어요."}},{"@type":"Question","name":"회원가입을 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"화면 색칠은 가입 없이 바로 할 수 있어요. 종이로 인쇄할 때만 카카오 로그인이 필요해요."}},{"@type":"Question","name":"색칠공부 도안은 몇 종류인가요?","acceptedAnswer":{"@type":"Answer","text":"공룡·공주·동물·바다·탈것·할로윈·크리스마스 등 17개 테마, 170종 도안이 있고 계속 늘어나요."}},{"@type":"Question","name":"휴대폰이나 태블릿에서도 되나요?","acceptedAnswer":{"@type":"Answer","text":"네. 휴대폰·태블릿·컴퓨터 어디서나 손가락이나 마우스로 바로 칠할 수 있어요."}},{"@type":"Question","name":"칠한 그림은 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"칠하던 그림은 자동으로 저장돼 \"내 작품\"에서 이어서 칠할 수 있고, 그림 저장 버튼으로 이미지 파일로도 받을 수 있어요. 카카오 로그인하면 다른 기기에서도 이어서 칠할 수 있어요."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"콕콕 색칠공부는 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"낙서판·점잇기·스티커 같은 놀이 모드는 모두 무료예요. 색칠 도안은 테마마다 1장씩 무료로 해 볼 수 있고, 골드(월 2,900원)는 도안 전부를 색칠하고 인쇄도 무제한이에요."}},{"@type":"Question","name":"몇 살 아이에게 맞나요?","acceptedAnswer":{"@type":"Answer","text":"선이 굵고 칸이 넓어서 3~7세 유아가 혼자 칠하기 좋아요. 칸을 누르면 색이 바로 채워져서 손이 서툰 아이도 쉽게 완성할 수 있어요."}},{"@type":"Question","name":"회원가입을 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"화면 색칠은 가입 없이 바로 할 수 있어요. 종이로 인쇄할 때만 카카오 로그인이 필요해요."}},{"@type":"Question","name":"색칠공부 도안은 몇 종류인가요?","acceptedAnswer":{"@type":"Answer","text":"공룡·공주·동물·바다·탈것·할로윈·크리스마스 등 17개 테마, 204종 도안이 있고 계속 늘어나요."}},{"@type":"Question","name":"휴대폰이나 태블릿에서도 되나요?","acceptedAnswer":{"@type":"Answer","text":"네. 휴대폰·태블릿·컴퓨터 어디서나 손가락이나 마우스로 바로 칠할 수 있어요."}},{"@type":"Question","name":"칠한 그림은 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"칠하던 그림은 자동으로 저장돼 \"내 작품\"에서 이어서 칠할 수 있고, 그림 저장 버튼으로 이미지 파일로도 받을 수 있어요. 카카오 로그인하면 다른 기기에서도 이어서 칠할 수 있어요."}}]}</script>
 
   <footer class="site-footer">
     <div class="foot-mascot-wrap">
@@ -747,12 +821,12 @@
     <button class="close-x" id="goldClose">✕</button>
     <div class="mIcon">👑</div>
     <h3>골드로 인쇄 무제한</h3>
-    <p id="goldDesc">무료는 종이 인쇄가 주 3장까지예요. 골드가 되면 언제든 마음껏 인쇄할 수 있어요.</p>
+    <p id="goldDesc">테마마다 첫 그림은 무료 체험이에요. 골드가 되면 그림 204종을 전부 색칠하고 인쇄도 마음껏 할 수 있어요.</p>
     <div class="gold-price"><b>2,900</b>원 <span>/ 월</span></div>
     <ul class="modal-benefits gold-benefits">
-      <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>종이 인쇄 <b>무제한</b></span></li>
-      <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>팩 전체 도안도 마음껏 출력</span></li>
-      <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>화면 색칠·놀이·저장은 계속 무료</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>도안 <b>204종 전부</b> 색칠</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>종이 인쇄 <b>무제한</b> · 팩 전체 출력</span></li>
+      <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>놀이 모드는 계속 무료</span></li>
     </ul>
     <button class="full-btn gold-fullbtn" id="goldBuyBtn">골드 시작하기 · 월 2,900원</button>
     <form class="card-form" id="cardForm" hidden autocomplete="on">
@@ -805,7 +879,7 @@ const A = 'class="art" viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg"'
 const GR = (n="땅",y=300) => `<path class="fill" data-n="${n}" d="M8 ${y} H352 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>`;
 const BG = c => `<rect class="fill" data-n="배경" x="8" y="8" width="344" height="344" rx="26"/>`;
 
-/* ---------- 도안 170종 ---------- */
+/* ---------- 도안 204종 ---------- */
 const PACKS = [
 { id:"basic", name:"기본 그림", emoji:"⭐", premium:false, pics:[
   {id:"flower", name:"꽃", svg:`<svg ${A}>${BG()}
@@ -927,7 +1001,30 @@ const PACKS = [
     <path class="fill" data-n="하트" d="M180 308 C60 228 46 134 108 100 C150 80 176 110 180 132 C184 110 210 80 252 100 C314 134 300 228 180 308 Z"/>
     <circle class="fill" data-n="볼" cx="130" cy="196" r="14"/><circle class="fill" data-n="볼" cx="230" cy="196" r="14"/>
     <circle class="dk" cx="150" cy="172" r="9"/><circle class="dk" cx="210" cy="172" r="9"/><circle class="wt" cx="153" cy="168" r="3"/><circle class="wt" cx="213" cy="168" r="3"/>
-    <path class="ln" d="M160 200 q20 20 40 0"/></svg>`}
+    <path class="ln" d="M160 200 q20 20 40 0"/></svg>`},
+{id:"star", name:"별", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="달" d="M78 30 a42 42 0 1 0 44 62 a34 34 0 1 1 -44 -62 Z"/>
+    <polygon class="fill" data-n="작은별" points="${star(304,60,26,11,5)}"/>
+    <polygon class="fill" data-n="작은별" points="${star(54,300,22,9,5)}"/>
+    <polygon class="fill" data-n="작은별" points="${star(308,304,22,9,5)}"/>
+    <circle class="fill" data-n="반짝이" cx="250" cy="34" r="7"/><circle class="fill" data-n="반짝이" cx="110" cy="330" r="7"/><circle class="fill" data-n="반짝이" cx="40" cy="200" r="6"/>
+    <polygon class="fill" data-n="별" points="${star(180,192,132,60,5)}"/>
+    <circle class="fill" data-n="볼" cx="138" cy="214" r="12"/><circle class="fill" data-n="볼" cx="222" cy="214" r="12"/>
+    <circle class="dk" cx="156" cy="186" r="9"/><circle class="dk" cx="204" cy="186" r="9"/><circle class="wt" cx="159" cy="183" r="3"/><circle class="wt" cx="207" cy="183" r="3"/>
+    <path class="ln" d="M164 214 q16 16 32 0"/></svg>`},
+  {id:"bubbles", name:"비눗방울", svg:`<svg ${A}>${BG()}
+    ${GR("땅",318)}
+    <rect class="fill" data-n="막대" x="92" y="222" width="16" height="110" rx="8" transform="rotate(30 100 277)"/>
+    <circle class="fill" data-n="고리" cx="138" cy="204" r="32"/><circle class="fill" data-n="비눗막" cx="138" cy="204" r="20"/>
+    <rect class="fill" data-n="통" x="232" y="236" width="70" height="88" rx="14"/>
+    <rect class="fill" data-n="뚜껑" x="244" y="218" width="46" height="22" rx="6"/>
+    <circle class="fill" data-n="라벨" cx="267" cy="282" r="20"/>
+    <circle class="fill" data-n="큰방울" cx="196" cy="116" r="50"/>
+    <circle class="fill" data-n="비눗방울" cx="292" cy="88" r="32"/><circle class="fill" data-n="비눗방울" cx="92" cy="86" r="28"/>
+    <circle class="fill" data-n="비눗방울" cx="58" cy="176" r="16"/><circle class="fill" data-n="비눗방울" cx="250" cy="182" r="18"/><circle class="fill" data-n="비눗방울" cx="318" cy="164" r="13"/>
+    <g class="ln"><path d="M164 96 a36 36 0 0 1 22 -26 M272 74 a22 22 0 0 1 14 -14 M74 76 a20 20 0 0 1 12 -12 M238 176 a12 12 0 0 1 8 -8"/></g>
+    <circle class="dk" cx="178" cy="114" r="7"/><circle class="dk" cx="214" cy="114" r="7"/><circle class="wt" cx="180" cy="112" r="2.5"/><circle class="wt" cx="216" cy="112" r="2.5"/>
+    <path class="ln" d="M184 132 q12 12 24 0"/></svg>`}
 ]},
 
 { id:"animal", name:"귀여운 동물", emoji:"🐾", premium:false, pics:[
@@ -1039,7 +1136,38 @@ const PACKS = [
     <path class="fill" data-n="턱" d="M115 172 Q150 152 180 176 Q210 152 245 172 Q226 208 180 222 Q134 208 115 172 Z"/>
     <circle class="dk" cx="148" cy="142" r="8"/><circle class="dk" cx="212" cy="142" r="8"/><circle class="wt" cx="151" cy="139" r="3"/><circle class="wt" cx="215" cy="139" r="3"/>
     <ellipse class="dk" cx="180" cy="184" rx="10" ry="7"/>
-    <path class="ln" d="M180 191 v6 M180 197 q-10 8 -18 2 M180 197 q10 8 18 2"/></svg>`}
+    <path class="ln" d="M180 191 v6 M180 197 q-10 8 -18 2 M180 197 q10 8 18 2"/></svg>`},
+{id:"tiger", name:"호랑이", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="꼬리" d="M256 292 Q324 300 314 238 Q328 232 334 244 Q344 318 262 318 Z"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="294" rx="94" ry="52"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="312" rx="48" ry="30"/>
+    <ellipse class="fill" data-n="발" cx="118" cy="334" rx="28" ry="15"/><ellipse class="fill" data-n="발" cx="242" cy="334" rx="28" ry="15"/>
+    <circle class="fill" data-n="귀" cx="98" cy="78" r="32"/><circle class="fill" data-n="귀" cx="262" cy="78" r="32"/>
+    <circle class="fill" data-n="귀안" cx="98" cy="78" r="16"/><circle class="fill" data-n="귀안" cx="262" cy="78" r="16"/>
+    <circle class="fill" data-n="머리" cx="180" cy="160" r="100"/>
+    <path class="fill" data-n="줄무늬" d="M162 61 L180 104 L198 61 Q180 59 162 61 Z"/>
+    <path class="fill" data-n="줄무늬" d="M81 146 L124 158 L83 174 Q80 160 81 146 Z"/><path class="fill" data-n="줄무늬" d="M88 194 L122 196 L96 216 Q90 206 88 194 Z"/>
+    <path class="fill" data-n="줄무늬" d="M279 146 L236 158 L277 174 Q280 160 279 146 Z"/><path class="fill" data-n="줄무늬" d="M272 194 L238 196 L264 216 Q270 206 272 194 Z"/>
+    <ellipse class="fill" data-n="주둥이" cx="158" cy="208" rx="30" ry="24"/><ellipse class="fill" data-n="주둥이" cx="202" cy="208" rx="30" ry="24"/>
+    <path class="fill" data-n="코" d="M166 184 h28 q0 14 -14 20 q-14 -6 -14 -20 Z"/>
+    <path class="ln" d="M180 204 v10 q-10 12 -22 2 M180 214 q10 12 22 2"/>
+    <circle class="dk" cx="146" cy="148" r="10"/><circle class="dk" cx="214" cy="148" r="10"/><circle class="wt" cx="149" cy="145" r="3.5"/><circle class="wt" cx="217" cy="145" r="3.5"/>
+    <g class="ln"><path d="M140 280 l10 18 M220 280 l-10 18 M164 268 v14 M196 268 v14"/></g></svg>`},
+  {id:"koala", name:"코알라", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="몸통" cx="180" cy="278" rx="80" ry="66"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="294" rx="46" ry="42"/>
+    <ellipse class="fill" data-n="발" cx="128" cy="334" rx="30" ry="15"/><ellipse class="fill" data-n="발" cx="232" cy="334" rx="30" ry="15"/>
+    <ellipse class="fill" data-n="팔" cx="118" cy="268" rx="20" ry="36" transform="rotate(30 118 268)"/>
+    <path class="ln" d="M268 250 L300 196"/>
+    <ellipse class="fill" data-n="잎" cx="296" cy="186" rx="14" ry="30" transform="rotate(30 296 186)"/><ellipse class="fill" data-n="잎" cx="318" cy="216" rx="12" ry="26" transform="rotate(70 318 216)"/>
+    <ellipse class="fill" data-n="팔" cx="244" cy="264" rx="20" ry="36" transform="rotate(-40 244 264)"/>
+    <circle class="fill" data-n="귀" cx="90" cy="104" r="48"/><circle class="fill" data-n="귀" cx="270" cy="104" r="48"/>
+    <circle class="fill" data-n="귀안" cx="90" cy="108" r="26"/><circle class="fill" data-n="귀안" cx="270" cy="108" r="26"/>
+    <circle class="fill" data-n="머리" cx="180" cy="148" r="84"/>
+    <circle class="fill" data-n="볼" cx="124" cy="186" r="13"/><circle class="fill" data-n="볼" cx="236" cy="186" r="13"/>
+    <ellipse class="fill" data-n="코" cx="180" cy="170" rx="24" ry="32"/>
+    <circle class="dk" cx="138" cy="146" r="9"/><circle class="dk" cx="222" cy="146" r="9"/><circle class="wt" cx="141" cy="143" r="3"/><circle class="wt" cx="225" cy="143" r="3"/>
+    <path class="ln" d="M166 214 q14 12 28 0"/></svg>`}
 ]},
 
 { id:"sea", name:"바다 친구들", emoji:"🌊", premium:false, pics:[
@@ -1136,7 +1264,33 @@ const PACKS = [
     <circle class="fill" data-n="볼" cx="138" cy="150" r="10"/><circle class="fill" data-n="볼" cx="222" cy="150" r="10"/>
     <circle class="dk" cx="154" cy="126" r="7"/><circle class="dk" cx="206" cy="126" r="7"/><circle class="wt" cx="156" cy="124" r="2.5"/><circle class="wt" cx="208" cy="124" r="2.5"/>
     <path class="fill" data-n="부리" d="M164 140 h32 q-6 16 -16 20 q-10 -4 -16 -20 Z"/>
-    <ellipse class="fill" data-n="발" cx="146" cy="324" rx="28" ry="13"/><ellipse class="fill" data-n="발" cx="214" cy="324" rx="28" ry="13"/></svg>`}
+    <ellipse class="fill" data-n="발" cx="146" cy="324" rx="28" ry="13"/><ellipse class="fill" data-n="발" cx="214" cy="324" rx="28" ry="13"/></svg>`},
+{id:"shark", name:"아기 상어", svg:`<svg ${A}>${BG()}
+    ${GR("모래",318)}
+    <rect class="fill" data-n="바다풀" x="296" y="232" width="18" height="110" rx="9" transform="rotate(8 305 290)"/><rect class="fill" data-n="바다풀" x="40" y="250" width="18" height="90" rx="9" transform="rotate(-8 49 300)"/>
+    <circle class="fill" data-n="물방울" cx="44" cy="120" r="12"/><circle class="fill" data-n="물방울" cx="62" cy="84" r="9"/><circle class="fill" data-n="물방울" cx="48" cy="54" r="7"/>
+    <path class="fill" data-n="꼬리" d="M270 180 L334 112 Q348 180 332 254 Z"/>
+    <path class="fill" data-n="등지느러미" d="M150 116 Q166 50 212 58 Q196 84 206 114 Z"/>
+    <path class="fill" data-n="몸통" d="M70 188 Q76 114 172 110 Q256 108 296 182 Q256 262 172 262 Q76 262 70 188 Z"/>
+    <path class="fill" data-n="배" d="M78 216 Q170 238 290 192 Q252 262 172 262 Q102 262 78 216 Z"/>
+    <path class="fill" data-n="가슴지느러미" d="M156 232 Q144 282 190 290 Q180 262 196 236 Z"/>
+    <circle class="fill" data-n="볼" cx="132" cy="204" r="11"/>
+    <circle class="dk" cx="122" cy="166" r="10"/><circle class="wt" cx="125" cy="163" r="3.5"/>
+    <path class="ln" d="M82 196 q22 18 46 4"/>
+    <g class="ln"><path d="M218 156 q-6 16 0 32 M234 154 q-6 18 0 36"/></g></svg>`},
+  {id:"clam", name:"조개", svg:`<svg ${A}>${BG()}
+    ${GR("모래",312)}
+    <polygon class="fill" data-n="불가사리" points="${star(306,300,30,13,5)}"/>
+    <circle class="fill" data-n="물방울" cx="300" cy="64" r="12"/><circle class="fill" data-n="물방울" cx="322" cy="104" r="8"/><circle class="fill" data-n="물방울" cx="44" cy="70" r="10"/>
+    <path class="fill" data-n="윗껍데기" d="M60 206 Q52 120 104 90 Q140 62 180 62 Q220 62 256 90 Q308 120 300 206 Z"/>
+    <g class="ln"><path d="M180 206 L96 104 M180 206 L136 74 M180 206 L180 64 M180 206 L224 74 M180 206 L264 104"/></g>
+    <ellipse class="fill" data-n="속살" cx="180" cy="210" rx="118" ry="20"/>
+    <circle class="fill" data-n="진주" cx="180" cy="190" r="28"/><circle class="wt" cx="170" cy="180" r="6"/>
+    <path class="fill" data-n="아래껍데기" d="M56 214 Q66 302 180 306 Q294 302 304 214 Z"/>
+    <g class="ln"><path d="M100 226 L130 294 M260 226 L230 294"/></g>
+    <circle class="fill" data-n="볼" cx="132" cy="268" r="11"/><circle class="fill" data-n="볼" cx="228" cy="268" r="11"/>
+    <circle class="dk" cx="152" cy="246" r="8"/><circle class="dk" cx="208" cy="246" r="8"/><circle class="wt" cx="155" cy="243" r="3"/><circle class="wt" cx="211" cy="243" r="3"/>
+    <path class="ln" d="M166 266 q14 14 28 0"/></svg>`}
 ]},
 
 { id:"sky", name:"하늘을 나는", emoji:"🚀", premium:true, pics:[
@@ -1236,7 +1390,34 @@ const PACKS = [
     <g class="ln" stroke-dasharray="12 12"><path d="M140 236 Q100 300 66 284 Q36 266 64 240 Q92 222 100 300"/></g>
     <polygon class="fill" data-n="작은날개" points="314,82 250,214 172,268"/>
     <polygon class="fill" data-n="몸통" points="314,82 156,200 172,268"/>
-    <polygon class="fill" data-n="큰날개" points="314,82 48,176 156,200"/></svg>`}
+    <polygon class="fill" data-n="큰날개" points="314,82 48,176 156,200"/></svg>`},
+{id:"airship", name:"비행선", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="52" cy="52" r="24"/><g class="ln"><path d="M52 16 v-6 M88 52 h6 M77 27 l5 -5"/></g>
+    <path class="fill" data-n="꼬리날개" d="M268 92 L318 40 Q336 44 334 66 L300 112 Z"/>
+    <path class="fill" data-n="꼬리날개" d="M268 172 L318 224 Q336 220 334 198 L300 152 Z"/>
+    <g class="ln"><path d="M150 186 L136 214 M210 186 L224 214"/></g>
+    <rect class="fill" data-n="곤돌라" x="120" y="210" width="120" height="40" rx="14"/>
+    <circle class="fill" data-n="창문" cx="150" cy="230" r="10"/><circle class="fill" data-n="창문" cx="180" cy="230" r="10"/><circle class="fill" data-n="창문" cx="210" cy="230" r="10"/>
+    <ellipse class="fill" data-n="프로펠러" cx="252" cy="230" rx="6" ry="20"/>
+    <ellipse class="fill" data-n="풍선" cx="176" cy="132" rx="134" ry="64"/>
+    <ellipse class="fill" data-n="줄무늬" cx="196" cy="132" rx="34" ry="62"/>
+    <circle class="dk" cx="96" cy="124" r="8"/><circle class="wt" cx="99" cy="121" r="3"/>
+    <circle class="fill" data-n="볼" cx="84" cy="150" r="10"/><path class="ln" d="M60 148 q12 12 24 4"/>
+    <path class="fill" data-n="구름" d="M40 322 a22 22 0 0 1 8 -42 a30 30 0 0 1 56 -10 a24 24 0 0 1 22 52 Z"/>
+    <path class="fill" data-n="구름" d="M216 326 a22 22 0 0 1 8 -42 a32 32 0 0 1 60 -12 a26 26 0 0 1 32 54 Z"/></svg>`},
+  {id:"bluebird", name:"파랑새", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="306" cy="54" r="24"/><g class="ln"><path d="M306 18 v-6 M270 54 h-6 M281 29 l-5 -5"/></g>
+    <path class="fill" data-n="꼬리" d="M226 206 L316 178 Q328 196 314 210 L326 222 Q318 244 300 236 L232 240 Z"/>
+    <rect class="fill" data-n="나뭇가지" x="30" y="266" width="300" height="22" rx="11"/>
+    <ellipse class="fill" data-n="잎" cx="62" cy="252" rx="22" ry="12" transform="rotate(-30 62 252)"/><ellipse class="fill" data-n="잎" cx="296" cy="304" rx="22" ry="12" transform="rotate(30 296 304)"/>
+    <path class="fill" data-n="깃털" d="M156 82 Q150 52 170 46 Q166 66 180 80 Z"/>
+    <circle class="fill" data-n="몸통" cx="170" cy="172" r="92"/>
+    <ellipse class="fill" data-n="배" cx="164" cy="206" rx="54" ry="52"/>
+    <path class="fill" data-n="날개" d="M200 160 Q262 150 258 210 Q240 248 200 228 Q216 196 200 160 Z"/>
+    <path class="fill" data-n="부리" d="M90 140 L52 156 L92 168 Z"/>
+    <circle class="fill" data-n="볼" cx="118" cy="174" r="12"/>
+    <circle class="dk" cx="126" cy="132" r="10"/><circle class="wt" cx="129" cy="129" r="3.5"/>
+    <g class="ln"><path d="M140 262 v18 M132 284 l8 -6 l8 6 M188 262 v18 M180 284 l8 -6 l8 6"/></g></svg>`}
 ]},
 
 { id:"snack", name:"맛있는 간식", emoji:"🍦", premium:true, pics:[
@@ -1315,7 +1496,32 @@ const PACKS = [
     <circle class="fill" data-n="체리" cx="186" cy="76" r="15"/>
     <circle class="fill" data-n="볼" cx="134" cy="246" r="12"/><circle class="fill" data-n="볼" cx="226" cy="246" r="12"/>
     <circle class="dk" cx="156" cy="226" r="8"/><circle class="dk" cx="204" cy="226" r="8"/><circle class="wt" cx="159" cy="223" r="3"/><circle class="wt" cx="207" cy="223" r="3"/>
-    <path class="ln" d="M166 246 q14 14 28 0"/></svg>`}
+    <path class="ln" d="M166 246 q14 14 28 0"/></svg>`},
+{id:"sandwich", name:"샌드위치", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="접시" cx="180" cy="296" rx="152" ry="34"/>
+    <path class="fill" data-n="빵테두리" d="M180 52 Q190 52 196 62 L304 268 Q310 284 292 284 H68 Q50 284 56 268 L164 62 Q170 52 180 52 Z"/>
+    <path class="fill" data-n="빵" d="M180 84 L280 268 H80 Z"/>
+    <path class="fill" data-n="양상추" d="M104 184 H256 q16 10 0 20 H104 q-16 -10 0 -20 Z"/>
+    <rect class="fill" data-n="햄" x="92" y="204" width="176" height="18" rx="9"/>
+    <path class="fill" data-n="치즈" d="M84 222 H276 V238 H214 L200 254 L186 238 H84 Z"/>
+    <circle class="fill" data-n="볼" cx="150" cy="166" r="9"/><circle class="fill" data-n="볼" cx="210" cy="166" r="9"/>
+    <circle class="dk" cx="164" cy="148" r="7"/><circle class="dk" cx="196" cy="148" r="7"/><circle class="wt" cx="166" cy="146" r="2.5"/><circle class="wt" cx="198" cy="146" r="2.5"/>
+    <path class="ln" d="M170 162 q10 10 20 0"/>
+    <circle class="fill" data-n="방울토마토" cx="64" cy="70" r="20"/><circle class="fill" data-n="방울토마토" cx="296" cy="76" r="20"/>
+    <g class="ln"><path d="M58 52 l6 6 l6 -6 M290 58 l6 6 l6 -6"/></g></svg>`},
+  {id:"macaron", name:"마카롱", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="접시" cx="180" cy="304" rx="152" ry="26"/>
+    <path class="fill" data-n="아래과자" d="M60 266 H300 Q300 300 180 300 Q60 300 60 266 Z"/>
+    <rect class="fill" data-n="크림" x="66" y="242" width="228" height="26" rx="13"/>
+    <path class="fill" data-n="위과자" d="M60 244 Q60 188 180 188 Q300 188 300 244 Z"/>
+    <path class="fill" data-n="아래과자" d="M84 160 H276 Q276 192 180 192 Q84 192 84 160 Z"/>
+    <rect class="fill" data-n="크림" x="90" y="136" width="180" height="26" rx="13"/>
+    <path class="fill" data-n="위과자" d="M84 138 Q84 70 180 70 Q276 70 276 138 Z"/>
+    <circle class="fill" data-n="볼" cx="130" cy="118" r="11"/><circle class="fill" data-n="볼" cx="230" cy="118" r="11"/>
+    <circle class="dk" cx="152" cy="104" r="8"/><circle class="dk" cx="208" cy="104" r="8"/><circle class="wt" cx="155" cy="101" r="3"/><circle class="wt" cx="211" cy="101" r="3"/>
+    <path class="ln" d="M168 118 q12 12 24 0"/>
+    <path class="fill" data-n="하트" d="M50 64 a14 14 0 0 1 24 -14 a14 14 0 0 1 24 14 q0 18 -24 32 q-24 -14 -24 -32 Z"/>
+    <polygon class="fill" data-n="반짝이" points="${star(304,64,24,9,4)}"/><polygon class="fill" data-n="반짝이" points="${star(318,200,14,5,4)}"/><polygon class="fill" data-n="반짝이" points="${star(40,200,14,5,4)}"/></svg>`}
 ]},
 
 { id:"dino", name:"공룡 나라", emoji:"🦕", premium:true, pics:[
@@ -1431,7 +1637,41 @@ const PACKS = [
     <circle class="fill" data-n="볼" cx="140" cy="242" r="11"/><circle class="fill" data-n="볼" cx="220" cy="242" r="11"/>
     <path class="ln" d="M166 246 q14 12 28 0"/>
     <ellipse class="fill" data-n="덤불" cx="40" cy="300" rx="28" ry="20"/><ellipse class="fill" data-n="덤불" cx="320" cy="300" rx="28" ry="20"/>
-    <ellipse class="fill" data-n="바위" cx="110" cy="322" rx="22" ry="12"/><ellipse class="fill" data-n="바위" cx="256" cy="324" rx="18" ry="10"/></svg>`}
+    <ellipse class="fill" data-n="바위" cx="110" cy="322" rx="22" ry="12"/><ellipse class="fill" data-n="바위" cx="256" cy="324" rx="18" ry="10"/></svg>`},
+{id:"spino", name:"스피노사우루스", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="58" cy="60" r="22"/><g class="ln"><path d="M58 26 v-8 M92 60 h8 M82 36 l6 -6"/></g>
+    ${GR("땅",300)}
+    <path class="fill" data-n="꼬리" d="M96 224 Q56 222 20 196 Q30 248 104 262 Z"/>
+    <rect class="fill" data-n="다리" x="112" y="248" width="32" height="62" rx="12"/><rect class="fill" data-n="다리" x="174" y="250" width="32" height="60" rx="12"/>
+    <path class="fill" data-n="돛" d="M92 218 Q96 92 166 84 Q236 92 238 214 Z"/>
+    <g class="ln"><path d="M124 210 Q124 140 138 104 M164 210 V88 M204 210 Q206 140 196 100"/></g>
+    <ellipse class="fill" data-n="몸통" cx="164" cy="230" rx="82" ry="44"/>
+    <ellipse class="fill" data-n="배" cx="176" cy="248" rx="48" ry="22"/>
+    <ellipse class="fill" data-n="팔" cx="232" cy="246" rx="10" ry="20" transform="rotate(-30 232 246)"/>
+    <path class="fill" data-n="목" d="M212 206 Q236 170 256 160 L276 182 Q250 196 244 226 Z"/>
+    <path class="fill" data-n="머리" d="M240 166 Q248 136 278 136 Q300 138 340 160 Q346 170 338 176 L262 192 Q240 190 240 166 Z"/>
+    <path class="ln" d="M276 180 L336 170"/>
+    <circle class="wt" cx="272" cy="154" r="9"/><circle class="dk" cx="274" cy="155" r="5"/>
+    <circle class="fill" data-n="볼" cx="260" cy="176" r="6"/>
+    <circle class="fill" data-n="무늬" cx="130" cy="226" r="11"/><circle class="fill" data-n="무늬" cx="110" cy="246" r="8"/></svg>`},
+  {id:"pachy", name:"박치기공룡", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="구름" d="M40 86 q-6 -26 20 -28 q10 -18 30 -8 q22 -6 22 18 q14 4 6 18 Z"/>
+    <path class="fill" data-n="풀" d="M40 300 l6 -30 l8 30 l8 -24 l6 24 Z"/><path class="fill" data-n="풀" d="M300 300 l6 -30 l8 30 l8 -24 l6 24 Z"/>
+    ${GR("땅",300)}
+    <path class="fill" data-n="꼬리" d="M110 230 Q60 236 30 214 Q44 262 116 266 Z"/>
+    <rect class="fill" data-n="다리" x="132" y="252" width="34" height="58" rx="12"/><rect class="fill" data-n="다리" x="192" y="252" width="34" height="58" rx="12"/>
+    <ellipse class="fill" data-n="발" cx="146" cy="310" rx="24" ry="10"/><ellipse class="fill" data-n="발" cx="212" cy="310" rx="24" ry="10"/>
+    <ellipse class="fill" data-n="몸통" cx="176" cy="220" rx="70" ry="60"/>
+    <ellipse class="fill" data-n="배" cx="188" cy="232" rx="40" ry="40"/>
+    <ellipse class="fill" data-n="팔" cx="236" cy="208" rx="10" ry="20" transform="rotate(-40 236 208)"/>
+    <path class="fill" data-n="목" d="M206 200 Q214 170 226 160 L262 170 Q244 190 240 220 Z"/>
+    <path class="fill" data-n="얼굴" d="M190 150 Q186 110 220 106 H262 Q300 110 304 140 Q306 172 276 178 H214 Q190 174 190 150 Z"/>
+    <path class="fill" data-n="박치기머리" d="M192 132 Q190 62 248 60 Q306 62 304 132 Q250 116 192 132 Z"/>
+    <circle class="fill" data-n="혹" cx="190" cy="124" r="10"/><circle class="fill" data-n="혹" cx="208" cy="96" r="9"/><circle class="fill" data-n="혹" cx="300" cy="118" r="10"/>
+    <circle class="wt" cx="246" cy="142" r="9"/><circle class="dk" cx="248" cy="143" r="5"/><circle class="wt" cx="276" cy="142" r="9"/><circle class="dk" cx="278" cy="143" r="5"/>
+    <circle class="fill" data-n="볼" cx="232" cy="160" r="6"/><circle class="fill" data-n="볼" cx="292" cy="158" r="6"/>
+    <path class="ln" d="M254 164 q10 8 20 0"/>
+    <circle class="fill" data-n="무늬" cx="130" cy="200" r="11"/><circle class="fill" data-n="무늬" cx="146" cy="174" r="9"/></svg>`}
 ]},
 
 { id:"princess", name:"공주와 친구들", emoji:"👑", premium:false, pics:[
@@ -1559,7 +1799,40 @@ const PACKS = [
     <path class="fill" data-n="구두안쪽" d="M92 118 Q104 104 128 120 Q166 146 200 176 Q160 170 120 150 Q94 138 92 118 Z"/>
     <path class="ln" d="M110 182 Q190 230 290 230"/>
     <path class="fill" data-n="리본" d="M236 196 L212 178 L214 212 Z"/><path class="fill" data-n="리본" d="M236 196 L262 182 L256 214 Z"/>
-    <circle class="fill" data-n="리본" cx="236" cy="198" r="9"/></svg>`}
+    <circle class="fill" data-n="리본" cx="236" cy="198" r="9"/></svg>`},
+{id:"mirror", name:"마법 거울", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(54,70,20,9,5)}"/><polygon class="fill" data-n="별" points="${star(310,80,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(300,250,14,6,4)}"/><polygon class="fill" data-n="별" points="${star(58,240,14,6,4)}"/>
+    <path class="fill" data-n="받침" d="M120 340 Q124 306 180 302 Q236 306 240 340 Z"/>
+    <rect class="fill" data-n="기둥" x="168" y="270" width="24" height="36" rx="6"/>
+    <ellipse class="fill" data-n="틀" cx="180" cy="168" rx="96" ry="114"/>
+    <ellipse class="fill" data-n="거울" cx="180" cy="172" rx="70" ry="88"/>
+    <g class="ln"><path d="M138 130 l30 -30 M136 160 l52 -52"/></g>
+    <path class="fill" data-n="왕관" d="M146 66 L150 30 L166 48 L180 22 L194 48 L210 30 L214 66 Z"/>
+    <circle class="fill" data-n="보석" cx="180" cy="52" r="7"/>
+    <path class="fill" data-n="하트" d="M180 290 q-22 -14 -22 -30 q0 -14 14 -14 q8 0 8 10 q0 -10 8 -10 q14 0 14 14 q0 16 -22 30 Z"/>
+    <circle class="fill" data-n="보석" cx="90" cy="168" r="10"/><circle class="fill" data-n="보석" cx="270" cy="168" r="10"/>
+    <circle class="dk" cx="160" cy="180" r="6"/><circle class="dk" cx="200" cy="180" r="6"/>
+    <circle class="fill" data-n="볼" cx="148" cy="198" r="8"/><circle class="fill" data-n="볼" cx="212" cy="198" r="8"/>
+    <path class="ln" d="M168 204 q12 10 24 0"/></svg>`},
+  {id:"babydragon", name:"아기 용", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(52,62,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(310,58,16,7,5)}"/>
+    ${GR("풀밭",304)}
+    <path class="fill" data-n="날개" d="M130 190 Q70 130 40 160 Q60 170 52 196 Q76 192 84 214 Q100 200 128 220 Z"/>
+    <path class="fill" data-n="날개" d="M230 190 Q290 130 320 160 Q300 170 308 196 Q284 192 276 214 Q260 200 232 220 Z"/>
+    <path class="fill" data-n="꼬리" d="M226 286 Q290 296 300 260 Q306 240 322 246 Q314 230 296 238 Q280 270 228 262 Z"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="248" rx="62" ry="64"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="258" rx="38" ry="46"/>
+    <g class="ln"><path d="M148 238 h64 M144 260 h72 M148 282 h64"/></g>
+    <ellipse class="fill" data-n="발" cx="138" cy="308" rx="26" ry="14"/><ellipse class="fill" data-n="발" cx="222" cy="308" rx="26" ry="14"/>
+    <ellipse class="fill" data-n="팔" cx="128" cy="244" rx="12" ry="22" transform="rotate(30 128 244)"/><ellipse class="fill" data-n="팔" cx="232" cy="244" rx="12" ry="22" transform="rotate(-30 232 244)"/>
+    <path class="fill" data-n="뿔" d="M140 112 L128 64 L162 100 Z"/><path class="fill" data-n="뿔" d="M220 112 L232 64 L198 100 Z"/>
+    <ellipse class="fill" data-n="머리" cx="180" cy="140" rx="64" ry="54"/>
+    <path class="fill" data-n="볏" d="M168 88 L180 70 L192 88 Z"/>
+    <ellipse class="fill" data-n="주둥이" cx="180" cy="168" rx="36" ry="22"/>
+    <circle class="dk" cx="170" cy="164" r="3"/><circle class="dk" cx="190" cy="164" r="3"/>
+    <circle class="wt" cx="152" cy="130" r="12"/><circle class="dk" cx="154" cy="132" r="7"/><circle class="wt" cx="208" cy="130" r="12"/><circle class="dk" cx="210" cy="132" r="7"/>
+    <circle class="fill" data-n="볼" cx="132" cy="156" r="8"/><circle class="fill" data-n="볼" cx="228" cy="156" r="8"/>
+    <path class="ln" d="M170 176 q10 8 20 0"/></svg>`}
 ]},
 
 { id:"bug", name:"숲속 친구들", emoji:"🐞", premium:false, pics:[
@@ -1677,7 +1950,43 @@ const PACKS = [
     <path class="fill" data-n="큰뿔" d="M296 230 Q324 204 324 146 Q324 128 310 132 Q302 136 304 152 L300 166 L290 158 Q292 200 274 228 Z"/>
     <circle class="wt" cx="282" cy="246" r="9"/><circle class="dk" cx="284" cy="247" r="5"/>
     <path class="ln" d="M292 260 q8 4 14 -2"/>
-    <circle class="fill" data-n="무늬" cx="96" cy="210" r="12"/><circle class="fill" data-n="무늬" cx="184" cy="210" r="12"/></svg>`}
+    <circle class="fill" data-n="무늬" cx="96" cy="210" r="12"/><circle class="fill" data-n="무늬" cx="184" cy="210" r="12"/></svg>`},
+{id:"firefly", name:"반딧불이", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="달" d="M300 36 a34 34 0 1 0 22 60 a28 28 0 1 1 -22 -60 Z"/>
+    <polygon class="fill" data-n="별" points="${star(50,58,16,7,5)}"/><polygon class="fill" data-n="별" points="${star(60,300,14,6,5)}"/><polygon class="fill" data-n="별" points="${star(310,290,14,6,5)}"/>
+    <path class="fill" data-n="빛" d="M180 316 Q110 314 112 254 Q120 210 180 210 Q240 210 248 254 Q250 314 180 316 Z"/>
+    <ellipse class="fill" data-n="꼬리" cx="180" cy="258" rx="40" ry="38"/>
+    <g class="ln"><path d="M150 240 h60 M146 262 h68"/></g>
+    <path class="fill" data-n="날개" d="M170 160 Q90 100 70 150 Q66 200 160 200 Z"/>
+    <path class="fill" data-n="날개" d="M190 160 Q270 100 290 150 Q294 200 200 200 Z"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="190" rx="34" ry="42"/>
+    <g class="ln"><path d="M164 96 Q150 66 130 60 M196 96 Q210 66 230 60"/></g>
+    <circle class="fill" data-n="더듬이" cx="128" cy="58" r="9"/><circle class="fill" data-n="더듬이" cx="232" cy="58" r="9"/>
+    <circle class="fill" data-n="머리" cx="180" cy="122" r="34"/>
+    <circle class="wt" cx="166" cy="118" r="9"/><circle class="dk" cx="168" cy="119" r="5"/><circle class="wt" cx="194" cy="118" r="9"/><circle class="dk" cx="196" cy="119" r="5"/>
+    <circle class="fill" data-n="볼" cx="156" cy="136" r="6"/><circle class="fill" data-n="볼" cx="204" cy="136" r="6"/>
+    <path class="ln" d="M172 138 q8 6 16 0"/>
+    <g class="ln"><path d="M100 248 l-16 -6 M260 248 l16 -6 M108 290 l-14 10 M252 290 l14 10 M180 330 v10"/></g></svg>`},
+  {id:"mole", name:"두더지", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="60" cy="60" r="22"/><g class="ln"><path d="M60 26 v-8 M94 60 h8 M84 36 l6 -6"/></g>
+    <path class="fill" data-n="구름" d="M248 86 q-6 -26 20 -28 q10 -18 30 -8 q22 -6 22 18 q14 4 6 18 Z"/>
+    <path class="fill" data-n="꽃" d="M300 236 m-10 0 a10 10 0 1 1 20 0 a10 10 0 1 1 -20 0"/>
+    <path class="ln" d="M300 246 v30"/>
+    ${GR("땅",276)}
+    <path class="fill" data-n="흙더미" d="M60 300 Q80 236 180 232 Q280 236 300 300 Z"/>
+    <path class="fill" data-n="몸통" d="M110 276 Q104 140 180 132 Q256 140 250 276 Z"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="230" rx="44" ry="46"/>
+    <path class="fill" data-n="손" d="M96 250 q-8 -30 16 -36 q22 0 22 22 q0 20 -18 24 Z"/>
+    <path class="fill" data-n="손" d="M264 250 q8 -30 -16 -36 q-22 0 -22 22 q0 20 18 24 Z"/>
+    <g class="ln"><path d="M104 234 l-8 -8 M110 228 l-4 -12 M256 234 l8 -8 M250 228 l4 -12"/></g>
+    <path class="fill" data-n="흙더미" d="M70 300 Q120 268 180 278 Q240 268 290 300 Z"/>
+    <path class="fill" data-n="안전모" d="M126 150 Q126 96 180 96 Q234 96 234 150 Z"/>
+    <rect class="fill" data-n="안전모" x="116" y="144" width="128" height="14" rx="7"/>
+    <circle class="fill" data-n="불빛" cx="180" cy="122" r="12"/>
+    <circle class="dk" cx="160" cy="176" r="5"/><circle class="dk" cx="200" cy="176" r="5"/>
+    <ellipse class="fill" data-n="코" cx="180" cy="196" rx="14" ry="10"/>
+    <circle class="fill" data-n="볼" cx="146" cy="196" r="7"/><circle class="fill" data-n="볼" cx="214" cy="196" r="7"/>
+    <path class="ln" d="M172 210 q8 6 16 0"/></svg>`}
 ]},
 { id:"ride", name:"부릉부릉 탈것", emoji:"🚒", premium:false, pics:[
   {id:"firetruck", name:"소방차", free:true, svg:`<svg ${A}>${BG()}
@@ -1811,7 +2120,35 @@ const PACKS = [
     <path class="fill" data-n="안장" d="M70 190 Q110 162 168 182 Q168 196 152 196 H82 Q66 196 70 190 Z"/>
     <circle class="fill" data-n="전조등" cx="282" cy="132" r="16"/>
     <rect class="fill" data-n="발판" x="170" y="244" width="62" height="12" rx="4"/>
-    <circle class="fill" data-n="뒷등" cx="44" cy="226" r="9"/></svg>`}
+    <circle class="fill" data-n="뒷등" cx="44" cy="226" r="9"/></svg>`},
+{id:"submarine", name:"잠수함", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="물방울" cx="300" cy="62" r="10"/><circle class="fill" data-n="물방울" cx="318" cy="96" r="7"/><circle class="fill" data-n="물방울" cx="44" cy="120" r="8"/>
+    ${GR("모래",304)}
+    <path class="fill" data-n="해초" d="M40 304 Q30 270 46 250 Q60 276 52 304 Z"/><path class="fill" data-n="해초" d="M312 304 Q300 266 318 244 Q334 274 324 304 Z"/>
+    <path class="fill" data-n="물고기" d="M80 64 q24 -22 48 0 q-24 22 -48 0 Z M80 64 l-14 -12 v24 Z"/>
+    <path class="fill" data-n="잠망경" d="M196 120 V60 h40 v18 h-20 V120 Z"/>
+    <path class="fill" data-n="탑" d="M160 140 V112 q0 -10 10 -10 h52 q10 0 10 10 V140 Z"/>
+    <path class="fill" data-n="프로펠러" d="M34 176 q-12 20 0 40 l14 -12 v-16 Z"/>
+    <polygon class="fill" data-n="꼬리날개" points="96,170 60,116 82,110 124,156"/><polygon class="fill" data-n="꼬리날개" points="96,222 60,276 82,282 124,236"/>
+    <rect class="fill" data-n="몸체" x="54" y="134" width="280" height="124" rx="62"/>
+    <rect class="fill" data-n="줄무늬" x="58" y="226" width="272" height="16"/>
+    <circle class="fill" data-n="창문" cx="150" cy="190" r="22"/><circle class="fill" data-n="창문" cx="212" cy="190" r="22"/><circle class="fill" data-n="창문" cx="274" cy="190" r="22"/>
+    <circle class="wt" cx="144" cy="184" r="5"/><circle class="wt" cx="206" cy="184" r="5"/><circle class="wt" cx="268" cy="184" r="5"/></svg>`},
+  {id:"garbagetruck", name:"청소차", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="300" cy="58" r="22"/><g class="ln"><path d="M300 24 v-8 M266 58 h-8 M276 34 l-6 -6"/></g>
+    <path class="fill" data-n="구름" d="M60 92 q-6 -26 20 -28 q10 -18 30 -8 q22 -6 22 18 q14 4 6 18 Z"/>
+    ${GR("길",296)}
+    <path class="fill" data-n="쓰레기통" d="M24 238 h40 l-4 58 h-32 Z"/><rect class="fill" data-n="뚜껑" x="20" y="228" width="48" height="12" rx="5"/>
+    <path class="fill" data-n="적재함" d="M78 270 V140 q0 -14 14 -14 H214 V270 Z"/>
+    <path class="fill" data-n="뒷문" d="M70 270 V130 q0 -10 10 -6 L104 140 V270 Z"/>
+    <g class="ln"><path d="M126 160 V244 M158 160 V244 M190 160 V244"/></g>
+    <path class="fill" data-n="운전석" d="M214 270 V150 q0 -10 10 -10 H276 q12 0 18 12 L326 210 V270 Z"/>
+    <path class="fill" data-n="창문" d="M232 202 V160 H274 L298 202 Z"/>
+    <rect class="fill" data-n="범퍼" x="70" y="262" width="264" height="18" rx="8"/>
+    <ellipse class="fill" data-n="전조등" cx="322" cy="234" rx="7" ry="10"/>
+    <rect class="dk" x="236" y="214" width="16" height="6" rx="3"/>
+    <circle class="fill" data-n="바퀴" cx="126" cy="284" r="28"/><circle class="fill" data-n="바퀴" cx="270" cy="284" r="28"/>
+    <circle class="wt" cx="126" cy="284" r="11"/><circle class="wt" cx="270" cy="284" r="11"/></svg>`}
 ]},
 { id:"fruit", name:"과일 채소", emoji:"🍎", premium:false, pics:[
   {id:"apple", name:"사과", free:true, svg:`<svg ${A}>${BG()}
@@ -1902,7 +2239,32 @@ const PACKS = [
     <path class="fill" data-n="잎" d="M178 86 q-38 -40 -84 -24 q32 40 84 24 Z"/>
     <circle class="dk" cx="160" cy="214" r="7"/><circle class="dk" cx="222" cy="214" r="7"/>
     <path class="ln" d="M180 236 q11 12 22 0"/>
-    <ellipse class="fill" data-n="볼" cx="140" cy="238" rx="14" ry="9"/><ellipse class="fill" data-n="볼" cx="244" cy="238" rx="14" ry="9"/></svg>`}
+    <ellipse class="fill" data-n="볼" cx="140" cy="238" rx="14" ry="9"/><ellipse class="fill" data-n="볼" cx="244" cy="238" rx="14" ry="9"/></svg>`},
+{id:"pear", name:"배", svg:`<svg ${A}>${BG()}
+    ${GR("식탁",304)}
+    <path class="fill" data-n="배" d="M180 76 c-30 0 -40 30 -42 62 c-2 30 -70 50 -70 112 c0 44 46 66 112 66 c66 0 112 -22 112 -66 c0 -62 -68 -82 -70 -112 c-2 -32 -12 -62 -42 -62 Z"/>
+    <ellipse class="wt" cx="106" cy="214" rx="9" ry="18" transform="rotate(30 106 214)"/>
+    <path class="fill" data-n="꼭지" d="M174 80 q-4 -28 8 -44 l8 4 q-8 16 -4 40 Z"/>
+    <path class="fill" data-n="잎" d="M188 56 q34 -42 92 -30 q-28 50 -92 30 Z"/><path class="ln" d="M198 52 q36 -14 68 -20"/>
+    <circle class="fill" data-n="점무늬" cx="150" cy="150" r="5"/><circle class="fill" data-n="점무늬" cx="214" cy="160" r="5"/><circle class="fill" data-n="점무늬" cx="262" cy="270" r="5"/><circle class="fill" data-n="점무늬" cx="96" cy="282" r="5"/>
+    <circle class="dk" cx="158" cy="226" r="8"/><circle class="dk" cx="202" cy="226" r="8"/>
+    <path class="ln" d="M168 250 q12 14 24 0"/>
+    <ellipse class="fill" data-n="볼" cx="132" cy="252" rx="15" ry="10"/><ellipse class="fill" data-n="볼" cx="228" cy="252" rx="15" ry="10"/>
+    <path class="fill" data-n="잎" d="M178 60 q-36 -30 -80 -14 q30 34 80 14 Z"/></svg>`},
+  {id:"broccoli", name:"브로콜리", svg:`<svg ${A}>${BG()}
+    ${GR("식탁",304)}
+    <path class="fill" data-n="줄기" d="M142 170 q8 70 -6 140 h88 q-14 -70 -6 -140 Z"/>
+    <path class="ln" d="M160 230 q-14 -20 -34 -26 M200 230 q14 -20 34 -26"/>
+    <circle class="fill" data-n="송이" cx="96" cy="140" r="46"/><circle class="fill" data-n="송이" cx="264" cy="140" r="46"/>
+    <circle class="fill" data-n="송이" cx="130" cy="84" r="46"/><circle class="fill" data-n="송이" cx="230" cy="84" r="46"/>
+    <circle class="fill" data-n="송이" cx="180" cy="62" r="44"/>
+    <circle class="fill" data-n="송이" cx="180" cy="140" r="64"/>
+    <g class="ln"><path d="M80 130 q8 -8 16 0 M244 128 q8 -8 16 0 M118 78 q8 -8 16 0 M222 74 q8 -8 16 0 M172 50 q8 -8 16 0"/></g>
+    <circle class="dk" cx="158" cy="140" r="8"/><circle class="dk" cx="202" cy="140" r="8"/>
+    <path class="ln" d="M168 162 q12 14 24 0"/>
+    <ellipse class="fill" data-n="볼" cx="138" cy="164" rx="13" ry="9"/><ellipse class="fill" data-n="볼" cx="222" cy="164" rx="13" ry="9"/>
+    <path class="fill" data-n="작은브로콜리" d="M286 300 v-30 h20 v30 Z"/><circle class="fill" data-n="작은송이" cx="284" cy="268" r="14"/><circle class="fill" data-n="작은송이" cx="308" cy="268" r="14"/><circle class="fill" data-n="작은송이" cx="296" cy="252" r="16"/>
+    <path class="fill" data-n="작은브로콜리" d="M54 300 v-28 h18 v28 Z"/><circle class="fill" data-n="작은송이" cx="52" cy="270" r="13"/><circle class="fill" data-n="작은송이" cx="74" cy="270" r="13"/><circle class="fill" data-n="작은송이" cx="63" cy="255" r="15"/></svg>`}
 ]},
 { id:"halloween", name:"할로윈", emoji:"🎃", premium:false, pics:[
   {id:"pumpkin", name:"호박", free:true, svg:`<svg ${A}>${BG()}
@@ -2017,7 +2379,40 @@ const PACKS = [
       <path class="fill" data-n="리본" d="M196 212 l-30 22 l20 6 l-4 16 l24 -38 Z"/>
       <path class="fill" data-n="리본" d="M196 212 l14 34 l8 -14 l14 6 Z"/>
     </g>
-</svg>`}
+</svg>`},
+{id:"monster", name:"귀여운 몬스터", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="달" cx="292" cy="70" r="36"/>
+    <polygon class="fill" data-n="별" points="${star(58,60,18,8,5)}"/>
+    ${GR("땅",304)}
+    <path class="fill" data-n="뿔" d="M124 104 q-20 -40 -2 -70 q18 26 34 60 Z"/><path class="fill" data-n="뿔" d="M236 104 q20 -40 2 -70 q-18 26 -34 60 Z"/>
+    <path class="fill" data-n="팔" d="M82 190 q-46 -6 -50 -48 q22 4 30 20 q8 -18 24 -18 q-10 20 6 26 Z"/>
+    <path class="fill" data-n="팔" d="M278 190 q46 -6 50 -48 q-22 4 -30 20 q-8 -18 -24 -18 q10 20 -6 26 Z"/>
+    <ellipse class="fill" data-n="발" cx="138" cy="304" rx="30" ry="16"/><ellipse class="fill" data-n="발" cx="222" cy="304" rx="30" ry="16"/>
+    <path class="fill" data-n="몸통" d="M180 80 c-80 0 -104 70 -104 130 c0 60 30 92 104 92 c74 0 104 -32 104 -92 c0 -60 -24 -130 -104 -130 Z"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="246" rx="58" ry="44"/>
+    <circle class="fill" data-n="점무늬" cx="110" cy="236" r="10"/><circle class="fill" data-n="점무늬" cx="254" cy="230" r="12"/><circle class="fill" data-n="점무늬" cx="250" cy="120" r="8"/>
+    <circle class="fill" data-n="눈" cx="180" cy="140" r="34"/><circle class="dk" cx="186" cy="146" r="16"/><circle class="wt" cx="192" cy="140" r="5"/>
+    <path class="fill" data-n="입" d="M146 186 q34 36 68 0 Z"/>
+    <polygon class="fill" data-n="이빨" points="160,187 168,187 164,197"/><polygon class="fill" data-n="이빨" points="192,187 200,187 196,197"/>
+    <ellipse class="fill" data-n="볼" cx="126" cy="182" rx="13" ry="9"/><ellipse class="fill" data-n="볼" cx="234" cy="182" rx="13" ry="9"/></svg>`},
+  {id:"hauntedhouse", name:"유령의 집", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="달" cx="66" cy="66" r="36"/>
+    <polygon class="fill" data-n="별" points="${star(310,46,14,6,5)}"/>
+    ${GR("땅",304)}
+    <polygon class="fill" data-n="지붕" points="70,150 180,58 290,150"/>
+    <rect class="fill" data-n="굴뚝" x="236" y="76" width="26" height="50"/>
+    <rect class="fill" data-n="집" x="90" y="148" width="180" height="156"/>
+    <path class="fill" data-n="동그란창" d="M180 104 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 Z"/><path class="ln" d="M180 86 v36 M162 104 h36"/>
+    <rect class="fill" data-n="창문" x="108" y="170" width="44" height="50" rx="4"/><rect class="fill" data-n="창문" x="208" y="170" width="44" height="50" rx="4"/>
+    <path class="ln" d="M130 170 v50 M108 195 h44 M230 170 v50 M208 195 h44"/>
+    <path class="fill" data-n="문" d="M154 304 v-56 q26 -30 52 0 v56 Z"/><circle class="dk" cx="196" cy="278" r="4"/>
+    <path class="ln" d="M100 240 l14 12 l-8 10 M262 250 l-14 10"/>
+    <path class="fill" data-n="유령" d="M296 254 c0 -30 18 -46 34 -46 c16 0 18 16 18 46 v40 l-8 -8 l-10 10 l-10 -10 l-10 10 l-14 -10 Z" transform="translate(-24 0)"/>
+    <circle class="dk" cx="300" cy="238" r="4"/><circle class="dk" cx="316" cy="238" r="4"/><ellipse class="dk" cx="308" cy="254" rx="4" ry="5"/>
+    <path class="fill" data-n="유령" d="M20 230 c0 -26 14 -38 28 -38 c14 0 28 12 28 38 v40 l-8 -8 l-10 10 l-10 -10 l-10 10 l-10 -8 Z" transform="translate(0 0)"/>
+    <circle class="dk" cx="40" cy="226" r="4"/><circle class="dk" cx="56" cy="226" r="4"/><path class="ln" d="M42 240 q6 6 12 0"/>
+    <path class="fill" data-n="꼭지" d="M236 300 q0 -12 8 -16 l4 4 q-6 4 -4 12 Z"/><ellipse class="fill" data-n="호박" cx="240" cy="324" rx="34" ry="24"/><path class="ln" d="M226 304 q-8 20 0 40 M254 304 q8 20 0 40"/>
+    <path class="fill" data-n="박쥐" d="M226 40 q-16 -14 -34 -6 q12 6 10 16 q12 -6 24 4 q12 -10 24 -4 q-2 -10 10 -16 q-18 -8 -34 6 Z" transform="translate(-60 0)"/></svg>`}
 ]},
 { id:"xmas", name:"크리스마스", emoji:"🎄", premium:false, pics:[
   {id:"xtree", name:"트리", free:true, svg:`<svg ${A}>${BG()}
@@ -2132,7 +2527,36 @@ const PACKS = [
     <polygon class="fill" data-n="별" points="${star(170,214,14,6,5)}"/>
     <rect class="fill" data-n="다리" x="104" y="236" width="16" height="34" rx="4"/><rect class="fill" data-n="다리" x="230" y="236" width="16" height="34" rx="4"/>
     <path class="fill" data-n="썰매날" d="M40 266 h260 q30 0 30 -24 q0 -10 10 -10 q10 2 8 14 q-4 40 -48 40 H40 q-10 0 -10 -10 q0 -10 10 -10 Z"/>
-    </g></svg>`}
+    </g></svg>`},
+{id:"ornament", name:"트리 장식볼", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="나뭇가지" d="M8 40 q90 30 172 18 q90 -12 172 20 v-26 q-90 -24 -172 -14 q-90 10 -172 -14 Z"/>
+    <g class="ln"><path d="M60 44 l-10 18 M110 52 l-8 20 M250 52 l8 20 M300 58 l10 18"/></g>
+    <path class="ln" d="M180 62 v30"/>
+    <circle class="fill" data-n="고리" cx="180" cy="96" r="10"/>
+    <rect class="fill" data-n="뚜껑" x="156" y="102" width="48" height="30" rx="6"/><path class="ln" d="M168 104 v26 M180 104 v26 M192 104 v26"/>
+    <circle class="fill" data-n="장식볼" cx="180" cy="224" r="100"/>
+    <path class="fill" data-n="띠" d="M84 196 q96 -30 192 0 v48 q-96 30 -192 0 Z"/>
+    <path class="ln" d="M84 196 q96 -30 192 0 M84 244 q96 30 192 0"/>
+    <polygon class="fill" data-n="별" points="${star(130,212,14,6,5)}"/><polygon class="fill" data-n="별" points="${star(230,212,14,6,5)}"/>
+    <ellipse class="wt" cx="122" cy="160" rx="10" ry="22" transform="rotate(40 122 160)"/>
+    <circle class="dk" cx="160" cy="276" r="7"/><circle class="dk" cx="200" cy="276" r="7"/><path class="ln" d="M170 294 q10 10 20 0"/>
+    <ellipse class="fill" data-n="볼" cx="142" cy="294" rx="11" ry="7"/><ellipse class="fill" data-n="볼" cx="218" cy="294" rx="11" ry="7"/>
+    <circle class="fill" data-n="눈송이" cx="50" cy="160" r="10"/><circle class="fill" data-n="눈송이" cx="312" cy="150" r="12"/><circle class="fill" data-n="눈송이" cx="44" cy="300" r="12"/><circle class="fill" data-n="눈송이" cx="318" cy="300" r="9"/></svg>`},
+  {id:"gingerhouse", name:"과자집", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(54,56,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(310,60,14,6,5)}"/>
+    ${GR("눈",304)}
+    <rect class="fill" data-n="벽" x="84" y="160" width="192" height="144"/>
+    <path class="fill" data-n="지붕" d="M58 172 L180 64 L302 172 Z"/>
+    <path class="fill" data-n="크림" d="M58 172 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 Z"/>
+    <path class="fill" data-n="크림" d="M180 64 L58 172 l-6 -8 L180 50 L308 164 l-6 8 Z"/>
+    <circle class="fill" data-n="사탕" cx="180" cy="110" r="16"/><path class="ln" d="M168 100 q12 10 24 20"/>
+    <circle class="fill" data-n="젤리" cx="132" cy="146" r="9"/><circle class="fill" data-n="젤리" cx="228" cy="146" r="9"/>
+    <rect class="fill" data-n="창문" x="104" y="196" width="46" height="42" rx="6"/><path class="ln" d="M127 196 v42 M104 217 h46"/>
+    <rect class="fill" data-n="창문" x="210" y="196" width="46" height="42" rx="6"/><path class="ln" d="M233 196 v42 M210 217 h46"/>
+    <path class="fill" data-n="문" d="M156 304 v-52 q24 -28 48 0 v52 Z"/><circle class="dk" cx="194" cy="280" r="4"/>
+    <circle class="fill" data-n="단추사탕" cx="110" cy="272" r="10"/><circle class="fill" data-n="단추사탕" cx="250" cy="272" r="10"/>
+    <path class="fill" data-n="지팡이사탕" d="M300 304 v-58 q0 -20 18 -20 q18 0 18 20 h-12 q0 -8 -6 -8 q-6 0 -6 8 v58 Z"/>
+    <circle class="fill" data-n="막대사탕" cx="46" cy="246" r="22"/><path class="ln" d="M46 246 m-12 0 a12 12 0 1 1 12 12"/><rect class="fill" data-n="막대" x="42" y="268" width="8" height="36"/></svg>`}
 ]},
 { id:"space", name:"우주 탐험", emoji:"🪐", premium:false, pics:[
   {id:"planet", name:"토성", free:true, svg:`<svg ${A}>${BG()}
@@ -2235,7 +2659,36 @@ const PACKS = [
     <circle class="fill" data-n="불빛" cx="114" cy="210" r="10"/><circle class="fill" data-n="불빛" cx="246" cy="210" r="10"/>
     <path class="ln" d="M100 246 l-20 24 M180 246 v24 M260 246 l20 24"/>
     <circle class="fill" data-n="바퀴" cx="80" cy="282" r="28"/><circle class="fill" data-n="바퀴" cx="180" cy="282" r="28"/><circle class="fill" data-n="바퀴" cx="280" cy="282" r="28"/>
-    <circle class="wt" cx="80" cy="282" r="11"/><circle class="wt" cx="180" cy="282" r="11"/><circle class="wt" cx="280" cy="282" r="11"/></svg>`}
+    <circle class="wt" cx="80" cy="282" r="11"/><circle class="wt" cx="180" cy="282" r="11"/><circle class="wt" cx="280" cy="282" r="11"/></svg>`},
+{id:"mars", name:"화성", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(52,56,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(312,310,16,7,5)}"/><polygon class="fill" data-n="별" points="${star(310,56,12,5,5)}"/>
+    <circle class="fill" data-n="위성" cx="300" cy="120" r="22"/><circle class="fill" data-n="위성무늬" cx="294" cy="114" r="6"/>
+    <circle class="fill" data-n="위성" cx="62" cy="290" r="16"/>
+    <circle class="fill" data-n="화성" cx="180" cy="184" r="118"/>
+    <path class="fill" data-n="극관" d="M130 96 q50 -26 100 0 q-50 22 -100 0 Z"/>
+    <path class="fill" data-n="무늬" d="M76 150 q40 -16 70 6 q-20 20 -66 14 Z"/>
+    <path class="fill" data-n="무늬" d="M226 232 q26 -10 50 2 q-12 24 -46 18 Z"/>
+    <circle class="fill" data-n="분화구" cx="244" cy="146" r="16"/><circle class="fill" data-n="분화구" cx="112" cy="250" r="13"/><circle class="fill" data-n="분화구" cx="190" cy="270" r="10"/>
+    <circle class="dk" cx="158" cy="186" r="9"/><circle class="dk" cx="206" cy="186" r="9"/>
+    <circle class="wt" cx="161" cy="182" r="3"/><circle class="wt" cx="209" cy="182" r="3"/>
+    <path class="ln" d="M168 212 q14 14 28 0"/>
+    <ellipse class="fill" data-n="볼" cx="134" cy="212" rx="14" ry="9"/><ellipse class="fill" data-n="볼" cx="230" cy="212" rx="14" ry="9"/></svg>`},
+  {id:"spacedog", name:"우주 강아지", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(50,54,16,7,5)}"/><polygon class="fill" data-n="별" points="${star(316,300,16,7,5)}"/><polygon class="fill" data-n="별" points="${star(46,300,12,5,5)}"/>
+    <circle class="fill" data-n="행성" cx="300" cy="66" r="30"/><path class="ln" d="M272 74 q28 -18 56 -16"/>
+    <rect class="fill" data-n="산소통" x="246" y="214" width="34" height="70" rx="12"/>
+    <rect class="fill" data-n="우주복" x="114" y="208" width="132" height="96" rx="40"/>
+    <rect class="fill" data-n="버튼판" x="152" y="232" width="56" height="40" rx="8"/><circle class="fill" data-n="버튼" cx="168" cy="252" r="7"/><circle class="fill" data-n="버튼" cx="192" cy="252" r="7"/>
+    <ellipse class="fill" data-n="장갑" cx="104" cy="248" rx="18" ry="22"/><ellipse class="fill" data-n="장갑" cx="256" cy="248" rx="18" ry="22" transform="translate(0 0)"/>
+    <ellipse class="fill" data-n="부츠" cx="150" cy="312" rx="26" ry="14"/><ellipse class="fill" data-n="부츠" cx="210" cy="312" rx="26" ry="14"/>
+    <circle class="fill" data-n="헬멧" cx="180" cy="134" r="92"/>
+    <path class="fill" data-n="귀" d="M122 98 q-34 10 -30 70 q26 -4 38 -40 Z"/><path class="fill" data-n="귀" d="M238 98 q34 10 30 70 q-26 -4 -38 -40 Z"/>
+    <ellipse class="fill" data-n="얼굴" cx="180" cy="140" rx="62" ry="58"/>
+    <ellipse class="fill" data-n="주둥이" cx="180" cy="168" rx="30" ry="22"/>
+    <ellipse class="dk" cx="180" cy="156" rx="11" ry="8"/><path class="ln" d="M180 164 v10 M180 174 q-10 8 -18 0 M180 174 q10 8 18 0"/>
+    <circle class="dk" cx="154" cy="128" r="8"/><circle class="dk" cx="206" cy="128" r="8"/><circle class="wt" cx="157" cy="125" r="3"/><circle class="wt" cx="209" cy="125" r="3"/>
+    <ellipse class="wt" cx="118" cy="84" rx="8" ry="18" transform="rotate(40 118 84)"/>
+    <rect class="fill" data-n="목링" x="120" y="212" width="120" height="16" rx="8"/></svg>`}
 ]},
 { id:"farm", name:"농장 동물", emoji:"🐮", premium:false, pics:[
   {id:"cow", name:"젖소", free:true, svg:`<svg ${A}>${BG()}
@@ -2346,7 +2799,35 @@ const PACKS = [
     <path class="fill" data-n="몸" d="M108 214 q0 -60 70 -70 q4 -50 50 -50 q40 4 36 50 q-2 24 -18 34 q40 20 40 50 q0 64 -90 64 q-88 0 -88 -78 Z"/>
     <polygon class="fill" data-n="부리" points="262,118 292,128 262,138"/><ellipse class="fill" data-n="턱볏" cx="258" cy="152" rx="9" ry="15"/>
     <circle class="dk" cx="240" cy="116" r="6"/>
-    <path class="fill" data-n="날개" d="M140 222 q44 -34 90 -4 q-44 44 -90 4 Z"/></svg>`}
+    <path class="fill" data-n="날개" d="M140 222 q44 -34 90 -4 q-44 44 -90 4 Z"/></svg>`},
+{id:"donkey", name:"당나귀", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="304" cy="58" r="22"/>
+    ${GR("풀밭",300)}
+    <path class="ln" d="M290 182 q22 20 18 64"/><path class="fill" data-n="꼬리털" d="M308 240 q14 10 6 34 q-12 -2 -16 -10 q-4 -18 10 -24 Z"/>
+    <rect class="fill" data-n="다리" x="140" y="226" width="20" height="70" rx="8"/><rect class="fill" data-n="다리" x="170" y="230" width="20" height="66" rx="8"/><rect class="fill" data-n="다리" x="240" y="230" width="20" height="66" rx="8"/><rect class="fill" data-n="다리" x="268" y="226" width="20" height="70" rx="8"/>
+    <rect class="fill" data-n="발굽" x="136" y="288" width="28" height="16" rx="5"/><rect class="fill" data-n="발굽" x="166" y="288" width="28" height="16" rx="5"/><rect class="fill" data-n="발굽" x="236" y="288" width="28" height="16" rx="5"/><rect class="fill" data-n="발굽" x="264" y="288" width="28" height="16" rx="5"/>
+    <ellipse class="fill" data-n="몸" cx="214" cy="200" rx="86" ry="46"/>
+    <ellipse class="fill" data-n="목" cx="148" cy="166" rx="28" ry="50" transform="rotate(-40 148 166)"/>
+    <path class="fill" data-n="갈기" d="M120 108 q10 -14 22 -2 q10 -10 18 4 q12 -6 16 8 q12 -2 12 12 q12 2 8 14 q-14 8 -30 2 q-20 -14 -46 -38 Z"/>
+    <ellipse class="fill" data-n="귀" cx="92" cy="58" rx="12" ry="36" transform="rotate(-18 92 58)"/><ellipse class="fill" data-n="귀" cx="134" cy="64" rx="12" ry="36" transform="rotate(22 134 64)"/>
+    <ellipse class="fill" data-n="얼굴" cx="110" cy="130" rx="40" ry="48"/>
+    <ellipse class="fill" data-n="코" cx="104" cy="176" rx="34" ry="24"/><ellipse class="dk" cx="92" cy="174" rx="4" ry="5"/><ellipse class="dk" cx="116" cy="174" rx="4" ry="5"/>
+    <circle class="dk" cx="94" cy="124" r="6"/><circle class="dk" cx="126" cy="124" r="6"/><circle class="wt" cx="96" cy="121" r="2"/><circle class="wt" cx="128" cy="121" r="2"/>
+    <path class="ln" d="M94 188 q10 8 20 0"/></svg>`},
+  {id:"windmill", name:"풍차", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="구름" d="M40 92 q-2 -22 22 -20 q8 -18 28 -8 q20 -4 20 16 q14 4 6 14 H46 q-10 0 -6 -2 Z"/>
+    ${GR("풀밭",300)}
+    <path class="fill" data-n="탑" d="M120 300 L146 132 H214 L240 300 Z"/>
+    <path class="fill" data-n="지붕" d="M134 138 q46 -70 92 0 Z"/>
+    <path class="fill" data-n="문" d="M160 300 v-40 q20 -26 40 0 v40 Z"/>
+    <circle class="fill" data-n="창문" cx="180" cy="200" r="16"/><path class="ln" d="M164 200 h32 M180 184 v32"/>
+    <g transform="rotate(30 180 124)"><rect class="fill" data-n="날개" x="186" y="18" width="32" height="92" rx="4"/><path class="ln" d="M202 18 v92 M186 48 h32 M186 78 h32"/><rect class="fill" data-n="날개살" x="174" y="14" width="12" height="110" rx="5"/></g>
+    <g transform="rotate(120 180 124)"><rect class="fill" data-n="날개" x="186" y="18" width="32" height="92" rx="4"/><path class="ln" d="M202 18 v92 M186 48 h32 M186 78 h32"/><rect class="fill" data-n="날개살" x="174" y="14" width="12" height="110" rx="5"/></g>
+    <g transform="rotate(210 180 124)"><rect class="fill" data-n="날개" x="186" y="18" width="32" height="92" rx="4"/><path class="ln" d="M202 18 v92 M186 48 h32 M186 78 h32"/><rect class="fill" data-n="날개살" x="174" y="14" width="12" height="110" rx="5"/></g>
+    <g transform="rotate(300 180 124)"><rect class="fill" data-n="날개" x="186" y="18" width="32" height="92" rx="4"/><path class="ln" d="M202 18 v92 M186 48 h32 M186 78 h32"/><rect class="fill" data-n="날개살" x="174" y="14" width="12" height="110" rx="5"/></g>
+    <circle class="fill" data-n="가운데" cx="180" cy="124" r="14"/>
+    <path class="ln" d="M60 322 v-30 M300 322 v-30"/>
+    <path class="fill" data-n="튤립" d="M46 292 q-4 -26 4 -30 l7 10 l7 -10 l7 10 l7 -10 q8 4 4 30 Z"/><path class="fill" data-n="튤립" d="M286 292 q-4 -26 4 -30 l7 10 l7 -10 l7 10 l7 -10 q8 4 4 30 Z"/></svg>`}
 ]},
 { id:"plant", name:"꽃과 식물", emoji:"🌻", premium:false, pics:[
   {id:"sunflower", name:"해바라기", free:true, svg:`<svg ${A}>${BG()}
@@ -2442,7 +2923,31 @@ const PACKS = [
     <path class="fill" data-n="꽃잎" d="M180 256 q-50 -30 -40 -118 q40 40 40 110 Z"/><path class="fill" data-n="꽃잎" d="M180 256 q50 -30 40 -118 q-40 40 -40 110 Z"/>
     <path class="fill" data-n="꽃잎" d="M180 256 q-30 -60 0 -150 q30 90 0 150 Z"/>
     <circle class="fill" data-n="해" cx="60" cy="62" r="24"/><g class="ln"><path d="M60 28 v-8 M94 62 h8 M84 38 l6 -6"/></g>
-    <g class="ln"><path d="M40 330 q20 -8 40 0 M260 336 q20 -8 40 0"/></g></svg>`}
+    <g class="ln"><path d="M40 330 q20 -8 40 0 M260 336 q20 -8 40 0"/></g></svg>`},
+{id:"cherryblossom", name:"벚꽃", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="나뭇가지" d="M14 340 q60 -90 150 -150 q60 -44 150 -100 l8 12 q-80 54 -136 92 q30 6 70 -4 l2 14 q-50 14 -92 0 q-80 60 -132 140 Z"/>
+    <ellipse class="fill" data-n="꽃봉오리" cx="250" cy="206" rx="13" ry="18" transform="rotate(40 250 206)"/><ellipse class="fill" data-n="꽃봉오리" cx="56" cy="270" rx="13" ry="18" transform="rotate(-30 56 270)"/>
+    <path class="fill" data-n="작은 꽃잎" d="M292 82 q-24 -14 -14.4 -40 q7.2 4 14.4 -2.4 q7.2 6.4 14.4 2.4 q9.6 26 -14.4 40 Z" transform="rotate(0 292 82)"/><path class="fill" data-n="작은 꽃잎" d="M292 82 q-24 -14 -14.4 -40 q7.2 4 14.4 -2.4 q7.2 6.4 14.4 2.4 q9.6 26 -14.4 40 Z" transform="rotate(72 292 82)"/><path class="fill" data-n="작은 꽃잎" d="M292 82 q-24 -14 -14.4 -40 q7.2 4 14.4 -2.4 q7.2 6.4 14.4 2.4 q9.6 26 -14.4 40 Z" transform="rotate(144 292 82)"/><path class="fill" data-n="작은 꽃잎" d="M292 82 q-24 -14 -14.4 -40 q7.2 4 14.4 -2.4 q7.2 6.4 14.4 2.4 q9.6 26 -14.4 40 Z" transform="rotate(216 292 82)"/><path class="fill" data-n="작은 꽃잎" d="M292 82 q-24 -14 -14.4 -40 q7.2 4 14.4 -2.4 q7.2 6.4 14.4 2.4 q9.6 26 -14.4 40 Z" transform="rotate(288 292 82)"/>
+    <circle class="fill" data-n="꽃술" cx="292" cy="82" r="10"/>
+    <path class="fill" data-n="꽃잎" d="M170 172 q-50.4 -29.4 -30.2 -84 q15.1 8.4 30.2 -5 q15.1 13.4 30.2 5 q20.2 54.6 -30.2 84 Z" transform="rotate(0 170 172)"/><path class="fill" data-n="꽃잎" d="M170 172 q-50.4 -29.4 -30.2 -84 q15.1 8.4 30.2 -5 q15.1 13.4 30.2 5 q20.2 54.6 -30.2 84 Z" transform="rotate(72 170 172)"/><path class="fill" data-n="꽃잎" d="M170 172 q-50.4 -29.4 -30.2 -84 q15.1 8.4 30.2 -5 q15.1 13.4 30.2 5 q20.2 54.6 -30.2 84 Z" transform="rotate(144 170 172)"/><path class="fill" data-n="꽃잎" d="M170 172 q-50.4 -29.4 -30.2 -84 q15.1 8.4 30.2 -5 q15.1 13.4 30.2 5 q20.2 54.6 -30.2 84 Z" transform="rotate(216 170 172)"/><path class="fill" data-n="꽃잎" d="M170 172 q-50.4 -29.4 -30.2 -84 q15.1 8.4 30.2 -5 q15.1 13.4 30.2 5 q20.2 54.6 -30.2 84 Z" transform="rotate(288 170 172)"/>
+    <circle class="fill" data-n="꽃술" cx="170" cy="172" r="22"/>
+    <g class="ln"><path d="M170 150 v-14 M191 165 l12 -6 M184 190 l8 10 M156 190 l-8 10 M149 165 l-12 -6"/></g>
+    <path class="fill" data-n="날리는 꽃잎" d="M70 70 q-18 -14 -4 -30 q4 6 10 4 q10 20 -6 26 Z"/><path class="fill" data-n="날리는 꽃잎" d="M300 270 q-20 -6 -12 -26 q6 4 10 0 q16 14 2 26 Z"/></svg>`},
+  {id:"morningglory", name:"나팔꽃", svg:`<svg ${A}>${BG()}
+    ${GR("땅",310)}
+    <rect class="fill" data-n="지지대" x="292" y="40" width="14" height="272" rx="6"/>
+    <path class="ln" d="M299 300 q-30 -20 0 -40 q30 -20 0 -40 q-30 -20 0 -40 q30 -20 0 -40 q-30 -20 0 -40 q24 -14 6 -36 M290 250 q-60 0 -96 -40 M300 160 q-40 10 -80 -10 M296 110 q-10 -30 -40 -40"/>
+    <path class="fill" data-n="잎" d="M250 152 C 214 130 220 92 252 112 C 284 92 290 130 250 152 Z" transform="rotate(-30 250 130)"/>
+    <path class="fill" data-n="잎" d="M110 300 C 70 270 82 230 112 252 C 142 230 152 270 110 300 Z" transform="rotate(20 110 270)"/>
+    <path class="fill" data-n="잎" d="M330 236 C 300 216 306 186 330 202 C 344 192 350 216 330 236 Z"/>
+    <path class="fill" data-n="꽃봉오리" d="M256 72 q-20 -10 -10 -36 q16 4 22 24 q2 10 -12 12 Z"/>
+    <path class="fill" data-n="꽃대롱" d="M200 252 L210 266 L104 280 L92 196 Z"/>
+    <ellipse class="fill" data-n="작은 꽃" cx="92" cy="238" rx="18" ry="44" transform="rotate(-6 92 238)"/>
+    <path class="fill" data-n="꽃받침" d="M198 248 l16 -8 l4 14 l-4 14 l-16 -6 Z"/>
+    <path class="fill" data-n="꽃대롱" d="M150 160 H186 L176 220 H160 Z"/>
+    <circle class="fill" data-n="큰 꽃잎" cx="168" cy="110" r="70"/>
+    <path class="fill" data-n="꽃 무늬" d="M168 110 L168 48 L183 96 L234 90 L190 118 L210 166 L168 136 L126 166 L146 118 L102 90 L153 96 L168 48 Z"/>
+    <circle class="fill" data-n="꽃술" cx="168" cy="110" r="16"/></svg>`}
 ]},
 { id:"party", name:"생일 파티", emoji:"🎂", premium:false, pics:[
   {id:"cake", name:"생일케이크", free:true, svg:`<svg ${A}>${BG()}
@@ -2546,7 +3051,30 @@ const PACKS = [
     <rect class="fill" data-n="화면" x="132" y="186" width="58" height="40" rx="6"/>
     <path class="fill" data-n="하트" d="M161 218 l-14 -14 a8 8 0 0 1 14 -8 a8 8 0 0 1 14 8 Z"/>
     <circle class="fill" data-n="버튼" cx="218" cy="196" r="11"/><circle class="fill" data-n="버튼" cx="218" cy="228" r="11"/>
-    <rect class="fill" data-n="버튼" x="132" y="236" width="58" height="14" rx="6"/></svg>`}
+    <rect class="fill" data-n="버튼" x="132" y="236" width="58" height="14" rx="6"/></svg>`},
+{id:"pinata", name:"피냐타", svg:`<svg ${A}>${BG()}
+    <path class="ln" d="M180 8 V48"/>
+    <polygon class="fill" data-n="뿔" points="157.9,129.6 180,46 202.1,129.6"/><polygon class="fill" data-n="뿔" points="211.6,136.6 297.9,131.7 225.2,178.5"/><polygon class="fill" data-n="뿔" points="221.6,189.7 252.9,270.3 185.9,215.6"/><polygon class="fill" data-n="뿔" points="174.1,215.6 107.1,270.3 138.4,189.7"/><polygon class="fill" data-n="뿔" points="134.8,178.5 62.1,131.7 148.4,136.6"/>
+    <circle class="fill" data-n="몸통" cx="180" cy="170" r="58"/>
+    <path class="fill" data-n="줄무늬" d="M124 156 h112 q4 14 0 28 h-112 q-4 -14 0 -28 Z"/>
+    <circle class="dk" cx="160" cy="146" r="7"/><circle class="dk" cx="200" cy="146" r="7"/><circle class="wt" cx="162" cy="143" r="2.5"/><circle class="wt" cx="202" cy="143" r="2.5"/>
+    <path class="ln" d="M164 202 q16 14 32 0"/>
+    <path class="fill" data-n="술" d="M300 128 l20 -6 l-4 10 l14 6 l-14 6 Z"/><path class="fill" data-n="술" d="M60 128 l-20 -6 l4 10 l-14 6 l14 6 Z"/>
+    <rect class="fill" data-n="막대" x="40" y="250" width="16" height="100" rx="7" transform="rotate(-50 48 300)"/>
+    <ellipse class="fill" data-n="사탕" cx="276" cy="300" rx="20" ry="13"/><polygon class="fill" data-n="사탕" points="256,300 240,290 240,310"/><polygon class="fill" data-n="사탕" points="296,300 312,290 312,310"/>
+    <g transform="rotate(25 170 312)"><ellipse class="fill" data-n="사탕" cx="170" cy="312" rx="18" ry="12"/><polygon class="fill" data-n="사탕" points="152,312 138,302 138,322"/><polygon class="fill" data-n="사탕" points="188,312 202,302 202,322"/></g>
+    <polygon class="fill" data-n="별" points="${star(290,46,20,8,5)}"/></svg>`},
+  {id:"cakeslice", name:"조각 케이크", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="접시" cx="186" cy="276" rx="160" ry="44"/>
+    <path class="fill" data-n="빵" d="M56 206 L314 176 V256 L56 286 Z"/>
+    <path class="fill" data-n="크림층" d="M56 244 L314 214 V232 L56 262 Z"/>
+    <polygon class="fill" data-n="윗면" points="56,206 268,124 314,176"/>
+    <path class="fill" data-n="크림" d="M56 206 L314 176 v14 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 q-13 18 -26 3 Z"/>
+    <path class="fill" data-n="휘핑크림" d="M226 168 q-20 0 -14 -18 q-6 -18 14 -20 q8 -18 26 -8 q18 2 14 18 q12 14 -6 26 Z"/>
+    <path class="fill" data-n="딸기" d="M246 140 q-26 -10 -20 -36 q12 -8 24 2 q14 -10 24 0 q4 26 -28 34 Z"/>
+    <path class="fill" data-n="꼭지" d="M236 102 l10 -14 l6 12 l14 -6 l-6 12 Z"/>
+    <circle class="dk" cx="242" cy="116" r="2.5"/><circle class="dk" cx="256" cy="114" r="2.5"/><circle class="dk" cx="248" cy="128" r="2.5"/>
+    <polygon class="fill" data-n="별" points="${star(70,70,24,10,5)}"/><polygon class="fill" data-n="별" points="${star(130,40,14,6,5)}"/></svg>`}
 ]},
 { id:"music", name:"악기 놀이", emoji:"🥁", premium:false, pics:[
   {id:"drum", name:"북", free:true, svg:`<svg ${A}>${BG()}
@@ -2642,11 +3170,31 @@ const PACKS = [
     <rect class="fill" data-n="띠" x="140" y="160" width="80" height="24" rx="10"/>
     <circle class="fill" data-n="마이크머리" cx="180" cy="110" r="62"/>
     <g class="ln"><path d="M122 90 h116 M118 112 h124 M124 134 h112 M152 54 v110 M180 48 v124 M208 54 v110"/></g>
-    </g></svg>`}
+    </g></svg>`},
+{id:"saxophone", name:"색소폰", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="음표" d="M290 120 v-60 l30 -8 v52 a12 10 0 1 1 -8 -8 v-28 l-14 4 v48 a12 10 0 1 1 -8 0 Z"/>
+    <polygon class="fill" data-n="별" points="${star(58,250,22,9,5)}"/>
+    <path class="fill" data-n="목관" d="M138 100 q-2 -40 -44 -52 l-4 16 q30 8 30 36 Z"/>
+    <rect class="fill" data-n="마우스피스" x="62" y="40" width="34" height="18" rx="7" transform="rotate(16 79 49)"/>
+    <path class="fill" data-n="몸통" d="M118 96 H162 V258 q0 26 26 26 q24 0 30 -26 L236 184 H284 L262 270 q-14 58 -76 58 q-68 0 -68 -70 Z"/>
+    <path class="fill" data-n="나팔" d="M236 184 L200 150 H322 L284 184 Z"/>
+    <ellipse class="fill" data-n="나팔 입구" cx="261" cy="148" rx="64" ry="18"/>
+    <ellipse class="fill" data-n="띠" cx="140" cy="100" rx="26" ry="9"/>
+    <circle class="fill" data-n="키" cx="140" cy="140" r="11"/><circle class="fill" data-n="키" cx="140" cy="172" r="11"/><circle class="fill" data-n="키" cx="140" cy="204" r="11"/><circle class="fill" data-n="키" cx="140" cy="236" r="11"/>
+    <circle class="fill" data-n="키" cx="200" cy="300" r="11"/><circle class="fill" data-n="키" cx="236" cy="286" r="11"/></svg>`},
+  {id:"triangle", name:"트라이앵글", svg:`<svg ${A}>${BG()}
+    <path class="ln" d="M180 36 V84"/>
+    <rect class="fill" data-n="고리" x="150" y="22" width="60" height="18" rx="8"/>
+    <path class="fill" data-n="트라이앵글" d="M76 262 L180 80 L304 294 L92 294 L112 276 L272 276 L180 114 L98 258 Z"/>
+    <g transform="rotate(-35 270 170)"><rect class="fill" data-n="채" x="264" y="96" width="12" height="150" rx="6"/><circle class="fill" data-n="채 손잡이" cx="270" cy="246" r="12"/></g>
+    <g class="ln"><path d="M60 150 q-14 16 0 32 M40 140 q-24 26 0 52 M316 240 q14 14 0 30"/></g>
+    <path class="fill" data-n="음표" d="M64 96 v-44 l26 -8 v40 a11 9 0 1 1 -7 -7 v-20 l-12 3 v36 a11 9 0 1 1 -7 0 Z"/>
+    <path class="fill" data-n="음표" d="M300 104 v-48 l18 -6 v10 l-10 4 v40 a11 9 0 1 1 -8 0 Z"/>
+    <polygon class="fill" data-n="별" points="${star(312,160,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(54,240,18,8,5)}"/></svg>`}
 ]}
 ];
 
-PACKS.forEach(p=>p.premium=false); // 화면 색칠은 전부 무료 (인쇄만 유료)
+PACKS.forEach(p=>{ p.premium=true; p.pics.forEach((x,i)=>x.free=i===0); }); // 테마마다 첫 그림만 무료 체험, 나머지 색칠·인쇄는 골드(월 구독)
 const allPics = PACKS.flatMap(p=>p.pics.map(pic=>({pic, pack:p})));
 function picById(id){ return allPics.find(x=>x.pic.id===id); }
 
@@ -2654,7 +3202,7 @@ const KEY="coloring-kok-v3", GKEY="coloring-kok-gold", WKEY="coloring-kok-print"
 let saved={}, curId=PACKS[0].pics[0].id, color=COLORS[1][0], colorName=COLORS[1][1], undo=[];
 let isGold=false;
 // 골드 여부는 서버(/api/me)가 알려줌
-function packOpen(pk){ return true; } // 화면 색칠은 전부 무료
+function packOpen(pk){ return isGold; } // 골드면 전체, 아니면 무료 체험 그림만
 /* 주간 인쇄 카운트 (무료: 주 N장) */
 function weekId(){ const d=new Date(); const o=new Date(d.getFullYear(),0,1); return d.getFullYear()+"-"+Math.floor(((d-o)/86400000+o.getDay()+1)/7); }
 function printsThisWeek(){ try{ const w=JSON.parse(localStorage.getItem(WKEY)||"{}"); return w.id===weekId()?(w.n||0):0; }catch(e){ return 0; } }
@@ -2677,7 +3225,7 @@ async function tryPrint(run){
     bumpPrints(); r={ok:true,printsLeft:printsLeft()};
   }
   if(r.reason==="login"){ me.loggedIn=false; needLogin(); return; }
-  if(r.gold){ isGold=true; renderGoldUI(); run(); return; }
+  if(r.gold){ isGold=true; renderGoldUI(); renderPacks(); run(); return; }
   if(!r.ok){ showToast("이번 주 무료 인쇄를 모두 썼어요"); openGold(); return; }
   run();
   showToast(r.printsLeft>0?`인쇄했어요! 이번 주 ${r.printsLeft}장 남았어요 🖨️`:"이번 주 무료 인쇄를 모두 썼어요");
@@ -2856,7 +3404,7 @@ function printPack(pk){
   setTimeout(()=>{ if(document.body.classList.contains("print-pack")) done(); },1500);
 }
 
-/* 팩은 전부 무료 — 포인트 잠금 없음 */
+/* 잠금: 테마별 첫 그림만 무료, 나머지는 골드 */
 function openUnlock(){ openGold(); }
 
 /* 골드(인쇄 무제한) 모달 */
@@ -2871,7 +3419,7 @@ function openGold(){
   const gc=document.getElementById("goldCancel"); gc.hidden=!(isGold&&me.subActive); gc.dataset.confirm=""; gc.textContent="정기결제 해지하기";
   document.getElementById("goldDesc").textContent = isGold
     ? (me.goldUntil?`골드 이용 중이에요 👑 ${new Date(me.goldUntil).getMonth()+1}월 ${new Date(me.goldUntil).getDate()}일까지 · `+(me.subActive?"자동 연장돼요":"해지됨"):"이미 골드예요! 인쇄를 마음껏 즐기세요 👑")
-    : `무료는 종이 인쇄가 주 ${PRINT_FREE_PER_WEEK}장까지예요. 골드가 되면 언제든 마음껏 인쇄할 수 있어요.`;
+    : `테마마다 첫 그림은 무료 체험이에요. 골드가 되면 그림 204종을 전부 색칠하고 인쇄도 마음껏 할 수 있어요.`;
   goldMsg.textContent=""; goldMsg.className="msg";
   goldModal.classList.add("show");
 }
@@ -2919,7 +3467,7 @@ renderGoldUI();
 fetch("/api/me",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(d=>{
   if(!d) return; me=d;
   const a=document.getElementById("navLogin");
-  if(d.loggedIn){ window.__loggedIn=true; pullWorks(); a.href="/api/logout"; a.classList.add("out"); a.textContent="로그아웃"; if(d.gold){ isGold=true; renderGoldUI(); } }
+  if(d.loggedIn){ window.__loggedIn=true; pullWorks(); a.href="/api/logout"; a.classList.add("out"); a.textContent="로그아웃"; if(d.gold){ isGold=true; renderGoldUI(); renderPacks(); } }
   renderBuyBtn();
   if(window.__pendingPrint){ window.__pendingPrint=false; history.replaceState(null,"",location.pathname); tryPrint(()=>window.print()); }
 }).catch(()=>{});
@@ -2973,8 +3521,8 @@ function renderStars(){
   starBoard.innerHTML="";
   for(let i=0;i<stars;i++){ const s=document.createElement("span"); s.className="st"; s.textContent=STARS[i%STARS.length]; starBoard.appendChild(s); }
 }
-function awardStar(){
-  showToast("그림을 저장했어요! 🎉"); sparkle();
+function awardStar(msg){
+  showToast(msg||"그림을 저장했어요! 🎉"); sparkle();
   stars++; try{ localStorage.setItem(SKEY,JSON.stringify({d:new Date().toDateString(),n:stars})); }catch(e){}
   renderStars();
   const last=starBoard.lastChild; if(last&&last.scrollIntoView) last.scrollIntoView({block:"nearest"});
@@ -2987,18 +3535,23 @@ function show(id,on){ document.getElementById(id).classList.toggle("hide",!on); 
 function setMode(m){
   mode=m;
   document.querySelectorAll(".mode").forEach(b=>b.classList.toggle("on",b.dataset.m===m));
-  ["paper","drawCanvas","dotHost","stickerHost"].forEach(id=>document.getElementById(id).classList.toggle("hide",
-    id!==({color:"paper",draw:"drawCanvas",dots:"dotHost",sticker:"stickerHost"})[m]));
-  show("paletteSec", m==="color"||m==="draw"||m==="sticker");
+  const HOST={color:"paper",draw:"drawCanvas",dots:"dotHost",sticker:"stickerHost",maze:"mazeCanvas",memory:"memoryHost",puzzle:"puzzleHost",trace:"traceCanvas"};
+  Object.values(HOST).forEach(id=>document.getElementById(id).classList.toggle("hide",id!==HOST[m]));
+  show("paletteSec", m==="color"||m==="draw"||m==="sticker"||m==="trace");
   show("brushSec", m==="draw"); show("stickerSec", m==="sticker"); show("dotSec", m==="dots");
   show("toolsColor", m==="color"); show("toolsDraw", m==="draw"); show("toolsSticker", m==="sticker"); show("toolsDots", m==="dots");
-  show("packSection", m==="color");
+  ["maze","memory","puzzle","trace"].forEach(g=>{ show(g+"Sec", m===g); show("tools"+g[0].toUpperCase()+g.slice(1), m===g); });
+  show("packSection", m==="color"); show("progress", m==="color"); show("dock", m==="color");
   document.getElementById("paletteTitle").textContent = m==="sticker" ? "🎨 배경 색 고르기" : "🎨 색 고르기";
   if(m==="draw") initDraw();
   if(m==="dots" && !dotState.loaded) loadDot(0);
   if(m==="sticker") initSticker();
+  if(m==="maze" && !maze) newMaze();
+  if(m==="memory" && !mem) newMemory();
+  if(m==="puzzle" && !pz.order.length) newPuzzle();
+  if(m==="trace" && !traceCanvas.dataset.on){ traceCanvas.dataset.on=1; drawGuide(); }
 }
-document.querySelectorAll(".mode").forEach(b=>b.addEventListener("click",()=>setMode(b.dataset.m)));
+document.querySelectorAll(".mode").forEach(b=>b.addEventListener("click",()=>{ setMode(b.dataset.m); ev("mode",{m:b.dataset.m}); }));
 
 async function saveBlob(blob,name){
   try{ const dl=window.claude&&await claude.use("downloads"); if(dl){ await dl.save({filename:name,data:blob}); awardStar(); return; } }
@@ -3108,6 +3661,164 @@ document.getElementById("stkSave").addEventListener("click",()=>{
   }; img.src=url;
 });
 
+/* ---- 공통: 게임 성공 ---- */
+const shuffle=a=>{ for(let i=a.length-1;i>0;i--){ const j=Math.random()*(i+1)|0; [a[i],a[j]]=[a[j],a[i]]; } return a; };
+function winStar(msg,game){ cheer(msg); awardStar(msg); ev("game_clear",{game}); }
+function pickOn(wrap,b){ wrap.querySelectorAll(".dp").forEach(x=>x.classList.toggle("on",x===b)); }
+
+/* ---- 미로찾기 ---- */
+const mazeCanvas=document.getElementById("mazeCanvas"), mctx=mazeCanvas.getContext("2d");
+const MZ_DIR=[[0,-1,1,4],[1,0,2,8],[0,1,4,1],[-1,0,8,2]]; // dx,dy,내 통로 비트,상대 통로 비트 (북1 동2 남4 서8)
+let maze=null, mazeN=6, mazeDrag=false;
+function newMaze(){
+  const N=mazeN, open=new Array(N*N).fill(0), seen=new Array(N*N).fill(false), st=[0]; seen[0]=true;
+  while(st.length){ const c=st[st.length-1], x=c%N, y=c/N|0;
+    const nb=MZ_DIR.filter(([dx,dy])=>{ const nx=x+dx, ny=y+dy; return nx>=0&&ny>=0&&nx<N&&ny<N&&!seen[ny*N+nx]; });
+    if(!nb.length){ st.pop(); continue; }
+    const [dx,dy,b,o]=nb[Math.random()*nb.length|0], n=(y+dy)*N+x+dx; open[c]|=b; open[n]|=o; seen[n]=true; st.push(n); }
+  maze={N,open,path:[0],done:false}; drawMaze();
+}
+function drawMaze(){
+  const {N,open,path}=maze, P=40, cs=680/N, goal=N*N-1, cx=i=>P+(i%N+.5)*cs, cy=i=>P+((i/N|0)+.5)*cs;
+  mctx.fillStyle="#fff"; mctx.fillRect(0,0,760,760);
+  mctx.fillStyle="#F0EAFF"; mctx.fillRect(P,P,cs,cs);
+  mctx.fillStyle="#FFF1CC"; mctx.fillRect(P+(N-1)*cs,P+(N-1)*cs,cs,cs);
+  mctx.lineCap="round"; mctx.lineJoin="round";
+  mctx.strokeStyle="#FF5FA2"; mctx.lineWidth=cs*.3; mctx.beginPath();
+  path.forEach((c,k)=>k?mctx.lineTo(cx(c),cy(c)):mctx.moveTo(cx(c),cy(c))); mctx.stroke();
+  mctx.strokeStyle="#241B3E"; mctx.lineWidth=Math.max(7,cs*.11); mctx.beginPath();
+  for(let i=0;i<N*N;i++){ const x=P+(i%N)*cs, y=P+(i/N|0)*cs, o=open[i];
+    if(!(o&1)){ mctx.moveTo(x,y); mctx.lineTo(x+cs,y); }
+    if(!(o&8)){ mctx.moveTo(x,y); mctx.lineTo(x,y+cs); }
+    if(i%N===N-1&&!(o&2)){ mctx.moveTo(x+cs,y); mctx.lineTo(x+cs,y+cs); }
+    if((i/N|0)===N-1&&!(o&4)){ mctx.moveTo(x,y+cs); mctx.lineTo(x+cs,y+cs); } }
+  mctx.stroke();
+  mctx.textAlign="center"; mctx.textBaseline="middle"; mctx.font=(cs*.62)+"px serif";
+  const end=path[path.length-1];
+  if(end!==goal) mctx.fillText("🥕",cx(goal),cy(goal));
+  mctx.fillText("🐰",cx(end),cy(end));
+}
+function mazeCell(e){ const r=mazeCanvas.getBoundingClientRect(), cs=680/maze.N,
+  x=Math.floor(((e.clientX-r.left)/r.width*760-40)/cs), y=Math.floor(((e.clientY-r.top)/r.height*760-40)/cs);
+  return x<0||y<0||x>=maze.N||y>=maze.N?-1:y*maze.N+x; }
+// 손가락 칸 쪽으로 한 칸씩 이동 — 벽이 있으면 멈춤, 왔던 길로 가면 지워짐
+function mazeTo(t){
+  const {N,open,path}=maze; if(t<0) return;
+  for(let g=0;g<N*2;g++){ const c=path[path.length-1]; if(c===t) break;
+    const x=c%N, y=c/N|0, tx=t%N, ty=t/N|0, cand=[];
+    if(tx!==x) cand.push(tx>x?1:3); if(ty!==y) cand.push(ty>y?2:0);
+    if(Math.abs(ty-y)>Math.abs(tx-x)) cand.reverse();
+    const d=cand.find(k=>open[c]&MZ_DIR[k][2]); if(d==null) break;
+    const n=c+MZ_DIR[d][0]+MZ_DIR[d][1]*N, k=path.indexOf(n);
+    if(k>=0) path.length=k+1; else path.push(n);
+    if(n===N*N-1){ maze.done=true; mazeDrag=false; break; } }
+  drawMaze();
+  if(maze.done) winStar("도착! 당근을 찾았어요 🥕","maze");
+}
+mazeCanvas.addEventListener("pointerdown",e=>{ if(mode!=="maze"||maze.done) return; mazeDrag=true; mazeCanvas.setPointerCapture(e.pointerId);
+  const c=mazeCell(e), k=maze.path.indexOf(c); if(k>=0){ maze.path.length=k+1; drawMaze(); } else mazeTo(c); });
+mazeCanvas.addEventListener("pointermove",e=>{ if(mazeDrag) mazeTo(mazeCell(e)); });
+mazeCanvas.addEventListener("pointerup",()=>mazeDrag=false);
+mazeCanvas.addEventListener("pointercancel",()=>mazeDrag=false);
+document.getElementById("mazePick").addEventListener("click",e=>{ const b=e.target.closest(".dp"); if(!b) return; pickOn(e.currentTarget,b); mazeN=+b.dataset.n; newMaze(); });
+document.getElementById("mazeNew").addEventListener("click",newMaze);
+
+/* ---- 짝맞추기 ---- */
+const memoryHost=document.getElementById("memoryHost");
+const MEM_EMO=["🐶","🐱","🐰","🐻","🐼","🦊","🐯","🐸","🐵","🐥","🦁","🐷","🍎","🍌","🍓","🍇","🍉","🍑","🚗","🌈"];
+let mem=null;
+function memStat(){ document.getElementById("memMoves").textContent=mem.moves; document.getElementById("memFound").textContent=mem.found; }
+function newMemory(){
+  const pick=shuffle(MEM_EMO.slice()).slice(0,6);
+  mem={lock:false,open:[],moves:0,found:0};
+  memoryHost.innerHTML=`<div class="mem-grid">${shuffle([...pick,...pick]).map(e=>`<button class="mcard" data-e="${e}" aria-label="카드 뒤집기"><span class="mc-in"><span class="mc-back"></span><span class="mc-front">${e}</span></span></button>`).join("")}</div>`;
+  memStat();
+}
+memoryHost.addEventListener("click",e=>{
+  const b=e.target.closest(".mcard"); if(!b||mem.lock||b.classList.contains("flip")) return;
+  b.classList.add("flip"); mem.open.push(b);
+  if(mem.open.length<2) return;
+  const [a,c]=mem.open; mem.open=[]; mem.moves++;
+  if(a.dataset.e===c.dataset.e){ a.classList.add("ok"); c.classList.add("ok"); mem.found++;
+    if(mem.found===6) setTimeout(()=>winStar(`${mem.moves}번 만에 다 찾았어요! 🎉`,"memory"),500); }
+  else { mem.lock=true; setTimeout(()=>{ a.classList.remove("flip"); c.classList.remove("flip"); mem.lock=false; },850); }
+  memStat();
+});
+document.getElementById("memNew").addEventListener("click",newMemory);
+
+/* ---- 그림 퍼즐 (무료 그림만) ---- */
+const puzzleHost=document.getElementById("puzzleHost");
+const PZ_PICS=allPics.filter(x=>x.pic.free).map(x=>x.pic);
+const PZ_COLS=["#FFB3C7","#FFD66B","#9FE3B4","#9CD3FF","#C9B5FF","#FFC28A","#7FE0D4","#FF9BB8","#B8E986"];
+let pz={n:3,pic:0,order:[],sel:-1,done:false};
+function coloredSvg(svg){ // 흰 도안은 조각 구분이 어려워 부위별로 색을 입힘
+  const t=document.createElement("div"); t.innerHTML=svg; const s=t.firstElementChild, m={}; let k=0;
+  s.querySelectorAll(".fill").forEach(f=>{ const n=f.dataset.n||"";
+    f.style.fill = n==="배경" ? "#FFF8E7" : (m[n]=m[n]||PZ_COLS[k++%PZ_COLS.length]); });
+  return s.outerHTML; }
+function newPuzzle(){
+  const n=pz.n; let o; do{ o=shuffle([...Array(n*n).keys()]); }while(o.every((v,i)=>v===i));
+  pz={...pz,order:o,sel:-1,done:false}; puzzleHost.classList.remove("done");
+  const svg=coloredSvg(PZ_PICS[pz.pic].svg);
+  puzzleHost.innerHTML=o.map(t=>`<button class="ptile" data-t="${t}" aria-label="퍼즐 조각" style="width:${100/n}%;height:${100/n}%"><span class="pt-img" style="width:${n*100}%;height:${n*100}%;left:${-(t%n)*100}%;top:${-(t/n|0)*100}%">${svg}</span></button>`).join("");
+  placeTiles();
+}
+function placeTiles(){ const n=pz.n;
+  puzzleHost.querySelectorAll(".ptile").forEach(b=>{ const t=+b.dataset.t, pos=pz.order.indexOf(t);
+    b.style.left=(pos%n)*100/n+"%"; b.style.top=(pos/n|0)*100/n+"%"; b.classList.toggle("sel",t===pz.sel); }); }
+puzzleHost.addEventListener("click",e=>{
+  const b=e.target.closest(".ptile"); if(!b||pz.done) return; const t=+b.dataset.t;
+  if(pz.sel<0||pz.sel===t){ pz.sel=pz.sel===t?-1:t; placeTiles(); return; }
+  const i=pz.order.indexOf(pz.sel), j=pz.order.indexOf(t); [pz.order[i],pz.order[j]]=[pz.order[j],pz.order[i]]; pz.sel=-1; placeTiles();
+  if(pz.order.every((v,k)=>v===k)){ pz.done=true; setTimeout(()=>{ puzzleHost.classList.add("done"); winStar("퍼즐 완성! 최고예요 🧩","puzzle"); },280); }
+});
+const pzPics=document.getElementById("pzPics");
+PZ_PICS.forEach((p,i)=>{ const b=document.createElement("button"); b.className="pzp"+(i===0?" on":""); b.setAttribute("aria-label",p.name+" 퍼즐"); b.title=p.name; b.innerHTML=coloredSvg(p.svg);
+  b.addEventListener("click",()=>{ pz.pic=i; pzPics.querySelectorAll(".pzp").forEach(x=>x.classList.toggle("on",x===b)); newPuzzle(); }); pzPics.appendChild(b); });
+document.getElementById("pzSize").addEventListener("click",e=>{ const b=e.target.closest(".dp"); if(!b) return; pickOn(e.currentTarget,b); pz.n=+b.dataset.n; newPuzzle(); });
+document.getElementById("pzNew").addEventListener("click",newPuzzle);
+
+/* ---- 따라 그리기 ---- */
+const traceCanvas=document.getElementById("traceCanvas"), tctx=traceCanvas.getContext("2d");
+const TRACE=[["동그라미","circle"],["세모","tri"],["네모","rect"],["별","star"],["하트","heart"],
+  ..."ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅎ".split("").map(c=>[c]), ..."123456789".split("").map(c=>[c])];
+let trI=0, tracing=false, tX=0, tY=0;
+function shapePath(k){ const p=new Path2D();
+  if(k==="circle") p.arc(380,385,255,0,Math.PI*2);
+  if(k==="tri"){ p.moveTo(380,120); p.lineTo(650,620); p.lineTo(110,620); p.closePath(); }
+  if(k==="rect") p.rect(140,140,480,480);
+  if(k==="star"){ for(let i=0;i<10;i++){ const r=i%2?120:290, a=-Math.PI/2+i*Math.PI/5; p.lineTo(380+r*Math.cos(a),405+r*Math.sin(a)); } p.closePath(); }
+  if(k==="heart"){ p.moveTo(380,650); p.bezierCurveTo(130,480,70,330,160,215); p.bezierCurveTo(240,120,350,150,380,250); p.bezierCurveTo(410,150,520,120,600,215); p.bezierCurveTo(690,330,630,480,380,650); p.closePath(); }
+  return p; }
+async function drawGuide(){
+  const [name,k]=TRACE[trI];
+  document.getElementById("traceName").textContent=`${name} (${trI+1}/${TRACE.length})`;
+  document.querySelectorAll("#tracePick .dp").forEach(b=>b.classList.toggle("on",trI>=+b.dataset.i&&(!b.nextElementSibling||trI<+b.nextElementSibling.dataset.i)));
+  if(!k) try{ await document.fonts.load("560px Jua",name); }catch(e){}
+  tctx.setLineDash([]); tctx.fillStyle="#fff"; tctx.fillRect(0,0,760,760);
+  tctx.lineCap="round"; tctx.lineJoin="round";
+  if(k){ const p=shapePath(k); tctx.strokeStyle="#F1ECFF"; tctx.lineWidth=64; tctx.stroke(p);
+    tctx.strokeStyle="#B9A6F5"; tctx.lineWidth=7; tctx.setLineDash([22,18]); tctx.stroke(p); }
+  else { // 글자 실제 크기를 재서 높이 460px로 맞추고 가운데 정렬
+    tctx.textAlign="left"; tctx.textBaseline="alphabetic"; tctx.font="500px 'Jua', sans-serif";
+    let m=tctx.measureText(name); const fs=500*460/(m.actualBoundingBoxAscent+m.actualBoundingBoxDescent);
+    tctx.font=fs+"px 'Jua', sans-serif"; m=tctx.measureText(name);
+    const x=380-(m.actualBoundingBoxRight-m.actualBoundingBoxLeft)/2, y=385+(m.actualBoundingBoxAscent-m.actualBoundingBoxDescent)/2;
+    tctx.fillStyle=tctx.strokeStyle="#F1ECFF"; tctx.lineWidth=40; tctx.strokeText(name,x,y); tctx.fillText(name,x,y);
+    tctx.strokeStyle="#B9A6F5"; tctx.lineWidth=6; tctx.setLineDash([18,15]); tctx.strokeText(name,x,y); }
+  tctx.setLineDash([]);
+}
+function tpos(e){ const r=traceCanvas.getBoundingClientRect(); return [(e.clientX-r.left)/r.width*760,(e.clientY-r.top)/r.height*760]; }
+function traceLine(x1,y1,x2,y2){ tctx.strokeStyle=penColor(); tctx.lineWidth=26; tctx.beginPath(); tctx.moveTo(x1,y1); tctx.lineTo(x2,y2); tctx.stroke(); }
+traceCanvas.addEventListener("pointerdown",e=>{ if(mode!=="trace") return; tracing=true; traceCanvas.setPointerCapture(e.pointerId); [tX,tY]=tpos(e); traceLine(tX,tY,tX,tY); });
+traceCanvas.addEventListener("pointermove",e=>{ if(!tracing) return; const [x,y]=tpos(e); traceLine(tX,tY,x,y); tX=x; tY=y; });
+traceCanvas.addEventListener("pointerup",()=>tracing=false);
+traceCanvas.addEventListener("pointercancel",()=>tracing=false);
+document.getElementById("tracePick").addEventListener("click",e=>{ const b=e.target.closest(".dp"); if(!b) return; trI=+b.dataset.i; drawGuide(); });
+document.getElementById("trClear").addEventListener("click",()=>{ drawGuide(); showToast("깨끗해졌어요! ✨"); });
+document.getElementById("trNext").addEventListener("click",()=>{ trI=(trI+1)%TRACE.length; drawGuide(); });
+document.getElementById("trSave").addEventListener("click",()=>traceCanvas.toBlob(b=>saveBlob(b,"따라그리기.png"),"image/png"));
+
 /* 오늘의 그림 뽑기 — 열린 그림 중 랜덤 */
 document.getElementById("luckyBtn").addEventListener("click",()=>{
   const pool=allPics.filter(x=>packOpen(x.pack)||x.pic.free).map(x=>x.pic.id).filter(id=>id!==curId);
@@ -3164,6 +3875,7 @@ renderPacks(); renderWorks();
 const qs=new URLSearchParams(location.search), qPic=qs.get("pic");
 if(qPic && picById(qPic)){ curId=qPic; setTimeout(()=>document.querySelector(".paper-card").scrollIntoView({block:"start"}),300); }
 window.__pendingPrint = qs.get("print")==="1";
+{ const f=picById(curId); if(f && !packOpen(f.pack) && !f.pic.free){ const want=curId===qPic; curId=PACKS[0].pics[0].id; if(want) setTimeout(()=>openUnlock(f.pack),700); } } // 잠긴 그림이면 무료 체험 그림으로 시작
 loadPicture(curId); setMode("color");
 if(window.__watchReveal) window.__watchReveal();
 </script>

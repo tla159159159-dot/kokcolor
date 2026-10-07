@@ -59,3 +59,32 @@
     <circle class="fill" data-n="전조등" cx="282" cy="132" r="16"/>
     <rect class="fill" data-n="발판" x="170" y="244" width="62" height="12" rx="4"/>
     <circle class="fill" data-n="뒷등" cx="44" cy="226" r="9"/></svg>`},
+
+{id:"submarine", name:"잠수함", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="물방울" cx="300" cy="62" r="10"/><circle class="fill" data-n="물방울" cx="318" cy="96" r="7"/><circle class="fill" data-n="물방울" cx="44" cy="120" r="8"/>
+    ${GR("모래",304)}
+    <path class="fill" data-n="해초" d="M40 304 Q30 270 46 250 Q60 276 52 304 Z"/><path class="fill" data-n="해초" d="M312 304 Q300 266 318 244 Q334 274 324 304 Z"/>
+    <path class="fill" data-n="물고기" d="M80 64 q24 -22 48 0 q-24 22 -48 0 Z M80 64 l-14 -12 v24 Z"/>
+    <path class="fill" data-n="잠망경" d="M196 120 V60 h40 v18 h-20 V120 Z"/>
+    <path class="fill" data-n="탑" d="M160 140 V112 q0 -10 10 -10 h52 q10 0 10 10 V140 Z"/>
+    <path class="fill" data-n="프로펠러" d="M34 176 q-12 20 0 40 l14 -12 v-16 Z"/>
+    <polygon class="fill" data-n="꼬리날개" points="96,170 60,116 82,110 124,156"/><polygon class="fill" data-n="꼬리날개" points="96,222 60,276 82,282 124,236"/>
+    <rect class="fill" data-n="몸체" x="54" y="134" width="280" height="124" rx="62"/>
+    <rect class="fill" data-n="줄무늬" x="58" y="226" width="272" height="16"/>
+    <circle class="fill" data-n="창문" cx="150" cy="190" r="22"/><circle class="fill" data-n="창문" cx="212" cy="190" r="22"/><circle class="fill" data-n="창문" cx="274" cy="190" r="22"/>
+    <circle class="wt" cx="144" cy="184" r="5"/><circle class="wt" cx="206" cy="184" r="5"/><circle class="wt" cx="268" cy="184" r="5"/></svg>`},
+  {id:"garbagetruck", name:"청소차", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="300" cy="58" r="22"/><g class="ln"><path d="M300 24 v-8 M266 58 h-8 M276 34 l-6 -6"/></g>
+    <path class="fill" data-n="구름" d="M60 92 q-6 -26 20 -28 q10 -18 30 -8 q22 -6 22 18 q14 4 6 18 Z"/>
+    ${GR("길",296)}
+    <path class="fill" data-n="쓰레기통" d="M24 238 h40 l-4 58 h-32 Z"/><rect class="fill" data-n="뚜껑" x="20" y="228" width="48" height="12" rx="5"/>
+    <path class="fill" data-n="적재함" d="M78 270 V140 q0 -14 14 -14 H214 V270 Z"/>
+    <path class="fill" data-n="뒷문" d="M70 270 V130 q0 -10 10 -6 L104 140 V270 Z"/>
+    <g class="ln"><path d="M126 160 V244 M158 160 V244 M190 160 V244"/></g>
+    <path class="fill" data-n="운전석" d="M214 270 V150 q0 -10 10 -10 H276 q12 0 18 12 L326 210 V270 Z"/>
+    <path class="fill" data-n="창문" d="M232 202 V160 H274 L298 202 Z"/>
+    <rect class="fill" data-n="범퍼" x="70" y="262" width="264" height="18" rx="8"/>
+    <ellipse class="fill" data-n="전조등" cx="322" cy="234" rx="7" ry="10"/>
+    <rect class="dk" x="236" y="214" width="16" height="6" rx="3"/>
+    <circle class="fill" data-n="바퀴" cx="126" cy="284" r="28"/><circle class="fill" data-n="바퀴" cx="270" cy="284" r="28"/>
+    <circle class="wt" cx="126" cy="284" r="11"/><circle class="wt" cx="270" cy="284" r="11"/></svg>`},

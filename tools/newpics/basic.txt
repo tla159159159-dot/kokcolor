@@ -45,3 +45,27 @@
     <circle class="fill" data-n="볼" cx="130" cy="196" r="14"/><circle class="fill" data-n="볼" cx="230" cy="196" r="14"/>
     <circle class="dk" cx="150" cy="172" r="9"/><circle class="dk" cx="210" cy="172" r="9"/><circle class="wt" cx="153" cy="168" r="3"/><circle class="wt" cx="213" cy="168" r="3"/>
     <path class="ln" d="M160 200 q20 20 40 0"/></svg>`},
+
+{id:"star", name:"별", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="달" d="M78 30 a42 42 0 1 0 44 62 a34 34 0 1 1 -44 -62 Z"/>
+    <polygon class="fill" data-n="작은별" points="${star(304,60,26,11,5)}"/>
+    <polygon class="fill" data-n="작은별" points="${star(54,300,22,9,5)}"/>
+    <polygon class="fill" data-n="작은별" points="${star(308,304,22,9,5)}"/>
+    <circle class="fill" data-n="반짝이" cx="250" cy="34" r="7"/><circle class="fill" data-n="반짝이" cx="110" cy="330" r="7"/><circle class="fill" data-n="반짝이" cx="40" cy="200" r="6"/>
+    <polygon class="fill" data-n="별" points="${star(180,192,132,60,5)}"/>
+    <circle class="fill" data-n="볼" cx="138" cy="214" r="12"/><circle class="fill" data-n="볼" cx="222" cy="214" r="12"/>
+    <circle class="dk" cx="156" cy="186" r="9"/><circle class="dk" cx="204" cy="186" r="9"/><circle class="wt" cx="159" cy="183" r="3"/><circle class="wt" cx="207" cy="183" r="3"/>
+    <path class="ln" d="M164 214 q16 16 32 0"/></svg>`},
+  {id:"bubbles", name:"비눗방울", svg:`<svg ${A}>${BG()}
+    ${GR("땅",318)}
+    <rect class="fill" data-n="막대" x="92" y="222" width="16" height="110" rx="8" transform="rotate(30 100 277)"/>
+    <circle class="fill" data-n="고리" cx="138" cy="204" r="32"/><circle class="fill" data-n="비눗막" cx="138" cy="204" r="20"/>
+    <rect class="fill" data-n="통" x="232" y="236" width="70" height="88" rx="14"/>
+    <rect class="fill" data-n="뚜껑" x="244" y="218" width="46" height="22" rx="6"/>
+    <circle class="fill" data-n="라벨" cx="267" cy="282" r="20"/>
+    <circle class="fill" data-n="큰방울" cx="196" cy="116" r="50"/>
+    <circle class="fill" data-n="비눗방울" cx="292" cy="88" r="32"/><circle class="fill" data-n="비눗방울" cx="92" cy="86" r="28"/>
+    <circle class="fill" data-n="비눗방울" cx="58" cy="176" r="16"/><circle class="fill" data-n="비눗방울" cx="250" cy="182" r="18"/><circle class="fill" data-n="비눗방울" cx="318" cy="164" r="13"/>
+    <g class="ln"><path d="M164 96 a36 36 0 0 1 22 -26 M272 74 a22 22 0 0 1 14 -14 M74 76 a20 20 0 0 1 12 -12 M238 176 a12 12 0 0 1 8 -8"/></g>
+    <circle class="dk" cx="178" cy="114" r="7"/><circle class="dk" cx="214" cy="114" r="7"/><circle class="wt" cx="180" cy="112" r="2.5"/><circle class="wt" cx="216" cy="112" r="2.5"/>
+    <path class="ln" d="M184 132 q12 12 24 0"/></svg>`},

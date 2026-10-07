@@ -47,3 +47,33 @@
     <rect class="fill" data-n="다리" x="104" y="236" width="16" height="34" rx="4"/><rect class="fill" data-n="다리" x="230" y="236" width="16" height="34" rx="4"/>
     <path class="fill" data-n="썰매날" d="M40 266 h260 q30 0 30 -24 q0 -10 10 -10 q10 2 8 14 q-4 40 -48 40 H40 q-10 0 -10 -10 q0 -10 10 -10 Z"/>
     </g></svg>`},
+
+{id:"ornament", name:"트리 장식볼", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="나뭇가지" d="M8 40 q90 30 172 18 q90 -12 172 20 v-26 q-90 -24 -172 -14 q-90 10 -172 -14 Z"/>
+    <g class="ln"><path d="M60 44 l-10 18 M110 52 l-8 20 M250 52 l8 20 M300 58 l10 18"/></g>
+    <path class="ln" d="M180 62 v30"/>
+    <circle class="fill" data-n="고리" cx="180" cy="96" r="10"/>
+    <rect class="fill" data-n="뚜껑" x="156" y="102" width="48" height="30" rx="6"/><path class="ln" d="M168 104 v26 M180 104 v26 M192 104 v26"/>
+    <circle class="fill" data-n="장식볼" cx="180" cy="224" r="100"/>
+    <path class="fill" data-n="띠" d="M84 196 q96 -30 192 0 v48 q-96 30 -192 0 Z"/>
+    <path class="ln" d="M84 196 q96 -30 192 0 M84 244 q96 30 192 0"/>
+    <polygon class="fill" data-n="별" points="${star(130,212,14,6,5)}"/><polygon class="fill" data-n="별" points="${star(230,212,14,6,5)}"/>
+    <ellipse class="wt" cx="122" cy="160" rx="10" ry="22" transform="rotate(40 122 160)"/>
+    <circle class="dk" cx="160" cy="276" r="7"/><circle class="dk" cx="200" cy="276" r="7"/><path class="ln" d="M170 294 q10 10 20 0"/>
+    <ellipse class="fill" data-n="볼" cx="142" cy="294" rx="11" ry="7"/><ellipse class="fill" data-n="볼" cx="218" cy="294" rx="11" ry="7"/>
+    <circle class="fill" data-n="눈송이" cx="50" cy="160" r="10"/><circle class="fill" data-n="눈송이" cx="312" cy="150" r="12"/><circle class="fill" data-n="눈송이" cx="44" cy="300" r="12"/><circle class="fill" data-n="눈송이" cx="318" cy="300" r="9"/></svg>`},
+  {id:"gingerhouse", name:"과자집", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(54,56,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(310,60,14,6,5)}"/>
+    ${GR("눈",304)}
+    <rect class="fill" data-n="벽" x="84" y="160" width="192" height="144"/>
+    <path class="fill" data-n="지붕" d="M58 172 L180 64 L302 172 Z"/>
+    <path class="fill" data-n="크림" d="M58 172 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 q15 18 30 0 Z"/>
+    <path class="fill" data-n="크림" d="M180 64 L58 172 l-6 -8 L180 50 L308 164 l-6 8 Z"/>
+    <circle class="fill" data-n="사탕" cx="180" cy="110" r="16"/><path class="ln" d="M168 100 q12 10 24 20"/>
+    <circle class="fill" data-n="젤리" cx="132" cy="146" r="9"/><circle class="fill" data-n="젤리" cx="228" cy="146" r="9"/>
+    <rect class="fill" data-n="창문" x="104" y="196" width="46" height="42" rx="6"/><path class="ln" d="M127 196 v42 M104 217 h46"/>
+    <rect class="fill" data-n="창문" x="210" y="196" width="46" height="42" rx="6"/><path class="ln" d="M233 196 v42 M210 217 h46"/>
+    <path class="fill" data-n="문" d="M156 304 v-52 q24 -28 48 0 v52 Z"/><circle class="dk" cx="194" cy="280" r="4"/>
+    <circle class="fill" data-n="단추사탕" cx="110" cy="272" r="10"/><circle class="fill" data-n="단추사탕" cx="250" cy="272" r="10"/>
+    <path class="fill" data-n="지팡이사탕" d="M300 304 v-58 q0 -20 18 -20 q18 0 18 20 h-12 q0 -8 -6 -8 q-6 0 -6 8 v58 Z"/>
+    <circle class="fill" data-n="막대사탕" cx="46" cy="246" r="22"/><path class="ln" d="M46 246 m-12 0 a12 12 0 1 1 12 12"/><rect class="fill" data-n="막대" x="42" y="268" width="8" height="36"/></svg>`},

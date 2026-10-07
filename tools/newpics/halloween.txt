@@ -54,3 +54,37 @@
       <path class="fill" data-n="리본" d="M196 212 l14 34 l8 -14 l14 6 Z"/>
     </g>
 </svg>`},
+
+{id:"monster", name:"귀여운 몬스터", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="달" cx="292" cy="70" r="36"/>
+    <polygon class="fill" data-n="별" points="${star(58,60,18,8,5)}"/>
+    ${GR("땅",304)}
+    <path class="fill" data-n="뿔" d="M124 104 q-20 -40 -2 -70 q18 26 34 60 Z"/><path class="fill" data-n="뿔" d="M236 104 q20 -40 2 -70 q-18 26 -34 60 Z"/>
+    <path class="fill" data-n="팔" d="M82 190 q-46 -6 -50 -48 q22 4 30 20 q8 -18 24 -18 q-10 20 6 26 Z"/>
+    <path class="fill" data-n="팔" d="M278 190 q46 -6 50 -48 q-22 4 -30 20 q-8 -18 -24 -18 q10 20 -6 26 Z"/>
+    <ellipse class="fill" data-n="발" cx="138" cy="304" rx="30" ry="16"/><ellipse class="fill" data-n="발" cx="222" cy="304" rx="30" ry="16"/>
+    <path class="fill" data-n="몸통" d="M180 80 c-80 0 -104 70 -104 130 c0 60 30 92 104 92 c74 0 104 -32 104 -92 c0 -60 -24 -130 -104 -130 Z"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="246" rx="58" ry="44"/>
+    <circle class="fill" data-n="점무늬" cx="110" cy="236" r="10"/><circle class="fill" data-n="점무늬" cx="254" cy="230" r="12"/><circle class="fill" data-n="점무늬" cx="250" cy="120" r="8"/>
+    <circle class="fill" data-n="눈" cx="180" cy="140" r="34"/><circle class="dk" cx="186" cy="146" r="16"/><circle class="wt" cx="192" cy="140" r="5"/>
+    <path class="fill" data-n="입" d="M146 186 q34 36 68 0 Z"/>
+    <polygon class="fill" data-n="이빨" points="160,187 168,187 164,197"/><polygon class="fill" data-n="이빨" points="192,187 200,187 196,197"/>
+    <ellipse class="fill" data-n="볼" cx="126" cy="182" rx="13" ry="9"/><ellipse class="fill" data-n="볼" cx="234" cy="182" rx="13" ry="9"/></svg>`},
+  {id:"hauntedhouse", name:"유령의 집", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="달" cx="66" cy="66" r="36"/>
+    <polygon class="fill" data-n="별" points="${star(310,46,14,6,5)}"/>
+    ${GR("땅",304)}
+    <polygon class="fill" data-n="지붕" points="70,150 180,58 290,150"/>
+    <rect class="fill" data-n="굴뚝" x="236" y="76" width="26" height="50"/>
+    <rect class="fill" data-n="집" x="90" y="148" width="180" height="156"/>
+    <path class="fill" data-n="동그란창" d="M180 104 m-18 0 a18 18 0 1 0 36 0 a18 18 0 1 0 -36 0 Z"/><path class="ln" d="M180 86 v36 M162 104 h36"/>
+    <rect class="fill" data-n="창문" x="108" y="170" width="44" height="50" rx="4"/><rect class="fill" data-n="창문" x="208" y="170" width="44" height="50" rx="4"/>
+    <path class="ln" d="M130 170 v50 M108 195 h44 M230 170 v50 M208 195 h44"/>
+    <path class="fill" data-n="문" d="M154 304 v-56 q26 -30 52 0 v56 Z"/><circle class="dk" cx="196" cy="278" r="4"/>
+    <path class="ln" d="M100 240 l14 12 l-8 10 M262 250 l-14 10"/>
+    <path class="fill" data-n="유령" d="M296 254 c0 -30 18 -46 34 -46 c16 0 18 16 18 46 v40 l-8 -8 l-10 10 l-10 -10 l-10 10 l-14 -10 Z" transform="translate(-24 0)"/>
+    <circle class="dk" cx="300" cy="238" r="4"/><circle class="dk" cx="316" cy="238" r="4"/><ellipse class="dk" cx="308" cy="254" rx="4" ry="5"/>
+    <path class="fill" data-n="유령" d="M20 230 c0 -26 14 -38 28 -38 c14 0 28 12 28 38 v40 l-8 -8 l-10 10 l-10 -10 l-10 10 l-10 -8 Z" transform="translate(0 0)"/>
+    <circle class="dk" cx="40" cy="226" r="4"/><circle class="dk" cx="56" cy="226" r="4"/><path class="ln" d="M42 240 q6 6 12 0"/>
+    <path class="fill" data-n="꼭지" d="M236 300 q0 -12 8 -16 l4 4 q-6 4 -4 12 Z"/><ellipse class="fill" data-n="호박" cx="240" cy="324" rx="34" ry="24"/><path class="ln" d="M226 304 q-8 20 0 40 M254 304 q8 20 0 40"/>
+    <path class="fill" data-n="박쥐" d="M226 40 q-16 -14 -34 -6 q12 6 10 16 q12 -6 24 4 q12 -10 24 -4 q-2 -10 10 -16 q-18 -8 -34 6 Z" transform="translate(-60 0)"/></svg>`},

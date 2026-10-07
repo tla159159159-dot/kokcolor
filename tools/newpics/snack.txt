@@ -45,3 +45,29 @@
     <circle class="fill" data-n="볼" cx="134" cy="246" r="12"/><circle class="fill" data-n="볼" cx="226" cy="246" r="12"/>
     <circle class="dk" cx="156" cy="226" r="8"/><circle class="dk" cx="204" cy="226" r="8"/><circle class="wt" cx="159" cy="223" r="3"/><circle class="wt" cx="207" cy="223" r="3"/>
     <path class="ln" d="M166 246 q14 14 28 0"/></svg>`},
+
+{id:"sandwich", name:"샌드위치", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="접시" cx="180" cy="296" rx="152" ry="34"/>
+    <path class="fill" data-n="빵테두리" d="M180 52 Q190 52 196 62 L304 268 Q310 284 292 284 H68 Q50 284 56 268 L164 62 Q170 52 180 52 Z"/>
+    <path class="fill" data-n="빵" d="M180 84 L280 268 H80 Z"/>
+    <path class="fill" data-n="양상추" d="M104 184 H256 q16 10 0 20 H104 q-16 -10 0 -20 Z"/>
+    <rect class="fill" data-n="햄" x="92" y="204" width="176" height="18" rx="9"/>
+    <path class="fill" data-n="치즈" d="M84 222 H276 V238 H214 L200 254 L186 238 H84 Z"/>
+    <circle class="fill" data-n="볼" cx="150" cy="166" r="9"/><circle class="fill" data-n="볼" cx="210" cy="166" r="9"/>
+    <circle class="dk" cx="164" cy="148" r="7"/><circle class="dk" cx="196" cy="148" r="7"/><circle class="wt" cx="166" cy="146" r="2.5"/><circle class="wt" cx="198" cy="146" r="2.5"/>
+    <path class="ln" d="M170 162 q10 10 20 0"/>
+    <circle class="fill" data-n="방울토마토" cx="64" cy="70" r="20"/><circle class="fill" data-n="방울토마토" cx="296" cy="76" r="20"/>
+    <g class="ln"><path d="M58 52 l6 6 l6 -6 M290 58 l6 6 l6 -6"/></g></svg>`},
+  {id:"macaron", name:"마카롱", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="접시" cx="180" cy="304" rx="152" ry="26"/>
+    <path class="fill" data-n="아래과자" d="M60 266 H300 Q300 300 180 300 Q60 300 60 266 Z"/>
+    <rect class="fill" data-n="크림" x="66" y="242" width="228" height="26" rx="13"/>
+    <path class="fill" data-n="위과자" d="M60 244 Q60 188 180 188 Q300 188 300 244 Z"/>
+    <path class="fill" data-n="아래과자" d="M84 160 H276 Q276 192 180 192 Q84 192 84 160 Z"/>
+    <rect class="fill" data-n="크림" x="90" y="136" width="180" height="26" rx="13"/>
+    <path class="fill" data-n="위과자" d="M84 138 Q84 70 180 70 Q276 70 276 138 Z"/>
+    <circle class="fill" data-n="볼" cx="130" cy="118" r="11"/><circle class="fill" data-n="볼" cx="230" cy="118" r="11"/>
+    <circle class="dk" cx="152" cy="104" r="8"/><circle class="dk" cx="208" cy="104" r="8"/><circle class="wt" cx="155" cy="101" r="3"/><circle class="wt" cx="211" cy="101" r="3"/>
+    <path class="ln" d="M168 118 q12 12 24 0"/>
+    <path class="fill" data-n="하트" d="M50 64 a14 14 0 0 1 24 -14 a14 14 0 0 1 24 14 q0 18 -24 32 q-24 -14 -24 -32 Z"/>
+    <polygon class="fill" data-n="반짝이" points="${star(304,64,24,9,4)}"/><polygon class="fill" data-n="반짝이" points="${star(318,200,14,5,4)}"/><polygon class="fill" data-n="반짝이" points="${star(40,200,14,5,4)}"/></svg>`},

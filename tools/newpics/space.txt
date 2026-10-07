@@ -51,3 +51,33 @@
     <path class="ln" d="M100 246 l-20 24 M180 246 v24 M260 246 l20 24"/>
     <circle class="fill" data-n="바퀴" cx="80" cy="282" r="28"/><circle class="fill" data-n="바퀴" cx="180" cy="282" r="28"/><circle class="fill" data-n="바퀴" cx="280" cy="282" r="28"/>
     <circle class="wt" cx="80" cy="282" r="11"/><circle class="wt" cx="180" cy="282" r="11"/><circle class="wt" cx="280" cy="282" r="11"/></svg>`},
+
+{id:"mars", name:"화성", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(52,56,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(312,310,16,7,5)}"/><polygon class="fill" data-n="별" points="${star(310,56,12,5,5)}"/>
+    <circle class="fill" data-n="위성" cx="300" cy="120" r="22"/><circle class="fill" data-n="위성무늬" cx="294" cy="114" r="6"/>
+    <circle class="fill" data-n="위성" cx="62" cy="290" r="16"/>
+    <circle class="fill" data-n="화성" cx="180" cy="184" r="118"/>
+    <path class="fill" data-n="극관" d="M130 96 q50 -26 100 0 q-50 22 -100 0 Z"/>
+    <path class="fill" data-n="무늬" d="M76 150 q40 -16 70 6 q-20 20 -66 14 Z"/>
+    <path class="fill" data-n="무늬" d="M226 232 q26 -10 50 2 q-12 24 -46 18 Z"/>
+    <circle class="fill" data-n="분화구" cx="244" cy="146" r="16"/><circle class="fill" data-n="분화구" cx="112" cy="250" r="13"/><circle class="fill" data-n="분화구" cx="190" cy="270" r="10"/>
+    <circle class="dk" cx="158" cy="186" r="9"/><circle class="dk" cx="206" cy="186" r="9"/>
+    <circle class="wt" cx="161" cy="182" r="3"/><circle class="wt" cx="209" cy="182" r="3"/>
+    <path class="ln" d="M168 212 q14 14 28 0"/>
+    <ellipse class="fill" data-n="볼" cx="134" cy="212" rx="14" ry="9"/><ellipse class="fill" data-n="볼" cx="230" cy="212" rx="14" ry="9"/></svg>`},
+  {id:"spacedog", name:"우주 강아지", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(50,54,16,7,5)}"/><polygon class="fill" data-n="별" points="${star(316,300,16,7,5)}"/><polygon class="fill" data-n="별" points="${star(46,300,12,5,5)}"/>
+    <circle class="fill" data-n="행성" cx="300" cy="66" r="30"/><path class="ln" d="M272 74 q28 -18 56 -16"/>
+    <rect class="fill" data-n="산소통" x="246" y="214" width="34" height="70" rx="12"/>
+    <rect class="fill" data-n="우주복" x="114" y="208" width="132" height="96" rx="40"/>
+    <rect class="fill" data-n="버튼판" x="152" y="232" width="56" height="40" rx="8"/><circle class="fill" data-n="버튼" cx="168" cy="252" r="7"/><circle class="fill" data-n="버튼" cx="192" cy="252" r="7"/>
+    <ellipse class="fill" data-n="장갑" cx="104" cy="248" rx="18" ry="22"/><ellipse class="fill" data-n="장갑" cx="256" cy="248" rx="18" ry="22" transform="translate(0 0)"/>
+    <ellipse class="fill" data-n="부츠" cx="150" cy="312" rx="26" ry="14"/><ellipse class="fill" data-n="부츠" cx="210" cy="312" rx="26" ry="14"/>
+    <circle class="fill" data-n="헬멧" cx="180" cy="134" r="92"/>
+    <path class="fill" data-n="귀" d="M122 98 q-34 10 -30 70 q26 -4 38 -40 Z"/><path class="fill" data-n="귀" d="M238 98 q34 10 30 70 q-26 -4 -38 -40 Z"/>
+    <ellipse class="fill" data-n="얼굴" cx="180" cy="140" rx="62" ry="58"/>
+    <ellipse class="fill" data-n="주둥이" cx="180" cy="168" rx="30" ry="22"/>
+    <ellipse class="dk" cx="180" cy="156" rx="11" ry="8"/><path class="ln" d="M180 164 v10 M180 174 q-10 8 -18 0 M180 174 q10 8 18 0"/>
+    <circle class="dk" cx="154" cy="128" r="8"/><circle class="dk" cx="206" cy="128" r="8"/><circle class="wt" cx="157" cy="125" r="3"/><circle class="wt" cx="209" cy="125" r="3"/>
+    <ellipse class="wt" cx="118" cy="84" rx="8" ry="18" transform="rotate(40 118 84)"/>
+    <rect class="fill" data-n="목링" x="120" y="212" width="120" height="16" rx="8"/></svg>`},
