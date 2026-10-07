@@ -28,3 +28,5 @@ svg .fill{fill:#fff;stroke:#2A2140;stroke-width:5;stroke-linejoin:round;stroke-l
 @media (max-width:600px){h1{font-size:25px}.grid{grid-template-columns:repeat(2,1fr)}.cta-row{grid-template-columns:1fr}}
 
 .family{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:28px 0 0;padding:16px;background:var(--card);border:1px solid var(--line);border-radius:18px}.family b{width:100%;font-family:'Jua',sans-serif;font-weight:400}.family a{font-size:14px;text-decoration:none;padding:9px 13px;border-radius:999px;border:1px solid var(--line);background:var(--bg)}
+
+@media (pointer:coarse){.crumb a,footer a{display:inline-block;padding:10px 4px;margin:-6px 0}}
