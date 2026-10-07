@@ -413,6 +413,23 @@
   #mazeCanvas,#traceCanvas{background:#fff;touch-action:none;aspect-ratio:1/1;cursor:crosshair}
   #memoryHost,#puzzleHost{position:relative;aspect-ratio:1/1;background:#fff;container-type:inline-size;user-select:none;-webkit-user-select:none}
   .dotpick.tri{grid-template-columns:repeat(3,1fr)}
+  .emopick{display:grid;grid-template-columns:repeat(auto-fill,minmax(58px,1fr));gap:8px}
+  .emopick .dp{font-size:20px;padding:8px 2px;letter-spacing:-2px;line-height:1.2}
+  .lvpick{display:grid;grid-template-columns:repeat(auto-fill,minmax(64px,1fr));gap:8px}
+  .lvpick.four{grid-template-columns:repeat(4,1fr)}
+  .lvpick.five{grid-template-columns:repeat(5,1fr);gap:6px}
+  .lvpick.five .dp{font-size:13px;padding:9px 0;letter-spacing:-.3px}
+  .lvpick.five small{font-size:10px}
+  .lvpick .dp{font-size:14px;padding:9px 2px;line-height:1.2;word-break:keep-all}
+  .lvpick small{display:block;font-family:'Noto Sans KR',sans-serif;font-size:11px;font-weight:500;color:var(--muted);margin-top:2px}
+  .lvpick .dp.on small{color:var(--brand-ink)}
+  .gstat.one{grid-template-columns:1fr;margin-top:14px}
+  .gwin{display:flex;flex-direction:column;align-items:center;gap:2px;margin-top:10px;padding:10px 12px 4px;border-radius:var(--r);background:var(--brand-soft);text-align:center}
+  #gwMsg{font-family:'Jua',sans-serif;font-size:17px;color:var(--brand-ink)}
+  .gwin .xlink{margin:0;padding:6px 4px;justify-content:center}
+  .xlink{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:0 6px;min-height:40px;padding:8px 4px;font-size:13px;line-height:1.5;color:var(--muted);text-decoration:none;word-break:keep-all}
+  .xlink b{color:var(--brand-ink);font-weight:700;white-space:nowrap}
+  .xlink:hover span{text-decoration:underline}
   .gstat{display:grid;grid-template-columns:1fr 1fr;gap:10px}
   .gstat span{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--r-sm);padding:10px;text-align:center;font-size:13px;color:var(--muted)}
   .gstat i{font-style:normal}
@@ -424,9 +441,9 @@
   .mc-in{position:relative;display:block;width:100%;height:100%;transition:transform .45s cubic-bezier(.3,1.3,.5,1);transform-style:preserve-3d}
   .mcard.flip .mc-in{transform:rotateY(180deg)}
   .mc-back,.mc-front{position:absolute;inset:0;border-radius:3.5cqw;-webkit-backface-visibility:hidden;backface-visibility:hidden;display:flex;align-items:center;justify-content:center}
-  .mc-back{background:var(--grad);box-shadow:0 4px 10px rgba(124,77,255,.25);color:#fff;font-family:'Jua',sans-serif;font-size:9cqw}
+  .mc-back{background:var(--grad);box-shadow:0 4px 10px rgba(124,77,255,.25);color:#fff;font-family:'Jua',sans-serif;font-size:calc(var(--fs,12cqw)*.75)}
   .mc-back::after{content:"?";opacity:.9}
-  .mc-front{background:var(--surface-2);border:2px solid var(--line);transform:rotateY(180deg);font-size:12cqw;line-height:1}
+  .mc-front{background:var(--surface-2);border:2px solid var(--line);transform:rotateY(180deg);font-size:var(--fs,12cqw);line-height:1}
   .mcard.ok .mc-front{background:#E6FAF6;border-color:var(--teal)}
   .mcard.ok .mc-in{animation:pop .3s ease .45s}
   .ptile{position:absolute;padding:0;border:0;border-radius:0;overflow:hidden;background:#fff;box-shadow:inset 0 0 0 1px rgba(124,77,255,.28);transition:left .25s,top .25s,transform .12s;min-height:0!important}
@@ -633,7 +650,7 @@
       <div class="host hide" id="memoryHost"></div>
       <div class="host hide" id="puzzleHost"></div>
       <canvas class="host hide" id="traceCanvas" width="760" height="760"></canvas>
-    </div></div>
+    </div><div class="gwin hide" id="gameWin" aria-live="polite"><span id="gwMsg"></span><a class="xlink" id="gwLink" target="_blank" rel="noopener"></a></div></div>
     <aside class="panel">
       <div id="paletteSec">
         <h2 id="paletteTitle">🎨 색 고르기</h2>
@@ -659,22 +676,28 @@
       </div>
 
       <div id="mazeSec" class="hide">
-        <div class="subhead">🐰 토끼가 당근 🥕까지 가도록 손가락으로 길을 그어요</div>
-        <div class="dotpick tri" id="mazePick"><button class="dp on" data-n="6">쉬움</button><button class="dp" data-n="9">보통</button><button class="dp" data-n="12">어려움</button></div>
+        <div class="subhead" id="mazeHint">🐰에서 🥕까지 손가락으로 길을 그어요</div>
+        <div class="emopick" id="mazeTheme"></div>
+        <div class="subhead" style="margin-top:14px">📏 크기</div>
+        <div class="lvpick five" id="mazePick"><button class="dp" data-n="4">4×4<small>아주 쉬움</small></button><button class="dp on" data-n="6">6×6<small>쉬움</small></button><button class="dp" data-n="9">9×9<small>보통</small></button><button class="dp" data-n="12">12×12<small>어려움</small></button><button class="dp" data-n="15">15×15<small>도전</small></button></div>
+        <div class="gstat one"><span>오늘 푼 미로 <b><i id="mzCount">0</i>개</b></span></div>
       </div>
       <div id="memorySec" class="hide">
         <div class="subhead">👀 카드 두 장을 뒤집어 같은 그림을 찾아요</div>
-        <div class="gstat"><span>뒤집은 횟수 <b id="memMoves">0</b></span><span>찾은 짝 <b><i id="memFound">0</i> / 6</b></span></div>
+        <div class="dotpick tri" id="memTheme"></div>
+        <div class="subhead" style="margin-top:14px">🔢 카드 수</div>
+        <div class="dotpick tri" id="memSize"><button class="dp on" data-n="6">6쌍</button><button class="dp" data-n="8">8쌍</button><button class="dp" data-n="10">10쌍</button></div>
+        <div class="gstat"><span>뒤집은 횟수 <b id="memMoves">0</b></span><span>찾은 짝 <b><i id="memFound">0</i> / <i id="memTotal">6</i></b></span></div>
       </div>
       <div id="puzzleSec" class="hide">
         <div class="subhead">🧩 조각 두 개를 차례로 누르면 자리가 바뀌어요</div>
-        <div class="dotpick" id="pzSize"><button class="dp on" data-n="3">3×3</button><button class="dp" data-n="4">4×4</button></div>
+        <div class="lvpick four" id="pzSize"><button class="dp" data-n="2">2×2<small>아주 쉬움</small></button><button class="dp on" data-n="3">3×3<small>쉬움</small></button><button class="dp" data-n="4">4×4<small>보통</small></button><button class="dp" data-n="5">5×5<small>도전</small></button></div>
         <div class="subhead" style="margin-top:14px">🖼️ 그림 고르기</div>
         <div class="pz-pics" id="pzPics"></div>
       </div>
       <div id="traceSec" class="hide">
         <div class="subhead">✍️ 점선을 따라 그려요 · <b id="traceName" class="trname"></b></div>
-        <div class="dotpick tri" id="tracePick"><button class="dp on" data-i="0">모양</button><button class="dp" data-i="5">한글</button><button class="dp" data-i="15">숫자</button></div>
+        <div class="dotpick tri" id="tracePick"></div>
       </div>
 
       <div class="tools" id="toolsColor">
@@ -698,17 +721,21 @@
       </div>
       <div class="tools hide" id="toolsMaze">
         <button id="mazeNew" class="b-print b-share"><svg class="ic" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/></svg>새 미로</button>
+        <a class="xlink" id="xMaze" target="_blank" rel="noopener"></a>
       </div>
       <div class="tools hide" id="toolsMemory">
         <button id="memNew" class="b-print b-share"><svg class="ic" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/></svg>다시하기</button>
+        <a class="xlink" id="xMemory" target="_blank" rel="noopener"></a>
       </div>
       <div class="tools hide" id="toolsPuzzle">
         <button id="pzNew" class="b-print b-share"><svg class="ic" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7"/><path d="M20 5v6h-6"/></svg>새 퍼즐</button>
+        <a class="xlink" id="xPuzzle" target="_blank" rel="noopener"></a>
       </div>
       <div class="tools hide" id="toolsTrace">
         <button id="trClear"><svg class="ic" viewBox="0 0 24 24"><path d="M4 15l7-7 6 6-6 6H7z"/><path d="M9 20h10"/></svg>지우기</button>
         <button id="trNext" class="b-print"><svg class="ic" viewBox="0 0 24 24"><path d="M5 12h13m-6-6 6 6-6 6"/></svg>다음</button>
         <button id="trSave" class="b-save b-share"><svg class="ic" viewBox="0 0 24 24"><path d="M12 4v10m0 0 4-4m-4 4-4-4"/><path d="M5 18h14"/></svg>그림 저장</button>
+        <a class="xlink" id="xTrace" target="_blank" rel="noopener"></a>
       </div>
     </aside>
   </div>
@@ -3546,6 +3573,7 @@ function setMode(m){
   if(m==="draw") initDraw();
   if(m==="dots" && !dotState.loaded) loadDot(0);
   if(m==="sticker") initSticker();
+  hideWin();
   if(m==="maze" && !maze) newMaze();
   if(m==="memory" && !mem) newMemory();
   if(m==="puzzle" && !pz.order.length) newPuzzle();
@@ -3663,30 +3691,54 @@ document.getElementById("stkSave").addEventListener("click",()=>{
 
 /* ---- 공통: 게임 성공 ---- */
 const shuffle=a=>{ for(let i=a.length-1;i>0;i--){ const j=Math.random()*(i+1)|0; [a[i],a[j]]=[a[j],a[i]]; } return a; };
-function winStar(msg,game){ cheer(msg); awardStar(msg); ev("game_clear",{game}); }
 function pickOn(wrap,b){ wrap.querySelectorAll(".dp").forEach(x=>x.classList.toggle("on",x===b)); }
+
+/* ---- 도장쾅 학습지 연결 (주제별 한 줄) ---- */
+const XL={
+  maze:["미로찾기/","미로 더 풀고 싶다면? 종이로 뽑는 미로 학습지"],
+  memory:["짝잇기학습지/","같은 것 찾기를 좋아하면 짝잇기 학습지"],
+  puzzle:["창의력학습지/","퍼즐 좋아하는 아이에게 창의력 학습지"],
+  shape:["운필력학습지/","선 긋기 연습은 종이로도! 운필력 학습지"],
+  hangul:["한글따라쓰기/","종이에 또박또박 써 보려면 한글 따라쓰기 학습지"],
+  abc:["알파벳쓰기/","종이에 또박또박 써 보려면 알파벳 쓰기 학습지"],
+  num:["수세기학습지/","종이에 또박또박 써 보려면 숫자 학습지"]};
+function setXlink(a,key,from){ const [p,t]=XL[key];
+  a.href="https://www.dojangkwang.co.kr/"+encodeURI(p)+"?utm_source=kokcolor&utm_medium=crosslink&utm_campaign="+from;
+  a.dataset.from=from; a.innerHTML=`<b>✏️ 도장쾅 학습지</b><span>${t} ›</span>`; }
+document.addEventListener("click",e=>{ const a=e.target.closest&&e.target.closest(".xlink"); if(a) ev("crosslink",{to:"dojangkwang",from:a.dataset.from}); });
+const gameWin=document.getElementById("gameWin");
+function hideWin(){ gameWin.classList.add("hide"); }
+function showWin(msg,key,from){ document.getElementById("gwMsg").textContent=msg; setXlink(document.getElementById("gwLink"),key,from); gameWin.classList.remove("hide"); }
+setXlink(document.getElementById("xMaze"),"maze","maze");
+setXlink(document.getElementById("xMemory"),"memory","memory");
+setXlink(document.getElementById("xPuzzle"),"puzzle","puzzle");
+function winStar(msg,game){ cheer(msg); awardStar(msg); ev("game_clear",{game}); showWin(msg,game,game); }
 
 /* ---- 미로찾기 ---- */
 const mazeCanvas=document.getElementById("mazeCanvas"), mctx=mazeCanvas.getContext("2d");
 const MZ_DIR=[[0,-1,1,4],[1,0,2,8],[0,1,4,1],[-1,0,8,2]]; // dx,dy,내 통로 비트,상대 통로 비트 (북1 동2 남4 서8)
-let maze=null, mazeN=6, mazeDrag=false;
+const MZ_THEMES=[["🐰","🥕","당근"],["🐶","🦴","뼈다귀"],["🐝","🌼","꽃"],["🚗","🏠","집"],["🐧","🐟","물고기"],["🐿️","🌰","도토리"],["🐵","🍌","바나나"]];
+let maze=null, mazeN=6, mazeDrag=false, mzTheme=-1, mzCleared=0;
 function newMaze(){
   const N=mazeN, open=new Array(N*N).fill(0), seen=new Array(N*N).fill(false), st=[0]; seen[0]=true;
   while(st.length){ const c=st[st.length-1], x=c%N, y=c/N|0;
     const nb=MZ_DIR.filter(([dx,dy])=>{ const nx=x+dx, ny=y+dy; return nx>=0&&ny>=0&&nx<N&&ny<N&&!seen[ny*N+nx]; });
     if(!nb.length){ st.pop(); continue; }
     const [dx,dy,b,o]=nb[Math.random()*nb.length|0], n=(y+dy)*N+x+dx; open[c]|=b; open[n]|=o; seen[n]=true; st.push(n); }
-  maze={N,open,path:[0],done:false}; drawMaze();
+  const th=MZ_THEMES[mzTheme<0?Math.random()*MZ_THEMES.length|0:mzTheme];
+  maze={N,open,path:[0],done:false,th}; hideWin();
+  document.getElementById("mazeHint").textContent=`${th[0]}에서 ${th[1]}까지 손가락으로 길을 그어요`;
+  drawMaze();
 }
 function drawMaze(){
-  const {N,open,path}=maze, P=40, cs=680/N, goal=N*N-1, cx=i=>P+(i%N+.5)*cs, cy=i=>P+((i/N|0)+.5)*cs;
+  const {N,open,path,th}=maze, P=40, cs=680/N, goal=N*N-1, cx=i=>P+(i%N+.5)*cs, cy=i=>P+((i/N|0)+.5)*cs;
   mctx.fillStyle="#fff"; mctx.fillRect(0,0,760,760);
   mctx.fillStyle="#F0EAFF"; mctx.fillRect(P,P,cs,cs);
   mctx.fillStyle="#FFF1CC"; mctx.fillRect(P+(N-1)*cs,P+(N-1)*cs,cs,cs);
   mctx.lineCap="round"; mctx.lineJoin="round";
   mctx.strokeStyle="#FF5FA2"; mctx.lineWidth=cs*.3; mctx.beginPath();
   path.forEach((c,k)=>k?mctx.lineTo(cx(c),cy(c)):mctx.moveTo(cx(c),cy(c))); mctx.stroke();
-  mctx.strokeStyle="#241B3E"; mctx.lineWidth=Math.max(7,cs*.11); mctx.beginPath();
+  mctx.strokeStyle="#241B3E"; mctx.lineWidth=Math.max(6,cs*.11); mctx.beginPath();
   for(let i=0;i<N*N;i++){ const x=P+(i%N)*cs, y=P+(i/N|0)*cs, o=open[i];
     if(!(o&1)){ mctx.moveTo(x,y); mctx.lineTo(x+cs,y); }
     if(!(o&8)){ mctx.moveTo(x,y); mctx.lineTo(x,y+cs); }
@@ -3695,8 +3747,8 @@ function drawMaze(){
   mctx.stroke();
   mctx.textAlign="center"; mctx.textBaseline="middle"; mctx.font=(cs*.62)+"px serif";
   const end=path[path.length-1];
-  if(end!==goal) mctx.fillText("🥕",cx(goal),cy(goal));
-  mctx.fillText("🐰",cx(end),cy(end));
+  if(end!==goal) mctx.fillText(th[1],cx(goal),cy(goal));
+  mctx.fillText(th[0],cx(end),cy(end));
 }
 function mazeCell(e){ const r=mazeCanvas.getBoundingClientRect(), cs=680/maze.N,
   x=Math.floor(((e.clientX-r.left)/r.width*760-40)/cs), y=Math.floor(((e.clientY-r.top)/r.height*760-40)/cs);
@@ -3713,25 +3765,34 @@ function mazeTo(t){
     if(k>=0) path.length=k+1; else path.push(n);
     if(n===N*N-1){ maze.done=true; mazeDrag=false; break; } }
   drawMaze();
-  if(maze.done) winStar("도착! 당근을 찾았어요 🥕","maze");
+  if(maze.done){ document.getElementById("mzCount").textContent=++mzCleared; winStar(`${maze.th[2]}까지 도착! 잘했어요 ${maze.th[1]}`,"maze"); }
 }
 mazeCanvas.addEventListener("pointerdown",e=>{ if(mode!=="maze"||maze.done) return; mazeDrag=true; mazeCanvas.setPointerCapture(e.pointerId);
   const c=mazeCell(e), k=maze.path.indexOf(c); if(k>=0){ maze.path.length=k+1; drawMaze(); } else mazeTo(c); });
 mazeCanvas.addEventListener("pointermove",e=>{ if(mazeDrag) mazeTo(mazeCell(e)); });
 mazeCanvas.addEventListener("pointerup",()=>mazeDrag=false);
 mazeCanvas.addEventListener("pointercancel",()=>mazeDrag=false);
+{ const w=document.getElementById("mazeTheme");
+  w.innerHTML=`<button class="dp on" data-t="-1" aria-label="랜덤 캐릭터">🎲</button>`+MZ_THEMES.map((t,i)=>`<button class="dp" data-t="${i}" aria-label="${t[2]} 찾기">${t[0]}${t[1]}</button>`).join("");
+  w.addEventListener("click",e=>{ const b=e.target.closest(".dp"); if(!b) return; pickOn(w,b); mzTheme=+b.dataset.t; newMaze(); }); }
 document.getElementById("mazePick").addEventListener("click",e=>{ const b=e.target.closest(".dp"); if(!b) return; pickOn(e.currentTarget,b); mazeN=+b.dataset.n; newMaze(); });
 document.getElementById("mazeNew").addEventListener("click",newMaze);
 
 /* ---- 짝맞추기 ---- */
 const memoryHost=document.getElementById("memoryHost");
-const MEM_EMO=["🐶","🐱","🐰","🐻","🐼","🦊","🐯","🐸","🐵","🐥","🦁","🐷","🍎","🍌","🍓","🍇","🍉","🍑","🚗","🌈"];
-let mem=null;
-function memStat(){ document.getElementById("memMoves").textContent=mem.moves; document.getElementById("memFound").textContent=mem.found; }
+const MEM_TH={
+  "🐶 동물":["🐶","🐱","🐰","🐻","🐼","🦊","🐯","🐸","🐵","🐥","🦁","🐷","🐮","🐨"],
+  "🍎 과일":["🍎","🍌","🍓","🍇","🍉","🍑","🍒","🍍","🥝","🍋","🍐","🍊","🥥","🍈"],
+  "🚗 탈것":["🚗","🚌","🚓","🚑","🚒","🚜","🚲","🚀","✈️","🚁","🚂","⛵","🛵","🚕"],
+  "🐳 바다":["🐳","🐬","🐟","🐠","🐡","🦈","🐙","🦀","🦞","🐚","🦑","🐢","🐋","⚓"],
+  "🍩 간식":["🍦","🍩","🍪","🍰","🧁","🍭","🍬","🍫","🍿","🥨","🍮","🧃","🍯","🥞"],
+  "🪐 우주":["🚀","🌙","⭐","🪐","☀️","🌍","👽","🛸","☄️","🌟","🔭","🛰️","🌠","🌛"]};
+let mem=null, memTheme="🐶 동물", memPairs=6;
+function memStat(){ document.getElementById("memMoves").textContent=mem.moves; document.getElementById("memFound").textContent=mem.found; document.getElementById("memTotal").textContent=memPairs; }
 function newMemory(){
-  const pick=shuffle(MEM_EMO.slice()).slice(0,6);
-  mem={lock:false,open:[],moves:0,found:0};
-  memoryHost.innerHTML=`<div class="mem-grid">${shuffle([...pick,...pick]).map(e=>`<button class="mcard" data-e="${e}" aria-label="카드 뒤집기"><span class="mc-in"><span class="mc-back"></span><span class="mc-front">${e}</span></span></button>`).join("")}</div>`;
+  const pick=shuffle(MEM_TH[memTheme].slice()).slice(0,memPairs), cols=memPairs===10?5:4, rows=memPairs===6?3:4;
+  mem={lock:false,open:[],moves:0,found:0}; hideWin();
+  memoryHost.innerHTML=`<div class="mem-grid" style="grid-template-columns:repeat(${cols},1fr);grid-template-rows:repeat(${rows},1fr);--fs:${cols===5?9.5:rows===4?11:12}cqw">${shuffle([...pick,...pick]).map(e=>`<button class="mcard" data-e="${e}" aria-label="카드 뒤집기"><span class="mc-in"><span class="mc-back"></span><span class="mc-front">${e}</span></span></button>`).join("")}</div>`;
   memStat();
 }
 memoryHost.addEventListener("click",e=>{
@@ -3740,25 +3801,72 @@ memoryHost.addEventListener("click",e=>{
   if(mem.open.length<2) return;
   const [a,c]=mem.open; mem.open=[]; mem.moves++;
   if(a.dataset.e===c.dataset.e){ a.classList.add("ok"); c.classList.add("ok"); mem.found++;
-    if(mem.found===6) setTimeout(()=>winStar(`${mem.moves}번 만에 다 찾았어요! 🎉`,"memory"),500); }
+    if(mem.found===memPairs) setTimeout(()=>winStar(`${mem.moves}번 만에 다 찾았어요! 🎉`,"memory"),500); }
   else { mem.lock=true; setTimeout(()=>{ a.classList.remove("flip"); c.classList.remove("flip"); mem.lock=false; },850); }
   memStat();
 });
+{ const w=document.getElementById("memTheme");
+  w.innerHTML=Object.keys(MEM_TH).map((k,i)=>`<button class="dp${i?"":" on"}" data-k="${k}">${k}</button>`).join("");
+  w.addEventListener("click",e=>{ const b=e.target.closest(".dp"); if(!b) return; pickOn(w,b); memTheme=b.dataset.k; newMemory(); }); }
+document.getElementById("memSize").addEventListener("click",e=>{ const b=e.target.closest(".dp"); if(!b) return; pickOn(e.currentTarget,b); memPairs=+b.dataset.n; newMemory(); });
 document.getElementById("memNew").addEventListener("click",newMemory);
 
-/* ---- 그림 퍼즐 (무료 그림만) ---- */
+/* ---- 그림 퍼즐 (무료 그림 + 퍼즐 전용 그림) ---- */
 const puzzleHost=document.getElementById("puzzleHost");
-const PZ_PICS=allPics.filter(x=>x.pic.free).map(x=>x.pic);
+const PZ_SVG=b=>`<svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg"><g stroke="#241B3E" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">${b}</g></svg>`;
+const PZ_EXTRA=[
+ {name:"무지개", svg:PZ_SVG(`<rect x="8" y="8" width="344" height="344" rx="26" fill="#DDF1FF"/><path d="M8 300h344v26a26 26 0 0 1-26 26H34A26 26 0 0 1 8 326z" fill="#9FE3B4"/>
+  <g fill="none" stroke-width="22"><path d="M50 280a130 130 0 0 1 260 0" stroke="#FF6B7A"/><path d="M72 280a108 108 0 0 1 216 0" stroke="#FFB648"/><path d="M94 280a86 86 0 0 1 172 0" stroke="#FFE15A"/><path d="M116 280a64 64 0 0 1 128 0" stroke="#5CD08A"/><path d="M138 280a42 42 0 0 1 84 0" stroke="#5AB4F5"/></g>
+  <path d="M28 286a24 24 0 0 1 30-34 30 30 0 0 1 54 8 20 20 0 0 1 4 26z" fill="#fff"/><path d="M244 286a24 24 0 0 1 30-34 30 30 0 0 1 54 8 20 20 0 0 1 4 26z" fill="#fff"/>
+  <circle cx="300" cy="62" r="26" fill="#FFD84D"/>`)},
+ {name:"집", svg:PZ_SVG(`<rect x="8" y="8" width="344" height="344" rx="26" fill="#CFEAFF"/><path d="M8 280h344v46a26 26 0 0 1-26 26H34A26 26 0 0 1 8 326z" fill="#8FDB9E"/>
+  <rect x="90" y="160" width="180" height="130" fill="#FFE29A"/><path d="M70 166 180 76l110 90z" fill="#FF7A6B"/><rect x="160" y="216" width="42" height="74" fill="#B67BE8"/><circle cx="194" cy="254" r="4" fill="#241B3E"/>
+  <rect x="106" y="190" width="40" height="40" fill="#9CD3FF"/><path d="M126 190v40M106 210h40"/><rect x="216" y="190" width="40" height="40" fill="#9CD3FF"/><path d="M236 190v40M216 210h40"/>
+  <rect x="226" y="92" width="26" height="46" fill="#C9805A"/><circle cx="62" cy="62" r="24" fill="#FFD84D"/><path d="M300 270v-50" /><circle cx="300" cy="206" r="22" fill="#5CD08A"/>`)},
+ {name:"해님과 꽃", svg:PZ_SVG(`<rect x="8" y="8" width="344" height="344" rx="26" fill="#FFF6D6"/><path d="M8 290h344v36a26 26 0 0 1-26 26H34A26 26 0 0 1 8 326z" fill="#9FE3B4"/>
+  <g stroke-width="7"><path d="M180 30v24M180 166v24M100 110h24M236 110h24M124 54l17 17M219 149l17 17M236 54l-17 17M141 149l-17 17"/></g><circle cx="180" cy="110" r="44" fill="#FFC93C"/><circle cx="165" cy="102" r="5" fill="#241B3E"/><circle cx="195" cy="102" r="5" fill="#241B3E"/><path d="M164 122q16 14 32 0" fill="none"/>
+  ${[[80,"#FF7AA8"],[180,"#B88CFF"],[280,"#FF9F45"]].map(([x,c])=>`<path d="M${x} 300v-70" fill="none"/><path d="M${x} 270q-26-20-36 0q20 14 36 0" fill="#5CD08A"/><g fill="${c}"><circle cx="${x}" cy="196" r="17"/><circle cx="${x+22}" cy="214" r="17"/><circle cx="${x-22}" cy="214" r="17"/><circle cx="${x+12}" cy="238" r="17"/><circle cx="${x-12}" cy="238" r="17"/></g><circle cx="${x}" cy="220" r="13" fill="#FFE15A"/>`).join("")}`)},
+ {name:"자동차", svg:PZ_SVG(`<rect x="8" y="8" width="344" height="344" rx="26" fill="#D9F2FF"/><path d="M8 262h344v64a26 26 0 0 1-26 26H34A26 26 0 0 1 8 326z" fill="#9AA3B5"/><path d="M40 306h50M150 306h50M260 306h50" stroke="#fff" stroke-width="8"/>
+  <path d="M52 236v-40q0-14 14-16l46-6 34-46q8-10 22-10h74q14 0 22 12l30 44 22 4q14 4 14 18v40z" fill="#FF5A6B"/><path d="M152 166l26-34h44v34z" fill="#9CD3FF"/><path d="M240 132h0q8 0 14 8l20 26h-34z" fill="#9CD3FF"/>
+  <circle cx="110" cy="240" r="30" fill="#3A3150"/><circle cx="110" cy="240" r="12" fill="#E8E4F2"/><circle cx="262" cy="240" r="30" fill="#3A3150"/><circle cx="262" cy="240" r="12" fill="#E8E4F2"/>
+  <circle cx="318" cy="200" r="8" fill="#FFE15A"/><path d="M60 70a20 20 0 0 1 26-24 26 26 0 0 1 46 6 16 16 0 0 1 2 22z" fill="#fff"/>`)},
+ {name:"물고기", svg:PZ_SVG(`<rect x="8" y="8" width="344" height="344" rx="26" fill="#7FD3F5"/><path d="M8 300q60-20 120 0t120 0 104 0v26a26 26 0 0 1-26 26H34A26 26 0 0 1 8 326z" fill="#F6E1A6"/>
+  <path d="M60 180q70-90 180 0q-110 90-180 0z" fill="#FFA94D"/><path d="M236 180l64-50v100z" fill="#FF7A6B"/><path d="M120 128q10 52 0 104M160 122q12 58 0 116" fill="none"/><circle cx="96" cy="170" r="10" fill="#fff"/><circle cx="96" cy="170" r="4" fill="#241B3E"/>
+  <circle cx="60" cy="110" r="10" fill="#fff"/><circle cx="44" cy="76" r="7" fill="#fff"/><circle cx="300" cy="60" r="12" fill="#fff"/>
+  <path d="M60 310q-20-40 0-80q20 40 0 80zM300 310q-24-50 0-100q24 50 0 100z" fill="#4CC38A"/>`)},
+ {name:"풍선", svg:PZ_SVG(`<rect x="8" y="8" width="344" height="344" rx="26" fill="#E9E2FF"/>
+  <path d="M110 170q20 60-10 160M180 150q-10 80 0 180M250 170q-20 60 10 160" fill="none"/>
+  <ellipse cx="110" cy="120" rx="50" ry="60" fill="#FF6B8B"/><ellipse cx="250" cy="120" rx="50" ry="60" fill="#5AB4F5"/><ellipse cx="180" cy="94" rx="54" ry="64" fill="#FFD84D"/>
+  <path d="M92 92q8-20 26-24M232 92q8-20 26-24M160 64q8-20 26-24" stroke="#fff" stroke-width="7" fill="none"/>
+  <path d="M40 300a18 18 0 0 1 22-20 24 24 0 0 1 40 4 14 14 0 0 1 2 16zM256 300a18 18 0 0 1 22-20 24 24 0 0 1 40 4 14 14 0 0 1 2 16z" fill="#fff"/>`)},
+ {name:"케이크", svg:PZ_SVG(`<rect x="8" y="8" width="344" height="344" rx="26" fill="#FFE3EE"/><rect x="40" y="298" width="280" height="22" rx="11" fill="#C9B5FF"/>
+  <rect x="70" y="220" width="220" height="80" rx="10" fill="#FFB3C7"/><rect x="100" y="150" width="160" height="72" rx="10" fill="#FFF3D6"/><path d="M70 236q27 18 55 0t55 0 55 0 55 0M100 166q20 14 40 0t40 0 40 0 40 0" fill="none"/>
+  <rect x="128" y="96" width="14" height="54" fill="#5AB4F5"/><rect x="173" y="96" width="14" height="54" fill="#5CD08A"/><rect x="218" y="96" width="14" height="54" fill="#FF9F45"/>
+  <path d="M135 92q-12-14 0-30q12 16 0 30zM180 92q-12-14 0-30q12 16 0 30zM225 92q-12-14 0-30q12 16 0 30z" fill="#FFD84D"/>
+  <circle cx="110" cy="270" r="8" fill="#FF6B8B"/><circle cx="180" cy="270" r="8" fill="#FF6B8B"/><circle cx="250" cy="270" r="8" fill="#FF6B8B"/>`)},
+ {name:"반짝 별", svg:PZ_SVG(`<rect x="8" y="8" width="344" height="344" rx="26" fill="#2E2A6B"/>
+  <path d="M180 70l32 66 72 8-54 50 15 72-65-37-65 37 15-72-54-50 72-8z" fill="#FFD84D"/><circle cx="160" cy="180" r="6" fill="#241B3E"/><circle cx="200" cy="180" r="6" fill="#241B3E"/><path d="M164 202q16 12 32 0" fill="none"/><circle cx="148" cy="196" r="7" fill="#FF9BB8" stroke="none"/><circle cx="212" cy="196" r="7" fill="#FF9BB8" stroke="none"/>
+  <path d="M60 60a34 34 0 1 0 30 50a28 28 0 1 1-30-50z" fill="#FFF3B0"/>
+  <g fill="#fff" stroke="none"><circle cx="300" cy="60" r="5"/><circle cx="60" cy="290" r="5"/><circle cx="300" cy="300" r="6"/><circle cx="250" cy="40" r="3"/><circle cx="110" cy="320" r="3"/></g>`)},
+ {name:"돛단배", svg:PZ_SVG(`<rect x="8" y="8" width="344" height="344" rx="26" fill="#BFE6FF"/><path d="M8 250q40-16 86 0t86 0 86 0 86 0v76a26 26 0 0 1-26 26H34A26 26 0 0 1 8 326z" fill="#3FA2E8"/>
+  <path d="M184 60v170" fill="none"/><path d="M190 70q70 70 80 140H190z" fill="#fff"/><path d="M178 90q-50 60-60 120h60z" fill="#FF7A6B"/><path d="M90 230h190l-30 44H120z" fill="#C9805A"/>
+  <path d="M184 60l40 14-40 12z" fill="#FFD84D"/><circle cx="300" cy="64" r="24" fill="#FFD84D"/><path d="M40 300q20-10 40 0M240 310q20-10 40 0" stroke="#fff" fill="none"/>`)},
+ {name:"나비", svg:PZ_SVG(`<rect x="8" y="8" width="344" height="344" rx="26" fill="#E6F8EC"/>
+  <path d="M180 170q-40-110-120-90q-30 50 30 100q-60 40-30 90q60 20 120-80z" fill="#FF8FB8"/><path d="M180 170q40-110 120-90q30 50-30 100q60 40 30 90q-60 20-120-80z" fill="#B88CFF"/>
+  <circle cx="110" cy="130" r="16" fill="#FFE15A"/><circle cx="250" cy="130" r="16" fill="#FFE15A"/><circle cx="116" cy="234" r="11" fill="#9CD3FF"/><circle cx="244" cy="234" r="11" fill="#9CD3FF"/>
+  <rect x="170" y="120" width="20" height="130" rx="10" fill="#4A3B6B"/><path d="M176 122q-14-40-34-50M184 122q14-40 34-50" fill="none"/>
+  <path d="M8 316q60-26 120-6t120 0 104 0v16a26 26 0 0 1-26 26H34A26 26 0 0 1 8 326z" fill="#9FE3B4"/>`)}];
+const PZ_PICS=[...PZ_EXTRA, ...allPics.filter(x=>x.pic.free).map(x=>x.pic)];
 const PZ_COLS=["#FFB3C7","#FFD66B","#9FE3B4","#9CD3FF","#C9B5FF","#FFC28A","#7FE0D4","#FF9BB8","#B8E986"];
 let pz={n:3,pic:0,order:[],sel:-1,done:false};
-function coloredSvg(svg){ // 흰 도안은 조각 구분이 어려워 부위별로 색을 입힘
+function coloredSvg(svg){ // 흰 도안은 조각 구분이 어려워 부위별로 색을 입힘 (퍼즐 전용 그림은 이미 색이 있음)
   const t=document.createElement("div"); t.innerHTML=svg; const s=t.firstElementChild, m={}; let k=0;
   s.querySelectorAll(".fill").forEach(f=>{ const n=f.dataset.n||"";
     f.style.fill = n==="배경" ? "#FFF8E7" : (m[n]=m[n]||PZ_COLS[k++%PZ_COLS.length]); });
   return s.outerHTML; }
 function newPuzzle(){
   const n=pz.n; let o; do{ o=shuffle([...Array(n*n).keys()]); }while(o.every((v,i)=>v===i));
-  pz={...pz,order:o,sel:-1,done:false}; puzzleHost.classList.remove("done");
+  pz={...pz,order:o,sel:-1,done:false}; puzzleHost.classList.remove("done"); hideWin();
   const svg=coloredSvg(PZ_PICS[pz.pic].svg);
   puzzleHost.innerHTML=o.map(t=>`<button class="ptile" data-t="${t}" aria-label="퍼즐 조각" style="width:${100/n}%;height:${100/n}%"><span class="pt-img" style="width:${n*100}%;height:${n*100}%;left:${-(t%n)*100}%;top:${-(t/n|0)*100}%">${svg}</span></button>`).join("");
   placeTiles();
@@ -3770,7 +3878,7 @@ puzzleHost.addEventListener("click",e=>{
   const b=e.target.closest(".ptile"); if(!b||pz.done) return; const t=+b.dataset.t;
   if(pz.sel<0||pz.sel===t){ pz.sel=pz.sel===t?-1:t; placeTiles(); return; }
   const i=pz.order.indexOf(pz.sel), j=pz.order.indexOf(t); [pz.order[i],pz.order[j]]=[pz.order[j],pz.order[i]]; pz.sel=-1; placeTiles();
-  if(pz.order.every((v,k)=>v===k)){ pz.done=true; setTimeout(()=>{ puzzleHost.classList.add("done"); winStar("퍼즐 완성! 최고예요 🧩","puzzle"); },280); }
+  if(pz.order.every((v,k)=>v===k)){ pz.done=true; setTimeout(()=>{ puzzleHost.classList.add("done"); winStar(`${PZ_PICS[pz.pic].name} 퍼즐 완성! 최고예요 🧩`,"puzzle"); },280); }
 });
 const pzPics=document.getElementById("pzPics");
 PZ_PICS.forEach((p,i)=>{ const b=document.createElement("button"); b.className="pzp"+(i===0?" on":""); b.setAttribute("aria-label",p.name+" 퍼즐"); b.title=p.name; b.innerHTML=coloredSvg(p.svg);
@@ -3780,28 +3888,44 @@ document.getElementById("pzNew").addEventListener("click",newPuzzle);
 
 /* ---- 따라 그리기 ---- */
 const traceCanvas=document.getElementById("traceCanvas"), tctx=traceCanvas.getContext("2d");
-const TRACE=[["동그라미","circle"],["세모","tri"],["네모","rect"],["별","star"],["하트","heart"],
-  ..."ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅎ".split("").map(c=>[c]), ..."123456789".split("").map(c=>[c])];
-let trI=0, tracing=false, tX=0, tY=0;
+const TR_GROUPS=[ // [칩 이름, 학습지 연결 키, 항목들] — 항목: [이름, 모양키] 또는 [글자]
+  ["모양","shape",[["동그라미","circle"],["세모","tri"],["네모","rect"],["별","star"],["하트","heart"],["마름모","diamond"],["달","moon"],["구름","cloud"],["물결선","wave"],["지그재그","zigzag"],["나선","spiral"],["사과","apple"],["물고기","fish"]]],
+  ["한글 자음","hangul",[..."ㄱㄴㄷㄹㅁㅂㅅㅇㅈㅊㅋㅌㅍㅎ"].map(c=>[c])],
+  ["한글 모음","hangul",[..."ㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣ"].map(c=>[c])],
+  ["알파벳","abc",[..."ABCDEFGHIJKLMNOPQRSTUVWXYZ"].map(c=>[c])],
+  ["숫자","num",[..."0123456789","10"].map(c=>[c])]];
+let trG=0, trI=0, tracing=false, tX=0, tY=0;
 function shapePath(k){ const p=new Path2D();
   if(k==="circle") p.arc(380,385,255,0,Math.PI*2);
   if(k==="tri"){ p.moveTo(380,120); p.lineTo(650,620); p.lineTo(110,620); p.closePath(); }
   if(k==="rect") p.rect(140,140,480,480);
   if(k==="star"){ for(let i=0;i<10;i++){ const r=i%2?120:290, a=-Math.PI/2+i*Math.PI/5; p.lineTo(380+r*Math.cos(a),405+r*Math.sin(a)); } p.closePath(); }
   if(k==="heart"){ p.moveTo(380,650); p.bezierCurveTo(130,480,70,330,160,215); p.bezierCurveTo(240,120,350,150,380,250); p.bezierCurveTo(410,150,520,120,600,215); p.bezierCurveTo(690,330,630,480,380,650); p.closePath(); }
+  if(k==="diamond"){ p.moveTo(380,110); p.lineTo(620,385); p.lineTo(380,660); p.lineTo(140,385); p.closePath(); }
+  if(k==="moon"){ p.moveTo(480,120); p.bezierCurveTo(170,110,130,610,500,650); p.bezierCurveTo(350,560,340,230,480,120); p.closePath(); }
+  if(k==="cloud"){ p.moveTo(180,520); p.bezierCurveTo(80,520,80,390,180,390); p.bezierCurveTo(170,270,330,240,370,330); p.bezierCurveTo(420,230,590,260,580,390); p.bezierCurveTo(680,390,680,520,580,520); p.closePath(); }
+  if(k==="wave"){ p.moveTo(100,385); for(let i=0;i<4;i++){ const x=100+i*140; p.quadraticCurveTo(x+35,255,x+70,385); p.quadraticCurveTo(x+105,515,x+140,385); } }
+  if(k==="zigzag"){ p.moveTo(100,480); for(let i=1;i<=8;i++) p.lineTo(100+i*70,i%2?290:480); }
+  if(k==="spiral"){ for(let t=0;t<=6*Math.PI;t+=.08){ const r=12+t*14; p.lineTo(380+r*Math.cos(t),385+r*Math.sin(t)); } }
+  if(k==="apple"){ p.moveTo(380,260); p.bezierCurveTo(450,200,620,220,610,400); p.bezierCurveTo(600,570,470,670,380,620); p.bezierCurveTo(290,670,160,570,150,400); p.bezierCurveTo(140,220,310,200,380,260); p.closePath();
+    p.moveTo(380,260); p.lineTo(396,150); p.moveTo(394,196); p.quadraticCurveTo(460,120,530,160); p.quadraticCurveTo(470,230,394,196); }
+  if(k==="fish"){ p.moveTo(110,385); p.bezierCurveTo(210,200,450,210,540,385); p.bezierCurveTo(450,560,210,570,110,385); p.closePath();
+    p.moveTo(540,385); p.lineTo(660,270); p.lineTo(660,500); p.closePath(); p.moveTo(235,350); p.arc(220,350,15,0,Math.PI*2); }
   return p; }
+function tracePickUI(){ document.querySelectorAll("#tracePick .dp").forEach((b,i)=>b.classList.toggle("on",i===trG));
+  setXlink(document.getElementById("xTrace"),TR_GROUPS[trG][1],"trace"); }
 async function drawGuide(){
-  const [name,k]=TRACE[trI];
-  document.getElementById("traceName").textContent=`${name} (${trI+1}/${TRACE.length})`;
-  document.querySelectorAll("#tracePick .dp").forEach(b=>b.classList.toggle("on",trI>=+b.dataset.i&&(!b.nextElementSibling||trI<+b.nextElementSibling.dataset.i)));
-  if(!k) try{ await document.fonts.load("560px Jua",name); }catch(e){}
+  const items=TR_GROUPS[trG][2], [name,k]=items[trI];
+  document.getElementById("traceName").textContent=`${name} (${trI+1}/${items.length})`;
+  if(!k) try{ await document.fonts.load("500px Jua",name); }catch(e){}
   tctx.setLineDash([]); tctx.fillStyle="#fff"; tctx.fillRect(0,0,760,760);
   tctx.lineCap="round"; tctx.lineJoin="round";
   if(k){ const p=shapePath(k); tctx.strokeStyle="#F1ECFF"; tctx.lineWidth=64; tctx.stroke(p);
     tctx.strokeStyle="#B9A6F5"; tctx.lineWidth=7; tctx.setLineDash([22,18]); tctx.stroke(p); }
-  else { // 글자 실제 크기를 재서 높이 460px로 맞추고 가운데 정렬
+  else { // 글자 실제 크기를 재서 높이 460px(너비 560px 이내)로 맞추고 가운데 정렬
     tctx.textAlign="left"; tctx.textBaseline="alphabetic"; tctx.font="500px 'Jua', sans-serif";
-    let m=tctx.measureText(name); const fs=500*460/(m.actualBoundingBoxAscent+m.actualBoundingBoxDescent);
+    let m=tctx.measureText(name);
+    const fs=Math.min(500*460/(m.actualBoundingBoxAscent+m.actualBoundingBoxDescent), 500*560/(m.actualBoundingBoxRight+m.actualBoundingBoxLeft));
     tctx.font=fs+"px 'Jua', sans-serif"; m=tctx.measureText(name);
     const x=380-(m.actualBoundingBoxRight-m.actualBoundingBoxLeft)/2, y=385+(m.actualBoundingBoxAscent-m.actualBoundingBoxDescent)/2;
     tctx.fillStyle=tctx.strokeStyle="#F1ECFF"; tctx.lineWidth=40; tctx.strokeText(name,x,y); tctx.fillText(name,x,y);
@@ -3814,10 +3938,13 @@ traceCanvas.addEventListener("pointerdown",e=>{ if(mode!=="trace") return; traci
 traceCanvas.addEventListener("pointermove",e=>{ if(!tracing) return; const [x,y]=tpos(e); traceLine(tX,tY,x,y); tX=x; tY=y; });
 traceCanvas.addEventListener("pointerup",()=>tracing=false);
 traceCanvas.addEventListener("pointercancel",()=>tracing=false);
-document.getElementById("tracePick").addEventListener("click",e=>{ const b=e.target.closest(".dp"); if(!b) return; trI=+b.dataset.i; drawGuide(); });
+{ const w=document.getElementById("tracePick");
+  w.innerHTML=TR_GROUPS.map((g,i)=>`<button class="dp" data-g="${i}">${g[0]}</button>`).join("");
+  w.addEventListener("click",e=>{ const b=e.target.closest(".dp"); if(!b) return; trG=+b.dataset.g; trI=0; hideWin(); tracePickUI(); drawGuide(); });
+  tracePickUI(); }
 document.getElementById("trClear").addEventListener("click",()=>{ drawGuide(); showToast("깨끗해졌어요! ✨"); });
-document.getElementById("trNext").addEventListener("click",()=>{ trI=(trI+1)%TRACE.length; drawGuide(); });
-document.getElementById("trSave").addEventListener("click",()=>traceCanvas.toBlob(b=>saveBlob(b,"따라그리기.png"),"image/png"));
+document.getElementById("trNext").addEventListener("click",()=>{ trI=(trI+1)%TR_GROUPS[trG][2].length; hideWin(); drawGuide(); });
+document.getElementById("trSave").addEventListener("click",()=>traceCanvas.toBlob(b=>{ saveBlob(b,"따라그리기.png"); showWin("멋지게 따라 그렸어요! ✍️",TR_GROUPS[trG][1],"trace"); },"image/png"));
 
 /* 오늘의 그림 뽑기 — 열린 그림 중 랜덤 */
 document.getElementById("luckyBtn").addEventListener("click",()=>{
