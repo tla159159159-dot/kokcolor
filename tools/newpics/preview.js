@@ -1,4 +1,4 @@
-// 사용: NODE_PATH=/tmp/claude-0/-home-claude-kokcolor/81839534-0a07-53a8-8414-d873e4044ebf/scratchpad/node_modules node tools/newpics/preview.js tools/newpics/<pack>.txt out.png
+// 사용: NODE_PATH=<playwright node_modules> node tools/newpics/preview.js <팩>.txt out.png
 // <pack>.txt = index.html PACKS의 pics 항목 줄들(  {id:"..", name:"..", svg:`<svg ${A}>${BG()} ... </svg>`},) 그대로
 const fs = require("fs"), { chromium } = require("playwright");
 const src = fs.readFileSync(process.argv[2], "utf8");
