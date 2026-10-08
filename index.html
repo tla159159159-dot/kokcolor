@@ -53,6 +53,8 @@
     margin:6px 0 22px;padding:20px 24px;border-radius:20px;color:#fff;
     background:linear-gradient(120deg,#8B5CF6 0%,#C05CE0 45%,#FF6FA6 100%);
     box-shadow:0 12px 28px rgba(139,92,246,.28);transition:transform .14s,box-shadow .2s}
+  .promo-talent{background:linear-gradient(120deg,#0EA5A4 0%,#22B8CF 50%,#5B8DEF 100%);box-shadow:0 12px 28px rgba(14,165,164,.25)}.promo-talent .promo-btn{color:#0E7C86}
+  .promo-malang{background:linear-gradient(120deg,#FF8A3D 0%,#FF6F91 60%,#F24E9B 100%);box-shadow:0 12px 28px rgba(255,111,145,.28)}.promo-malang .promo-btn{color:#E0457B}
   .promo:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(139,92,246,.36)}
   .promo::after{content:"";position:absolute;right:-30px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.12)}
   .promo-ad{position:absolute;top:12px;right:14px;z-index:2;font-family:'Noto Sans KR',sans-serif;font-size:10px;font-weight:700;letter-spacing:.5px;color:rgba(255,255,255,.9);background:rgba(255,255,255,.2);padding:3px 8px;border-radius:6px}
@@ -64,7 +66,7 @@
   .promo:hover .promo-btn{transform:translateX(3px)}
   @media (max-width:600px){
     .promo{flex-direction:column;align-items:flex-start;gap:12px;padding:18px 18px;margin:4px 0 18px}
-    .promo-title{font-size:18px}
+    .promo-title{font-size:18px;padding-right:36px}
     .promo-btn{width:100%;text-align:center}
   }
   :focus-visible{outline:3px solid var(--brand);outline-offset:2px;border-radius:10px}
@@ -650,7 +652,7 @@
       <div class="host hide" id="memoryHost"></div>
       <div class="host hide" id="puzzleHost"></div>
       <canvas class="host hide" id="traceCanvas" width="760" height="760"></canvas>
-    </div><div class="gwin hide" id="gameWin" aria-live="polite"><span id="gwMsg"></span><a class="xlink" id="gwLink" target="_blank" rel="noopener"></a></div></div>
+    </div><div class="gwin hide" id="gameWin" aria-live="polite"><span id="gwMsg"></span><a class="xlink" id="gwLink" target="_blank" rel="noopener"></a><a class="xlink" id="gwLink2" target="_blank" rel="noopener" hidden></a></div></div>
     <aside class="panel">
       <div id="paletteSec">
         <h2 id="paletteTitle">🎨 색 고르기</h2>
@@ -736,6 +738,7 @@
         <button id="trNext" class="b-print"><svg class="ic" viewBox="0 0 24 24"><path d="M5 12h13m-6-6 6 6-6 6"/></svg>다음</button>
         <button id="trSave" class="b-save b-share"><svg class="ic" viewBox="0 0 24 24"><path d="M12 4v10m0 0 4-4m-4 4-4-4"/><path d="M5 18h14"/></svg>그림 저장</button>
         <a class="xlink" id="xTrace" target="_blank" rel="noopener"></a>
+        <a class="xlink" id="xTrace2" target="_blank" rel="noopener" hidden></a>
       </div>
     </aside>
   </div>
@@ -749,6 +752,15 @@
       <a href="/색칠공부/공룡">🦕 공룡 색칠공부</a><a href="/색칠공부/공주">👑 공주 색칠공부</a><a href="/색칠공부/동물">🐾 동물 색칠공부</a><a href="/색칠공부/바다동물">🌊 바다 동물 색칠공부</a><a href="/색칠공부/하늘">🚀 로켓·비행기 색칠공부</a><a href="/색칠공부/간식">🍦 간식 색칠공부</a><a href="/색칠공부/곤충">🐞 곤충 색칠공부</a><a href="/색칠공부/꽃나무">⭐ 꽃·나무 색칠공부</a><a href="/색칠공부/크리스마스">🎄 크리스마스 색칠공부</a><a href="/색칠공부/할로윈">🎃 할로윈 색칠공부</a><a href="/색칠공부/탈것">🚒 탈것 색칠공부</a><a href="/색칠공부/과일채소">🍎 과일·채소 색칠공부</a><a href="/색칠공부/우주">🪐 우주 색칠공부</a><a href="/색칠공부/농장동물">🐮 농장 동물 색칠공부</a><a href="/색칠공부/꽃식물">🌻 꽃·식물 색칠공부</a><a href="/색칠공부/생일파티">🎂 생일 파티 색칠공부</a><a href="/색칠공부/악기">🥁 악기 색칠공부</a>
     </nav>
   </div>
+
+  <a class="promo promo-talent" data-site="mwojalhae" href="https://mwojalhae.kr/?utm_source=kokcolor&amp;utm_medium=ad&amp;utm_campaign=packs" target="_blank" rel="noopener">
+    <span class="promo-ad">AD</span>
+    <div class="promo-txt">
+      <b class="promo-title">색칠에 푹 빠지는 우리 아이, 뭘 잘할까?</b>
+      <span class="promo-sub">만 5~12세 무료 재능·적성검사 · 기질·학습성향까지 리포트로</span>
+    </div>
+    <span class="promo-btn">무료 검사하기 →</span>
+  </a>
 
   <section class="works" id="works" hidden>
     <div class="works-head"><h2>🖼️ 내 작품</h2><span class="works-sub" id="worksSub">칠하던 그림을 누르면 이어서 칠할 수 있어요</span></div>
@@ -773,8 +785,19 @@
       <a class="fam" data-site="dojangkwang" href="https://www.dojangkwang.co.kr/?utm_source=kokcolor&amp;utm_medium=crosslink&amp;utm_campaign=main" target="_blank" rel="noopener"><span class="fam-ic">✏️</span><b>도장쾅 학습지</b><span class="fam-d">색칠 다음엔 한글·숫자 프린트 학습지로 이어서 놀아요</span><em>학습지 보러가기 →</em></a>
       <a class="fam" data-site="bamtol" href="https://bamtol.co.kr/?utm_source=kokcolor&amp;utm_medium=crosslink&amp;utm_campaign=main" target="_blank" rel="noopener"><span class="fam-ic">🌙</span><b>밤톨 자장가</b><span class="fam-d">잠들기 전엔 포근한 자장가와 동화로 하루를 마무리해요</span><em>자장가 들으러 가기 →</em></a>
       <a class="fam" data-site="mommoment" href="https://mommoment.kr/?utm_source=kokcolor&amp;utm_medium=crosslink&amp;utm_campaign=main" target="_blank" rel="noopener"><span class="fam-ic">💬</span><b>맘먼트</b><span class="fam-d">또래 엄마들과 육아 고민·꿀팁을 나눠요</span><em>맘먼트 구경하기 →</em></a>
+      <a class="fam" data-site="mwojalhae" href="https://mwojalhae.kr/?utm_source=kokcolor&amp;utm_medium=crosslink&amp;utm_campaign=main" target="_blank" rel="noopener"><span class="fam-ic">🔎</span><b>우리애 뭐잘해?</b><span class="fam-d">무료 재능·적성검사로 아이가 잘하는 걸 찾아봐요</span><em>무료 검사하기 →</em></a>
+      <a class="fam" data-site="malangenglish" href="https://malangenglish.co.kr/?utm_source=kokcolor&amp;utm_medium=crosslink&amp;utm_campaign=main" target="_blank" rel="noopener"><span class="fam-ic">🍡</span><b>말랑영어</b><span class="fam-d">알파벳 따라쓰기·파닉스 엄마표 영어 학습지</span><em>무료 샘플 보기 →</em></a>
     </div>
   </section>
+
+  <a class="promo promo-malang" data-site="malangenglish" href="https://malangenglish.co.kr/?utm_source=kokcolor&amp;utm_medium=ad&amp;utm_campaign=plans" target="_blank" rel="noopener">
+    <span class="promo-ad">AD</span>
+    <div class="promo-txt">
+      <b class="promo-title">알파벳도 색칠처럼 말랑말랑하게</b>
+      <span class="promo-sub">엄마표 영어 학습지 · 알파벳 따라쓰기·파닉스 무료 샘플 PDF</span>
+    </div>
+    <span class="promo-btn">무료 샘플 받기 →</span>
+  </a>
 
   <section class="plans" id="plans">
     <h2 class="plans-title">요금제</h2>
@@ -3702,13 +3725,21 @@ const XL={
   hangul:["한글따라쓰기/","종이에 또박또박 써 보려면 한글 따라쓰기 학습지"],
   abc:["알파벳쓰기/","종이에 또박또박 써 보려면 알파벳 쓰기 학습지"],
   num:["수세기학습지/","종이에 또박또박 써 보려면 숫자 학습지"]};
+/* 형제 사이트 광고형 한 줄: 미로·짝맞추기·퍼즐 → 우리애 뭐잘해?, 알파벳 → 말랑영어 */
+const XL2={maze:["https://mwojalhae.kr/","🔎 우리애 뭐잘해?","길 찾기를 잘하는 아이, 어떤 재능일까? 무료 재능검사"],
+  memory:["https://mwojalhae.kr/","🔎 우리애 뭐잘해?","기억력 좋은 우리 아이, 강점이 궁금하다면 무료 재능검사"],
+  puzzle:["https://mwojalhae.kr/","🔎 우리애 뭐잘해?","퍼즐을 척척 맞추는 아이, 무료 적성검사로 확인해요"],
+  abc:["https://malangenglish.co.kr/","🍡 말랑영어","알파벳 소리까지 익히려면 무료 파닉스 학습지"]};
+function setXlink2(a,key,from){ const x=XL2[key]; a.hidden=!x; if(!x) return;
+  a.href=x[0]+"?utm_source=kokcolor&utm_medium=ad&utm_campaign="+from; a.dataset.from=from; a.dataset.to=x[0].includes("malang")?"malangenglish":"mwojalhae";
+  a.innerHTML=`<b>${x[1]}</b><span>${x[2]} ›</span>`; }
 function setXlink(a,key,from){ const [p,t]=XL[key];
   a.href="https://www.dojangkwang.co.kr/"+encodeURI(p)+"?utm_source=kokcolor&utm_medium=crosslink&utm_campaign="+from;
   a.dataset.from=from; a.innerHTML=`<b>✏️ 도장쾅 학습지</b><span>${t} ›</span>`; }
-document.addEventListener("click",e=>{ const a=e.target.closest&&e.target.closest(".xlink"); if(a) ev("crosslink",{to:"dojangkwang",from:a.dataset.from}); });
+document.addEventListener("click",e=>{ const a=e.target.closest&&e.target.closest(".xlink,.promo[data-site]"); if(a) ev("crosslink",{to:a.dataset.to||a.dataset.site||"dojangkwang",from:a.dataset.from||"ad"}); });
 const gameWin=document.getElementById("gameWin");
 function hideWin(){ gameWin.classList.add("hide"); }
-function showWin(msg,key,from){ document.getElementById("gwMsg").textContent=msg; setXlink(document.getElementById("gwLink"),key,from); gameWin.classList.remove("hide"); }
+function showWin(msg,key,from){ document.getElementById("gwMsg").textContent=msg; setXlink(document.getElementById("gwLink"),key,from); setXlink2(document.getElementById("gwLink2"),key,from); gameWin.classList.remove("hide"); }
 setXlink(document.getElementById("xMaze"),"maze","maze");
 setXlink(document.getElementById("xMemory"),"memory","memory");
 setXlink(document.getElementById("xPuzzle"),"puzzle","puzzle");
@@ -3913,7 +3944,7 @@ function shapePath(k){ const p=new Path2D();
     p.moveTo(540,385); p.lineTo(660,270); p.lineTo(660,500); p.closePath(); p.moveTo(235,350); p.arc(220,350,15,0,Math.PI*2); }
   return p; }
 function tracePickUI(){ document.querySelectorAll("#tracePick .dp").forEach((b,i)=>b.classList.toggle("on",i===trG));
-  setXlink(document.getElementById("xTrace"),TR_GROUPS[trG][1],"trace"); }
+  setXlink(document.getElementById("xTrace"),TR_GROUPS[trG][1],"trace"); setXlink2(document.getElementById("xTrace2"),TR_GROUPS[trG][1],"trace"); }
 async function drawGuide(){
   const items=TR_GROUPS[trG][2], [name,k]=items[trI];
   document.getElementById("traceName").textContent=`${name} (${trI+1}/${items.length})`;
