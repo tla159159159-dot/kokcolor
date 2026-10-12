@@ -79,3 +79,18 @@
     <circle class="fill" data-n="볼" cx="118" cy="174" r="12"/>
     <circle class="dk" cx="126" cy="132" r="10"/><circle class="wt" cx="129" cy="129" r="3.5"/>
     <g class="ln"><path d="M140 262 v18 M132 284 l8 -6 l8 6 M188 262 v18 M180 284 l8 -6 l8 6"/></g></svg>`},
+{id:"parachute", name:"낙하산", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="구름" d="M28 250 a18 18 0 0 1 26 -20 a24 24 0 0 1 44 4 a18 18 0 0 1 6 34 H34 a16 16 0 0 1 -6 -18 Z"/>
+    <path class="fill" data-n="구름" d="M256 300 a16 16 0 0 1 24 -18 a22 22 0 0 1 40 4 a16 16 0 0 1 6 30 H262 a14 14 0 0 1 -6 -16 Z"/>
+    <path class="fill" data-n="낙하산" d="M70 150 A110 100 0 0 1 125 63.4 L125 150 Q97 166 70 150 Z"/>
+    <path class="fill" data-n="낙하산" d="M125 150 L125 63.4 A110 100 0 0 1 180 50 L180 150 Q152 166 125 150 Z"/>
+    <path class="fill" data-n="낙하산" d="M180 150 L180 50 A110 100 0 0 1 235 63.4 L235 150 Q208 166 180 150 Z"/>
+    <path class="fill" data-n="낙하산" d="M235 150 L235 63.4 A110 100 0 0 1 290 150 Q262 166 235 150 Z"/>
+    <path class="ln" d="M70 150 L150 246 M125 150 L156 240 M235 150 L204 240 M290 150 L210 246"/>
+    <ellipse class="fill" data-n="팔" cx="158" cy="262" rx="9" ry="20" transform="rotate(30 158 262)"/><ellipse class="fill" data-n="팔" cx="202" cy="262" rx="9" ry="20" transform="rotate(-30 202 262)"/>
+    <ellipse class="fill" data-n="몸" cx="180" cy="290" rx="28" ry="30"/>
+    <ellipse class="fill" data-n="발" cx="166" cy="320" rx="11" ry="8"/><ellipse class="fill" data-n="발" cx="194" cy="320" rx="11" ry="8"/>
+    <circle class="fill" data-n="귀" cx="160" cy="218" r="10"/><circle class="fill" data-n="귀" cx="200" cy="218" r="10"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="238" r="26"/>
+    <ellipse class="fill" data-n="주둥이" cx="180" cy="248" rx="12" ry="9"/>
+    <circle class="dk" cx="170" cy="232" r="4"/><circle class="dk" cx="190" cy="232" r="4"/><ellipse class="dk" cx="180" cy="245" rx="4" ry="3"/></svg>`},

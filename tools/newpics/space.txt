@@ -81,3 +81,16 @@
     <circle class="dk" cx="154" cy="128" r="8"/><circle class="dk" cx="206" cy="128" r="8"/><circle class="wt" cx="157" cy="125" r="3"/><circle class="wt" cx="209" cy="125" r="3"/>
     <ellipse class="wt" cx="118" cy="84" rx="8" ry="18" transform="rotate(40 118 84)"/>
     <rect class="fill" data-n="목링" x="120" y="212" width="120" height="16" rx="8"/></svg>`},
+{id:"lander", name:"달착륙선", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="지구" cx="76" cy="80" r="32"/><path class="fill" data-n="대륙" d="M58 66 q14 -12 26 0 q-4 14 -18 14 q-10 0 -8 -14 Z M82 94 q14 -4 18 6 q-8 10 -18 4 Z"/>
+    <polygon class="fill" data-n="별" points="${star(300,52,14,6,5)}"/><polygon class="fill" data-n="별" points="${star(250,96,10,4,5)}"/>
+    ${GR("달표면",286)}
+    <ellipse class="fill" data-n="구덩이" cx="70" cy="318" rx="26" ry="8"/><ellipse class="fill" data-n="구덩이" cx="236" cy="326" rx="20" ry="6"/>
+    <path class="ln" d="M126 240 L92 292 M234 240 L268 292"/>
+    <ellipse class="fill" data-n="발판" cx="92" cy="294" rx="18" ry="6"/><ellipse class="fill" data-n="발판" cx="268" cy="294" rx="18" ry="6"/>
+    <path class="ln" d="M206 112 L228 80"/><circle class="fill" data-n="안테나" cx="230" cy="76" r="9"/>
+    <rect class="fill" data-n="몸체" x="108" y="170" width="144" height="76" rx="12"/>
+    <path class="fill" data-n="조종실" d="M128 170 L148 110 H212 L232 170 Z"/>
+    <circle class="fill" data-n="창문" cx="180" cy="140" r="18"/>
+    <rect class="fill" data-n="문" x="160" y="190" width="40" height="44" rx="8"/>
+    <path class="ln" d="M306 286 V200"/><path class="fill" data-n="깃발" d="M306 200 H340 V224 H306 Z"/></svg>`},

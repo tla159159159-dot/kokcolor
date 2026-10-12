@@ -76,3 +76,17 @@
     <circle class="fill" data-n="볼" cx="132" cy="268" r="11"/><circle class="fill" data-n="볼" cx="228" cy="268" r="11"/>
     <circle class="dk" cx="152" cy="246" r="8"/><circle class="dk" cx="208" cy="246" r="8"/><circle class="wt" cx="155" cy="243" r="3"/><circle class="wt" cx="211" cy="243" r="3"/>
     <path class="ln" d="M166 266 q14 14 28 0"/></svg>`},
+{id:"seal", name:"물개", svg:`<svg ${A}>${BG()}
+    ${GR("바다",270)}
+    <path class="ln" d="M30 300 q12 -8 24 0 t24 0 M280 296 q12 -8 24 0 t24 0"/>
+    <path class="fill" data-n="바위" d="M64 300 Q80 236 180 236 Q284 236 296 300 Z"/>
+    <ellipse class="fill" data-n="꼬리" cx="148" cy="290" rx="24" ry="10"/><ellipse class="fill" data-n="꼬리" cx="212" cy="290" rx="24" ry="10"/>
+    <path class="fill" data-n="몸" d="M124 284 C114 220 142 170 180 168 C218 170 246 220 236 284 Z"/>
+    <ellipse class="fill" data-n="지느러미" cx="128" cy="246" rx="13" ry="30" transform="rotate(25 128 246)"/><ellipse class="fill" data-n="지느러미" cx="232" cy="246" rx="13" ry="30" transform="rotate(-25 232 246)"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="236" rx="30" ry="40"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="140" r="44"/>
+    <circle class="dk" cx="162" cy="128" r="7"/><circle class="dk" cx="198" cy="128" r="7"/><circle class="wt" cx="164" cy="125" r="2"/><circle class="wt" cx="200" cy="125" r="2"/>
+    <ellipse class="fill" data-n="주둥이" cx="168" cy="158" rx="14" ry="10"/><ellipse class="fill" data-n="주둥이" cx="192" cy="158" rx="14" ry="10"/>
+    <ellipse class="dk" cx="180" cy="148" rx="8" ry="6"/>
+    <path class="ln" d="M154 160 L130 156 M154 166 L132 170 M206 160 L230 156 M206 166 L228 170"/>
+    <circle class="fill" data-n="공" cx="180" cy="62" r="26"/><path class="fill" data-n="공무늬" d="M180 36 Q200 62 180 88 Q160 62 180 36 Z"/></svg>`},

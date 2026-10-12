@@ -88,3 +88,19 @@
     <circle class="dk" cx="40" cy="226" r="4"/><circle class="dk" cx="56" cy="226" r="4"/><path class="ln" d="M42 240 q6 6 12 0"/>
     <path class="fill" data-n="꼭지" d="M236 300 q0 -12 8 -16 l4 4 q-6 4 -4 12 Z"/><ellipse class="fill" data-n="호박" cx="240" cy="324" rx="34" ry="24"/><path class="ln" d="M226 304 q-8 20 0 40 M254 304 q8 20 0 40"/>
     <path class="fill" data-n="박쥐" d="M226 40 q-16 -14 -34 -6 q12 6 10 16 q12 -6 24 4 q12 -10 24 -4 q-2 -10 10 -16 q-18 -8 -34 6 Z" transform="translate(-60 0)"/></svg>`},
+{id:"mummy", name:"미라", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="달" d="M290 36 a36 36 0 1 0 30 60 a28 28 0 1 1 -30 -60 Z"/>
+    <polygon class="fill" data-n="별" points="${star(62,64,16,7,5)}"/>
+    ${GR("땅",300)}
+    <ellipse class="fill" data-n="발" cx="152" cy="304" rx="24" ry="12"/><ellipse class="fill" data-n="발" cx="208" cy="304" rx="24" ry="12"/>
+    <path class="fill" data-n="붕대끝" d="M232 246 q34 8 40 38 q-12 -8 -28 -6 Z"/>
+    <rect class="fill" data-n="몸" x="122" y="168" width="116" height="132" rx="40"/>
+    <path class="ln" d="M124 204 L236 194 M122 236 L238 244 M126 270 L234 262"/>
+    <ellipse class="fill" data-n="팔" cx="110" cy="206" rx="14" ry="32" transform="rotate(50 110 206)"/><ellipse class="fill" data-n="팔" cx="250" cy="206" rx="14" ry="32" transform="rotate(-50 250 206)"/>
+    <ellipse class="fill" data-n="머리" cx="180" cy="124" rx="64" ry="56"/>
+    <path class="ln" d="M122 100 L238 90 M126 160 L234 168"/>
+    <rect class="fill" data-n="얼굴" x="126" y="110" width="108" height="32" rx="16"/>
+    <circle class="wt" cx="158" cy="126" r="12"/><circle class="wt" cx="202" cy="126" r="12"/><circle class="dk" cx="160" cy="128" r="6"/><circle class="dk" cx="204" cy="128" r="6"/>
+    <circle class="fill" data-n="볼" cx="140" cy="152" r="8"/><circle class="fill" data-n="볼" cx="220" cy="152" r="8"/>
+    <path class="ln" d="M170 152 q10 8 20 0"/>
+    <path class="fill" data-n="사탕" d="M64 236 l-12 -10 v20 Z M96 236 l12 -10 v20 Z"/><circle class="fill" data-n="사탕" cx="80" cy="236" r="16"/></svg>`},

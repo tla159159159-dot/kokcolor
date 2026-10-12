@@ -89,3 +89,16 @@
     <circle class="fill" data-n="볼" cx="232" cy="160" r="6"/><circle class="fill" data-n="볼" cx="292" cy="158" r="6"/>
     <path class="ln" d="M254 164 q10 8 20 0"/>
     <circle class="fill" data-n="무늬" cx="130" cy="200" r="11"/><circle class="fill" data-n="무늬" cx="146" cy="174" r="9"/></svg>`},
+{id:"plesio", name:"수장룡", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="296" cy="70" r="28"/>
+    <path class="fill" data-n="구름" d="M190 76 a16 16 0 0 1 24 -18 a22 22 0 0 1 40 4 a16 16 0 0 1 6 30 H196 a14 14 0 0 1 -6 -16 Z"/>
+    <ellipse class="fill" data-n="몸" cx="216" cy="236" rx="84" ry="40"/>
+    <path class="fill" data-n="꼬리" d="M290 232 Q326 200 338 212 Q326 234 292 246 Z"/>
+    <path class="fill" data-n="목" d="M150 236 C118 190 92 150 96 112 L128 108 C126 146 150 186 186 222 Z"/>
+    <ellipse class="fill" data-n="머리" cx="108" cy="98" rx="38" ry="26"/>
+    <circle class="dk" cx="116" cy="90" r="6"/><circle class="wt" cx="118" cy="88" r="2"/>
+    <path class="ln" d="M76 106 q12 8 26 2"/>
+    <circle class="fill" data-n="볼" cx="134" cy="104" r="7"/>
+    <circle class="fill" data-n="무늬" cx="210" cy="214" r="9"/><circle class="fill" data-n="무늬" cx="240" cy="208" r="7"/><circle class="fill" data-n="무늬" cx="264" cy="218" r="6"/>
+    ${GR("바다",240)}
+    <path class="ln" d="M40 280 q12 -8 24 0 t24 0 M150 300 q12 -8 24 0 t24 0 M260 276 q12 -8 24 0 t24 0"/></svg>`},

@@ -83,3 +83,15 @@
     <ellipse class="fill" data-n="코" cx="180" cy="170" rx="24" ry="32"/>
     <circle class="dk" cx="138" cy="146" r="9"/><circle class="dk" cx="222" cy="146" r="9"/><circle class="wt" cx="141" cy="143" r="3"/><circle class="wt" cx="225" cy="143" r="3"/>
     <path class="ln" d="M166 214 q14 12 28 0"/></svg>`},
+{id:"hippo", name:"하마", svg:`<svg ${A}>${BG()}
+    ${GR("풀밭",296)}
+    <ellipse class="fill" data-n="몸통" cx="180" cy="262" rx="112" ry="58"/>
+    <ellipse class="fill" data-n="발" cx="122" cy="314" rx="26" ry="14"/><ellipse class="fill" data-n="발" cx="238" cy="314" rx="26" ry="14"/>
+    <circle class="fill" data-n="귀" cx="132" cy="84" r="15"/><circle class="fill" data-n="귀" cx="228" cy="84" r="15"/>
+    <ellipse class="fill" data-n="머리" cx="180" cy="128" rx="60" ry="50"/>
+    <ellipse class="fill" data-n="주둥이" cx="180" cy="184" rx="86" ry="50"/>
+    <circle class="wt" cx="156" cy="118" r="13"/><circle class="wt" cx="204" cy="118" r="13"/><circle class="dk" cx="158" cy="120" r="6"/><circle class="dk" cx="202" cy="120" r="6"/>
+    <ellipse class="dk" cx="150" cy="168" rx="8" ry="6"/><ellipse class="dk" cx="210" cy="168" rx="8" ry="6"/>
+    <circle class="fill" data-n="볼" cx="118" cy="194" r="12"/><circle class="fill" data-n="볼" cx="242" cy="194" r="12"/>
+    <path class="ln" d="M146 198 q34 22 68 0"/>
+    <circle class="fill" data-n="꽃" cx="58" cy="290" r="10"/><circle class="fill" data-n="꽃" cx="304" cy="290" r="10"/></svg>`},

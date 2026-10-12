@@ -149,6 +149,11 @@
       "permanent": true
     },
     {
+      "source": "/doan/animal/hippo",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%8F%99%EB%AC%BC/%ED%95%98%EB%A7%88",
+      "permanent": true
+    },
+    {
       "source": "/doan/sea",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%B0%94%EB%8B%A4%EB%8F%99%EB%AC%BC",
       "permanent": true
@@ -211,6 +216,11 @@
     {
       "source": "/doan/sea/clam",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%B0%94%EB%8B%A4%EB%8F%99%EB%AC%BC/%EC%A1%B0%EA%B0%9C",
+      "permanent": true
+    },
+    {
+      "source": "/doan/sea/seal",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%B0%94%EB%8B%A4%EB%8F%99%EB%AC%BC/%EB%AC%BC%EA%B0%9C",
       "permanent": true
     },
     {
@@ -279,6 +289,11 @@
       "permanent": true
     },
     {
+      "source": "/doan/sky/parachute",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%98%EB%8A%98/%EB%82%99%ED%95%98%EC%82%B0",
+      "permanent": true
+    },
+    {
       "source": "/doan/snack",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B0%84%EC%8B%9D",
       "permanent": true
@@ -344,6 +359,11 @@
       "permanent": true
     },
     {
+      "source": "/doan/snack/hotdog",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B0%84%EC%8B%9D/%ED%95%AB%EB%8F%84%EA%B7%B8",
+      "permanent": true
+    },
+    {
       "source": "/doan/dino",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%B5%EB%A3%A1",
       "permanent": true
@@ -406,6 +426,11 @@
     {
       "source": "/doan/dino/pachy",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%B5%EB%A3%A1/%EB%B0%95%EC%B9%98%EA%B8%B0%EA%B3%B5%EB%A3%A1",
+      "permanent": true
+    },
+    {
+      "source": "/doan/dino/plesio",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%B5%EB%A3%A1/%EC%88%98%EC%9E%A5%EB%A3%A1",
       "permanent": true
     },
     {
@@ -604,6 +629,11 @@
       "permanent": true
     },
     {
+      "source": "/doan/ride/motorcycle",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%83%88%EA%B2%83/%EC%98%A4%ED%86%A0%EB%B0%94%EC%9D%B4",
+      "permanent": true
+    },
+    {
       "source": "/doan/fruit",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%BC%EC%9D%BC%EC%B1%84%EC%86%8C",
       "permanent": true
@@ -669,6 +699,11 @@
       "permanent": true
     },
     {
+      "source": "/doan/fruit/eggplant",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%BC%EC%9D%BC%EC%B1%84%EC%86%8C/%EA%B0%80%EC%A7%80",
+      "permanent": true
+    },
+    {
       "source": "/doan/halloween",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%A0%EB%A1%9C%EC%9C%88",
       "permanent": true
@@ -731,6 +766,11 @@
     {
       "source": "/doan/halloween/hauntedhouse",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%A0%EB%A1%9C%EC%9C%88/%EC%9C%A0%EB%A0%B9%EC%9D%98-%EC%A7%91",
+      "permanent": true
+    },
+    {
+      "source": "/doan/halloween/mummy",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%A0%EB%A1%9C%EC%9C%88/%EB%AF%B8%EB%9D%BC",
       "permanent": true
     },
     {
@@ -864,6 +904,11 @@
       "permanent": true
     },
     {
+      "source": "/doan/space/lander",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%9A%B0%EC%A3%BC/%EB%8B%AC%EC%B0%A9%EB%A5%99%EC%84%A0",
+      "permanent": true
+    },
+    {
       "source": "/doan/farm",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%86%8D%EC%9E%A5%EB%8F%99%EB%AC%BC",
       "permanent": true
@@ -926,6 +971,11 @@
     {
       "source": "/doan/farm/windmill",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%86%8D%EC%9E%A5%EB%8F%99%EB%AC%BC/%ED%92%8D%EC%B0%A8",
+      "permanent": true
+    },
+    {
+      "source": "/doan/farm/scarecrow",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%86%8D%EC%9E%A5%EB%8F%99%EB%AC%BC/%ED%97%88%EC%88%98%EC%95%84%EB%B9%84",
       "permanent": true
     },
     {

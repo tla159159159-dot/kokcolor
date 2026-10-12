@@ -80,3 +80,18 @@
     <circle class="fill" data-n="가운데" cx="180" cy="124" r="14"/>
     <path class="ln" d="M60 322 v-30 M300 322 v-30"/>
     <path class="fill" data-n="튤립" d="M46 292 q-4 -26 4 -30 l7 10 l7 -10 l7 10 l7 -10 q8 4 4 30 Z"/><path class="fill" data-n="튤립" d="M286 292 q-4 -26 4 -30 l7 10 l7 -10 l7 10 l7 -10 q8 4 4 30 Z"/></svg>`},
+{id:"scarecrow", name:"허수아비", svg:`<svg ${A}>${BG()}
+    ${GR("밭",292)}
+    <rect class="fill" data-n="막대" x="172" y="220" width="16" height="84"/>
+    <polygon class="fill" data-n="지푸라기" points="84,170 54,158 58,182 50,198 84,190"/><polygon class="fill" data-n="지푸라기" points="276,170 306,158 302,182 310,198 276,190"/>
+    <path class="fill" data-n="옷" d="M104 154 H256 L282 168 V194 H238 L232 252 H128 L122 194 H78 V168 Z"/>
+    <rect class="fill" data-n="헝겊" x="146" y="204" width="24" height="24"/>
+    <path class="ln" d="M180 160 V250"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="114" r="40"/>
+    <circle class="dk" cx="166" cy="114" r="6"/><circle class="dk" cx="194" cy="114" r="6"/><path class="ln" d="M164 130 q16 12 32 0"/>
+    <circle class="fill" data-n="볼" cx="150" cy="128" r="8"/><circle class="fill" data-n="볼" cx="210" cy="128" r="8"/>
+    <ellipse class="fill" data-n="모자챙" cx="180" cy="80" rx="66" ry="12"/>
+    <path class="fill" data-n="모자" d="M142 80 Q144 32 180 32 Q216 32 218 80 Z"/><path class="fill" data-n="띠" d="M143 64 H217 V76 H143 Z"/>
+    <ellipse class="fill" data-n="새" cx="268" cy="142" rx="18" ry="13"/><circle class="fill" data-n="새" cx="282" cy="128" r="10"/><polygon class="fill" data-n="부리" points="291,126 302,129 291,133"/><circle class="dk" cx="284" cy="126" r="3"/>
+    <circle class="fill" data-n="호박" cx="76" cy="292" r="24"/><path class="ln" d="M76 268 V258"/>
+    <circle class="fill" data-n="호박" cx="290" cy="300" r="18"/></svg>`},

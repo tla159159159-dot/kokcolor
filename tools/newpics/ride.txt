@@ -88,3 +88,15 @@
     <rect class="dk" x="236" y="214" width="16" height="6" rx="3"/>
     <circle class="fill" data-n="바퀴" cx="126" cy="284" r="28"/><circle class="fill" data-n="바퀴" cx="270" cy="284" r="28"/>
     <circle class="wt" cx="126" cy="284" r="11"/><circle class="wt" cx="270" cy="284" r="11"/></svg>`},
+{id:"motorcycle", name:"오토바이", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="296" cy="72" r="28"/>${rays(296,72,34,46,10,"햇살")}
+    ${GR("길",300)}
+    <circle class="fill" data-n="연기" cx="30" cy="232" r="12"/><circle class="fill" data-n="연기" cx="44" cy="206" r="9"/>
+    <rect class="fill" data-n="배기통" x="40" y="236" width="70" height="14" rx="7"/>
+    <circle class="fill" data-n="바퀴" cx="100" cy="262" r="40"/><circle class="fill" data-n="휠" cx="100" cy="262" r="16"/>
+    <circle class="fill" data-n="바퀴" cx="262" cy="262" r="40"/><circle class="fill" data-n="휠" cx="262" cy="262" r="16"/>
+    <path class="ln" d="M262 262 L238 160 M226 158 H252"/>
+    <path class="fill" data-n="몸체" d="M90 236 Q114 196 156 196 H234 Q270 196 282 236 Z"/>
+    <path class="fill" data-n="안장" d="M120 196 Q120 172 150 172 H196 Q210 172 210 196 Z"/>
+    <circle class="fill" data-n="전조등" cx="274" cy="200" r="12"/>
+    <circle class="dk" cx="226" cy="214" r="5"/><circle class="dk" cx="250" cy="214" r="5"/><path class="ln" d="M230 224 q8 7 16 0"/></svg>`},
