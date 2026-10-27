@@ -104,3 +104,38 @@
     <circle class="fill" data-n="볼" cx="140" cy="152" r="8"/><circle class="fill" data-n="볼" cx="220" cy="152" r="8"/>
     <path class="ln" d="M170 152 q10 8 20 0"/>
     <path class="fill" data-n="사탕" d="M64 236 l-12 -10 v20 Z M96 236 l12 -10 v20 Z"/><circle class="fill" data-n="사탕" cx="80" cy="236" r="16"/></svg>`},
+{id:"spider", name:"꼬마 거미", svg:`<svg ${A}>${BG()}
+    <path class="ln" d="M180 14 V136"/>
+    <circle class="fill" data-n="달" cx="300" cy="66" r="30"/>
+    <circle class="wt" cx="290" cy="58" r="6"/><circle class="wt" cx="310" cy="78" r="4"/>
+    <path class="fill" data-n="다리" d="M145.5 162.9 L88.2 119.3 L49.2 140.4 A9 9 0 0 0 58.8 155.6 L83.8 136.7 L134.5 177.1 Z"/>
+    <path class="fill" data-n="다리" d="M130.7 189.4 L63.2 169 L31.4 199.9 A9 9 0 0 0 44.6 212.1 L64.8 187 L125.3 206.6 Z"/>
+    <path class="fill" data-n="다리" d="M126.1 217.2 L59.5 232.2 L38 269.8 A9 9 0 0 0 54 278.2 L68.5 247.8 L129.9 234.8 Z"/>
+    <path class="fill" data-n="다리" d="M136.3 249 L90.6 286.8 L81.2 328.1 A9 9 0 0 0 98.8 331.9 L105.4 297.2 L147.7 263 Z"/>
+    <path class="fill" data-n="다리" d="M225.5 177.1 L276.2 136.7 L301.2 155.6 A9 9 0 0 0 310.8 140.4 L271.8 119.3 L214.5 162.9 Z"/>
+    <path class="fill" data-n="다리" d="M234.7 206.6 L295.2 187 L315.4 212.1 A9 9 0 0 0 328.6 199.9 L296.8 169 L229.3 189.4 Z"/>
+    <path class="fill" data-n="다리" d="M230.1 234.8 L291.5 247.8 L306 278.2 A9 9 0 0 0 322 269.8 L300.5 232.2 L233.9 217.2 Z"/>
+    <path class="fill" data-n="다리" d="M212.3 263 L254.6 297.2 L261.2 331.9 A9 9 0 0 0 278.8 328.1 L269.4 286.8 L223.7 249 Z"/>
+    <circle class="fill" data-n="몸통" cx="180" cy="206" r="74"/>
+    <path class="fill" data-n="리본" d="M180 140 q-38 -26 -46 0 q8 24 46 0 Z"/>
+    <path class="fill" data-n="리본" d="M180 140 q38 -26 46 0 q-8 24 -46 0 Z"/>
+    <circle class="fill" data-n="매듭" cx="180" cy="140" r="9"/>
+    <circle class="dk" cx="156" cy="200" r="10"/><circle class="dk" cx="204" cy="200" r="10"/><circle class="wt" cx="158" cy="197" r="2.5"/><circle class="wt" cx="206" cy="197" r="2.5"/>
+    <path class="ln" d="M167 226 q13 13 26 0"/>
+    <ellipse class="fill" data-n="볼" cx="134" cy="230" rx="12" ry="8"/><ellipse class="fill" data-n="볼" cx="226" cy="230" rx="12" ry="8"/></svg>`},
+  {id:"potion", name:"마법 물약", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="거품" cx="236" cy="50" r="10"/>
+    <circle class="fill" data-n="거품" cx="260" cy="26" r="7"/>
+    <rect class="fill" data-n="코르크" x="154" y="42" width="52" height="44" rx="10"/>
+    <rect class="fill" data-n="병목" x="150" y="90" width="60" height="60" rx="10"/>
+    <rect class="fill" data-n="입구" x="140" y="80" width="80" height="18" rx="8"/>
+    <circle class="fill" data-n="병" cx="180" cy="226" r="92"/>
+    <path class="fill" data-n="물약" d="M88.2 220 q23 -14 46 0 t46 0 t46 0 t45.6 0 A92 92 0 1 1 88.2 220 Z"/>
+    <circle class="fill" data-n="거품" cx="146" cy="266" r="13"/>
+    <circle class="fill" data-n="거품" cx="206" cy="290" r="9"/>
+    <circle class="fill" data-n="거품" cx="228" cy="252" r="15"/>
+    <circle class="dk" cx="156" cy="180" r="8"/><circle class="dk" cx="204" cy="180" r="8"/><circle class="wt" cx="158" cy="177" r="2.5"/><circle class="wt" cx="206" cy="177" r="2.5"/>
+    <path class="ln" d="M169 196 q11 11 22 0"/>
+    <ellipse class="fill" data-n="볼" cx="138" cy="200" rx="10" ry="7"/><ellipse class="fill" data-n="볼" cx="222" cy="200" rx="10" ry="7"/>
+    <polygon class="fill" data-n="반짝이" points="${star(62,90,18,6,4)}"/>
+    <polygon class="fill" data-n="반짝이" points="${star(304,130,16,6,4)}"/></svg>`},

@@ -91,3 +91,36 @@
     <ellipse class="fill" data-n="코" cx="180" cy="196" rx="14" ry="10"/>
     <circle class="fill" data-n="볼" cx="146" cy="196" r="7"/><circle class="fill" data-n="볼" cx="214" cy="196" r="7"/>
     <path class="ln" d="M172 210 q8 6 16 0"/></svg>`},
+{id:"pinecone", name:"솔방울", svg:`<svg ${A}>${BG()}
+    ${GR("땅",318)}
+    <ellipse class="fill" data-n="솔잎" cx="142" cy="78" rx="34" ry="9" transform="rotate(-28 142 78)"/>
+    <ellipse class="fill" data-n="솔잎" cx="218" cy="78" rx="34" ry="9" transform="rotate(28 218 78)"/>
+    <rect class="fill" data-n="꼭지" x="172" y="66" width="16" height="34" rx="6"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="198" rx="78" ry="106"/>
+    <path class="fill" data-n="비늘" d="M150 112 q30 -12 60 0 q2 22 -30 36 q-32 -14 -30 -36 Z"/>
+    <path class="fill" data-n="비늘" d="M120 148 q30 -12 60 0 q2 22 -30 36 q-32 -14 -30 -36 Z"/>
+    <path class="fill" data-n="비늘" d="M180 148 q30 -12 60 0 q2 22 -30 36 q-32 -14 -30 -36 Z"/>
+    <path class="fill" data-n="비늘" d="M92 186 q30 -12 60 0 q2 22 -30 36 q-32 -14 -30 -36 Z"/>
+    <path class="fill" data-n="비늘" d="M150 186 q30 -12 60 0 q2 22 -30 36 q-32 -14 -30 -36 Z"/>
+    <path class="fill" data-n="비늘" d="M208 186 q30 -12 60 0 q2 22 -30 36 q-32 -14 -30 -36 Z"/>
+    <path class="fill" data-n="비늘" d="M120 226 q30 -12 60 0 q2 22 -30 36 q-32 -14 -30 -36 Z"/>
+    <path class="fill" data-n="비늘" d="M180 226 q30 -12 60 0 q2 22 -30 36 q-32 -14 -30 -36 Z"/>
+    <path class="fill" data-n="비늘" d="M150 264 q30 -12 60 0 q2 22 -30 36 q-32 -14 -30 -36 Z"/>
+    <circle class="dk" cx="171" cy="196" r="4"/><circle class="dk" cx="189" cy="196" r="4"/><path class="ln" d="M174 206 q6 6 12 0"/></svg>`},
+  {id:"grasshopper", name:"메뚜기", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="56" cy="58" r="22"/>
+    <path class="fill" data-n="잎" d="M14 322 Q170 248 346 302 Q190 356 14 322 Z"/>
+    <path class="ln" d="M40 320 Q190 300 320 304"/>
+    <g class="ln"><path d="M262 160 Q250 92 200 70 M278 158 Q296 92 334 78"/></g>
+    <path class="fill" data-n="뒷다리" d="M71.1 150.7 L45 293.6 L67.8 306.6 A7 7 0 0 0 72.2 293.4 L59 294.4 L84.9 153.3 Z"/>
+    <path class="fill" data-n="앞다리" d="M225.7 239.8 L240.4 291.3 L263.6 302 A6.5 6.5 0 0 0 268.4 290 L251.6 284.7 L238.3 236.2 Z"/>
+    <path class="fill" data-n="앞다리" d="M193.5 245.4 L189.8 293.8 L213.1 307.8 A6.5 6.5 0 0 0 218.9 296.2 L202.2 290.2 L206.5 246.6 Z"/>
+    <ellipse class="fill" data-n="몸통" cx="160" cy="222" rx="94" ry="36" transform="rotate(-8 160 222)"/>
+    <g class="ln"><path d="M92 210 q6 20 0 40 M114 206 q6 22 0 42 M136 204 q6 22 0 42"/></g>
+    <ellipse class="fill" data-n="뒷다리" cx="116" cy="192" rx="60" ry="22" transform="rotate(40 116 192)"/>
+    <path class="fill" data-n="날개" d="M120 194 Q180 164 254 190 Q186 214 120 194 Z"/>
+    <ellipse class="fill" data-n="머리" cx="268" cy="192" rx="42" ry="36"/>
+    <circle class="fill" data-n="눈" cx="282" cy="178" r="15"/>
+    <circle class="dk" cx="286" cy="178" r="7"/><circle class="wt" cx="288" cy="175" r="2.5"/>
+    <path class="ln" d="M286 210 q10 6 18 -4"/>
+    <ellipse class="fill" data-n="볼" cx="262" cy="212" rx="10" ry="7"/></svg>`},

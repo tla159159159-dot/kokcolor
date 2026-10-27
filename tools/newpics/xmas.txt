@@ -77,3 +77,33 @@
     <circle class="fill" data-n="단추사탕" cx="110" cy="272" r="10"/><circle class="fill" data-n="단추사탕" cx="250" cy="272" r="10"/>
     <path class="fill" data-n="지팡이사탕" d="M300 304 v-58 q0 -20 18 -20 q18 0 18 20 h-12 q0 -8 -6 -8 q-6 0 -6 8 v58 Z"/>
     <circle class="fill" data-n="막대사탕" cx="46" cy="246" r="22"/><path class="ln" d="M46 246 m-12 0 a12 12 0 1 1 12 12"/><rect class="fill" data-n="막대" x="42" y="268" width="8" height="36"/></svg>`},
+{id:"mitten", name:"벙어리장갑", svg:`<svg ${A}>${BG()}
+    <path class="ln" d="M114 292 q66 54 132 0"/>
+    <ellipse class="fill" data-n="엄지" cx="60" cy="198" rx="20" ry="34" transform="rotate(-28 60 198)"/>
+    <path class="fill" data-n="장갑" d="M64 268 V152 q0 -56 50 -56 q50 0 50 56 V268 Z"/>
+    <rect class="fill" data-n="손목" x="56" y="250" width="116" height="46" rx="16"/>
+    <ellipse class="fill" data-n="엄지" cx="300" cy="198" rx="20" ry="34" transform="rotate(28 300 198)"/>
+    <path class="fill" data-n="장갑" d="M196 268 V152 q0 -56 50 -56 q50 0 50 56 V268 Z"/>
+    <rect class="fill" data-n="손목" x="188" y="250" width="116" height="46" rx="16"/>
+    <path class="fill" data-n="하트" d="M114 200 c-30 -18 -30 -46 -12 -48 c8 0 12 6 12 10 c0 -4 4 -10 12 -10 c18 2 18 30 -12 48 Z"/>
+    <path class="fill" data-n="하트" d="M246 200 c-30 -18 -30 -46 -12 -48 c8 0 12 6 12 10 c0 -4 4 -10 12 -10 c18 2 18 30 -12 48 Z"/>
+    <g class="ln"><path d="M64 273 q9 -8 18 0 t18 0 t18 0 t18 0 t18 0 t18 0 M196 273 q9 -8 18 0 t18 0 t18 0 t18 0 t18 0 t18 0"/></g>
+    <polygon class="fill" data-n="별" points="${star(180,52,24,10,5)}"/>
+    <circle class="fill" data-n="눈송이" cx="180" cy="140" r="9"/>
+    <circle class="fill" data-n="눈송이" cx="36" cy="56" r="8"/>
+    <circle class="fill" data-n="눈송이" cx="324" cy="60" r="8"/>
+    <circle class="fill" data-n="눈송이" cx="40" cy="330" r="7"/></svg>`},
+  {id:"snowglobe", name:"스노우볼", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="유리" cx="180" cy="160" r="112"/>
+    <path class="fill" data-n="눈밭" d="M85.4 220 Q180 188 274.6 220 A112 112 0 0 1 85.4 220 Z"/>
+    <rect class="fill" data-n="줄기" x="170" y="180" width="20" height="28" rx="4"/>
+    <path class="fill" data-n="나무" d="M180 106 L234 184 H126 Z"/>
+    <path class="fill" data-n="나무" d="M180 74 L222 138 H138 Z"/>
+    <polygon class="fill" data-n="별" points="${star(180,72,17,7,5)}"/>
+    <circle class="fill" data-n="눈" cx="110" cy="112" r="7"/>
+    <circle class="fill" data-n="눈" cx="252" cy="116" r="7"/>
+    <circle class="fill" data-n="눈" cx="116" cy="172" r="6"/>
+    <circle class="fill" data-n="눈" cx="246" cy="168" r="6"/>
+    <ellipse class="wt" cx="104" cy="94" rx="9" ry="24" transform="rotate(35 104 94)"/>
+    <path class="fill" data-n="받침" d="M96 266 h168 l20 60 q2 12 -12 12 h-184 q-14 0 -12 -12 Z"/>
+    <path class="fill" data-n="받침띠" d="M88 292 H272 L278 310 H82 Z"/></svg>`},

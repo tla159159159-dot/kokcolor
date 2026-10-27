@@ -80,3 +80,35 @@
     <path class="fill" data-n="꼭지" d="M236 102 l10 -14 l6 12 l14 -6 l-6 12 Z"/>
     <circle class="dk" cx="242" cy="116" r="2.5"/><circle class="dk" cx="256" cy="114" r="2.5"/><circle class="dk" cx="248" cy="128" r="2.5"/>
     <polygon class="fill" data-n="별" points="${star(70,70,24,10,5)}"/><polygon class="fill" data-n="별" points="${star(130,40,14,6,5)}"/></svg>`},
+{id:"magichat", name:"마술모자", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(62,66,24,10,5)}"/>
+    <polygon class="fill" data-n="별" points="${star(304,58,18,8,5)}"/>
+    <path class="fill" data-n="모자통" d="M116 186 L124 296 q1 16 16 16 h80 q15 0 16 -16 L244 186 Z"/>
+    <path class="fill" data-n="띠" d="M117.3 206 L242.7 206 L240.8 234 L119.2 234 Z"/>
+    <ellipse class="fill" data-n="챙" cx="180" cy="186" rx="112" ry="24"/>
+    <ellipse class="fill" data-n="모자속" cx="180" cy="186" rx="90" ry="14"/>
+    <ellipse class="fill" data-n="귀" cx="154" cy="92" rx="15" ry="46" transform="rotate(-12 154 92)"/>
+    <ellipse class="fill" data-n="귀" cx="206" cy="92" rx="15" ry="46" transform="rotate(12 206 92)"/>
+    <ellipse class="fill" data-n="머리" cx="180" cy="150" rx="48" ry="42"/>
+    <circle class="dk" cx="162" cy="144" r="6"/><circle class="dk" cx="198" cy="144" r="6"/><circle class="wt" cx="164" cy="141" r="2.5"/><circle class="wt" cx="200" cy="141" r="2.5"/>
+    <ellipse class="dk" cx="180" cy="162" rx="6" ry="4"/>
+    <path class="ln" d="M170 172 q10 8 20 0"/>
+    <ellipse class="fill" data-n="볼" cx="146" cy="164" rx="9" ry="6"/><ellipse class="fill" data-n="볼" cx="214" cy="164" rx="9" ry="6"/>
+    <path class="fill" data-n="챙" d="M68 186 A112 24 0 0 0 292 186 L270 186 A90 14 0 0 1 90 186 Z"/>
+    <rect class="fill" data-n="지팡이" x="286" y="190" width="16" height="116" rx="6" transform="rotate(18 294 248)"/>
+    <rect class="fill" data-n="지팡이끝" x="286" y="190" width="16" height="26" rx="6" transform="rotate(18 294 248)"/>
+    <g class="ln"><path d="M318 166 l12 -10 M326 186 l14 0 M300 154 l2 -14"/></g></svg>`},
+  {id:"camera", name:"즉석카메라", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="별" points="${star(40,58,20,8,4)}"/>
+    <polygon class="fill" data-n="별" points="${star(322,54,18,7,4)}"/>
+    <rect class="fill" data-n="윗부분" x="88" y="84" width="74" height="40" rx="12"/>
+    <rect class="fill" data-n="셔터" x="238" y="90" width="40" height="30" rx="8"/>
+    <rect class="fill" data-n="사진" x="110" y="250" width="140" height="94" rx="6"/>
+    <path class="fill" data-n="사진속" d="M180 330 c-26 -15 -26 -38 -10 -40 c6 0 10 5 10 9 c0 -4 4 -9 10 -9 c16 2 16 25 -10 40 Z"/>
+    <rect class="fill" data-n="몸통" x="60" y="110" width="240" height="168" rx="30"/>
+    <rect class="fill" data-n="띠" x="60" y="150" width="240" height="30" rx="0"/>
+    <rect class="fill" data-n="플래시" x="84" y="120" width="46" height="22" rx="6"/>
+    <rect class="fill" data-n="창" x="240" y="120" width="38" height="22" rx="6"/>
+    <circle class="fill" data-n="렌즈" cx="180" cy="208" r="64"/>
+    <circle class="fill" data-n="렌즈안" cx="180" cy="208" r="40"/>
+    <circle class="wt" cx="166" cy="194" r="9"/></svg>`},

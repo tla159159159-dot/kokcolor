@@ -90,3 +90,40 @@
     <ellipse class="dk" cx="180" cy="148" rx="8" ry="6"/>
     <path class="ln" d="M154 160 L130 156 M154 166 L132 170 M206 160 L230 156 M206 166 L228 170"/>
     <circle class="fill" data-n="공" cx="180" cy="62" r="26"/><path class="fill" data-n="공무늬" d="M180 36 Q200 62 180 88 Q160 62 180 36 Z"/></svg>`},
+{id:"squid", name:"오징어", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="물방울" cx="60" cy="70" r="13"/>
+    <circle class="fill" data-n="물방울" cx="300" cy="96" r="9"/>
+    <circle class="wt" cx="56" cy="66" r="4"/>
+    <path class="fill" data-n="다리" d="M123.1 219.4 L81.9 263.1 L64.5 318.8 L90 343.4 A9.5 9.5 0 0 0 102 328.6 L83.5 317.2 L98.1 272.9 L136.9 232.6 Z"/>
+    <path class="fill" data-n="다리" d="M223.1 232.6 L261.9 272.9 L276.5 317.2 L258 328.6 A9.5 9.5 0 0 0 270 343.4 L295.5 318.8 L278.1 263.1 L236.9 219.4 Z"/>
+    <path class="fill" data-n="다리" d="M123.7 227.7 L109 272 L124.2 307.5 A13 13 0 0 0 147.8 296.5 L135 272 L148.3 236.3 Z"/>
+    <path class="fill" data-n="다리" d="M145.2 233.7 L137 280.7 L150.1 313.1 A13 13 0 0 0 173.9 302.9 L163 279.3 L170.8 238.3 Z"/>
+    <path class="fill" data-n="다리" d="M167 236.5 L169.1 282.6 L159.8 307.6 A13 13 0 0 0 184.2 316.4 L194.9 285.4 L193 235.5 Z"/>
+    <path class="fill" data-n="다리" d="M189.2 238.3 L197 279.3 L186.1 302.9 A13 13 0 0 0 209.9 313.1 L223 280.7 L214.8 233.7 Z"/>
+    <path class="fill" data-n="다리" d="M211.7 236.3 L225 272 L212.2 296.5 A13 13 0 0 0 235.8 307.5 L251 272 L236.3 227.7 Z"/>
+    <path class="fill" data-n="지느러미" d="M158 92 Q88 128 94 172 L158 172 Z"/>
+    <path class="fill" data-n="지느러미" d="M202 92 Q272 128 266 172 L202 172 Z"/>
+    <path class="fill" data-n="몸통" d="M180 36 C228 68 238 120 238 170 V214 q0 26 -26 26 H148 q-26 0 -26 -26 V170 C122 120 132 68 180 36 Z"/>
+    <circle class="dk" cx="158" cy="186" r="9"/><circle class="dk" cx="202" cy="186" r="9"/><circle class="wt" cx="160" cy="183" r="2.5"/><circle class="wt" cx="204" cy="183" r="2.5"/>
+    <path class="ln" d="M168 210 q12 12 24 0"/>
+    <ellipse class="fill" data-n="볼" cx="144" cy="212" rx="11" ry="7"/><ellipse class="fill" data-n="볼" cx="216" cy="212" rx="11" ry="7"/></svg>`},
+  {id:"otter", name:"해달", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="302" cy="56" r="22"/>
+    <circle class="fill" data-n="물방울" cx="56" cy="70" r="10"/>
+    <circle class="fill" data-n="물방울" cx="80" cy="44" r="6"/>
+    <circle class="fill" data-n="귀" cx="116" cy="116" r="13"/>
+    <circle class="fill" data-n="귀" cx="244" cy="116" r="13"/>
+    <ellipse class="fill" data-n="몸통" cx="180" cy="252" rx="84" ry="70"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="254" rx="52" ry="46"/>
+    <ellipse class="fill" data-n="머리" cx="180" cy="142" rx="72" ry="60"/>
+    <circle class="dk" cx="150" cy="132" r="8"/><circle class="dk" cx="210" cy="132" r="8"/><circle class="wt" cx="152" cy="129" r="2.5"/><circle class="wt" cx="212" cy="129" r="2.5"/>
+    <ellipse class="fill" data-n="주둥이" cx="180" cy="170" rx="42" ry="26"/>
+    <ellipse class="dk" cx="180" cy="158" rx="10" ry="7"/>
+    <path class="ln" d="M168 176 q6 8 12 0 q6 8 12 0"/>
+    <g class="ln"><path d="M140 168 l-30 -4 M140 178 l-28 6 M220 168 l30 -4 M220 178 l28 6"/></g>
+    <ellipse class="fill" data-n="볼" cx="126" cy="158" rx="10" ry="7"/><ellipse class="fill" data-n="볼" cx="234" cy="158" rx="10" ry="7"/>
+    <path class="fill" data-n="조개" d="M146 252 Q180 196 214 252 Q180 266 146 252 Z"/>
+    <g class="ln"><path d="M180 212 V256 M166 222 l-6 32 M194 222 l6 32"/></g>
+    <ellipse class="fill" data-n="앞발" cx="144" cy="248" rx="17" ry="13"/>
+    <ellipse class="fill" data-n="앞발" cx="216" cy="248" rx="17" ry="13"/>
+    <path class="fill" data-n="물" d="M8 284 q21.5 -14 43 0 t43 0 t43 0 t43 0 t43 0 t43 0 t43 0 t43 0 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/></svg>`},

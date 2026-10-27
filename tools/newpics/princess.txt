@@ -96,3 +96,32 @@
     <circle class="wt" cx="152" cy="130" r="12"/><circle class="dk" cx="154" cy="132" r="7"/><circle class="wt" cx="208" cy="130" r="12"/><circle class="dk" cx="210" cy="132" r="7"/>
     <circle class="fill" data-n="볼" cx="132" cy="156" r="8"/><circle class="fill" data-n="볼" cx="228" cy="156" r="8"/>
     <path class="ln" d="M170 176 q10 8 20 0"/></svg>`},
+{id:"wand", name:"요술봉", svg:`<svg ${A}>${BG()}
+    <rect class="fill" data-n="막대" x="168" y="176" width="24" height="120" rx="12"/>
+    <rect class="fill" data-n="손잡이" x="160" y="276" width="40" height="58" rx="16"/>
+    <polygon class="fill" data-n="별" points="${star(180,118,86,40,5)}"/>
+    <circle class="dk" cx="160" cy="110" r="8"/><circle class="dk" cx="200" cy="110" r="8"/><circle class="wt" cx="162" cy="107" r="2.5"/><circle class="wt" cx="202" cy="107" r="2.5"/>
+    <path class="ln" d="M169 128 q11 11 22 0"/>
+    <ellipse class="fill" data-n="볼" cx="144" cy="134" rx="10" ry="7"/><ellipse class="fill" data-n="볼" cx="216" cy="134" rx="10" ry="7"/>
+    <path class="fill" data-n="리본" d="M180 206 q-46 -30 -58 -4 q8 28 58 4 Z"/>
+    <path class="fill" data-n="리본" d="M180 206 q46 -30 58 -4 q-8 28 -58 4 Z"/>
+    <path class="fill" data-n="리본끈" d="M174 212 l-22 42 l14 -2 l5 14 l12 -50 Z"/>
+    <path class="fill" data-n="리본끈" d="M186 212 l22 42 l-14 -2 l-5 14 l-12 -50 Z"/>
+    <circle class="fill" data-n="매듭" cx="180" cy="206" r="11"/>
+    <polygon class="fill" data-n="반짝이" points="${star(62,64,18,6,4)}"/>
+    <polygon class="fill" data-n="반짝이" points="${star(300,76,15,5,4)}"/>
+    <polygon class="fill" data-n="반짝이" points="${star(70,256,14,5,4)}"/>
+    <polygon class="fill" data-n="반짝이" points="${star(294,238,20,7,4)}"/></svg>`},
+  {id:"teacup", name:"티파티 찻잔", svg:`<svg ${A}>${BG()}
+    <g class="ln"><path d="M150 132 q-12 -16 0 -30 t0 -30 M180 126 q-12 -16 0 -30 t0 -30 M210 132 q-12 -16 0 -30 t0 -30"/></g>
+    <ellipse class="fill" data-n="받침" cx="180" cy="290" rx="140" ry="30"/>
+    <path class="fill" data-n="손잡이" d="M250 170 C310 164 308 250 240 252 L240 230 C282 226 282 190 250 192 Z"/>
+    <path class="fill" data-n="잔" d="M84 160 h192 q-4 90 -60 120 h-72 q-56 -30 -60 -120 Z"/>
+    <ellipse class="fill" data-n="차" cx="180" cy="160" rx="96" ry="18"/>
+    <path class="fill" data-n="왕관" d="M160 236 v-34 l12 14 l8 -20 l8 20 l12 -14 v34 Z"/>
+    <path class="fill" data-n="무늬" d="M124 226 c-22 -14 -22 -34 -8 -36 c6 0 8 4 8 8 c0 -4 2 -8 8 -8 c14 2 14 22 -8 36 Z"/>
+    <path class="fill" data-n="무늬" d="M236 226 c-22 -14 -22 -34 -8 -36 c6 0 8 4 8 8 c0 -4 2 -8 8 -8 c14 2 14 22 -8 36 Z"/>
+    <rect class="fill" data-n="각설탕" x="54" y="250" width="30" height="30" rx="6" transform="rotate(-10 69 265)"/>
+    <rect class="fill" data-n="각설탕" x="270" y="256" width="28" height="28" rx="6" transform="rotate(12 284 270)"/>
+    <polygon class="fill" data-n="반짝이" points="${star(56,80,16,6,4)}"/>
+    <polygon class="fill" data-n="반짝이" points="${star(300,70,14,5,4)}"/></svg>`},

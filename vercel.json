@@ -84,6 +84,16 @@
       "permanent": true
     },
     {
+      "source": "/doan/basic/beachball",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%BD%83%EB%82%98%EB%AC%B4/%EB%B9%84%EC%B9%98%EB%B3%BC",
+      "permanent": true
+    },
+    {
+      "source": "/doan/basic/alarmclock",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%BD%83%EB%82%98%EB%AC%B4/%EC%9E%90%EB%AA%85%EC%A2%85",
+      "permanent": true
+    },
+    {
       "source": "/doan/animal",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%8F%99%EB%AC%BC",
       "permanent": true
@@ -154,6 +164,16 @@
       "permanent": true
     },
     {
+      "source": "/doan/animal/zebra",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%8F%99%EB%AC%BC/%EC%96%BC%EB%A3%A9%EB%A7%90",
+      "permanent": true
+    },
+    {
+      "source": "/doan/animal/raccoon",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%8F%99%EB%AC%BC/%EB%84%88%EA%B5%AC%EB%A6%AC",
+      "permanent": true
+    },
+    {
       "source": "/doan/sea",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%B0%94%EB%8B%A4%EB%8F%99%EB%AC%BC",
       "permanent": true
@@ -221,6 +241,16 @@
     {
       "source": "/doan/sea/seal",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%B0%94%EB%8B%A4%EB%8F%99%EB%AC%BC/%EB%AC%BC%EA%B0%9C",
+      "permanent": true
+    },
+    {
+      "source": "/doan/sea/squid",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%B0%94%EB%8B%A4%EB%8F%99%EB%AC%BC/%EC%98%A4%EC%A7%95%EC%96%B4",
+      "permanent": true
+    },
+    {
+      "source": "/doan/sea/otter",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%B0%94%EB%8B%A4%EB%8F%99%EB%AC%BC/%ED%95%B4%EB%8B%AC",
       "permanent": true
     },
     {
@@ -499,6 +529,16 @@
       "permanent": true
     },
     {
+      "source": "/doan/princess/wand",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%B5%EC%A3%BC/%EC%9A%94%EC%88%A0%EB%B4%89",
+      "permanent": true
+    },
+    {
+      "source": "/doan/princess/teacup",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%B5%EC%A3%BC/%ED%8B%B0%ED%8C%8C%ED%8B%B0-%EC%B0%BB%EC%9E%94",
+      "permanent": true
+    },
+    {
       "source": "/doan/bug",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%A4%EC%B6%A9",
       "permanent": true
@@ -561,6 +601,16 @@
     {
       "source": "/doan/bug/mole",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%A4%EC%B6%A9/%EB%91%90%EB%8D%94%EC%A7%80",
+      "permanent": true
+    },
+    {
+      "source": "/doan/bug/pinecone",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%A4%EC%B6%A9/%EC%86%94%EB%B0%A9%EC%9A%B8",
+      "permanent": true
+    },
+    {
+      "source": "/doan/bug/grasshopper",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%A4%EC%B6%A9/%EB%A9%94%EB%9A%9C%EA%B8%B0",
       "permanent": true
     },
     {
@@ -774,6 +824,16 @@
       "permanent": true
     },
     {
+      "source": "/doan/halloween/spider",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%A0%EB%A1%9C%EC%9C%88/%EA%BC%AC%EB%A7%88-%EA%B1%B0%EB%AF%B8",
+      "permanent": true
+    },
+    {
+      "source": "/doan/halloween/potion",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%A0%EB%A1%9C%EC%9C%88/%EB%A7%88%EB%B2%95-%EB%AC%BC%EC%95%BD",
+      "permanent": true
+    },
+    {
       "source": "/doan/xmas",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4",
       "permanent": true
@@ -836,6 +896,16 @@
     {
       "source": "/doan/xmas/gingerhouse",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EA%B3%BC%EC%9E%90%EC%A7%91",
+      "permanent": true
+    },
+    {
+      "source": "/doan/xmas/mitten",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EB%B2%99%EC%96%B4%EB%A6%AC%EC%9E%A5%EA%B0%91",
+      "permanent": true
+    },
+    {
+      "source": "/doan/xmas/snowglobe",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EC%8A%A4%EB%85%B8%EC%9A%B0%EB%B3%BC",
       "permanent": true
     },
     {
@@ -1044,6 +1114,16 @@
       "permanent": true
     },
     {
+      "source": "/doan/plant/wateringcan",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%BD%83%EC%8B%9D%EB%AC%BC/%EB%AC%BC%EB%BF%8C%EB%A6%AC%EA%B0%9C",
+      "permanent": true
+    },
+    {
+      "source": "/doan/plant/sprout",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%BD%83%EC%8B%9D%EB%AC%BC/%EC%83%88%EC%8B%B9",
+      "permanent": true
+    },
+    {
       "source": "/doan/party",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%83%9D%EC%9D%BC%ED%8C%8C%ED%8B%B0",
       "permanent": true
@@ -1109,6 +1189,16 @@
       "permanent": true
     },
     {
+      "source": "/doan/party/magichat",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%83%9D%EC%9D%BC%ED%8C%8C%ED%8B%B0/%EB%A7%88%EC%88%A0%EB%AA%A8%EC%9E%90",
+      "permanent": true
+    },
+    {
+      "source": "/doan/party/camera",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%83%9D%EC%9D%BC%ED%8C%8C%ED%8B%B0/%EC%A6%89%EC%84%9D%EC%B9%B4%EB%A9%94%EB%9D%BC",
+      "permanent": true
+    },
+    {
       "source": "/doan/music",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%95%85%EA%B8%B0",
       "permanent": true
@@ -1171,6 +1261,16 @@
     {
       "source": "/doan/music/triangle",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%95%85%EA%B8%B0/%ED%8A%B8%EB%9D%BC%EC%9D%B4%EC%95%B5%EA%B8%80",
+      "permanent": true
+    },
+    {
+      "source": "/doan/music/headphones",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%95%85%EA%B8%B0/%ED%97%A4%EB%93%9C%ED%8F%B0",
+      "permanent": true
+    },
+    {
+      "source": "/doan/music/harp",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%95%85%EA%B8%B0/%ED%95%98%ED%94%84",
       "permanent": true
     }
   ]

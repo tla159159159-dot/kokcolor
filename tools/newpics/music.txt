@@ -73,3 +73,32 @@
     <path class="fill" data-n="음표" d="M64 96 v-44 l26 -8 v40 a11 9 0 1 1 -7 -7 v-20 l-12 3 v36 a11 9 0 1 1 -7 0 Z"/>
     <path class="fill" data-n="음표" d="M300 104 v-48 l18 -6 v10 l-10 4 v40 a11 9 0 1 1 -8 0 Z"/>
     <polygon class="fill" data-n="별" points="${star(312,160,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(54,240,18,8,5)}"/></svg>`},
+{id:"headphones", name:"헤드폰", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="밴드" d="M60 214 C60 56 300 56 300 214 L276 214 C276 84 84 84 84 214 Z"/>
+    <ellipse class="fill" data-n="머리받침" cx="180" cy="104" rx="58" ry="17"/>
+    <ellipse class="fill" data-n="쿠션" cx="112" cy="236" rx="20" ry="52"/>
+    <ellipse class="fill" data-n="쿠션" cx="248" cy="236" rx="20" ry="52"/>
+    <ellipse class="fill" data-n="이어컵" cx="74" cy="236" rx="38" ry="60"/>
+    <ellipse class="fill" data-n="이어컵" cx="286" cy="236" rx="38" ry="60"/>
+    <ellipse class="fill" data-n="장식" cx="70" cy="236" rx="18" ry="32"/>
+    <ellipse class="fill" data-n="장식" cx="290" cy="236" rx="18" ry="32"/>
+    <path class="ln" d="M162 284 V222"/>
+    <circle class="fill" data-n="음표" cx="150" cy="284" r="12"/>
+    <path class="ln" d="M197 276 V214 L221 206 V268"/>
+    <circle class="fill" data-n="음표" cx="187" cy="276" r="10"/>
+    <circle class="fill" data-n="음표" cx="211" cy="268" r="10"/></svg>`},
+  {id:"harp", name:"하프", svg:`<svg ${A}>${BG()}
+    <path class="ln" d="M118 78 V268.4 M136 76.1 V246.7 M154 79.9 V225 M172 88.3 V203.3 M190 98.6 V181.6 M208 107.3 V159.9 M226 111.8 V138.2"/>
+    <path class="fill" data-n="울림통" d="M124 317.3 L292 109.3 A18 18 0 0 0 264 86.7 L96 294.7 Z"/>
+    <circle class="fill" data-n="장식" cx="162" cy="244" r="8"/>
+    <circle class="fill" data-n="장식" cx="196" cy="202" r="8"/>
+    <circle class="fill" data-n="장식" cx="230" cy="160" r="8"/>
+    <rect class="fill" data-n="기둥" x="72" y="74" width="26" height="240" rx="13"/>
+    <path class="fill" data-n="목" d="M89.8 92.5 L103.4 84.9 L115.9 79.2 L127.4 76.4 L138.6 76.4 L150.1 79.2 L162.6 84.9 L176.2 92.5 L190.6 100.5 L206.1 107.4 L222.6 111.4 L239.4 111.4 L255.9 107.4 L271.4 100.5 L285.8 92.5 A12 12 0 0 0 274.2 71.5 L260.6 79.1 L248.1 84.8 L236.6 87.6 L225.4 87.6 L213.9 84.8 L201.4 79.1 L187.8 71.5 L173.4 63.5 L157.9 56.6 L141.4 52.6 L124.6 52.6 L108.1 56.6 L92.6 63.5 L78.2 71.5 Z"/>
+    <circle class="fill" data-n="장식" cx="84" cy="70" r="14"/>
+    <rect class="fill" data-n="받침" x="54" y="302" width="200" height="32" rx="12"/>
+    <path class="ln" d="M302 226 V172"/>
+    <circle class="fill" data-n="음표" cx="290" cy="226" r="12"/>
+    <path class="ln" d="M268 290 V236 L330 224 V278"/>
+    <circle class="fill" data-n="음표" cx="256" cy="290" r="12"/>
+    <circle class="fill" data-n="음표" cx="318" cy="278" r="12"/></svg>`},
