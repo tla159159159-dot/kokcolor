@@ -90,7 +90,7 @@ for (const p of packs) {
   p.pics.forEach((x, i) => {
     const others = p.pics.filter(o => o.id !== x.id);
     redirects.push({ source: `/doan/${p.id}/${x.id}`, destination: encodeURI(picUrl(p, x)), permanent: true });
-    const fr = i === 0; // 테마별 첫 그림만 무료 체험 (index.html 과 같은 규칙)
+    const fr = i < 2; // 테마별 2장만 무료 체험 (index.html 과 같은 규칙)
     fs.writeFileSync(path.join(OUT, KO[p.id], slug(x.name) + ".html"), page({
       title: `${x.name} 색칠공부 도안 | ${fr ? "무료 색칠·인쇄" : "색칠·인쇄"} - 콕콕`,
       desc: fr ? `${x.name} 색칠공부 도안을 화면에서 무료로 바로 색칠하고, 종이로 인쇄해서 칠할 수도 있어요. ${t.kw} 모음 콕콕.` : `${x.name} 색칠공부 도안을 화면에서 색칠하고 종이로 인쇄해요. ${t.kw}의 첫 그림은 무료 체험, 전체는 골드. 콕콕.`,

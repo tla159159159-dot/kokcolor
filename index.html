@@ -129,6 +129,7 @@
   .nav-login[hidden]{display:none}
   .link-btn{background:none!important;border:none!important;box-shadow:none!important;color:var(--muted)!important;font-size:13px!important;text-decoration:underline;padding:8px!important;min-height:0!important;margin:4px auto 0;display:block}
   .gold-note a{color:inherit}
+  .nv-login-btn{background:#03C75A!important;color:#fff!important;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;margin-top:8px}.nv-login-btn b{font-family:Arial,sans-serif;font-size:17px}
   .kk-login-btn{background:#FEE500!important;color:#191919!important;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
   #goldBuyBtn.kk{background:#FEE500!important;color:#191919!important;display:inline-flex;align-items:center;justify-content:center;gap:8px}
   .nav-cta:hover{transform:translateY(-2px)}
@@ -572,7 +573,7 @@
       <span class="brand-tag">어린이 색칠놀이</span>
     </div>
     <div class="nav-right">
-      <a class="nav-login" id="navLogin" href="/api/kakao-login"><span class="kk-bubble"></span>카카오 로그인</a>
+      <a class="nav-login" id="navLogin" href="/api/kakao-login"><span class="kk-bubble"></span>로그인</a>
       <button class="nav-cta" id="navPremium"><span class="np-star">👑</span> 골드</button>
     </div>
   </nav>
@@ -745,7 +746,7 @@
 
   <div class="pack-area" id="packSection">
     <h2 class="section-title" id="pics">🖼️ 색칠공부 도안 고르기</h2>
-    <div class="section-sub">테마마다 첫 그림은 무료 체험! 골드는 214종 전부 색칠·인쇄해요</div>
+    <div class="section-sub">테마마다 2장은 무료 체험! 골드는 214종 전부 색칠·인쇄해요</div>
     <div id="packArea"></div>
     <nav class="theme-links" aria-label="테마별 색칠공부 도안">
       <h3>테마별 색칠공부 도안 모아보기</h3>
@@ -801,14 +802,14 @@
 
   <section class="plans" id="plans">
     <h2 class="plans-title">요금제</h2>
-    <p class="plans-sub">놀이 모드는 모두 무료예요. 색칠 도안은 테마마다 1장씩 무료로 해 보고, 골드로 전부 열어요.</p>
+    <p class="plans-sub">놀이 모드는 모두 무료예요. 색칠 도안은 테마마다 2장씩 무료로 해 보고, 골드로 전부 열어요.</p>
     <div class="plan-grid">
       <div class="plan">
         <div class="plan-name">무료</div>
         <div class="plan-price"><b>0</b>원</div>
         <ul class="plan-feat">
           <li>놀이 모드(낙서·점잇기·스티커 등) <b>전부</b></li>
-          <li>테마마다 무료 체험 도안 <b>1장</b>씩</li>
+          <li>테마마다 무료 체험 도안 <b>2장</b>씩</li>
           <li>무료 도안 인쇄 <b>주 3장</b></li>
         </ul>
         <div class="plan-cur">지금 이용 중</div>
@@ -829,14 +830,14 @@
 
   <section class="faq" id="faq">
     <h2 class="plans-title">자주 묻는 질문</h2>
-    <details><summary>콕콕 색칠공부는 무료인가요?</summary><p>낙서판·점잇기·스티커 같은 놀이 모드는 모두 무료예요. 색칠 도안은 테마마다 1장씩 무료로 해 볼 수 있고, 골드(월 2,900원)는 도안 전부를 색칠하고 인쇄도 무제한이에요.</p></details>
+    <details><summary>콕콕 색칠공부는 무료인가요?</summary><p>낙서판·점잇기·스티커 같은 놀이 모드는 모두 무료예요. 색칠 도안은 테마마다 2장씩 무료로 해 볼 수 있고, 골드(월 2,900원)는 도안 전부를 색칠하고 인쇄도 무제한이에요.</p></details>
     <details><summary>몇 살 아이에게 맞나요?</summary><p>선이 굵고 칸이 넓어서 3~7세 유아가 혼자 칠하기 좋아요. 칸을 누르면 색이 바로 채워져서 손이 서툰 아이도 쉽게 완성할 수 있어요.</p></details>
     <details><summary>회원가입을 해야 하나요?</summary><p>화면 색칠은 가입 없이 바로 할 수 있어요. 종이로 인쇄할 때만 카카오 로그인이 필요해요.</p></details>
     <details><summary>색칠공부 도안은 몇 종류인가요?</summary><p>공룡·공주·동물·바다·탈것·할로윈·크리스마스 등 17개 테마, 214종 도안이 있고 계속 늘어나요.</p></details>
     <details><summary>휴대폰이나 태블릿에서도 되나요?</summary><p>네. 휴대폰·태블릿·컴퓨터 어디서나 손가락이나 마우스로 바로 칠할 수 있어요.</p></details>
     <details><summary>칠한 그림은 저장되나요?</summary><p>칠하던 그림은 자동으로 저장돼 "내 작품"에서 이어서 칠할 수 있고, 그림 저장 버튼으로 이미지 파일로도 받을 수 있어요. 카카오 로그인하면 다른 기기에서도 이어서 칠할 수 있어요.</p></details>
   </section>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"콕콕 색칠공부는 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"낙서판·점잇기·스티커 같은 놀이 모드는 모두 무료예요. 색칠 도안은 테마마다 1장씩 무료로 해 볼 수 있고, 골드(월 2,900원)는 도안 전부를 색칠하고 인쇄도 무제한이에요."}},{"@type":"Question","name":"몇 살 아이에게 맞나요?","acceptedAnswer":{"@type":"Answer","text":"선이 굵고 칸이 넓어서 3~7세 유아가 혼자 칠하기 좋아요. 칸을 누르면 색이 바로 채워져서 손이 서툰 아이도 쉽게 완성할 수 있어요."}},{"@type":"Question","name":"회원가입을 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"화면 색칠은 가입 없이 바로 할 수 있어요. 종이로 인쇄할 때만 카카오 로그인이 필요해요."}},{"@type":"Question","name":"색칠공부 도안은 몇 종류인가요?","acceptedAnswer":{"@type":"Answer","text":"공룡·공주·동물·바다·탈것·할로윈·크리스마스 등 17개 테마, 214종 도안이 있고 계속 늘어나요."}},{"@type":"Question","name":"휴대폰이나 태블릿에서도 되나요?","acceptedAnswer":{"@type":"Answer","text":"네. 휴대폰·태블릿·컴퓨터 어디서나 손가락이나 마우스로 바로 칠할 수 있어요."}},{"@type":"Question","name":"칠한 그림은 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"칠하던 그림은 자동으로 저장돼 \"내 작품\"에서 이어서 칠할 수 있고, 그림 저장 버튼으로 이미지 파일로도 받을 수 있어요. 카카오 로그인하면 다른 기기에서도 이어서 칠할 수 있어요."}}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"콕콕 색칠공부는 무료인가요?","acceptedAnswer":{"@type":"Answer","text":"낙서판·점잇기·스티커 같은 놀이 모드는 모두 무료예요. 색칠 도안은 테마마다 2장씩 무료로 해 볼 수 있고, 골드(월 2,900원)는 도안 전부를 색칠하고 인쇄도 무제한이에요."}},{"@type":"Question","name":"몇 살 아이에게 맞나요?","acceptedAnswer":{"@type":"Answer","text":"선이 굵고 칸이 넓어서 3~7세 유아가 혼자 칠하기 좋아요. 칸을 누르면 색이 바로 채워져서 손이 서툰 아이도 쉽게 완성할 수 있어요."}},{"@type":"Question","name":"회원가입을 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"화면 색칠은 가입 없이 바로 할 수 있어요. 종이로 인쇄할 때만 카카오 로그인이 필요해요."}},{"@type":"Question","name":"색칠공부 도안은 몇 종류인가요?","acceptedAnswer":{"@type":"Answer","text":"공룡·공주·동물·바다·탈것·할로윈·크리스마스 등 17개 테마, 214종 도안이 있고 계속 늘어나요."}},{"@type":"Question","name":"휴대폰이나 태블릿에서도 되나요?","acceptedAnswer":{"@type":"Answer","text":"네. 휴대폰·태블릿·컴퓨터 어디서나 손가락이나 마우스로 바로 칠할 수 있어요."}},{"@type":"Question","name":"칠한 그림은 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"칠하던 그림은 자동으로 저장돼 \"내 작품\"에서 이어서 칠할 수 있고, 그림 저장 버튼으로 이미지 파일로도 받을 수 있어요. 카카오 로그인하면 다른 기기에서도 이어서 칠할 수 있어요."}}]}</script>
 
   <footer class="site-footer">
     <div class="foot-mascot-wrap">
@@ -862,8 +863,9 @@
     <button class="close-x" id="loginClose">✕</button>
     <div class="mIcon">🖨️</div>
     <h3>인쇄는 로그인 후 이용할 수 있어요</h3>
-    <p>카카오로 3초 만에 로그인하고 매주 3장 무료로 인쇄하세요.</p>
+    <p id="loginDesc">3초 만에 로그인하고 매주 3장 무료로 인쇄하세요.</p>
     <a class="full-btn kk-login-btn" id="loginGo" href="/api/kakao-login?next=print"><span class="kk-bubble"></span> 카카오로 로그인</a>
+    <a class="full-btn nv-login-btn" id="loginGoNv" href="/api/naver-login?next=print" hidden><b>N</b> 네이버로 로그인</a>
   </div>
 </div>
 <div class="modal" id="goldModal">
@@ -871,7 +873,7 @@
     <button class="close-x" id="goldClose">✕</button>
     <div class="mIcon">👑</div>
     <h3>골드로 인쇄 무제한</h3>
-    <p id="goldDesc">테마마다 첫 그림은 무료 체험이에요. 골드가 되면 그림 214종을 전부 색칠하고 인쇄도 마음껏 할 수 있어요.</p>
+    <p id="goldDesc">테마마다 2장은 무료 체험이에요. 골드가 되면 그림 214종을 전부 색칠하고 인쇄도 마음껏 할 수 있어요.</p>
     <div class="gold-price"><b>2,900</b>원 <span>/ 월</span></div>
     <ul class="modal-benefits gold-benefits">
       <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>도안 <b>214종 전부</b> 색칠</span></li>
@@ -3374,7 +3376,7 @@ const PACKS = [
 ]}
 ];
 
-PACKS.forEach(p=>{ p.premium=true; p.pics.forEach((x,i)=>x.free=i===0); }); // 테마마다 첫 그림만 무료 체험, 나머지 색칠·인쇄는 골드(월 구독)
+PACKS.forEach(p=>{ p.premium=true; p.pics.forEach((x,i)=>x.free=i<2); }); // 테마마다 2장만 무료 체험, 나머지 색칠·인쇄는 골드(월 구독)
 const allPics = PACKS.flatMap(p=>p.pics.map(pic=>({pic, pack:p})));
 function picById(id){ return allPics.find(x=>x.pic.id===id); }
 
@@ -3391,7 +3393,7 @@ function printsLeft(){ return Math.max(0, PRINT_FREE_PER_WEEK - printsThisWeek()
 /* 인쇄 게이트: 골드면 무제한, 아니면 주 N장 */
 function needLogin(){
   if(me.loggedIn) return false;
-  document.getElementById("loginModal").classList.add("show"); return true;
+  openLogin("print"); return true;
 }
 const ev=(n,p)=>{ try{ gtag("event",n,p||{}); }catch(e){} };
 async function tryPrint(run){
@@ -3584,7 +3586,7 @@ function printPack(pk){
   setTimeout(()=>{ if(document.body.classList.contains("print-pack")) done(); },1500);
 }
 
-/* 잠금: 테마별 첫 그림만 무료, 나머지는 골드 */
+/* 잠금: 테마별 2장만 무료, 나머지는 골드 */
 function openUnlock(){ openGold(); }
 
 /* 골드(인쇄 무제한) 모달 */
@@ -3599,7 +3601,7 @@ function openGold(){
   const gc=document.getElementById("goldCancel"); gc.hidden=!(isGold&&me.subActive); gc.dataset.confirm=""; gc.textContent="정기결제 해지하기";
   document.getElementById("goldDesc").textContent = isGold
     ? (me.goldUntil?`골드 이용 중이에요 👑 ${new Date(me.goldUntil).getMonth()+1}월 ${new Date(me.goldUntil).getDate()}일까지 · `+(me.subActive?"자동 연장돼요":"해지됨"):"이미 골드예요! 인쇄를 마음껏 즐기세요 👑")
-    : `테마마다 첫 그림은 무료 체험이에요. 골드가 되면 그림 214종을 전부 색칠하고 인쇄도 마음껏 할 수 있어요.`;
+    : `테마마다 2장은 무료 체험이에요. 골드가 되면 그림 214종을 전부 색칠하고 인쇄도 마음껏 할 수 있어요.`;
   goldMsg.textContent=""; goldMsg.className="msg";
   goldModal.classList.add("show");
 }
@@ -3610,7 +3612,7 @@ document.getElementById("goldBtn").addEventListener("click",openGold);
 navPremium.addEventListener("click",openGold);
 document.getElementById("goldBuyBtn").addEventListener("click",()=>{
   if(isGold){ closeGold(); return; }
-  if(!me.loggedIn){ location.href="/api/kakao-login?next=gold"; return; }
+  if(!me.loggedIn){ closeGold(); openLogin("gold"); return; }
   if(!me.payReady){ goldMsg.textContent="골드는 곧 열려요! 지금은 매주 3장까지 무료로 인쇄할 수 있어요."; goldMsg.className="msg"; return; }
   ev("begin_checkout",{value:2900,currency:"KRW"});
   document.getElementById("goldBuyBtn").hidden=true; const f=document.getElementById("cardForm"); f.hidden=false; f.cardNo.focus();
@@ -3644,7 +3646,7 @@ renderBuyBtn();
 renderGoldUI();
 
 /* 카카오 로그인 상태 */
-fetch("/api/me",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(d=>{
+fetch("/api/me",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(d=>{ if(d&&d.naverReady) document.getElementById("loginGoNv").hidden=false;
   if(!d) return; me=d;
   const a=document.getElementById("navLogin");
   if(d.loggedIn){ window.__loggedIn=true; pullWorks(); a.href="/api/logout"; a.classList.add("out"); a.textContent="로그아웃"; if(d.gold){ isGold=true; renderGoldUI(); renderPacks(); } }
@@ -3657,9 +3659,17 @@ fetch("/api/me",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(d=
 { const params=new URLSearchParams(location.search), q=params.get("login");
   if(q){ history.replaceState(null,"",location.pathname);
     setTimeout(()=>showToast(q==="ok"?"카카오 로그인 완료! 🎉":"로그인을 못 했어요. 다시 시도해 주세요."),300);
-    if(q==="ok") ev("login",{method:"kakao"});
+    if(q==="ok") ev("login");
     if(q==="ok" && params.get("next")==="gold") setTimeout(openGold,600);
     if(q==="ok" && params.get("next")==="print") setTimeout(()=>showToast("로그인 완료! 이제 인쇄할 수 있어요 🖨️"),2200); } }
+
+function openLogin(next){ const h=document.querySelector("#loginModal h3"), d=document.getElementById("loginDesc");
+  if(next==="print"){ h.textContent="인쇄는 로그인 후 이용할 수 있어요"; d.textContent="3초 만에 로그인하고 매주 3장 무료로 인쇄하세요."; }
+  else{ h.textContent="콕콕 로그인"; d.textContent="로그인하면 칠한 그림이 저장되고 골드도 이용할 수 있어요."; }
+  document.querySelector("#loginModal .mIcon").textContent=next==="print"?"🖨️":"🖍️";
+  const q=next?"?next="+next:""; document.getElementById("loginGo").href="/api/kakao-login"+q; document.getElementById("loginGoNv").href="/api/naver-login"+q;
+  document.getElementById("loginModal").classList.add("show"); }
+document.getElementById("navLogin").addEventListener("click",e=>{ if(window.__loggedIn) return; e.preventDefault(); openLogin(""); });
 { const lm=document.getElementById("loginModal");
   document.getElementById("loginClose").addEventListener("click",()=>lm.classList.remove("show"));
   lm.addEventListener("click",e=>{ if(e.target===lm) lm.classList.remove("show"); }); }
