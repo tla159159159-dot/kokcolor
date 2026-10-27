@@ -3640,9 +3640,9 @@ let me={loggedIn:false};
 function renderBuyBtn(){
   const b=document.getElementById("goldBuyBtn");
   if(isGold){ b.textContent="골드 이용 중 👑 · 닫기"; b.classList.remove("kk"); return; }
-  b.innerHTML = !me.loggedIn ? '<span class="kk-bubble"></span> 카카오로 시작하기 · 월 2,900원'
+  b.innerHTML = !me.loggedIn ? '로그인하고 시작하기 · 월 2,900원'
     : me.payReady ? "카드 등록하고 골드 시작 · 월 2,900원" : "골드 오픈 준비 중 · 곧 만나요";
-  b.classList.toggle("kk", !me.loggedIn);
+  b.classList.remove("kk");
 }
 renderBuyBtn();
 renderGoldUI();
