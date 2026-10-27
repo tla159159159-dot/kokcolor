@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
   if (!s) return res.json({ loggedIn: false, naverReady, googleReady });
   try {
     const sub = JSON.parse((await redis("GET", `kok:sub:${s.uid}`)) || "null");
-    res.json({ loggedIn: true, uid: s.uid, ...(await status(s.uid)), subActive: !!(sub && sub.active),
+    res.json({ loggedIn: true, uid: s.uid, name: s.name || "", ...(await status(s.uid)), subActive: !!(sub && sub.active),
       naverReady, googleReady, payReady: !!(process.env.NICEPAY_CLIENT_KEY && process.env.NICEPAY_OPEN) });
   }
   catch (e) { res.json({ loggedIn: true, uid: s.uid, gold: false, printsLeft: null, dbError: true }); }
