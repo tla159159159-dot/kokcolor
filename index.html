@@ -129,6 +129,7 @@
   .nav-login[hidden]{display:none}
   .link-btn{background:none!important;border:none!important;box-shadow:none!important;color:var(--muted)!important;font-size:13px!important;text-decoration:underline;padding:8px!important;min-height:0!important;margin:4px auto 0;display:block}
   .gold-note a{color:inherit}
+  .gg-login-btn{background:#fff!important;color:#1f1f1f!important;border:1px solid #dadce0!important;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;margin-top:8px}.gg-login-btn b{font-family:Arial,sans-serif;font-size:17px;color:#4285F4}
   .nv-login-btn{background:#03C75A!important;color:#fff!important;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;margin-top:8px}.nv-login-btn b{font-family:Arial,sans-serif;font-size:17px}
   .kk-login-btn{background:#FEE500!important;color:#191919!important;display:flex;align-items:center;justify-content:center;gap:8px;text-decoration:none}
   #goldBuyBtn.kk{background:#FEE500!important;color:#191919!important;display:inline-flex;align-items:center;justify-content:center;gap:8px}
@@ -866,6 +867,7 @@
     <p id="loginDesc">3초 만에 로그인하고 매주 3장 무료로 인쇄하세요.</p>
     <a class="full-btn kk-login-btn" id="loginGo" href="/api/kakao-login?next=print"><span class="kk-bubble"></span> 카카오로 로그인</a>
     <a class="full-btn nv-login-btn" id="loginGoNv" href="/api/naver-login?next=print" hidden><b>N</b> 네이버로 로그인</a>
+    <a class="full-btn gg-login-btn" id="loginGoGg" href="/api/google-login?next=print" hidden><b>G</b> 구글로 로그인</a>
   </div>
 </div>
 <div class="modal" id="goldModal">
@@ -3646,7 +3648,7 @@ renderBuyBtn();
 renderGoldUI();
 
 /* 카카오 로그인 상태 */
-fetch("/api/me",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(d=>{ if(d&&d.naverReady) document.getElementById("loginGoNv").hidden=false;
+fetch("/api/me",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(d=>{ if(d&&d.naverReady) document.getElementById("loginGoNv").hidden=false; if(d&&d.googleReady) document.getElementById("loginGoGg").hidden=false;
   if(!d) return; me=d;
   const a=document.getElementById("navLogin");
   if(d.loggedIn){ window.__loggedIn=true; pullWorks(); a.href="/api/logout"; a.classList.add("out"); a.textContent="로그아웃"; if(d.gold){ isGold=true; renderGoldUI(); renderPacks(); } }
@@ -3667,7 +3669,7 @@ function openLogin(next){ const h=document.querySelector("#loginModal h3"), d=do
   if(next==="print"){ h.textContent="인쇄는 로그인 후 이용할 수 있어요"; d.textContent="3초 만에 로그인하고 매주 3장 무료로 인쇄하세요."; }
   else{ h.textContent="콕콕 로그인"; d.textContent="로그인하면 칠한 그림이 저장되고 골드도 이용할 수 있어요."; }
   document.querySelector("#loginModal .mIcon").textContent=next==="print"?"🖨️":"🖍️";
-  const q=next?"?next="+next:""; document.getElementById("loginGo").href="/api/kakao-login"+q; document.getElementById("loginGoNv").href="/api/naver-login"+q;
+  const q=next?"?next="+next:""; document.getElementById("loginGo").href="/api/kakao-login"+q; document.getElementById("loginGoNv").href="/api/naver-login"+q; document.getElementById("loginGoGg").href="/api/google-login"+q;
   document.getElementById("loginModal").classList.add("show"); }
 document.getElementById("navLogin").addEventListener("click",e=>{ if(window.__loggedIn) return; e.preventDefault(); openLogin(""); });
 { const lm=document.getElementById("loginModal");
