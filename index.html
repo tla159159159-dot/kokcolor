@@ -343,6 +343,11 @@
   .pack-chips{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 12px;margin-bottom:6px;scrollbar-width:none;-webkit-overflow-scrolling:touch}.pack-chips::-webkit-scrollbar{display:none}
   .pack-chips button{flex:none;font:inherit;font-size:14px;padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap}
   .pack-chips button:active{transform:scale(.95)}.pack{scroll-margin-top:76px}
+  .ez-pay{margin-top:12px;text-align:left}.ez-title{font-size:14px;font-weight:800;margin:0 0 8px}.ez-title span{font-weight:500;color:var(--muted);font-size:12px}
+  .ez-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.ez-row button{min-height:48px;border:0;border-radius:12px;font-weight:800;font-size:14px;cursor:pointer}
+  .ez-kakao{background:#FEE500;color:#191919}.ez-naver{background:#03C75A;color:#fff}.ez-samsung{background:#1428A0;color:#fff}
+  .ez-or{margin:14px 0 0;font-size:13px;color:var(--muted);text-align:center}
+  @media(max-width:380px){.ez-row button{font-size:13px}}
   .card-form{display:grid;gap:10px;margin-top:12px;text-align:left}.card-form label{display:grid;gap:4px;font-size:13px;color:var(--muted)}
   .card-form input:not([type=checkbox]){font:inherit;font-size:16px;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);width:100%;box-sizing:border-box}
   .cf-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card-form .cf-agree{display:flex;gap:8px;align-items:flex-start;color:var(--ink)}.cf-agree a{color:inherit}
@@ -883,6 +888,11 @@
       <li><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg><span>놀이 모드는 계속 무료</span></li>
     </ul>
     <button class="full-btn gold-fullbtn" id="goldBuyBtn">골드 시작하기 · 월 2,900원</button>
+    <div class="ez-pay" id="ezPay" hidden>
+      <p class="ez-title">간편결제로 30일 이용권 2,900원 <span>(자동연장 없음)</span></p>
+      <div class="ez-row"><button type="button" data-m="kakaopay" class="ez-kakao">카카오페이</button><button type="button" data-m="naverpayCard" class="ez-naver">네이버페이</button><button type="button" data-m="samsungpayCard" class="ez-samsung">삼성페이</button></div>
+      <p class="ez-or">또는 카드번호 입력으로 매달 자동결제</p>
+    </div>
     <form class="card-form" id="cardForm" hidden autocomplete="on">
       <label>카드번호<input name="cardNo" inputmode="numeric" autocomplete="cc-number" maxlength="19" placeholder="숫자만 입력" required></label>
       <div class="cf-row"><label>유효기간(월)<input name="expMonth" inputmode="numeric" autocomplete="cc-exp-month" maxlength="2" placeholder="MM" required></label>
@@ -3617,7 +3627,18 @@ document.getElementById("goldBuyBtn").addEventListener("click",()=>{
   if(!me.loggedIn){ closeGold(); openLogin("gold"); return; }
   if(!me.payReady){ goldMsg.textContent="골드는 곧 열려요! 지금은 매주 3장까지 무료로 인쇄할 수 있어요."; goldMsg.className="msg"; return; }
   ev("begin_checkout",{value:2900,currency:"KRW"});
-  document.getElementById("goldBuyBtn").hidden=true; const f=document.getElementById("cardForm"); f.hidden=false; f.cardNo.focus();
+  document.getElementById("goldBuyBtn").hidden=true; document.getElementById("ezPay").hidden=false; document.getElementById("cardForm").hidden=false;
+});
+document.getElementById("ezPay").addEventListener("click",async e=>{
+  const m=e.target.closest("button[data-m]"); if(!m||m.disabled) return; m.disabled=true;
+  goldMsg.textContent="결제창을 여는 중이에요…"; goldMsg.className="msg";
+  const r=await fetch("/api/pay-start",{method:"POST",credentials:"same-origin"}).then(r=>r.json()).catch(()=>({ok:false}));
+  if(r.ok&&!window.AUTHNICE) await new Promise((ok,no)=>{const sc=document.createElement("script");sc.src="https://pay.nicepay.co.kr/v1/js/";sc.onload=ok;sc.onerror=no;document.head.appendChild(sc);}).catch(()=>{});
+  m.disabled=false;
+  if(!r.ok||!window.AUTHNICE){ goldMsg.textContent=r.msg||"결제창을 열지 못했어요. 잠시 후 다시 시도해 주세요."; return; }
+  goldMsg.textContent="";
+  AUTHNICE.requestPay({clientId:r.clientId,method:m.dataset.m,orderId:r.orderId,amount:r.amount,goodsName:r.goodsName,returnUrl:location.origin+"/api/pay-return",
+    fnError:x=>{ goldMsg.textContent="결제를 마치지 못했어요."+(x&&x.errorMsg?" ("+x.errorMsg+")":""); }});
 });
 document.getElementById("cardForm").addEventListener("submit",async e=>{
   e.preventDefault(); const f=e.currentTarget, btn=document.getElementById("cardSubmit");

@@ -38,14 +38,20 @@ const expireBid = bid => nice(`/v1/subscribe/${bid}/expire`, { orderId: newOrder
 async function chargeMonth(uid, sub) {
   const orderId = newOrderId("pay");
   const pay = await nice(`/v1/subscribe/${sub.bid}/payments`, { orderId, amount: PRICE, goodsName: GOODS, cardQuota: 0, useShopInterest: false });
-  const cur = Number(await redis("GET", `kok:gold:${uid}`)) || 0;
-  const until = Math.max(cur, Date.now()) + PERIOD;
-  await redis("SET", `kok:gold:${uid}`, String(until));
+  const until = await addGold(uid, { orderId, tid: pay.tid, amount: PRICE });
   sub.next = until; sub.fails = 0; sub.lastOrderId = orderId; sub.lastTid = pay.tid;
   await redis("SET", `kok:sub:${uid}`, JSON.stringify(sub));
   await redis("ZADD", "kok:subs", String(until), uid);
-  await redis("RPUSH", `kok:pay:${uid}`, JSON.stringify({ at: Date.now(), orderId, tid: pay.tid, amount: PRICE }));
   return until;
 }
 
-module.exports = { nice, encCard, registBid, expireBid, chargeMonth, PRICE, DAY };
+// 골드 30일 연장 + 결제 기록 (정기결제·간편결제 공용)
+async function addGold(uid, rec) {
+  const cur = Number(await redis("GET", `kok:gold:${uid}`)) || 0;
+  const until = Math.max(cur, Date.now()) + PERIOD;
+  await redis("SET", `kok:gold:${uid}`, String(until));
+  await redis("RPUSH", `kok:pay:${uid}`, JSON.stringify({ at: Date.now(), ...rec }));
+  return until;
+}
+
+module.exports = { nice, encCard, registBid, expireBid, chargeMonth, addGold, newOrderId, PRICE, DAY };

@@ -15,9 +15,12 @@ module.exports = async (req, res) => {
   await redis("EXPIRE", tryKey, "86400");
   const b = req.body || {}, d = v => String(v || "").replace(/\D/g, "");
   const card = { cardNo: d(b.cardNo), expMonth: d(b.expMonth).padStart(2, "0"), expYear: d(b.expYear).slice(-2), idNo: d(b.idNo), cardPw: d(b.cardPw) };
-  if (!/^\d{14,16}$/.test(card.cardNo) || !/^(0[1-9]|1[0-2])$/.test(card.expMonth) || !/^\d{2}$/.test(card.expYear)
-      || !/^(\d{6}|\d{10})$/.test(card.idNo) || !/^\d{2}$/.test(card.cardPw))
-    return res.status(400).json({ ok: false, msg: "카드 정보를 다시 확인해 주세요." });
+  const bad = !/^\d{14,16}$/.test(card.cardNo) ? "카드번호(숫자 14~16자리)"
+    : !/^(0[1-9]|1[0-2])$/.test(card.expMonth) ? "유효기간 월(01~12)"
+    : !/^\d{2}$/.test(card.expYear) ? "유효기간 년(YY)"
+    : !/^(\d{6}|\d{10})$/.test(card.idNo) ? "생년월일 6자리(법인카드는 사업자번호 10자리)"
+    : !/^\d{2}$/.test(card.cardPw) ? "비밀번호 앞 2자리" : "";
+  if (bad) return res.status(400).json({ ok: false, msg: `${bad}를 다시 확인해 주세요.` });
   let bid;
   try {
     const r = await registBid(s.uid, card);
