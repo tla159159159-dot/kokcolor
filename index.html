@@ -372,7 +372,7 @@
   /* modal */
   .modal{position:fixed;inset:0;background:rgba(36,27,62,.55);display:none;align-items:center;justify-content:center;z-index:80;padding:18px;backdrop-filter:blur(4px)}
   .modal.show{display:flex}
-  .sheet-card{background:var(--surface);border-radius:var(--r-xl);border:1px solid var(--line);max-width:400px;width:100%;padding:28px;box-shadow:var(--sh-lg);position:relative}
+  .sheet-card{background:var(--surface);border-radius:var(--r-xl);border:1px solid var(--line);max-width:400px;width:100%;padding:28px;box-shadow:var(--sh-lg);position:relative;max-height:100%;overflow-y:auto;overscroll-behavior:contain}
   .sheet-card .mIcon{font-size:44px;text-align:center;margin-bottom:8px}
   .sheet-card h3{font-family:'Jua',sans-serif;font-size:24px;margin:0 0 8px;text-align:center}
   .sheet-card p{font-size:14px;color:var(--muted);margin:0 0 16px;line-height:1.6;text-align:center}
