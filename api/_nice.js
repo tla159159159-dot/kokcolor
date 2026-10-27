@@ -3,8 +3,8 @@ const crypto = require("crypto");
 const { redis } = require("./_db");
 
 const PRICE = 2900, GOODS = "콕콕 골드 1개월", DAY = 864e5, PERIOD = 30 * DAY;
-// 운영 전환: NICEPAY_API=https://api.nicepay.co.kr (기본은 샌드박스)
-const BASE = () => process.env.NICEPAY_API || "https://sandbox-api.nicepay.co.kr";
+// 기본 운영. 테스트 키로 시험할 때만 Vercel에 NICEPAY_SANDBOX=1
+const BASE = () => process.env.NICEPAY_SANDBOX ? "https://sandbox-api.nicepay.co.kr" : "https://api.nicepay.co.kr";
 const auth = () => "Basic " + Buffer.from(`${process.env.NICEPAY_CLIENT_KEY}:${process.env.NICEPAY_SECRET_KEY}`).toString("base64");
 const newOrderId = p => `kok-${p}-${Date.now()}-${crypto.randomBytes(4).toString("hex")}`;
 
