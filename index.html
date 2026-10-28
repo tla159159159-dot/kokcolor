@@ -344,6 +344,11 @@
   .pack-chips button{flex:none;font:inherit;font-size:14px;padding:9px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;white-space:nowrap}
   .pack-chips button:active{transform:scale(.95)}.pack{scroll-margin-top:76px}
   .gold-hello{margin:0 0 6px;padding:0 34px;font-size:13px;font-weight:700;color:var(--muted)}
+  .reviews{max-width:720px;margin:0 auto;padding:8px 16px 24px}.rv-avg{text-align:center;font-weight:800;margin:-4px 0 12px;color:#b7791f}
+  .rv-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}.rv-list li{background:#fff;border-radius:14px;padding:12px 14px;box-shadow:0 2px 10px rgba(0,0,0,.05);overflow-wrap:anywhere}
+  .rv-head{display:flex;justify-content:space-between;gap:8px;font-size:13px;color:var(--muted);margin-bottom:4px}.rv-head b{color:#f5a623;letter-spacing:1px}.rv-empty{text-align:center;color:var(--muted)}
+  .rv-more{display:block;margin:10px auto 0}.rv-form{display:grid;gap:10px;margin-top:16px}.rv-form textarea{width:100%;box-sizing:border-box;border:1.5px solid #e5e0f0;border-radius:12px;padding:12px;font:inherit;font-size:16px;resize:vertical}
+  .rv-stars{display:flex;justify-content:center;gap:6px}.rv-stars button{border:0;background:none;font-size:34px;line-height:1;color:#ddd;cursor:pointer;min-width:44px;min-height:44px}.rv-stars button.on{color:#f5a623}
   .ez-pay{margin-top:12px;text-align:left}.ez-title{font-size:14px;font-weight:800;margin:0 0 8px}.ez-title span{font-weight:500;color:var(--muted);font-size:12px}
   .ez-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.ez-row button{min-height:48px;border:0;border-radius:12px;font-weight:800;font-size:14px;cursor:pointer}
   .ez-kakao{background:#FEE500;color:#191919}.ez-naver{background:#03C75A;color:#fff}.ez-samsung{background:#1428A0;color:#fff}
@@ -833,6 +838,19 @@
         <button class="plan-btn" id="goldBtn">골드 시작하기</button>
       </div>
     </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <h2 class="plans-title">구매평</h2>
+    <div class="rv-avg" id="rvAvg"></div>
+    <ul class="rv-list" id="rvList"><li class="rv-empty">아직 구매평이 없어요. 첫 구매평을 남겨 주세요!</li></ul>
+    <button class="link-btn rv-more" id="rvMore" hidden>더 보기</button>
+    <form class="rv-form" id="rvForm">
+      <div class="rv-stars" id="rvStars" role="radiogroup" aria-label="별점"><button type="button" data-s="1" aria-label="1점">★</button><button type="button" data-s="2" aria-label="2점">★</button><button type="button" data-s="3" aria-label="3점">★</button><button type="button" data-s="4" aria-label="4점">★</button><button type="button" data-s="5" aria-label="5점">★</button></div>
+      <textarea name="text" maxlength="300" rows="3" placeholder="아이와 써 본 느낌을 남겨 주세요 (5~300자)"></textarea>
+      <button class="plan-btn" id="rvSubmit">구매평 남기기</button>
+      <div class="msg" id="rvMsg"></div>
+    </form>
   </section>
 
   <section class="faq" id="faq">
@@ -4010,6 +4028,7 @@ fetch("/api/me",{credentials:"same-origin"}).then(r=>r.ok?r.json():null).then(d=
     setTimeout(()=>showToast(q==="ok"?"로그인 완료! 🎉":"로그인을 못 했어요. 다시 시도해 주세요."),300);
     if(q==="ok") ev("login");
     if(q==="ok" && params.get("next")==="gold") setTimeout(openGold,600);
+    if(q==="ok" && params.get("next")==="review") setTimeout(()=>document.getElementById("reviews").scrollIntoView({behavior:"smooth"}),700);
     if(q==="ok" && params.get("next")==="print") setTimeout(()=>showToast("로그인 완료! 이제 인쇄할 수 있어요 🖨️"),2200); } }
 
 function openLogin(next){ const h=document.querySelector("#loginModal h3"), d=document.getElementById("loginDesc");
@@ -4023,6 +4042,26 @@ document.getElementById("navLogin").addEventListener("click",e=>{ if(window.__lo
   document.getElementById("loginClose").addEventListener("click",()=>lm.classList.remove("show"));
   lm.addEventListener("click",e=>{ if(e.target===lm) lm.classList.remove("show"); }); }
 
+
+/* 구매평 */
+{ const L=document.getElementById("rvList"),F=document.getElementById("rvForm"),M=document.getElementById("rvMsg"),more=document.getElementById("rvMore"),avg=document.getElementById("rvAvg");
+  let all=[],shown=5,stars=0;
+  const item=r=>{const li=document.createElement("li"),h=document.createElement("div"),p=document.createElement("p");h.className="rv-head";
+    const b=document.createElement("b");b.textContent="★".repeat(r.stars)+"☆".repeat(5-r.stars);const w=document.createElement("span");const d=new Date(r.at);w.textContent=`${r.who} · ${d.getMonth()+1}/${d.getDate()}`;
+    h.append(b,w);p.textContent=r.text;p.style.margin="0";li.append(h,p);return li;};
+  const draw=()=>{ if(!all.length) return; L.replaceChildren(...all.slice(0,shown).map(item)); more.hidden=all.length<=shown;
+    avg.textContent=`★ ${(all.reduce((a,r)=>a+r.stars,0)/all.length).toFixed(1)} · ${all.length}개`; };
+  fetch("/api/reviews").then(r=>r.json()).then(j=>{all=j.reviews||[];draw();}).catch(()=>{});
+  more.addEventListener("click",()=>{shown+=10;draw();});
+  document.getElementById("rvStars").addEventListener("click",e=>{const t=e.target.closest("button");if(!t)return;stars=+t.dataset.s;
+    [...e.currentTarget.children].forEach(x=>x.classList.toggle("on",+x.dataset.s<=stars));});
+  F.addEventListener("submit",async e=>{e.preventDefault(); if(!me.loggedIn){openLogin("review");return;}
+    const btn=document.getElementById("rvSubmit"); if(btn.disabled) return; btn.disabled=true; M.textContent="";
+    const r=await fetch("/api/reviews",{method:"POST",credentials:"same-origin",headers:{"Content-Type":"application/json"},body:JSON.stringify({stars,text:F.text.value})}).then(r=>r.json()).catch(()=>({ok:false}));
+    btn.disabled=false;
+    if(!r.ok){M.textContent=r.msg||"저장하지 못했어요. 잠시 후 다시 시도해 주세요.";if(r.msg&&r.msg.startsWith("로그인"))openLogin("review");return;}
+    all.unshift(r.review);draw();F.reset();stars=0;[...document.getElementById("rvStars").children].forEach(x=>x.classList.remove("on"));M.textContent="고마워요! 구매평이 등록됐어요 💛"; });
+}
 /* 토스트 · 반짝이 */
 let toT;
 function showToast(m){ toastEl.textContent=m; toastEl.classList.add("show"); clearTimeout(toT); toT=setTimeout(()=>toastEl.classList.remove("show"),1800); }
