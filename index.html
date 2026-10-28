@@ -3971,13 +3971,16 @@ document.getElementById("goldBuyBtn").addEventListener("click",()=>{
   if(!me.loggedIn){ closeGold(); openLogin("gold"); return; }
   if(!me.payReady){ goldMsg.textContent="골드는 곧 열려요! 지금은 매주 3장까지 무료로 인쇄할 수 있어요."; goldMsg.className="msg"; return; }
   ev("begin_checkout",{value:1900,currency:"KRW"});
-  document.getElementById("goldBuyBtn").hidden=true; document.getElementById("ezPay").hidden=false; if(!window.AUTHNICE&&!document.getElementById("niceSdk")){const sc=document.createElement("script");sc.id="niceSdk";sc.src="https://pay.nicepay.co.kr/v1/js/";document.head.appendChild(sc);} document.getElementById("cardForm").hidden=false;
+  document.getElementById("goldBuyBtn").hidden=true; document.getElementById("ezPay").hidden=false; loadNice(); document.getElementById("cardForm").hidden=false;
 });
+// 나이스페이 결제창 스크립트: 한 번만 불러오고, 불러오는 중이면 그걸 기다림
+let niceP=null;
+const loadNice=()=>window.AUTHNICE?Promise.resolve():(niceP=niceP||new Promise(ok=>{const sc=document.createElement("script");sc.src="https://pay.nicepay.co.kr/v1/js/";sc.onload=ok;sc.onerror=()=>{niceP=null;ok();};document.head.appendChild(sc);}));
 document.getElementById("ezPay").addEventListener("click",async e=>{
   const m=e.target.closest("button[data-m]"); if(!m||m.disabled) return; m.disabled=true;
   goldMsg.textContent="결제창을 여는 중이에요…"; goldMsg.className="msg";
   const r=await fetch("/api/pay-start",{method:"POST",credentials:"same-origin"}).then(r=>r.json()).catch(()=>({ok:false}));
-  if(r.ok&&!window.AUTHNICE) await new Promise((ok,no)=>{const sc=document.createElement("script");sc.src="https://pay.nicepay.co.kr/v1/js/";sc.onload=ok;sc.onerror=no;document.head.appendChild(sc);}).catch(()=>{});
+  if(r.ok) await loadNice();
   m.disabled=false;
   if(!r.ok||!window.AUTHNICE){ goldMsg.textContent=r.msg||"결제창을 열지 못했어요. 잠시 후 다시 시도해 주세요."; return; }
   goldMsg.textContent=""; closeGold(); // 골드 창(z-index 80)이 나이스페이 결제창을 가리지 않게 먼저 닫음
