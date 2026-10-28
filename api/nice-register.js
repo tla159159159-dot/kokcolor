@@ -1,7 +1,7 @@
 // 골드 시작: 카드 등록(빌키 발급) → 첫 달 결제. 카드정보는 암호화해 나이스페이로만 전달
 const { getSession } = require("./_session");
 const { redis } = require("./_db");
-const { registBid, expireBid, chargeMonth } = require("./_nice");
+const { registBid, expireBid, chargeMonth, priceFor } = require("./_nice");
 const TEST_UID = "kakao:5115936774";
 module.exports = async (req, res) => {
   if (req.method !== "POST") return res.status(405).end();
@@ -29,7 +29,7 @@ module.exports = async (req, res) => {
     if (s.uid === TEST_UID) { await expireBid(bid); return res.json({ ok: false, msg: `✅ 카드 확인 성공 (${r.cardName || "카드"}) · 결제는 안 됐어요` }); }
     const old = JSON.parse((await redis("GET", `kok:sub:${s.uid}`)) || "null");
     const sub = { bid, card: r.cardName, active: true, since: Date.now(), fails: 0 };
-    const until = await chargeMonth(s.uid, sub);
+    const until = await chargeMonth(s.uid, sub, await priceFor(s.uid));
     if (old && old.bid && old.bid !== bid) expireBid(old.bid);
     res.json({ ok: true, goldUntil: until });
   } catch (e) {

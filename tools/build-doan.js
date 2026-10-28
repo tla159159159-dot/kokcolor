@@ -99,7 +99,7 @@ for (const p of packs) {
       crumbs: [["홈", "/"], [t.kw, themeUrl(p)], [x.name, picUrl(p, x)]],
       body: `<div class="hero-pic"><img src="/img/${x.id}.png" alt="${esc(x.name)} 색칠공부 도안 - 유아 색칠놀이" width="800" height="800" fetchpriority="high"></div>
 <div class="cta-row"><a class="big-cta" href="/?pic=${x.id}">🎨 화면에서 색칠하기</a><a class="ghost-cta" href="/?pic=${x.id}&amp;print=1">🖨️ 종이로 인쇄하기</a></div>
-<p class="intro">${x.name} 그림은 ${t.kw} ${p.pics.length}종 중 하나예요. 칸을 누르면 바로 색이 채워져서 아직 손이 서툰 유아도 쉽게 완성할 수 있어요. ${fr ? "이 그림은 무료 체험 도안이라 바로 색칠할 수 있고, 로그인하면 매주 3장까지 무료로 인쇄할 수 있어요." : `이 그림은 골드(월 2,900원) 도안이에요. ${t.kw}의 앞 2장(${p.pics[0].name}·${p.pics[1].name})은 무료로 해 볼 수 있어요.`}</p>
+<p class="intro">${x.name} 그림은 ${t.kw} ${p.pics.length}종 중 하나예요. 칸을 누르면 바로 색이 채워져서 아직 손이 서툰 유아도 쉽게 완성할 수 있어요. ${fr ? "이 그림은 무료 체험 도안이라 바로 색칠할 수 있고, 로그인하면 매주 3장까지 무료로 인쇄할 수 있어요." : `이 그림은 골드(첫 달 1,900원 · 이후 월 3,900원) 도안이에요. ${t.kw}의 앞 2장(${p.pics[0].name}·${p.pics[1].name})은 무료로 해 볼 수 있어요.`}</p>
 <h2>같은 테마 도안</h2>
 <ul class="grid">${others.map(o => `<li><a href="${picUrl(p, o)}">${svgA11y(o.svg, o.name + " 색칠공부 도안")}<span>${o.name}</span></a></li>`).join("")}</ul>`,
     }));

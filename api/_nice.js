@@ -2,7 +2,8 @@
 const crypto = require("crypto");
 const { redis } = require("./_db");
 
-const PRICE = 2900, GOODS = "콕콕 골드 1개월", DAY = 864e5, PERIOD = 30 * DAY;
+// 첫 결제 1,900원, 그다음부터 매달 3,900원
+const FIRST = 1900, PRICE = 3900, GOODS = "콕콕 골드 1개월", DAY = 864e5, PERIOD = 30 * DAY;
 // 기본 운영. 테스트 키로 시험할 때만 Vercel에 NICEPAY_SANDBOX=1
 const BASE = () => process.env.NICEPAY_SANDBOX ? "https://sandbox-api.nicepay.co.kr" : "https://api.nicepay.co.kr";
 const auth = () => "Basic " + Buffer.from(`${process.env.NICEPAY_CLIENT_KEY}:${process.env.NICEPAY_SECRET_KEY}`).toString("base64");
@@ -35,10 +36,13 @@ async function registBid(uid, card) {
 const expireBid = bid => nice(`/v1/subscribe/${bid}/expire`, { orderId: newOrderId("exp") }).catch(() => null);
 
 // 한 달 치 결제 → 성공하면 골드 기간 연장
-async function chargeMonth(uid, sub) {
+// 결제 기록이 없으면 첫 달 가격
+const priceFor = async uid => (Number(await redis("LLEN", `kok:pay:${uid}`)) > 0 ? PRICE : FIRST);
+
+async function chargeMonth(uid, sub, amount = PRICE) {
   const orderId = newOrderId("pay");
-  const pay = await nice(`/v1/subscribe/${sub.bid}/payments`, { orderId, amount: PRICE, goodsName: GOODS, cardQuota: 0, useShopInterest: false });
-  const until = await addGold(uid, { orderId, tid: pay.tid, amount: PRICE });
+  const pay = await nice(`/v1/subscribe/${sub.bid}/payments`, { orderId, amount, goodsName: GOODS, cardQuota: 0, useShopInterest: false });
+  const until = await addGold(uid, { orderId, tid: pay.tid, amount });
   sub.next = until; sub.fails = 0; sub.lastOrderId = orderId; sub.lastTid = pay.tid;
   await redis("SET", `kok:sub:${uid}`, JSON.stringify(sub));
   await redis("ZADD", "kok:subs", String(until), uid);
@@ -54,4 +58,4 @@ async function addGold(uid, rec) {
   return until;
 }
 
-module.exports = { nice, encCard, registBid, expireBid, chargeMonth, addGold, newOrderId, PRICE, DAY };
+module.exports = { nice, encCard, registBid, expireBid, chargeMonth, addGold, newOrderId, priceFor, FIRST, PRICE, DAY };
