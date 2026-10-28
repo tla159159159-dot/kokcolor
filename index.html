@@ -3971,7 +3971,7 @@ document.getElementById("goldBuyBtn").addEventListener("click",()=>{
   if(!me.loggedIn){ closeGold(); openLogin("gold"); return; }
   if(!me.payReady){ goldMsg.textContent="골드는 곧 열려요! 지금은 매주 3장까지 무료로 인쇄할 수 있어요."; goldMsg.className="msg"; return; }
   ev("begin_checkout",{value:1900,currency:"KRW"});
-  document.getElementById("goldBuyBtn").hidden=true; document.getElementById("ezPay").hidden=false; document.getElementById("cardForm").hidden=false;
+  document.getElementById("goldBuyBtn").hidden=true; document.getElementById("ezPay").hidden=false; if(!window.AUTHNICE&&!document.getElementById("niceSdk")){const sc=document.createElement("script");sc.id="niceSdk";sc.src="https://pay.nicepay.co.kr/v1/js/";document.head.appendChild(sc);} document.getElementById("cardForm").hidden=false;
 });
 document.getElementById("ezPay").addEventListener("click",async e=>{
   const m=e.target.closest("button[data-m]"); if(!m||m.disabled) return; m.disabled=true;
@@ -3980,9 +3980,9 @@ document.getElementById("ezPay").addEventListener("click",async e=>{
   if(r.ok&&!window.AUTHNICE) await new Promise((ok,no)=>{const sc=document.createElement("script");sc.src="https://pay.nicepay.co.kr/v1/js/";sc.onload=ok;sc.onerror=no;document.head.appendChild(sc);}).catch(()=>{});
   m.disabled=false;
   if(!r.ok||!window.AUTHNICE){ goldMsg.textContent=r.msg||"결제창을 열지 못했어요. 잠시 후 다시 시도해 주세요."; return; }
-  goldMsg.textContent="";
+  goldMsg.textContent=""; closeGold(); // 골드 창(z-index 80)이 나이스페이 결제창을 가리지 않게 먼저 닫음
   AUTHNICE.requestPay({clientId:r.clientId,method:m.dataset.m,orderId:r.orderId,amount:r.amount,goodsName:r.goodsName,returnUrl:location.origin+"/api/pay-return",
-    fnError:x=>{ goldMsg.textContent="결제를 마치지 못했어요."+(x&&x.errorMsg?" ("+x.errorMsg+")":""); }});
+    fnError:x=>{ openGold(); goldMsg.textContent="결제를 마치지 못했어요."+(x&&x.errorMsg?" ("+x.errorMsg+")":""); }});
 });
 document.getElementById("cardForm").addEventListener("submit",async e=>{
   e.preventDefault(); const f=e.currentTarget, btn=document.getElementById("cardSubmit");
