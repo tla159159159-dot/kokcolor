@@ -35,7 +35,17 @@ const abs = u => SITE + encodeURI(u);
 const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 const svgA11y = (svg, label) => svg.replace("<svg ", `<svg role="img" aria-label="${esc(label)}" `);
 
-const page = ({ title, desc, canon, h1, body, crumbs, og = "/og.png" }) => `<!DOCTYPE html>
+// 페이지마다 그림 주제에 맞는 광고 배너 1개만 (여러 개 몰아 넣지 않음)
+const AD = {
+  dojang: ["https://www.dojangkwang.co.kr/", "도장쾅", "색칠 끝! 이번엔 연필 잡고 한 장 더", "한글·숫자 따라쓰기 프린트 학습지 · 무료 샘플 바로 인쇄", "학습지 보러가기 →"],
+  talent: ["https://mwojalhae.kr/", "우리애 뭐잘해?", "동물·곤충을 좋아하는 아이, 어떤 재능이 있을까?", "만 5~12세 무료 재능·기질 검사 · 결과 리포트 바로 확인", "무료 검사하기 →"],
+  malang: ["https://malangenglish.co.kr/", "말랑영어", "Apple, Banana… 영어도 색칠처럼 말랑하게", "엄마표 영어 학습지 · 알파벳 따라쓰기·파닉스 무료 샘플", "무료 샘플 받기 →"],
+  mom: ["https://mommoment.kr/", "맘먼트", "다른 엄마들은 이번 주말 뭐 하고 놀까?", "또래 엄마들의 집콕 놀이·파티 준비 꿀팁 · 가입 없이 구경", "구경하러 가기 →"],
+};
+const AD_BY = { animal: "talent", sea: "talent", bug: "talent", farm: "talent", dino: "talent", plant: "talent", fruit: "malang", snack: "malang", princess: "mom", party: "mom", xmas: "mom", halloween: "mom", music: "mom" };
+const adFor = pid => { const k = AD_BY[pid] || "dojang", [u, n, t, d, b] = AD[k];
+  return `<a class="adban ad-${k}" href="${u}?utm_source=kokcolor&amp;utm_medium=ad&amp;utm_campaign=doan" target="_blank" rel="noopener sponsored" aria-label="${n} 광고"><span class="ad-tag">AD</span><span class="ad-txt"><b>${t}</b><span>${d}</span></span><span class="ad-btn">${b}</span></a>`; };
+const page = ({ title, desc, canon, h1, body, crumbs, og = "/og.png", pid = "" }) => `<!DOCTYPE html>
 <html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTFDM2WQQ2"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-KTFDM2WQQ2");</script>
 <title>${esc(title)}</title>
@@ -56,7 +66,7 @@ const page = ({ title, desc, canon, h1, body, crumbs, og = "/og.png" }) => `<!DO
 <nav class="crumb">${crumbs.map((c, i) => i < crumbs.length - 1 ? `<a href="${c[1]}">${c[0]}</a> › ` : `<span>${c[0]}</span>`).join("")}</nav>
 <h1>${h1}</h1>
 ${body}
-<aside class="family"><b>함께 보면 좋은 곳</b><a href="https://www.dojangkwang.co.kr/?utm_source=kokcolor&amp;utm_medium=crosslink&amp;utm_campaign=doan" target="_blank" rel="noopener">✏️ 도장쾅 한글·숫자 학습지</a><a href="https://mommoment.kr/?utm_source=kokcolor&amp;utm_medium=crosslink&amp;utm_campaign=doan" target="_blank" rel="noopener">💬 맘먼트 엄마 커뮤니티</a><a href="https://mwojalhae.kr/?utm_source=kokcolor&amp;utm_medium=ad&amp;utm_campaign=doan" target="_blank" rel="noopener">🔎 우리애 뭐잘해? 무료 재능검사</a><a href="https://malangenglish.co.kr/?utm_source=kokcolor&amp;utm_medium=ad&amp;utm_campaign=doan" target="_blank" rel="noopener">🍡 말랑영어 알파벳 학습지</a></aside>
+${adFor(pid)}
 <footer class="foot"><nav class="themes">${packs.map(p => `<a href="${themeUrl(p)}">${p.emoji} ${THEME[p.id].kw}</a>`).join("")}</nav>
 <p><a href="/terms.html">이용약관</a> · <a href="/privacy.html">개인정보처리방침</a> · <a href="/refund.html">환불정책</a></p>
 <p>© 2026 콕콕 kokcolor.kr · CKT컴퍼니</p></footer>
@@ -75,7 +85,7 @@ for (const p of packs) {
   redirects.push({ source: `/doan/${p.id}`, destination: encodeURI(themeUrl(p)), permanent: true });
   const names = p.pics.map(x => x.name).join("·");
   // 테마 페이지
-  fs.writeFileSync(path.join(OUT, KO[p.id] + ".html"), page({
+  fs.writeFileSync(path.join(OUT, KO[p.id] + ".html"), page({ pid: p.id,
     title: `${t.kw} ${p.pics.length}종 | 색칠·인쇄 무료 체험 - 콕콕`,
     desc: `${t.kw} ${p.pics.length}종(${names}). 첫 그림(${p.pics[0].name})은 가입 없이 무료로 색칠해 보고, 골드로 전부 색칠·인쇄해요.`,
     canon: themeUrl(p), og: `/og/t-${p.id}.jpg`,
@@ -91,7 +101,7 @@ for (const p of packs) {
     const others = p.pics.filter(o => o.id !== x.id);
     redirects.push({ source: `/doan/${p.id}/${x.id}`, destination: encodeURI(picUrl(p, x)), permanent: true });
     const fr = i < 2; // 테마별 2장만 무료 체험 (index.html 과 같은 규칙)
-    fs.writeFileSync(path.join(OUT, KO[p.id], slug(x.name) + ".html"), page({
+    fs.writeFileSync(path.join(OUT, KO[p.id], slug(x.name) + ".html"), page({ pid: p.id,
       title: `${x.name} 색칠공부 도안 | ${fr ? "무료 색칠·인쇄" : "색칠·인쇄"} - 콕콕`,
       desc: fr ? `${x.name} 색칠공부 도안을 화면에서 무료로 바로 색칠하고, 종이로 인쇄해서 칠할 수도 있어요. ${t.kw} 모음 콕콕.` : `${x.name} 색칠공부 도안을 화면에서 색칠하고 종이로 인쇄해요. ${t.kw}의 첫 그림은 무료 체험, 전체는 골드. 콕콕.`,
       canon: picUrl(p, x), og: `/og/${x.id}.jpg`,

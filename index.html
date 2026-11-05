@@ -54,6 +54,8 @@
     background:linear-gradient(120deg,#8B5CF6 0%,#C05CE0 45%,#FF6FA6 100%);
     box-shadow:0 12px 28px rgba(139,92,246,.28);transition:transform .14s,box-shadow .2s}
   .promo-talent{background:linear-gradient(120deg,#0EA5A4 0%,#22B8CF 50%,#5B8DEF 100%);box-shadow:0 12px 28px rgba(14,165,164,.25)}.promo-talent .promo-btn{color:#0E7C86}
+  .promo-dojang{background:linear-gradient(120deg,#6C5CE7 0%,#8E7CF8 55%,#B57CF2 100%);box-shadow:0 12px 28px rgba(108,92,231,.25)}.promo-dojang .promo-btn{color:#5B4BD6}
+  .promo-mom{background:linear-gradient(120deg,#F59E0B 0%,#F97316 55%,#EF6461 100%);box-shadow:0 12px 28px rgba(249,115,22,.25)}.promo-mom .promo-btn{color:#D9480F}
   .promo-malang{background:linear-gradient(120deg,#FF8A3D 0%,#FF6F91 60%,#F24E9B 100%);box-shadow:0 12px 28px rgba(255,111,145,.28)}.promo-malang .promo-btn{color:#E0457B}
   .promo:hover{transform:translateY(-2px);box-shadow:0 16px 36px rgba(139,92,246,.36)}
   .promo::after{content:"";position:absolute;right:-30px;top:-40px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.12)}
@@ -797,25 +799,16 @@
     </div>
     <div class="star-board" id="starBoard"></div>
   </section>
-
-  <section class="family" aria-label="함께 보면 좋은 사이트">
-    <h2 class="plans-title">색칠 다 했다면, 이것도 좋아요</h2>
-    <div class="family-grid">
-      <a class="fam" data-site="dojangkwang" href="https://www.dojangkwang.co.kr/?utm_source=kokcolor&amp;utm_medium=crosslink&amp;utm_campaign=main" target="_blank" rel="noopener"><span class="fam-ic">✏️</span><b>도장쾅 학습지</b><span class="fam-d">색칠 다음엔 한글·숫자 프린트 학습지로 이어서 놀아요</span><em>학습지 보러가기 →</em></a>
-      <a class="fam" data-site="mommoment" href="https://mommoment.kr/?utm_source=kokcolor&amp;utm_medium=crosslink&amp;utm_campaign=main" target="_blank" rel="noopener"><span class="fam-ic">💬</span><b>맘먼트</b><span class="fam-d">또래 엄마들과 육아 고민·꿀팁을 나눠요</span><em>맘먼트 구경하기 →</em></a>
-      <a class="fam" data-site="mwojalhae" href="https://mwojalhae.kr/?utm_source=kokcolor&amp;utm_medium=crosslink&amp;utm_campaign=main" target="_blank" rel="noopener"><span class="fam-ic">🔎</span><b>우리애 뭐잘해?</b><span class="fam-d">무료 재능·적성검사로 아이가 잘하는 걸 찾아봐요</span><em>무료 검사하기 →</em></a>
-      <a class="fam" data-site="malangenglish" href="https://malangenglish.co.kr/?utm_source=kokcolor&amp;utm_medium=crosslink&amp;utm_campaign=main" target="_blank" rel="noopener"><span class="fam-ic">🍡</span><b>말랑영어</b><span class="fam-d">알파벳 따라쓰기·파닉스 엄마표 영어 학습지</span><em>무료 샘플 보기 →</em></a>
-    </div>
-  </section>
-
-  <a class="promo promo-malang" data-site="malangenglish" href="https://malangenglish.co.kr/?utm_source=kokcolor&amp;utm_medium=ad&amp;utm_campaign=plans" target="_blank" rel="noopener">
+  <a class="promo promo-dojang" data-site="dojangkwang" href="https://www.dojangkwang.co.kr/?utm_source=kokcolor&amp;utm_medium=ad&amp;utm_campaign=reward" target="_blank" rel="noopener">
     <span class="promo-ad">AD</span>
     <div class="promo-txt">
-      <b class="promo-title">알파벳도 색칠처럼 말랑말랑하게</b>
-      <span class="promo-sub">엄마표 영어 학습지 · 알파벳 따라쓰기·파닉스 무료 샘플 PDF</span>
+      <b class="promo-title">색칠 끝! 이번엔 연필 잡고 한 장 더</b>
+      <span class="promo-sub">한글·숫자 따라쓰기 프린트 학습지 · 무료 샘플 바로 인쇄</span>
     </div>
-    <span class="promo-btn">무료 샘플 받기 →</span>
+    <span class="promo-btn">학습지 보러가기 →</span>
   </a>
+
+
 
   <section class="plans" id="plans">
     <h2 class="plans-title">요금제</h2>
@@ -844,6 +837,14 @@
       </div>
     </div>
   </section>
+  <a class="promo promo-malang" data-site="malangenglish" href="https://malangenglish.co.kr/?utm_source=kokcolor&amp;utm_medium=ad&amp;utm_campaign=plans" target="_blank" rel="noopener">
+    <span class="promo-ad">AD</span>
+    <div class="promo-txt">
+      <b class="promo-title">알파벳도 색칠처럼 말랑말랑하게</b>
+      <span class="promo-sub">엄마표 영어 학습지 · 알파벳 따라쓰기·파닉스 무료 샘플 PDF</span>
+    </div>
+    <span class="promo-btn">무료 샘플 받기 →</span>
+  </a>
 
   <section class="reviews" id="reviews">
     <h2 class="plans-title">구매평</h2>
@@ -858,6 +859,14 @@
       <div class="msg" id="rvMsg"></div>
     </form>
   </section>
+  <a class="promo promo-mom" data-site="mommoment" href="https://mommoment.kr/?utm_source=kokcolor&amp;utm_medium=ad&amp;utm_campaign=reviews" target="_blank" rel="noopener">
+    <span class="promo-ad">AD</span>
+    <div class="promo-txt">
+      <b class="promo-title">다른 엄마들은 오늘 뭐 하고 놀았을까?</b>
+      <span class="promo-sub">또래 엄마들의 집콕 놀이·육아 꿀팁 커뮤니티 · 가입 없이 구경</span>
+    </div>
+    <span class="promo-btn">구경하러 가기 →</span>
+  </a>
 
   <section class="faq" id="faq">
     <h2 class="plans-title">자주 묻는 질문</h2>
