@@ -49,7 +49,6 @@
     <ellipse class="fill" data-n="귓속" cx="260" cy="150" rx="28" ry="9" transform="rotate(35 260 150)"/>
     <ellipse class="fill" data-n="얼굴" cx="180" cy="184" rx="74" ry="70"/>
     <ellipse class="fill" data-n="주둥이" cx="180" cy="222" rx="32" ry="22"/>
-    <circle class="fill" data-n="이마 점" cx="166" cy="140" r="6"/><circle class="fill" data-n="이마 점" cx="194" cy="140" r="6"/><circle class="fill" data-n="이마 점" cx="180" cy="152" r="5"/>
     <circle class="dk" cx="150" cy="180" r="9"/><circle class="wt" cx="153" cy="176" r="3"/><circle class="dk" cx="210" cy="180" r="9"/><circle class="wt" cx="213" cy="176" r="3"/>
     <ellipse class="dk" cx="180" cy="212" rx="8" ry="5"/><path class="ln" d="M170 230 q10 8 20 0"/>
     <circle class="fill" data-n="볼" cx="128" cy="210" r="11"/><circle class="fill" data-n="볼" cx="232" cy="210" r="11"/>
@@ -57,5 +56,4 @@
     <polygon class="fill" data-n="꽃" points="${star(120,124,20,10,5)}"/>
     <polygon class="fill" data-n="꽃" points="${star(180,106,24,12,5)}"/>
     <polygon class="fill" data-n="꽃" points="${star(240,124,20,10,5)}"/>
-    <circle class="fill" data-n="꽃술" cx="180" cy="108" r="7"/>
-    <ellipse class="fill" data-n="잎" cx="150" cy="110" rx="12" ry="6" transform="rotate(-20 150 110)"/><ellipse class="fill" data-n="잎" cx="210" cy="110" rx="12" ry="6" transform="rotate(20 210 110)"/></svg>`},
+    <circle class="fill" data-n="꽃술" cx="180" cy="108" r="7"/></svg>`},
