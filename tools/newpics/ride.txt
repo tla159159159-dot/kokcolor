@@ -100,3 +100,19 @@
     <path class="fill" data-n="안장" d="M120 196 Q120 172 150 172 H196 Q210 172 210 196 Z"/>
     <circle class="fill" data-n="전조등" cx="274" cy="200" r="12"/>
     <circle class="dk" cx="226" cy="214" r="5"/><circle class="dk" cx="250" cy="214" r="5"/><path class="ln" d="M230 224 q8 7 16 0"/></svg>`},
+{id:"leafboat", name:"나뭇잎 배 개구리", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="58" cy="60" r="24"/><g class="ln"><path d="M58 24 v-8 M94 60 h8 M83 35 l6 -6 M22 60 h-8 M33 35 l-6 -6"/></g>
+    <path class="ln" d="M250 256 V74"/>
+    <path class="fill" data-n="깃발" d="M250 74 L224 83 L250 92 Z"/>
+    <path class="fill" data-n="돛" d="M256 100 C310 130 310 206 256 232 Z"/>
+    <ellipse class="fill" data-n="몸" cx="150" cy="222" rx="48" ry="34"/>
+    <ellipse class="fill" data-n="배" cx="150" cy="230" rx="28" ry="22"/>
+    <ellipse class="fill" data-n="머리" cx="150" cy="172" rx="58" ry="38"/>
+    <circle class="fill" data-n="눈" cx="118" cy="138" r="20"/><circle class="fill" data-n="눈" cx="182" cy="138" r="20"/>
+    <circle class="dk" cx="118" cy="140" r="8"/><circle class="wt" cx="121" cy="137" r="3"/><circle class="dk" cx="182" cy="140" r="8"/><circle class="wt" cx="185" cy="137" r="3"/>
+    <path class="ln" d="M120 182 q30 22 60 0"/>
+    <ellipse class="fill" data-n="볼" cx="106" cy="178" rx="10" ry="7"/><ellipse class="fill" data-n="볼" cx="194" cy="178" rx="10" ry="7"/>
+    <path class="fill" data-n="나뭇잎배" d="M28 234 C80 298 262 302 332 224 C270 250 100 256 28 234 Z"/>
+    <path class="ln" d="M50 246 Q180 282 312 238 M120 262 l-10 14 M180 268 l-4 14 M240 262 l4 14"/>
+    <path class="fill" data-n="물" d="M8 286 q21.5 -14 43 0 q21.5 14 43 0 q21.5 -14 43 0 q21.5 14 43 0 q21.5 -14 43 0 q21.5 14 43 0 q21.5 -14 43 0 q21.5 14 43 0 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/>
+    <path class="fill" data-n="연잎" d="M300 324 L326 316 A30 11 0 1 1 300 313 Z"/></svg>`},

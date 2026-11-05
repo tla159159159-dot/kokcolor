@@ -124,3 +124,19 @@
     <circle class="dk" cx="286" cy="178" r="7"/><circle class="wt" cx="288" cy="175" r="2.5"/>
     <path class="ln" d="M286 210 q10 6 18 -4"/>
     <ellipse class="fill" data-n="볼" cx="262" cy="212" rx="10" ry="7"/></svg>`},
+{id:"snailhouse", name:"꽃집 달팽이", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="구름" d="M30 100 a18 18 0 0 1 20 -24 a24 24 0 0 1 44 4 a16 16 0 0 1 10 20 Z"/>
+    <ellipse class="fill" data-n="나비 날개" cx="300" cy="76" rx="18" ry="14" transform="rotate(-30 300 76)"/><ellipse class="fill" data-n="나비 날개" cx="326" cy="76" rx="18" ry="14" transform="rotate(30 326 76)"/>
+    <path class="ln" d="M313 66 v24 M313 66 l-6 -10 M313 66 l6 -10"/>
+    ${GR("풀밭",300)}<path class="ln" d="M30 300 l-4 -16 M40 300 l4 -14 M326 300 l-4 -16 M336 300 l4 -14"/>
+    <path class="ln" d="M74 196 L62 160 M100 194 L110 160"/>
+    <circle class="wt" cx="62" cy="154" r="10"/><circle class="dk" cx="63" cy="155" r="5"/><circle class="wt" cx="110" cy="154" r="10"/><circle class="dk" cx="111" cy="155" r="5"/>
+    <path class="fill" data-n="몸" d="M60 302 C46 256 50 200 82 192 C114 186 120 226 116 266 L292 270 C322 274 322 302 298 302 Z"/>
+    <path class="ln" d="M74 236 q12 10 24 0"/>
+    <rect class="fill" data-n="집" x="140" y="170" width="132" height="102" rx="16"/>
+    <path class="fill" data-n="지붕" d="M124 180 Q206 96 288 180 Z"/>
+    <path class="ln" d="M206 112 V138"/>
+    <path class="fill" data-n="꽃잎" d="M194 88 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z M209 99 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z M203 117 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z M185 117 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z M179 99 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z"/>
+    <circle class="fill" data-n="꽃술" cx="206" cy="104" r="11"/>
+    <circle class="fill" data-n="창문" cx="180" cy="218" r="22"/><path class="ln" d="M158 218 h44 M180 196 v44"/>
+    <path class="fill" data-n="문" d="M226 272 V234 a18 18 0 0 1 36 0 V272 Z"/><circle class="dk" cx="254" cy="254" r="3"/></svg>`},

@@ -94,3 +94,21 @@
     <circle class="fill" data-n="창문" cx="180" cy="140" r="18"/>
     <rect class="fill" data-n="문" x="160" y="190" width="40" height="44" rx="8"/>
     <path class="ln" d="M306 286 V200"/><path class="fill" data-n="깃발" d="M306 200 H340 V224 H306 Z"/></svg>`},
+{id:"bunnyastro", name:"우주비행사 토끼", svg:`<svg ${A}>${BG()}
+    <ellipse class="fill" data-n="고리" cx="66" cy="72" rx="46" ry="12" transform="rotate(-18 66 72)"/><circle class="fill" data-n="행성" cx="66" cy="72" r="26"/>
+    <polygon class="fill" data-n="별" points="${star(300,46,16,6,5)}"/><polygon class="fill" data-n="별" points="${star(64,180,12,5,5)}"/>
+    ${GR("달 표면",296)}<ellipse class="fill" data-n="구덩이" cx="290" cy="324" rx="26" ry="9"/>
+    <rect class="fill" data-n="부츠" x="134" y="268" width="40" height="32" rx="10"/><rect class="fill" data-n="부츠" x="186" y="268" width="40" height="32" rx="10"/>
+    <ellipse class="fill" data-n="팔" cx="114" cy="236" rx="16" ry="34" transform="rotate(14 114 236)"/>
+    <path class="fill" data-n="당근" d="M262 164 L304 108 L284 172 Z"/><path class="ln" d="M304 108 l-2 -18 M304 108 l12 -12 M304 108 l16 2"/>
+    <ellipse class="fill" data-n="팔" cx="250" cy="196" rx="16" ry="34" transform="rotate(40 250 196)"/>
+    <path class="fill" data-n="우주복" d="M124 196 Q114 284 140 284 H220 Q246 284 236 196 Z"/>
+    <rect class="fill" data-n="가슴판" x="156" y="224" width="48" height="34" rx="8"/>
+    <circle class="dk" cx="170" cy="241" r="5"/><circle class="dk" cx="190" cy="241" r="5"/>
+    <circle class="fill" data-n="헬멧" cx="180" cy="134" r="72"/>
+    <path class="ln" d="M126 98 q10 -22 32 -30"/>
+    <ellipse class="fill" data-n="귀" cx="160" cy="100" rx="12" ry="30"/><ellipse class="fill" data-n="귀" cx="200" cy="100" rx="12" ry="30"/>
+    <path class="ln" d="M160 84 v26 M200 84 v26"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="152" r="44"/>
+    <circle class="dk" cx="164" cy="146" r="6"/><circle class="wt" cx="166" cy="144" r="2"/><circle class="dk" cx="196" cy="146" r="6"/><circle class="wt" cx="198" cy="144" r="2"/>
+    <ellipse class="dk" cx="180" cy="161" rx="5" ry="4"/><path class="ln" d="M180 165 v5 M170 172 q10 8 10 -2 q0 10 10 2"/></svg>`},

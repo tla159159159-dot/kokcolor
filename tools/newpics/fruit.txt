@@ -78,3 +78,22 @@
     <path class="ln" d="M160 252 q16 10 30 -6"/>
     <circle class="fill" data-n="볼" cx="138" cy="254" r="9"/><circle class="fill" data-n="볼" cx="204" cy="244" r="9"/>
     <polygon class="fill" data-n="별" points="${star(70,72,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(296,150,14,6,5)}"/></svg>`},
+{id:"berryhouse", name:"딸기집 생쥐", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="구름" d="M256 88 a18 18 0 0 1 20 -24 a24 24 0 0 1 44 4 a16 16 0 0 1 10 20 Z"/>
+    ${GR("땅",300)}
+    <path class="ln" d="M46 300 V270 M318 300 V270"/>
+    <path class="fill" data-n="꽃" d="M32 262 v-22 l7 8 l7 -10 l7 10 l7 -8 v22 q-14 12 -28 0 Z"/>
+    <path class="fill" data-n="꽃" d="M304 262 v-22 l7 8 l7 -10 l7 10 l7 -8 v22 q-14 12 -28 0 Z"/>
+    <rect class="fill" data-n="줄기" x="173" y="52" width="14" height="30" rx="6"/>
+    <path class="fill" data-n="딸기집" d="M180 302 C104 302 64 246 70 186 C76 128 130 108 180 114 C230 108 284 128 290 186 C296 246 256 302 180 302 Z"/>
+    <path class="ln" d="M104 170 l4 8 M256 170 l-4 8 M96 232 l4 8 M264 232 l-4 8 M122 276 l4 6 M238 276 l-4 6 M246 136 l-3 7 M114 136 l3 7"/>
+    <path class="fill" data-n="꼭지" d="M180 136 C158 142 128 138 116 122 C136 112 156 114 170 122 C160 108 164 92 180 82 C196 92 200 108 190 122 C204 114 224 112 244 122 C232 138 202 142 180 136 Z"/>
+    <circle class="fill" data-n="창문" cx="180" cy="192" r="38"/>
+    <circle class="fill" data-n="귀" cx="161" cy="176" r="12"/><circle class="fill" data-n="귀" cx="199" cy="176" r="12"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="200" r="22"/>
+    <circle class="dk" cx="172" cy="196" r="4"/><circle class="dk" cx="188" cy="196" r="4"/><circle class="dk" cx="180" cy="205" r="3.5"/>
+    <path class="ln" d="M166 206 l-14 -2 M194 206 l14 -2"/>
+    <rect class="fill" data-n="창틀" x="134" y="214" width="92" height="14" rx="7"/>
+    <ellipse class="fill" data-n="손" cx="168" cy="214" rx="8" ry="6"/><ellipse class="fill" data-n="손" cx="192" cy="214" rx="8" ry="6"/>
+    <path class="fill" data-n="문" d="M160 302 V266 a20 20 0 0 1 40 0 V302 Z"/><circle class="dk" cx="192" cy="284" r="3"/>
+    <ellipse class="fill" data-n="돌" cx="168" cy="322" rx="18" ry="7"/><ellipse class="fill" data-n="돌" cx="196" cy="338" rx="18" ry="7"/></svg>`},

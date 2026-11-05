@@ -106,3 +106,23 @@
     <ellipse class="fill" data-n="볼" cx="138" cy="314" rx="11" ry="7"/><ellipse class="fill" data-n="볼" cx="222" cy="314" rx="11" ry="7"/>
     <ellipse class="fill" data-n="돌멩이" cx="54" cy="316" rx="16" ry="10"/>
     <ellipse class="fill" data-n="돌멩이" cx="308" cy="320" rx="18" ry="11"/></svg>`},
+{id:"robotgarden", name:"꽃에 물 주는 로봇", svg:`<svg ${A}>${BG()}
+    ${GR("흙",300)}
+    <path class="ln" d="M100 70 V48"/><circle class="fill" data-n="안테나" cx="100" cy="42" r="10"/>
+    <rect class="fill" data-n="머리" x="52" y="70" width="96" height="72" rx="18"/>
+    <circle class="fill" data-n="눈" cx="82" cy="104" r="13"/><circle class="fill" data-n="눈" cx="118" cy="104" r="13"/>
+    <circle class="dk" cx="84" cy="105" r="6"/><circle class="dk" cx="120" cy="105" r="6"/><path class="ln" d="M88 126 q12 8 24 0"/>
+    <path class="ln" d="M100 142 v8"/>
+    <circle class="fill" data-n="바퀴" cx="76" cy="280" r="20"/><circle class="fill" data-n="바퀴" cx="124" cy="280" r="20"/>
+    <circle class="dk" cx="76" cy="280" r="5"/><circle class="dk" cx="124" cy="280" r="5"/>
+    <rect class="fill" data-n="몸" x="46" y="150" width="108" height="110" rx="20"/>
+    <circle class="dk" cx="80" cy="190" r="6"/><circle class="dk" cx="100" cy="190" r="6"/><circle class="dk" cx="120" cy="190" r="6"/><path class="ln" d="M76 220 h48"/>
+    <path class="ln" d="M206 166 q20 -26 40 0"/>
+    <path class="fill" data-n="주둥이" d="M250 192 L292 164 L300 174 L256 206 Z"/>
+    <path class="fill" data-n="물뿌리개" d="M196 166 h56 v46 q0 10 -10 10 h-36 q-10 0 -10 -10 Z"/>
+    <rect class="fill" data-n="팔" x="146" y="176" width="58" height="18" rx="9"/>
+    <path class="ln" d="M300 186 q6 8 0 12 q-6 -4 0 -12 M312 200 q6 8 0 12 q-6 -4 0 -12 M296 208 q6 8 0 12 q-6 -4 0 -12"/>
+    <path class="ln" d="M266 250 V300 M320 266 V300"/>
+    <ellipse class="fill" data-n="잎" cx="252" cy="280" rx="14" ry="7" transform="rotate(-30 252 280)"/><ellipse class="fill" data-n="잎" cx="334" cy="284" rx="12" ry="6" transform="rotate(30 334 284)"/>
+    <path class="fill" data-n="꽃잎" d="M254 221 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z M268.3 231.4 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z M262.8 248.1 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z M245.2 248.1 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z M239.7 231.4 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z "/><circle class="fill" data-n="꽃술" cx="266" cy="236" r="10"/>
+    <path class="fill" data-n="꽃잎" d="M308 237 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z M322.3 247.4 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z M316.8 264.1 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z M299.2 264.1 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z M293.7 247.4 a12 12 0 1 0 24 0 a12 12 0 1 0 -24 0 Z "/><circle class="fill" data-n="꽃술" cx="320" cy="252" r="10"/></svg>`},

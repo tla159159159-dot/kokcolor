@@ -81,3 +81,23 @@
     <path class="ln" d="M168 240 q12 10 24 0"/>
     <circle class="fill" data-n="볼" cx="128" cy="240" r="10"/><circle class="fill" data-n="볼" cx="232" cy="240" r="10"/>
     <polygon class="fill" data-n="별" points="${star(62,70,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(298,64,16,7,5)}"/><polygon class="fill" data-n="별" points="${star(180,62,12,5,5)}"/></svg>`},
+{id:"foxbaker", name:"케이크 굽는 여우", svg:`<svg ${A}>${BG()}
+    <path class="fill" data-n="꼬리" d="M70 262 C24 254 18 200 40 178 C52 214 70 226 92 230 Z"/>
+    <path class="fill" data-n="몸" d="M66 282 C60 220 76 186 110 184 C144 186 160 220 154 282 Z"/>
+    <path class="fill" data-n="앞치마" d="M88 282 V214 H132 V282 Z"/><path class="ln" d="M100 250 h20 v14 h-20 Z"/>
+    <path class="fill" data-n="귀" d="M66 112 L62 50 L104 82 Z"/><path class="fill" data-n="귀" d="M154 112 L158 50 L116 82 Z"/>
+    <path class="fill" data-n="얼굴" d="M60 118 C60 80 90 70 110 70 C130 70 160 80 160 118 C160 150 130 176 110 182 C90 176 60 150 60 118 Z"/>
+    <path class="fill" data-n="입 주변" d="M82 140 C96 128 124 128 138 140 C132 164 120 178 110 182 C100 178 88 164 82 140 Z"/>
+    <path class="fill" data-n="요리사 모자" d="M80 84 C62 76 66 42 90 48 C94 22 126 22 130 48 C154 42 158 76 140 84 Z"/>
+    <circle class="dk" cx="93" cy="118" r="6"/><circle class="wt" cx="95" cy="116" r="2"/><circle class="dk" cx="127" cy="118" r="6"/><circle class="wt" cx="129" cy="116" r="2"/>
+    <ellipse class="dk" cx="110" cy="150" rx="7" ry="5"/><path class="ln" d="M102 162 q8 6 16 0"/>
+    ${GR("탁자",280)}
+    <ellipse class="fill" data-n="접시" cx="258" cy="280" rx="72" ry="12"/>
+    <rect class="fill" data-n="아래층" x="198" y="216" width="120" height="60" rx="10"/>
+    <path class="fill" data-n="크림" d="M198 228 Q198 216 210 216 H306 Q318 216 318 228 V236 q-10 12 -20 0 q-10 12 -20 0 q-10 12 -20 0 q-10 12 -20 0 q-10 12 -20 0 q-10 12 -20 0 Z"/>
+    <rect class="fill" data-n="위층" x="218" y="170" width="80" height="50" rx="10"/>
+    <path class="fill" data-n="크림" d="M218 182 Q218 170 230 170 H286 Q298 170 298 182 V188 q-10 10 -20 0 q-10 10 -20 0 q-10 10 -20 0 q-10 10 -20 0 Z"/>
+    <path class="fill" data-n="딸기" d="M258 174 C238 162 238 140 258 140 C278 140 278 162 258 174 Z"/>
+    <path class="ln" d="M248 140 l10 -10 l10 10"/>
+    <ellipse class="fill" data-n="팔" cx="164" cy="214" rx="24" ry="11" transform="rotate(-20 164 214)"/>
+    <path class="fill" data-n="짤주머니" d="M164 204 C166 188 186 186 194 198 L216 196 L198 214 C190 230 162 222 164 204 Z"/><path class="ln" d="M172 196 l10 22"/></svg>`},

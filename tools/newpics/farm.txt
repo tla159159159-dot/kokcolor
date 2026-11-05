@@ -95,3 +95,20 @@
     <ellipse class="fill" data-n="새" cx="268" cy="142" rx="18" ry="13"/><circle class="fill" data-n="새" cx="282" cy="128" r="10"/><polygon class="fill" data-n="부리" points="291,126 302,129 291,133"/><circle class="dk" cx="284" cy="126" r="3"/>
     <circle class="fill" data-n="호박" cx="76" cy="292" r="24"/><path class="ln" d="M76 268 V258"/>
     <circle class="fill" data-n="호박" cx="290" cy="300" r="18"/></svg>`},
+{id:"pigcart", name:"사과 수레 아기돼지", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="304" cy="58" r="24"/><g class="ln"><path d="M304 22 v-8 M340 58 h8 M279 33 l-6 -6 M329 33 l6 -6"/></g>
+    ${GR("풀밭",298)}
+    <path class="ln" d="M250 210 L312 180"/>
+    <rect class="fill" data-n="손잡이" x="300" y="168" width="36" height="14" rx="7" transform="rotate(-24 318 175)"/>
+    <path class="fill" data-n="귀" d="M136 120 C118 100 120 82 132 84 C148 88 160 98 162 108 Z"/><path class="fill" data-n="귀" d="M204 120 C222 100 220 82 208 84 C192 88 180 98 178 108 Z"/>
+    <circle class="fill" data-n="얼굴" cx="170" cy="148" r="44"/>
+    <ellipse class="fill" data-n="코" cx="170" cy="160" rx="17" ry="12"/><circle class="dk" cx="164" cy="160" r="3"/><circle class="dk" cx="176" cy="160" r="3"/>
+    <circle class="dk" cx="150" cy="136" r="6"/><circle class="wt" cx="152" cy="134" r="2"/><circle class="dk" cx="190" cy="136" r="6"/><circle class="wt" cx="192" cy="134" r="2"/>
+    <circle class="fill" data-n="볼" cx="138" cy="162" r="9"/><circle class="fill" data-n="볼" cx="202" cy="162" r="9"/>
+    <path class="ln" d="M162 178 q8 6 16 0"/>
+    <circle class="fill" data-n="사과" cx="104" cy="200" r="26"/><circle class="fill" data-n="사과" cx="236" cy="200" r="26"/>
+    <circle class="fill" data-n="사과" cx="170" cy="204" r="22"/><path class="ln" d="M104 174 v-8 M236 174 v-8 M170 182 v-6"/><path class="fill" data-n="사과잎" d="M106 168 q12 -12 22 -4 q-10 10 -22 4 Z"/><path class="fill" data-n="사과잎" d="M238 168 q12 -12 22 -4 q-10 10 -22 4 Z"/>
+    <path class="fill" data-n="수레" d="M64 208 H276 L254 268 H86 Z"/><path class="ln" d="M76 236 H264"/>
+    <circle class="fill" data-n="바퀴" cx="110" cy="276" r="24"/><circle class="fill" data-n="바퀴" cx="230" cy="276" r="24"/>
+    <path class="ln" d="M110 256 v40 M90 276 h40 M230 256 v40 M210 276 h40"/>
+    <circle class="dk" cx="110" cy="276" r="6"/><circle class="dk" cx="230" cy="276" r="6"/></svg>`},

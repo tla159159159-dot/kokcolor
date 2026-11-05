@@ -107,3 +107,22 @@
     <ellipse class="wt" cx="104" cy="94" rx="9" ry="24" transform="rotate(35 104 94)"/>
     <path class="fill" data-n="받침" d="M96 266 h168 l20 60 q2 12 -12 12 h-184 q-14 0 -12 -12 Z"/>
     <path class="fill" data-n="받침띠" d="M88 292 H272 L278 310 H82 Z"/></svg>`},
+{id:"skatepenguin", name:"스케이트 타는 펭귄", svg:`<svg ${A}>${BG()}
+    <path class="ln" d="M50 46 v20 M40 56 h20 M43 49 l14 14 M57 49 l-14 14 M228 36 v16 M220 44 h16"/>
+    <rect class="fill" data-n="줄기" x="292" y="240" width="18" height="36"/>
+    <path class="fill" data-n="트리" d="M301 78 L338 150 H320 L346 246 H256 L282 150 H264 Z"/>
+    <polygon class="fill" data-n="별" points="${star(301,70,15,6,5)}"/>
+    ${GR("얼음",272)}<path class="ln" d="M30 318 q60 -16 120 0 t120 0"/>
+    <ellipse class="fill" data-n="날개" cx="90" cy="184" rx="34" ry="14" transform="rotate(-30 90 184)"/>
+    <ellipse class="fill" data-n="날개" cx="210" cy="184" rx="34" ry="14" transform="rotate(30 210 184)"/>
+    <rect class="fill" data-n="스케이트" x="106" y="240" width="40" height="28" rx="9"/><rect class="fill" data-n="스케이트" x="154" y="240" width="40" height="28" rx="9"/>
+    <path class="ln" d="M102 280 h50 M150 280 h50 M114 268 v12 M138 268 v12 M162 268 v12 M186 268 v12"/>
+    <ellipse class="fill" data-n="몸" cx="150" cy="176" rx="58" ry="76"/>
+    <path class="fill" data-n="배" d="M150 112 C122 112 112 134 120 152 C106 184 110 234 150 246 C190 234 194 184 180 152 C188 134 178 112 150 112 Z"/>
+    <circle class="dk" cx="136" cy="140" r="6"/><circle class="wt" cx="138" cy="138" r="2"/><circle class="dk" cx="164" cy="140" r="6"/><circle class="wt" cx="166" cy="138" r="2"/>
+    <path class="fill" data-n="부리" d="M139 154 H161 L150 168 Z"/>
+    <path class="fill" data-n="털모자" d="M100 118 C100 80 122 62 150 62 C178 62 200 80 200 118 Z"/>
+    <rect class="fill" data-n="모자 테두리" x="96" y="108" width="108" height="18" rx="9"/>
+    <circle class="fill" data-n="방울" cx="150" cy="56" r="14"/>
+    <path class="fill" data-n="목도리" d="M100 184 Q150 202 200 184 L200 200 Q150 218 100 200 Z"/>
+    <path class="fill" data-n="목도리 끝" d="M168 204 L190 200 L198 242 L176 246 Z"/></svg>`},

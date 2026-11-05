@@ -127,3 +127,20 @@
     <ellipse class="fill" data-n="앞발" cx="144" cy="248" rx="17" ry="13"/>
     <ellipse class="fill" data-n="앞발" cx="216" cy="248" rx="17" ry="13"/>
     <path class="fill" data-n="물" d="M8 284 q21.5 -14 43 0 t43 0 t43 0 t43 0 t43 0 t43 0 t43 0 t43 0 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/></svg>`},
+{id:"whalecastle", name:"성을 업은 고래", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="306" cy="56" r="24"/><g class="ln"><path d="M306 20 v-8 M338 56 h8 M281 31 l-6 -6 M331 81 l6 6"/></g>
+    <path class="fill" data-n="물줄기" d="M70 190 C64 150 50 130 34 126 C52 114 68 128 75 146 C80 122 98 110 114 116 C98 128 88 150 86 190 Z"/>
+    <rect class="fill" data-n="왼쪽 탑" x="126" y="124" width="36" height="70"/>
+    <rect class="fill" data-n="오른쪽 탑" x="210" y="124" width="36" height="70"/>
+    <rect class="fill" data-n="가운데 탑" x="158" y="92" width="56" height="100"/>
+    <path class="fill" data-n="지붕" d="M120 126 L144 86 L168 126 Z"/><path class="fill" data-n="지붕" d="M204 126 L228 86 L252 126 Z"/>
+    <path class="ln" d="M186 48 V22"/><path class="fill" data-n="깃발" d="M186 22 L214 30 L186 38 Z"/>
+    <path class="fill" data-n="지붕" d="M152 94 L186 46 L220 94 Z"/>
+    <path class="fill" data-n="문" d="M172 180 V158 a14 14 0 0 1 28 0 V180 Z"/>
+    <path class="ln" d="M138 156 v-10 a6 6 0 0 1 12 0 v10 Z M222 156 v-10 a6 6 0 0 1 12 0 v10 Z M180 126 v-8 a6 6 0 0 1 12 0 v8 Z"/>
+    <ellipse class="fill" data-n="꼬리" cx="284" cy="194" rx="26" ry="11" transform="rotate(-70 284 194)"/>
+    <ellipse class="fill" data-n="꼬리" cx="314" cy="210" rx="26" ry="11" transform="rotate(-15 314 210)"/>
+    <path class="fill" data-n="몸통" d="M26 270 C26 206 84 176 164 176 C214 176 252 196 270 222 L290 210 L298 222 C284 238 278 256 278 270 Z"/>
+    <circle class="dk" cx="78" cy="224" r="7"/><circle class="wt" cx="80" cy="222" r="2.5"/>
+    <path class="ln" d="M46 244 q26 14 52 4"/><ellipse class="fill" data-n="볼" cx="110" cy="240" rx="11" ry="8"/>
+    <path class="fill" data-n="바다" d="M8 276 q21.5 -14 43 0 q21.5 14 43 0 q21.5 -14 43 0 q21.5 14 43 0 q21.5 -14 43 0 q21.5 14 43 0 q21.5 -14 43 0 q21.5 14 43 0 V326 a26 26 0 0 1 -26 26 H34 a26 26 0 0 1 -26 -26 Z"/></svg>`},
