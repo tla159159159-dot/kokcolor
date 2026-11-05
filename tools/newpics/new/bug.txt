@@ -1,0 +1,53 @@
+  {id:"bleafumbrella", name:"나뭇잎 우산 무당벌레", svg:`<svg ${A}>${BG()}
+    ${GR("땅",304)}
+    <path class="fill" data-n="빗방울" d="M46 160 q-12 18 0 24 q12 -6 0 -24 Z"/><path class="fill" data-n="빗방울" d="M318 170 q-12 18 0 24 q12 -6 0 -24 Z"/>
+    <path class="fill" data-n="빗방울" d="M40 40 q-12 18 0 24 q12 -6 0 -24 Z"/><path class="fill" data-n="빗방울" d="M320 30 q-12 18 0 24 q12 -6 0 -24 Z"/>
+    <rect class="fill" data-n="줄기" x="226" y="120" width="10" height="122" rx="5"/>
+    <path class="fill" data-n="나뭇잎" d="M84 136 Q200 6 316 136 Q258 116 200 136 Q142 116 84 136 Z"/>
+    <path class="ln" d="M200 132 V58 M200 110 L160 84 M200 110 L240 84 M200 86 L176 68 M200 86 L224 68"/>
+    <ellipse class="fill" data-n="발" cx="154" cy="314" rx="18" ry="9"/><ellipse class="fill" data-n="발" cx="206" cy="314" rx="18" ry="9"/>
+    <circle class="fill" data-n="몸통" cx="180" cy="256" r="56"/>
+    <path class="ln" d="M180 214 V312"/>
+    <circle class="fill" data-n="점" cx="152" cy="248" r="11"/><circle class="fill" data-n="점" cx="208" cy="248" r="11"/>
+    <circle class="fill" data-n="점" cx="156" cy="286" r="9"/><circle class="fill" data-n="점" cx="204" cy="286" r="9"/>
+    <path class="ln" d="M166 170 L154 150 M194 170 L206 150"/><circle class="dk" cx="153" cy="148" r="5"/><circle class="dk" cx="207" cy="148" r="5"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="196" r="32"/>
+    <circle class="dk" cx="168" cy="192" r="5"/><circle class="wt" cx="170" cy="190" r="2"/><circle class="dk" cx="192" cy="192" r="5"/><circle class="wt" cx="194" cy="190" r="2"/>
+    <circle class="fill" data-n="볼" cx="160" cy="206" r="6"/><circle class="fill" data-n="볼" cx="200" cy="206" r="6"/>
+    <path class="ln" d="M172 208 q8 7 16 0"/>
+    <ellipse class="fill" data-n="팔" cx="228" cy="236" rx="10" ry="16"/>
+    <ellipse class="fill" data-n="물웅덩이" cx="290" cy="328" rx="36" ry="10"/></svg>`},
+  {id:"bantberry", name:"딸기 나르는 개미", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="306" cy="56" r="26"/>
+    ${GR("땅",300)}
+    <path class="fill" data-n="풀" d="M30 300 L40 266 L50 300 L60 272 L70 300 Z"/><path class="fill" data-n="풀" d="M290 300 L300 270 L310 300 L320 262 L330 300 Z"/>
+    <path class="ln" d="M150 240 L196 196 M176 246 L214 200"/>
+    <path class="fill" data-n="딸기" d="M96 112 Q170 70 244 112 Q240 170 172 198 Q100 170 96 112 Z"/>
+    <path class="fill" data-n="꼭지" d="M118 108 L136 80 L152 98 L170 72 L188 98 L204 80 L222 108 Q170 94 118 108 Z"/>
+    <ellipse class="dk" cx="140" cy="128" rx="3" ry="5"/><ellipse class="dk" cx="172" cy="122" rx="3" ry="5"/><ellipse class="dk" cx="204" cy="128" rx="3" ry="5"/>
+    <ellipse class="dk" cx="152" cy="156" rx="3" ry="5"/><ellipse class="dk" cx="190" cy="154" rx="3" ry="5"/><ellipse class="dk" cx="172" cy="178" rx="3" ry="5"/>
+    <path class="ln" d="M150 258 L130 296 M168 262 L170 298 M186 258 L208 296"/>
+    <ellipse class="fill" data-n="발" cx="126" cy="300" rx="12" ry="6"/><ellipse class="fill" data-n="발" cx="170" cy="302" rx="12" ry="6"/><ellipse class="fill" data-n="발" cx="212" cy="300" rx="12" ry="6"/>
+    <ellipse class="fill" data-n="엉덩이" cx="102" cy="250" rx="42" ry="32"/>
+    <ellipse class="fill" data-n="가슴" cx="168" cy="248" rx="26" ry="20"/>
+    <path class="ln" d="M232 196 Q236 166 262 160 M250 206 Q270 184 292 190"/><circle class="dk" cx="263" cy="159" r="5"/><circle class="dk" cx="293" cy="190" r="5"/>
+    <circle class="fill" data-n="머리" cx="232" cy="228" r="32"/>
+    <circle class="dk" cx="242" cy="222" r="5"/><circle class="wt" cx="244" cy="220" r="2"/>
+    <circle class="fill" data-n="볼" cx="250" cy="238" r="6"/>
+    <path class="ln" d="M232 244 q8 6 16 0"/>
+    <circle class="fill" data-n="손" cx="196" cy="196" r="9"/><circle class="fill" data-n="손" cx="214" cy="200" r="9"/></svg>`},
+  {id:"bapplecaterpillar", name:"사과집 애벌레", svg:`<svg ${A}>${BG()}
+    ${GR("풀밭",300)}
+    <rect class="fill" data-n="꼭지" x="174" y="56" width="12" height="40" rx="6"/>
+    <path class="fill" data-n="잎" d="M186 72 Q220 40 256 56 Q226 90 186 72 Z"/>
+    <path class="fill" data-n="사과" d="M180 100 C120 64 52 104 60 196 C68 286 140 320 180 300 C220 320 292 286 300 196 C308 104 240 64 180 100 Z"/>
+    <circle class="fill" data-n="창문" cx="200" cy="176" r="46"/>
+    <path class="ln" d="M190 150 L180 128 M212 150 L222 128"/><circle class="dk" cx="179" cy="126" r="5"/><circle class="dk" cx="223" cy="126" r="5"/>
+    <circle class="fill" data-n="애벌레 얼굴" cx="200" cy="176" r="30"/>
+    <circle class="dk" cx="190" cy="172" r="5"/><circle class="wt" cx="192" cy="170" r="2"/><circle class="dk" cx="210" cy="172" r="5"/><circle class="wt" cx="212" cy="170" r="2"/>
+    <circle class="fill" data-n="볼" cx="182" cy="186" r="5"/><circle class="fill" data-n="볼" cx="218" cy="186" r="5"/>
+    <path class="ln" d="M193 188 q7 6 14 0"/>
+    <ellipse class="fill" data-n="손" cx="178" cy="214" rx="11" ry="8"/><ellipse class="fill" data-n="손" cx="222" cy="214" rx="11" ry="8"/>
+    <path class="fill" data-n="문" d="M100 296 V252 a24 24 0 0 1 48 0 V296 Z"/><circle class="dk" cx="138" cy="274" r="4"/>
+    <polygon class="fill" data-n="꽃" points="${star(50,326,14,6,5)}"/><polygon class="fill" data-n="꽃" points="${star(310,326,14,6,5)}"/>
+    <ellipse class="fill" data-n="버섯갓" cx="300" cy="280" rx="26" ry="16"/><rect class="fill" data-n="버섯기둥" x="292" y="282" width="16" height="22" rx="5"/></svg>`},

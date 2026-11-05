@@ -1,0 +1,61 @@
+  {id:"ahamsterseed", name:"해바라기씨 먹는 햄스터", svg:`<svg ${A}>${BG()}
+    ${GR("바닥",296)}
+    <path class="ln" d="M308 296 V150"/>
+    <ellipse class="fill" data-n="잎" cx="326" cy="236" rx="20" ry="10" transform="rotate(-30 326 236)"/>
+    ${rays(308,108,24,44,9,"꽃잎")}
+    <circle class="fill" data-n="꽃 가운데" cx="308" cy="108" r="26"/>
+    <circle class="fill" data-n="귀" cx="122" cy="112" r="22"/><circle class="fill" data-n="귀" cx="226" cy="112" r="22"/>
+    <circle class="fill" data-n="귓속" cx="122" cy="112" r="11"/><circle class="fill" data-n="귓속" cx="226" cy="112" r="11"/>
+    <ellipse class="fill" data-n="몸" cx="174" cy="204" rx="96" ry="98"/>
+    <ellipse class="fill" data-n="배" cx="174" cy="238" rx="58" ry="56"/>
+    <circle class="fill" data-n="볼" cx="112" cy="196" r="22"/><circle class="fill" data-n="볼" cx="236" cy="196" r="22"/>
+    <circle class="dk" cx="146" cy="166" r="8"/><circle class="wt" cx="149" cy="163" r="3"/><circle class="dk" cx="202" cy="166" r="8"/><circle class="wt" cx="205" cy="163" r="3"/>
+    <ellipse class="dk" cx="174" cy="184" rx="6" ry="4"/><path class="ln" d="M164 194 q5 6 10 0 q5 6 10 0"/>
+    <ellipse class="fill" data-n="해바라기씨" cx="174" cy="226" rx="15" ry="24"/>
+    <path class="ln" d="M174 208 v36"/>
+    <ellipse class="fill" data-n="앞발" cx="152" cy="232" rx="14" ry="11"/><ellipse class="fill" data-n="앞발" cx="196" cy="232" rx="14" ry="11"/>
+    <ellipse class="fill" data-n="뒷발" cx="128" cy="298" rx="24" ry="12"/><ellipse class="fill" data-n="뒷발" cx="220" cy="298" rx="24" ry="12"/>
+    <ellipse class="fill" data-n="씨앗" cx="54" cy="314" rx="9" ry="14" transform="rotate(40 54 314)"/><ellipse class="fill" data-n="씨앗" cx="84" cy="326" rx="9" ry="14" transform="rotate(-30 84 326)"/></svg>`},
+  {id:"aslothbranch", name:"나뭇가지 나무늘보", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="해" cx="312" cy="300" r="22"/>
+    <path class="fill" data-n="구름" d="M30 316 a16 16 0 0 1 4 -30 a20 20 0 0 1 36 -6 a16 16 0 0 1 12 36 Z"/>
+    <path class="ln" d="M60 96 q-8 40 6 80 M300 96 q10 30 -2 60"/>
+    <ellipse class="fill" data-n="덩굴잎" cx="66" cy="182" rx="10" ry="16"/><ellipse class="fill" data-n="덩굴잎" cx="298" cy="162" rx="10" ry="16"/>
+    <path class="fill" data-n="팔" d="M112 214 Q88 150 120 86 L156 92 Q128 150 152 206 Z"/>
+    <path class="fill" data-n="팔" d="M248 214 Q272 150 240 86 L204 92 Q232 150 208 206 Z"/>
+    <rect class="fill" data-n="나뭇가지" x="16" y="72" width="328" height="26" rx="13"/>
+    <ellipse class="fill" data-n="손" cx="138" cy="78" rx="22" ry="12"/><ellipse class="fill" data-n="손" cx="222" cy="78" rx="22" ry="12"/>
+    <path class="ln" d="M130 88 v-6 M140 89 v-6 M150 88 v-6 M214 88 v-6 M224 89 v-6 M234 88 v-6"/>
+    <ellipse class="fill" data-n="잎" cx="54" cy="58" rx="22" ry="11" transform="rotate(-20 54 58)"/>
+    <ellipse class="fill" data-n="잎" cx="282" cy="56" rx="22" ry="11" transform="rotate(20 282 56)"/>
+    <ellipse class="fill" data-n="잎" cx="320" cy="64" rx="18" ry="9" transform="rotate(-20 320 64)"/>
+    <ellipse class="fill" data-n="다리" cx="148" cy="290" rx="22" ry="30"/><ellipse class="fill" data-n="다리" cx="212" cy="290" rx="22" ry="30"/>
+    <ellipse class="fill" data-n="몸" cx="180" cy="222" rx="74" ry="78"/>
+    <ellipse class="fill" data-n="얼굴" cx="180" cy="196" rx="52" ry="40"/>
+    <ellipse class="fill" data-n="눈무늬" cx="160" cy="194" rx="18" ry="11" transform="rotate(20 160 194)"/>
+    <ellipse class="fill" data-n="눈무늬" cx="200" cy="194" rx="18" ry="11" transform="rotate(-20 200 194)"/>
+    <circle class="dk" cx="160" cy="194" r="6"/><circle class="wt" cx="162" cy="192" r="2"/><circle class="dk" cx="200" cy="194" r="6"/><circle class="wt" cx="202" cy="192" r="2"/>
+    <ellipse class="dk" cx="180" cy="208" rx="6" ry="4"/><path class="ln" d="M168 218 q12 10 24 0"/>
+    <ellipse class="fill" data-n="배" cx="180" cy="262" rx="40" ry="28"/></svg>`},
+  {id:"adeercrown", name:"꽃관 쓴 아기사슴", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="반짝이" points="${star(48,60,18,7,4)}"/>
+    <polygon class="fill" data-n="반짝이" points="${star(314,70,16,6,4)}"/>
+    <ellipse class="fill" data-n="몸" cx="180" cy="290" rx="74" ry="54"/>
+    <circle class="fill" data-n="점무늬" cx="128" cy="296" r="9"/><circle class="fill" data-n="점무늬" cx="232" cy="296" r="9"/><rect class="fill" data-n="앞다리" x="140" y="262" width="28" height="76" rx="13"/><rect class="fill" data-n="앞다리" x="192" y="262" width="28" height="76" rx="13"/>
+    <path class="fill" data-n="발굽" d="M140 322 h28 v6 a10 10 0 0 1 -10 10 h-8 a10 10 0 0 1 -10 -10 Z"/><path class="fill" data-n="발굽" d="M192 322 h28 v6 a10 10 0 0 1 -10 10 h-8 a10 10 0 0 1 -10 -10 Z"/>
+    <ellipse class="fill" data-n="귀" cx="98" cy="150" rx="46" ry="20" transform="rotate(-35 98 150)"/>
+    <ellipse class="fill" data-n="귀" cx="262" cy="150" rx="46" ry="20" transform="rotate(35 262 150)"/>
+    <ellipse class="fill" data-n="귓속" cx="100" cy="150" rx="28" ry="9" transform="rotate(-35 100 150)"/>
+    <ellipse class="fill" data-n="귓속" cx="260" cy="150" rx="28" ry="9" transform="rotate(35 260 150)"/>
+    <ellipse class="fill" data-n="얼굴" cx="180" cy="184" rx="74" ry="70"/>
+    <ellipse class="fill" data-n="주둥이" cx="180" cy="222" rx="32" ry="22"/>
+    <circle class="fill" data-n="이마 점" cx="166" cy="140" r="6"/><circle class="fill" data-n="이마 점" cx="194" cy="140" r="6"/><circle class="fill" data-n="이마 점" cx="180" cy="152" r="5"/>
+    <circle class="dk" cx="150" cy="180" r="9"/><circle class="wt" cx="153" cy="176" r="3"/><circle class="dk" cx="210" cy="180" r="9"/><circle class="wt" cx="213" cy="176" r="3"/>
+    <ellipse class="dk" cx="180" cy="212" rx="8" ry="5"/><path class="ln" d="M170 230 q10 8 20 0"/>
+    <circle class="fill" data-n="볼" cx="128" cy="210" r="11"/><circle class="fill" data-n="볼" cx="232" cy="210" r="11"/>
+    <path class="ln" d="M112 132 Q180 96 248 132"/>
+    <polygon class="fill" data-n="꽃" points="${star(120,124,20,10,5)}"/>
+    <polygon class="fill" data-n="꽃" points="${star(180,106,24,12,5)}"/>
+    <polygon class="fill" data-n="꽃" points="${star(240,124,20,10,5)}"/>
+    <circle class="fill" data-n="꽃술" cx="180" cy="108" r="7"/>
+    <ellipse class="fill" data-n="잎" cx="150" cy="110" rx="12" ry="6" transform="rotate(-20 150 110)"/><ellipse class="fill" data-n="잎" cx="210" cy="110" rx="12" ry="6" transform="rotate(20 210 110)"/></svg>`},

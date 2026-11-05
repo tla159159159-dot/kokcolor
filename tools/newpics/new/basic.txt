@@ -1,0 +1,54 @@
+  {id:"amailbird", name:"우체통과 파랑새", svg:`<svg ${A}>${BG()}
+    ${GR("잔디",298)}
+    <path class="fill" data-n="구름" d="M176 70 a16 16 0 0 1 4 -30 a20 20 0 0 1 36 -6 a16 16 0 0 1 12 36 Z"/>
+    <path class="fill" data-n="구름" d="M262 74 a16 16 0 0 1 4 -30 a20 20 0 0 1 36 -6 a16 16 0 0 1 12 36 Z"/>
+    <rect class="fill" data-n="기둥" x="166" y="210" width="28" height="100" rx="4"/>
+    <rect class="fill" data-n="깃대" x="262" y="128" width="10" height="66" rx="4"/>
+    <rect class="fill" data-n="깃발" x="262" y="116" width="40" height="26" rx="5"/>
+    <path class="fill" data-n="우체통" d="M92 218 V150 Q92 100 180 100 Q268 100 268 150 V218 Z"/>
+    <rect class="fill" data-n="편지" x="150" y="114" width="60" height="40" rx="3" transform="rotate(-8 180 134)"/>
+    <path class="ln" d="M148 122 L180 140 L210 114"/>
+    <rect class="fill" data-n="투입구" x="122" y="146" width="116" height="14" rx="7"/>
+    <path class="fill" data-n="하트" d="M180 206 c-26 -14 -26 -38 -8 -38 c5 0 8 3 8 7 c0 -4 3 -7 8 -7 c18 0 18 24 -8 38 Z"/>
+    <path class="fill" data-n="새 꼬리" d="M88 84 L56 70 L60 96 Z"/>
+    <ellipse class="fill" data-n="파랑새" cx="112" cy="84" rx="32" ry="24"/>
+    <ellipse class="fill" data-n="날개" cx="106" cy="88" rx="16" ry="11" transform="rotate(-15 106 88)"/>
+    <polygon class="fill" data-n="부리" points="142,76 160,82 142,90"/>
+    <circle class="dk" cx="128" cy="76" r="5"/><circle class="wt" cx="130" cy="74" r="2"/>
+    <path class="ln" d="M60 298 v-34 M300 298 v-34"/>
+    <path class="fill" data-n="꽃" d="M42 268 q-6 -30 6 -38 l6 10 l6 -10 l6 10 l6 -10 q12 8 6 38 Z"/>
+    <path class="fill" data-n="꽃" d="M282 268 q-6 -30 6 -38 l6 10 l6 -10 l6 10 l6 -10 q12 8 6 38 Z"/></svg>`},
+  {id:"abackpack", name:"곰돌이 책가방", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="반짝이" points="${star(50,70,18,7,4)}"/>
+    <polygon class="fill" data-n="반짝이" points="${star(314,300,16,6,4)}"/>
+    <path class="fill" data-n="손잡이" d="M144 98 Q144 46 180 46 Q216 46 216 98 H200 Q200 62 180 62 Q160 62 160 98 Z"/>
+    <polygon class="fill" data-n="연필" points="278,206 278,140 300,140 300,206"/>
+    <polygon class="fill" data-n="연필심" points="278,140 289,114 300,140"/>
+    <rect class="fill" data-n="가방" x="86" y="90" width="188" height="238" rx="48"/>
+    <rect class="fill" data-n="옆주머니" x="268" y="196" width="40" height="96" rx="14"/>
+    <path class="fill" data-n="덮개" d="M86 150 Q86 90 138 90 H222 Q274 90 274 150 V172 Q180 200 86 172 Z"/>
+    <rect class="fill" data-n="잠금장치" x="164" y="168" width="32" height="32" rx="8"/>
+    <rect class="fill" data-n="앞주머니" x="114" y="222" width="132" height="86" rx="22"/>
+    <path class="ln" d="M130 232 h100"/>
+    <circle class="fill" data-n="곰돌이 귀" cx="160" cy="250" r="11"/><circle class="fill" data-n="곰돌이 귀" cx="200" cy="250" r="11"/>
+    <circle class="fill" data-n="곰돌이 패치" cx="180" cy="272" r="26"/>
+    <circle class="dk" cx="171" cy="266" r="3.5"/><circle class="dk" cx="189" cy="266" r="3.5"/><ellipse class="dk" cx="180" cy="276" rx="4.5" ry="3"/>
+    <path class="ln" d="M174 284 q6 5 12 0"/>
+    <path class="ln" d="M96 196 L72 226"/>
+    <polygon class="fill" data-n="별 장식" points="${star(64,248,26,12,5)}"/></svg>`},
+  {id:"apicnic", name:"피크닉 바구니", svg:`<svg ${A}>${BG()}
+    ${GR("잔디",286)}
+    <circle class="fill" data-n="해" cx="58" cy="62" r="26"/><g class="ln"><path d="M58 22 v-8 M98 62 h8 M30 34 l-6 -6 M86 34 l6 -6"/></g>
+    <polygon class="fill" data-n="돗자리" points="22,340 338,340 306,266 54,266"/>
+    <path class="ln" d="M110 266 L90 340 M180 266 V340 M250 266 L270 340 M40 302 H320"/>
+    <path class="fill" data-n="손잡이" d="M106 196 Q106 84 180 84 Q254 84 254 196 H238 Q238 102 180 102 Q122 102 122 196 Z"/>
+    <rect class="fill" data-n="바게트" x="204" y="104" width="34" height="112" rx="17" transform="rotate(25 221 160)"/>
+    <path class="ln" d="M226 128 l14 6 M218 146 l14 6 M210 164 l14 6"/>
+    <circle class="fill" data-n="사과" cx="140" cy="178" r="26"/>
+    <path class="ln" d="M140 154 q2 -10 6 -14"/><ellipse class="fill" data-n="잎" cx="156" cy="146" rx="12" ry="6" transform="rotate(-25 156 146)"/>
+    <path class="fill" data-n="천" d="M92 200 Q118 172 148 192 Q180 170 212 192 Q242 172 268 200 V212 H92 Z"/>
+    <path class="fill" data-n="바구니" d="M86 210 H274 L252 300 H108 Z"/>
+    <path class="ln" d="M98 240 H262 M104 270 H256 M140 212 L146 298 M180 212 V298 M220 212 L214 298"/>
+    <rect class="fill" data-n="테두리" x="78" y="200" width="204" height="22" rx="11"/>
+    <rect class="fill" data-n="컵" x="290" y="232" width="40" height="52" rx="8"/>
+    <path class="ln" d="M302 232 L310 206"/></svg>`},

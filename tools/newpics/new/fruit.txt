@@ -1,0 +1,46 @@
+  {id:"bfruitbasket", name:"과일 바구니", svg:`<svg ${A}>${BG()}
+    ${GR("탁자",300)}
+    <path class="fill" data-n="손잡이" d="M78 204 Q180 26 282 204 H262 Q180 58 98 204 Z"/>
+    <path class="fill" data-n="바나나" d="M196 184 Q206 128 262 118 Q270 124 262 130 Q226 140 218 190 Z"/>
+    <circle class="fill" data-n="포도" cx="262" cy="170" r="16"/><circle class="fill" data-n="포도" cx="242" cy="186" r="16"/><circle class="fill" data-n="포도" cx="276" cy="192" r="16"/>
+    <circle class="fill" data-n="오렌지" cx="180" cy="170" r="36"/>
+    <circle class="dk" cx="172" cy="160" r="2"/><circle class="dk" cx="188" cy="166" r="2"/><circle class="dk" cx="178" cy="180" r="2"/>
+    <rect class="fill" data-n="사과 꼭지" x="114" y="130" width="8" height="22" rx="4"/>
+    <path class="fill" data-n="사과 잎" d="M122 140 Q140 122 156 132 Q140 150 122 140 Z"/>
+    <path class="fill" data-n="사과" d="M118 150 C96 136 72 156 78 186 C84 214 108 222 118 214 C128 222 152 214 158 186 C164 156 140 136 118 150 Z"/>
+    <path class="fill" data-n="바구니" d="M62 210 H298 L274 308 Q180 326 86 308 Z"/>
+    <path class="ln" d="M110 220 L120 314 M150 220 L154 318 M210 220 L206 318 M250 220 L240 314 M72 250 H288 M80 282 H280"/>
+    <rect class="fill" data-n="테두리" x="52" y="198" width="256" height="22" rx="11"/>
+    <path class="fill" data-n="리본" d="M180 209 L150 191 V227 Z M180 209 L210 191 V227 Z"/><circle class="fill" data-n="리본" cx="180" cy="209" r="10"/>
+    <polygon class="fill" data-n="반짝이" points="${star(50,70,14,5,4)}"/><polygon class="fill" data-n="반짝이" points="${star(310,74,14,5,4)}"/></svg>`},
+  {id:"bavocadobaby", name:"아보카도 친구", svg:`<svg ${A}>${BG()}
+    <polygon class="fill" data-n="반짝이" points="${star(56,70,18,7,4)}"/><polygon class="fill" data-n="반짝이" points="${star(306,80,15,6,4)}"/>
+    <ellipse class="fill" data-n="손" cx="76" cy="226" rx="16" ry="12" transform="rotate(-30 76 226)"/>
+    <ellipse class="fill" data-n="손" cx="284" cy="226" rx="16" ry="12" transform="rotate(30 284 226)"/>
+    <ellipse class="fill" data-n="발" cx="146" cy="330" rx="24" ry="12"/><ellipse class="fill" data-n="발" cx="214" cy="330" rx="24" ry="12"/>
+    <path class="fill" data-n="잎" d="M182 52 Q200 18 236 24 Q220 56 182 52 Z"/>
+    <path class="fill" data-n="껍질" d="M180 46 C118 46 80 170 80 230 C80 300 130 328 180 328 C230 328 280 300 280 230 C280 170 242 46 180 46 Z"/>
+    <path class="fill" data-n="과육" d="M180 68 C134 68 100 176 100 230 C100 288 140 310 180 310 C220 310 260 288 260 230 C260 176 226 68 180 68 Z"/>
+    <circle class="fill" data-n="씨" cx="180" cy="232" r="48"/>
+    <circle class="wt" cx="206" cy="206" r="7"/>
+    <circle class="dk" cx="164" cy="228" r="6"/><circle class="wt" cx="166" cy="226" r="2"/><circle class="dk" cx="196" cy="228" r="6"/><circle class="wt" cx="198" cy="226" r="2"/>
+    <circle class="fill" data-n="볼" cx="152" cy="246" r="8"/><circle class="fill" data-n="볼" cx="208" cy="246" r="8"/>
+    <path class="ln" d="M170 248 q10 9 20 0"/>
+    <path class="fill" data-n="하트" d="M180 140 c-20 -12 -20 -30 -8 -30 c5 0 8 3 8 7 c0 -4 3 -7 8 -7 c12 0 12 18 -8 30 Z"/></svg>`},
+  {id:"blemonade", name:"레몬에이드", svg:`<svg ${A}>${BG()}
+    ${GR("탁자",300)}
+    <rect class="fill" data-n="빨대" x="200" y="34" width="14" height="130" rx="6" transform="rotate(12 207 99)"/>
+    <path class="fill" data-n="컵" d="M110 106 H250 L236 306 H124 Z"/>
+    <path class="fill" data-n="레몬에이드" d="M115 146 H245 L233 294 H127 Z"/>
+    <rect class="fill" data-n="얼음" x="138" y="168" width="34" height="34" rx="6" transform="rotate(-12 155 185)"/>
+    <rect class="fill" data-n="얼음" x="186" y="196" width="34" height="34" rx="6" transform="rotate(14 203 213)"/>
+    <circle class="fill" data-n="거품" cx="160" cy="258" r="9"/><circle class="fill" data-n="거품" cx="206" cy="268" r="7"/>
+    <circle class="fill" data-n="레몬 조각" cx="114" cy="112" r="36"/>
+    <circle class="fill" data-n="과육" cx="114" cy="112" r="26"/>
+    <path class="ln" d="M114 86 V138 M88 112 H140 M96 94 L132 130 M132 94 L96 130"/>
+    <path class="fill" data-n="잎" d="M296 236 Q312 210 338 214 Q324 240 296 236 Z"/>
+    <ellipse class="fill" data-n="레몬" cx="294" cy="274" rx="44" ry="34"/>
+    <ellipse class="fill" data-n="레몬" cx="250" cy="274" rx="8" ry="10"/>
+    <circle class="dk" cx="282" cy="268" r="4"/><circle class="dk" cx="306" cy="268" r="4"/>
+    <path class="ln" d="M286 282 q8 6 16 0"/>
+    <polygon class="fill" data-n="반짝이" points="${star(300,70,16,6,4)}"/><polygon class="fill" data-n="반짝이" points="${star(46,220,14,5,4)}"/></svg>`},
