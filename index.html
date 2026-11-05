@@ -54,6 +54,7 @@
     background:linear-gradient(120deg,#8B5CF6 0%,#C05CE0 45%,#FF6FA6 100%);
     box-shadow:0 12px 28px rgba(139,92,246,.28);transition:transform .14s,box-shadow .2s}
   .promo-talent{background:linear-gradient(120deg,#0EA5A4 0%,#22B8CF 50%,#5B8DEF 100%);box-shadow:0 12px 28px rgba(14,165,164,.25)}.promo-talent .promo-btn{color:#0E7C86}
+  .feed-ad{margin:6px 0 18px}
   .promo-dojang{background:linear-gradient(120deg,#6C5CE7 0%,#8E7CF8 55%,#B57CF2 100%);box-shadow:0 12px 28px rgba(108,92,231,.25)}.promo-dojang .promo-btn{color:#5B4BD6}
   .promo-mom{background:linear-gradient(120deg,#F59E0B 0%,#F97316 55%,#EF6461 100%);box-shadow:0 12px 28px rgba(249,115,22,.25)}.promo-mom .promo-btn{color:#D9480F}
   .promo-malang{background:linear-gradient(120deg,#FF8A3D 0%,#FF6F91 60%,#F24E9B 100%);box-shadow:0 12px 28px rgba(255,111,145,.28)}.promo-malang .promo-btn{color:#E0457B}
@@ -774,14 +775,6 @@
     </nav>
   </div>
 
-  <a class="promo promo-talent" data-site="mwojalhae" href="https://mwojalhae.kr/?utm_source=kokcolor&amp;utm_medium=ad&amp;utm_campaign=packs" target="_blank" rel="noopener">
-    <span class="promo-ad">AD</span>
-    <div class="promo-txt">
-      <b class="promo-title">색칠에 푹 빠지는 우리 아이, 뭘 잘할까?</b>
-      <span class="promo-sub">만 5~12세 무료 재능·적성검사 · 기질·학습성향까지 리포트로</span>
-    </div>
-    <span class="promo-btn">무료 검사하기 →</span>
-  </a>
 
   <section class="works" id="works" hidden>
     <div class="works-head"><h2>🖼️ 내 작품</h2><span class="works-sub" id="worksSub">칠하던 그림을 누르면 이어서 칠할 수 있어요</span></div>
@@ -837,14 +830,6 @@
       </div>
     </div>
   </section>
-  <a class="promo promo-malang" data-site="malangenglish" href="https://malangenglish.co.kr/?utm_source=kokcolor&amp;utm_medium=ad&amp;utm_campaign=plans" target="_blank" rel="noopener">
-    <span class="promo-ad">AD</span>
-    <div class="promo-txt">
-      <b class="promo-title">알파벳도 색칠처럼 말랑말랑하게</b>
-      <span class="promo-sub">엄마표 영어 학습지 · 알파벳 따라쓰기·파닉스 무료 샘플 PDF</span>
-    </div>
-    <span class="promo-btn">무료 샘플 받기 →</span>
-  </a>
 
   <section class="reviews" id="reviews">
     <h2 class="plans-title">구매평</h2>
@@ -859,14 +844,6 @@
       <div class="msg" id="rvMsg"></div>
     </form>
   </section>
-  <a class="promo promo-mom" data-site="mommoment" href="https://mommoment.kr/?utm_source=kokcolor&amp;utm_medium=ad&amp;utm_campaign=reviews" target="_blank" rel="noopener">
-    <span class="promo-ad">AD</span>
-    <div class="promo-txt">
-      <b class="promo-title">다른 엄마들은 오늘 뭐 하고 놀았을까?</b>
-      <span class="promo-sub">또래 엄마들의 집콕 놀이·육아 꿀팁 커뮤니티 · 가입 없이 구경</span>
-    </div>
-    <span class="promo-btn">구경하러 가기 →</span>
-  </a>
 
   <section class="faq" id="faq">
     <h2 class="plans-title">자주 묻는 질문</h2>
@@ -4083,6 +4060,14 @@ paintNow();
 
 /* 팩 렌더 */
 const packArea=document.getElementById("packArea");
+
+// 도안 테마 사이사이 광고 배너(3번째·7번째·11번째 테마 다음)
+const FEED_ADS={3:["promo-talent","https://mwojalhae.kr/","우리 아이는 뭘 잘할까?","만 5~12세 무료 재능·기질 검사 · 결과 리포트 바로 확인","무료 검사하기 →"],
+  7:["promo-malang","https://malangenglish.co.kr/","알파벳도 색칠처럼 말랑말랑하게","엄마표 영어 학습지 · 알파벳 따라쓰기·파닉스 무료 샘플 PDF","무료 샘플 받기 →"],
+  11:["promo-mom","https://mommoment.kr/","다른 엄마들은 오늘 뭐 하고 놀았을까?","또래 엄마들의 집콕 놀이·육아 꿀팁 커뮤니티 · 가입 없이 구경","구경하러 가기 →"]};
+function feedAd(n){ const d=FEED_ADS[n]; if(!d) return null; const a=document.createElement("a");
+  a.className="promo feed-ad "+d[0]; a.href=d[1]+"?utm_source=kokcolor&utm_medium=ad&utm_campaign=packs"; a.target="_blank"; a.rel="noopener sponsored";
+  a.innerHTML=`<span class="promo-ad">AD</span><div class="promo-txt"><b class="promo-title">${d[2]}</b><span class="promo-sub">${d[3]}</span></div><span class="promo-btn">${d[4]}</span>`; return a; }
 function renderPacks(){
   packArea.innerHTML="";
   const m=new Date().getMonth(), season=m===9?"halloween":(m>=10?"xmas":null); // 10월 할로윈, 11~12월 크리스마스를 맨 위로
@@ -4090,7 +4075,8 @@ function renderPacks(){
   chips.innerHTML=[...PACKS].sort((x,y)=>(y.id===season)-(x.id===season)).map(pk=>`<button type="button" data-go="${pk.id}">${pk.emoji} ${pk.name}</button>`).join("");
   chips.addEventListener("click",e=>{ const b=e.target.closest("[data-go]"); if(!b) return; const el=document.getElementById("pk-"+b.dataset.go); if(el){ el.scrollIntoView({behavior:"smooth",block:"start"}); ev("theme_chip",{theme:b.dataset.go}); } });
   packArea.appendChild(chips);
-  [...PACKS].sort((x,y)=>(y.id===season)-(x.id===season)).forEach(pk=>{
+  [...PACKS].sort((x,y)=>(y.id===season)-(x.id===season)).forEach((pk,pi)=>{
+    if(pi) { const ad=feedAd(pi); if(ad) packArea.appendChild(ad); }
     const open = packOpen(pk);
     const sec=document.createElement("div"); sec.className="pack"+(open?"":" locked-pack"); sec.id="pk-"+pk.id;
     const head=document.createElement("div"); head.className="pack-head";

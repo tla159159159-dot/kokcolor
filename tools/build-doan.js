@@ -45,6 +45,10 @@ const AD = {
 const AD_BY = { animal: "talent", sea: "talent", bug: "talent", farm: "talent", dino: "talent", plant: "talent", fruit: "malang", snack: "malang", princess: "mom", party: "mom", xmas: "mom", halloween: "mom", music: "mom" };
 const adFor = pid => { const k = AD_BY[pid] || "dojang", [u, n, t, d, b] = AD[k];
   return `<a class="adban ad-${k}" href="${u}?utm_source=kokcolor&amp;utm_medium=ad&amp;utm_campaign=doan" target="_blank" rel="noopener sponsored" aria-label="${n} 광고"><span class="ad-tag">AD</span><span class="ad-txt"><b>${t}</b><span>${d}</span></span><span class="ad-btn">${b}</span></a>`; };
+// 그림 목록 중간(6번째 다음, 적으면 맨 끝)에 그림 칸 모양 광고 1개
+const withAd = (lis, pid) => { const k = AD_BY[pid] || "dojang", [u, n, t, d, b] = AD[k];
+  const ad = `<li class="ad-tile ad-${k}"><a href="${u}?utm_source=kokcolor&amp;utm_medium=ad&amp;utm_campaign=doan" target="_blank" rel="noopener sponsored" aria-label="${n} 광고"><span class="ad-tag">AD</span><b>${t}</b><small>${d}</small><em>${b}</em></a></li>`;
+  const i = Math.min(6, lis.length); return [...lis.slice(0, i), ad, ...lis.slice(i)].join(""); };
 const page = ({ title, desc, canon, h1, body, crumbs, og = "/og.png", pid = "" }) => `<!DOCTYPE html>
 <html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-KTFDM2WQQ2"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-KTFDM2WQQ2");</script>
@@ -66,7 +70,7 @@ const page = ({ title, desc, canon, h1, body, crumbs, og = "/og.png", pid = "" }
 <nav class="crumb">${crumbs.map((c, i) => i < crumbs.length - 1 ? `<a href="${c[1]}">${c[0]}</a> › ` : `<span>${c[0]}</span>`).join("")}</nav>
 <h1>${h1}</h1>
 ${body}
-${adFor(pid)}
+
 <footer class="foot"><nav class="themes">${packs.map(p => `<a href="${themeUrl(p)}">${p.emoji} ${THEME[p.id].kw}</a>`).join("")}</nav>
 <p><a href="/terms.html">이용약관</a> · <a href="/privacy.html">개인정보처리방침</a> · <a href="/refund.html">환불정책</a></p>
 <p>© 2026 콕콕 kokcolor.kr · CKT컴퍼니</p></footer>
@@ -93,7 +97,7 @@ for (const p of packs) {
     crumbs: [["홈", "/"], ["색칠공부 도안", "/#pics"], [t.kw, themeUrl(p)]],
     body: `<p class="intro">${t.intro}</p>
 <a class="big-cta" href="/?pic=${p.pics[0].id}">🎨 무료 체험 그림 색칠하기</a>
-<ul class="grid">${p.pics.map(x => `<li><a href="${picUrl(p, x)}"><img src="/img/${x.id}.png" alt="${esc(x.name)} 색칠공부 도안" width="400" height="400" loading="lazy" decoding="async"><span>${x.name} 색칠공부</span></a></li>`).join("")}</ul>`,
+<ul class="grid">${withAd(p.pics.map(x => `<li><a href="${picUrl(p, x)}"><img src="/img/${x.id}.png" alt="${esc(x.name)} 색칠공부 도안" width="400" height="400" loading="lazy" decoding="async"><span>${x.name} 색칠공부</span></a></li>`), p.id)}</ul>`,
   }));
   urls.push(themeUrl(p)); imgOf[themeUrl(p)] = p.pics.map(x => x.id); p.pics.forEach(x => { imgOf[picUrl(p, x)] = [x.id]; });
   // 그림 페이지
@@ -111,7 +115,7 @@ for (const p of packs) {
 <div class="cta-row"><a class="big-cta" href="/?pic=${x.id}">🎨 화면에서 색칠하기</a><a class="ghost-cta" href="/?pic=${x.id}&amp;print=1">🖨️ 종이로 인쇄하기</a></div>
 <p class="intro">${x.name} 그림은 ${t.kw} ${p.pics.length}종 중 하나예요. 칸을 누르면 바로 색이 채워져서 아직 손이 서툰 유아도 쉽게 완성할 수 있어요. ${fr ? "이 그림은 무료 체험 도안이라 바로 색칠할 수 있고, 로그인하면 매주 3장까지 무료로 인쇄할 수 있어요." : `이 그림은 골드(첫 구매 한 달 1,900원 · 이후 월 3,900원) 도안이에요. ${t.kw}의 앞 2장(${p.pics[0].name}·${p.pics[1].name})은 무료로 해 볼 수 있어요.`}</p>
 <h2>같은 테마 도안</h2>
-<ul class="grid">${others.map(o => `<li><a href="${picUrl(p, o)}">${svgA11y(o.svg, o.name + " 색칠공부 도안")}<span>${o.name}</span></a></li>`).join("")}</ul>`,
+<ul class="grid">${withAd(others.map(o => `<li><a href="${picUrl(p, o)}">${svgA11y(o.svg, o.name + " 색칠공부 도안")}<span>${o.name}</span></a></li>`), p.id)}</ul>`,
     }));
     urls.push(picUrl(p, x));
   });
