@@ -125,3 +125,69 @@
     <rect class="fill" data-n="각설탕" x="270" y="256" width="28" height="28" rx="6" transform="rotate(12 284 270)"/>
     <polygon class="fill" data-n="반짝이" points="${star(56,80,16,6,4)}"/>
     <polygon class="fill" data-n="반짝이" points="${star(300,70,14,5,4)}"/></svg>`},
+{id:"bswanboat", name:"백조 보트 공주", svg:`<svg ${A}>${BG()}
+    <circle class="fill" data-n="달" cx="300" cy="60" r="28"/><circle class="fill" data-n="달" cx="314" cy="50" r="24"/>
+    <polygon class="fill" data-n="별" points="${star(60,60,18,8,5)}"/><polygon class="fill" data-n="별" points="${star(120,100,12,5,5)}"/>
+    ${GR("호수",282)}
+    <path class="ln" d="M40 300 q10 -8 20 0 q10 8 20 0 M280 306 q10 -8 20 0 q10 8 20 0"/>
+    <path class="fill" data-n="머리카락" d="M150 172 Q144 128 180 128 Q216 128 210 172 L218 236 H142 Z"/>
+    <path class="fill" data-n="드레스" d="M152 200 Q180 186 208 200 L226 256 H134 Z"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="164" r="26"/>
+    <path class="fill" data-n="앞머리" d="M154 160 Q158 136 180 138 Q202 136 206 160 Q192 148 180 152 Q166 148 154 160 Z"/>
+    <path class="fill" data-n="왕관" d="M164 140 L166 116 L174 128 L180 112 L186 128 L194 116 L196 140 Z"/>
+    <circle class="dk" cx="171" cy="166" r="4"/><circle class="dk" cx="189" cy="166" r="4"/>
+    <circle class="fill" data-n="볼" cx="163" cy="176" r="5"/><circle class="fill" data-n="볼" cx="197" cy="176" r="5"/>
+    <path class="ln" d="M174 179 q6 5 12 0"/>
+    <path class="fill" data-n="꼬리깃" d="M66 240 Q30 214 40 178 Q64 206 92 222 Z"/>
+    <path class="fill" data-n="백조 몸" d="M58 234 Q66 298 150 302 H250 Q300 298 306 248 Q180 254 58 234 Z"/>
+    <path class="fill" data-n="날개" d="M110 262 Q136 214 214 238 Q196 274 110 262 Z"/>
+    <path class="ln" d="M140 256 q24 -14 50 -12 M126 262 q30 -6 60 -4"/>
+    <path class="fill" data-n="백조 목" d="M262 252 Q292 204 272 166 Q260 132 290 124 Q318 124 314 152 L300 154 Q298 142 288 144 Q280 148 288 168 Q306 212 290 258 Z"/>
+    <circle class="fill" data-n="백조 머리" cx="296" cy="138" r="18"/>
+    <polygon class="fill" data-n="부리" points="310,132 338,142 310,150"/>
+    <circle class="dk" cx="298" cy="134" r="4"/>
+    <ellipse class="fill" data-n="연잎" cx="54" cy="326" rx="34" ry="12"/>
+    <circle class="fill" data-n="연꽃" cx="306" cy="324" r="12"/></svg>`},
+  {id:"bmusicbox", name:"오르골 발레리나", svg:`<svg ${A}>${BG()}
+    ${GR("탁자",306)}
+    <ellipse class="fill" data-n="음표" cx="58" cy="128" rx="12" ry="9"/><path class="ln" d="M68 126 V84 l18 8"/>
+    <ellipse class="fill" data-n="음표" cx="292" cy="104" rx="12" ry="9"/><path class="ln" d="M302 102 V60 l18 8"/>
+    <polygon class="fill" data-n="반짝이" points="${star(300,180,14,5,4)}"/><polygon class="fill" data-n="반짝이" points="${star(62,196,14,5,4)}"/>
+    <polygon class="fill" data-n="뚜껑" points="70,232 102,204 258,204 290,232"/>
+    <ellipse class="fill" data-n="무대" cx="180" cy="214" rx="58" ry="11"/>
+    <rect class="fill" data-n="다리" x="175" y="160" width="10" height="54" rx="5"/>
+    <ellipse class="fill" data-n="다리" cx="210" cy="172" rx="28" ry="5" transform="rotate(-24 210 172)"/>
+    <ellipse class="fill" data-n="팔" cx="148" cy="116" rx="26" ry="6" transform="rotate(-24 148 116)"/>
+    <ellipse class="fill" data-n="팔" cx="212" cy="116" rx="26" ry="6" transform="rotate(24 212 116)"/>
+    <path class="fill" data-n="몸" d="M168 160 L171 118 Q180 112 189 118 L192 160 Z"/>
+    <path class="fill" data-n="치마" d="M124 156 Q180 136 236 156 Q230 172 216 168 Q206 178 194 170 Q180 180 166 170 Q154 178 144 168 Q130 172 124 156 Z"/>
+    <circle class="fill" data-n="머리 방울" cx="180" cy="70" r="10"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="96" r="20"/>
+    <circle class="dk" cx="173" cy="96" r="3"/><circle class="dk" cx="187" cy="96" r="3"/>
+    <path class="ln" d="M176 105 q4 3 8 0"/>
+    <rect class="fill" data-n="태엽" x="288" y="258" width="22" height="10" rx="4"/>
+    <ellipse class="fill" data-n="태엽" cx="320" cy="263" rx="9" ry="20"/>
+    <rect class="fill" data-n="상자" x="70" y="232" width="220" height="80" rx="10"/>
+    <rect class="fill" data-n="띠" x="70" y="250" width="220" height="14"/>
+    <path class="fill" data-n="하트" d="M180 300 c-24 -14 -24 -36 -10 -36 c6 0 10 4 10 8 c0 -4 4 -8 10 -8 c14 0 14 22 -10 36 Z"/>
+    <ellipse class="fill" data-n="발" cx="94" cy="320" rx="16" ry="8"/><ellipse class="fill" data-n="발" cx="266" cy="320" rx="16" ry="8"/></svg>`},
+  {id:"bflowerswing", name:"꽃그네 공주", svg:`<svg ${A}>${BG()}
+    ${GR("풀밭",306)}
+    <path class="fill" data-n="나뭇가지" d="M8 46 Q180 26 352 54 V80 Q180 54 8 72 Z"/>
+    <ellipse class="fill" data-n="잎" cx="60" cy="86" rx="22" ry="10" transform="rotate(20 60 86)"/>
+    <ellipse class="fill" data-n="잎" cx="300" cy="92" rx="22" ry="10" transform="rotate(-20 300 92)"/>
+    <path class="ln" d="M112 64 V230 M248 66 V230"/>
+    <circle class="fill" data-n="꽃" cx="112" cy="110" r="11"/><circle class="fill" data-n="꽃" cx="248" cy="110" r="11"/>
+    <circle class="fill" data-n="꽃" cx="112" cy="168" r="11"/><circle class="fill" data-n="꽃" cx="248" cy="168" r="11"/>
+    <path class="fill" data-n="머리카락" d="M150 170 Q144 126 180 126 Q216 126 210 170 L216 220 H144 Z"/>
+    <rect class="fill" data-n="그네" x="96" y="228" width="168" height="16" rx="8"/>
+    <ellipse class="fill" data-n="팔" cx="134" cy="210" rx="24" ry="8" transform="rotate(-32 134 210)"/>
+    <ellipse class="fill" data-n="팔" cx="226" cy="210" rx="24" ry="8" transform="rotate(32 226 210)"/>
+    <path class="fill" data-n="드레스" d="M160 194 Q180 186 200 194 L206 232 Q232 260 242 292 H118 Q128 260 154 232 Z"/>
+    <ellipse class="fill" data-n="구두" cx="162" cy="298" rx="14" ry="8"/><ellipse class="fill" data-n="구두" cx="198" cy="298" rx="14" ry="8"/>
+    <circle class="fill" data-n="얼굴" cx="180" cy="164" r="26"/>
+    <path class="fill" data-n="앞머리" d="M154 160 Q158 136 180 138 Q202 136 206 160 Q192 148 180 152 Q166 148 154 160 Z"/>
+    <path class="fill" data-n="티아라" d="M162 140 Q180 120 198 140 Q180 132 162 140 Z"/>
+    <circle class="dk" cx="171" cy="166" r="4"/><circle class="dk" cx="189" cy="166" r="4"/>
+    <path class="ln" d="M174 178 q6 5 12 0"/>
+    <polygon class="fill" data-n="들꽃" points="${star(48,326,14,6,5)}"/><polygon class="fill" data-n="들꽃" points="${star(312,326,14,6,5)}"/></svg>`},

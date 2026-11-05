@@ -94,6 +94,21 @@
       "permanent": true
     },
     {
+      "source": "/doan/basic/amailbird",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%BD%83%EB%82%98%EB%AC%B4/%EC%9A%B0%EC%B2%B4%ED%86%B5%EA%B3%BC-%ED%8C%8C%EB%9E%91%EC%83%88",
+      "permanent": true
+    },
+    {
+      "source": "/doan/basic/abackpack",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%BD%83%EB%82%98%EB%AC%B4/%EA%B3%B0%EB%8F%8C%EC%9D%B4-%EC%B1%85%EA%B0%80%EB%B0%A9",
+      "permanent": true
+    },
+    {
+      "source": "/doan/basic/apicnic",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%BD%83%EB%82%98%EB%AC%B4/%ED%94%BC%ED%81%AC%EB%8B%89-%EB%B0%94%EA%B5%AC%EB%8B%88",
+      "permanent": true
+    },
+    {
       "source": "/doan/animal",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%8F%99%EB%AC%BC",
       "permanent": true
@@ -176,6 +191,21 @@
     {
       "source": "/doan/animal/teacupcat",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%8F%99%EB%AC%BC/%EC%B0%BB%EC%9E%94-%EC%86%8D-%EA%B3%A0%EC%96%91%EC%9D%B4",
+      "permanent": true
+    },
+    {
+      "source": "/doan/animal/ahamsterseed",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%8F%99%EB%AC%BC/%ED%95%B4%EB%B0%94%EB%9D%BC%EA%B8%B0%EC%94%A8-%EB%A8%B9%EB%8A%94-%ED%96%84%EC%8A%A4%ED%84%B0",
+      "permanent": true
+    },
+    {
+      "source": "/doan/animal/aslothbranch",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%8F%99%EB%AC%BC/%EB%82%98%EB%AD%87%EA%B0%80%EC%A7%80-%EB%82%98%EB%AC%B4%EB%8A%98%EB%B3%B4",
+      "permanent": true
+    },
+    {
+      "source": "/doan/animal/adeercrown",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%8F%99%EB%AC%BC/%EA%BD%83%EA%B4%80-%EC%93%B4-%EC%95%84%EA%B8%B0%EC%82%AC%EC%8A%B4",
       "permanent": true
     },
     {
@@ -264,6 +294,21 @@
       "permanent": true
     },
     {
+      "source": "/doan/sea/apuffer",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%B0%94%EB%8B%A4%EB%8F%99%EB%AC%BC/%EB%8F%99%EA%B8%80%EB%8F%99%EA%B8%80-%EB%B3%B5%EC%96%B4",
+      "permanent": true
+    },
+    {
+      "source": "/doan/sea/amantaray",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%B0%94%EB%8B%A4%EB%8F%99%EB%AC%BC/%EB%B0%A9%EA%B8%8B-%EC%95%84%EA%B8%B0-%EA%B0%80%EC%98%A4%EB%A6%AC",
+      "permanent": true
+    },
+    {
+      "source": "/doan/sea/asandcastle",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%B0%94%EB%8B%A4%EB%8F%99%EB%AC%BC/%EB%AA%A8%EB%9E%98%EC%84%B1%EA%B3%BC-%EC%86%8C%EB%9D%BC%EA%B2%8C",
+      "permanent": true
+    },
+    {
       "source": "/doan/sky",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%98%EB%8A%98",
       "permanent": true
@@ -336,6 +381,26 @@
     {
       "source": "/doan/sky/balloonbear",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%98%EB%8A%98/%EC%97%B4%EA%B8%B0%EA%B5%AC-%ED%83%84-%EA%B3%B0",
+      "permanent": true
+    },
+    {
+      "source": "/doan/sky/ahummingbird",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%98%EB%8A%98/%EA%BD%83%EA%BF%80-%EB%A8%B9%EB%8A%94-%EB%B2%8C%EC%83%88",
+      "permanent": true
+    },
+    {
+      "source": "/doan/sky/acloudsheep",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%98%EB%8A%98/%EA%B5%AC%EB%A6%84-%EC%9C%84-%EC%95%84%EA%B8%B0%EC%96%91",
+      "permanent": true
+    },
+    {
+      "source": "/doan/sky/abirdhouse",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%98%EB%8A%98/%EC%83%88%EC%A7%91%EA%B3%BC-%EC%95%84%EA%B8%B0%EC%83%88",
+      "permanent": true
+    },
+    {
+      "source": "/doan/sky/aumbrellamouse",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%98%EB%8A%98/%EC%9A%B0%EC%82%B0-%ED%83%80%EA%B3%A0-%EB%82%98%EB%8A%94-%EC%83%9D%EC%A5%90",
       "permanent": true
     },
     {
@@ -414,6 +479,21 @@
       "permanent": true
     },
     {
+      "source": "/doan/snack/apancake",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B0%84%EC%8B%9D/%EB%94%B8%EA%B8%B0-%ED%8C%AC%EC%BC%80%EC%9D%B4%ED%81%AC",
+      "permanent": true
+    },
+    {
+      "source": "/doan/snack/abubbletea",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B0%84%EC%8B%9D/%EB%B0%A9%EA%B8%8B-%EB%B2%84%EB%B8%94%ED%8B%B0",
+      "permanent": true
+    },
+    {
+      "source": "/doan/snack/abungeo",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B0%84%EC%8B%9D/%EB%94%B0%EB%81%88%EB%94%B0%EB%81%88-%EB%B6%95%EC%96%B4%EB%B9%B5",
+      "permanent": true
+    },
+    {
       "source": "/doan/dino",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%B5%EB%A3%A1",
       "permanent": true
@@ -489,6 +569,21 @@
       "permanent": true
     },
     {
+      "source": "/doan/dino/adinoslide",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%B5%EB%A3%A1/%EA%B3%B5%EB%A3%A1-%EB%AF%B8%EB%81%84%EB%9F%BC%ED%8B%80",
+      "permanent": true
+    },
+    {
+      "source": "/doan/dino/adinoumbrella",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%B5%EB%A3%A1/%EC%9A%B0%EC%82%B0-%EC%93%B4-%ED%8A%B8%EB%A6%AC%EC%BC%80%EB%9D%BC%ED%86%B1%EC%8A%A4",
+      "permanent": true
+    },
+    {
+      "source": "/doan/dino/adinoball",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%B5%EB%A3%A1/%EA%B3%B5%EB%86%80%EC%9D%B4%ED%95%98%EB%8A%94-%EC%95%84%EA%B8%B0-%ED%8B%B0%EB%9D%BC%EB%85%B8",
+      "permanent": true
+    },
+    {
       "source": "/doan/princess",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%B5%EC%A3%BC",
       "permanent": true
@@ -561,6 +656,21 @@
     {
       "source": "/doan/princess/teacup",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%B5%EC%A3%BC/%ED%8B%B0%ED%8C%8C%ED%8B%B0-%EC%B0%BB%EC%9E%94",
+      "permanent": true
+    },
+    {
+      "source": "/doan/princess/bswanboat",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%B5%EC%A3%BC/%EB%B0%B1%EC%A1%B0-%EB%B3%B4%ED%8A%B8-%EA%B3%B5%EC%A3%BC",
+      "permanent": true
+    },
+    {
+      "source": "/doan/princess/bmusicbox",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%B5%EC%A3%BC/%EC%98%A4%EB%A5%B4%EA%B3%A8-%EB%B0%9C%EB%A0%88%EB%A6%AC%EB%82%98",
+      "permanent": true
+    },
+    {
+      "source": "/doan/princess/bflowerswing",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%B5%EC%A3%BC/%EA%BD%83%EA%B7%B8%EB%84%A4-%EA%B3%B5%EC%A3%BC",
       "permanent": true
     },
     {
@@ -644,6 +754,21 @@
       "permanent": true
     },
     {
+      "source": "/doan/bug/bleafumbrella",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%A4%EC%B6%A9/%EB%82%98%EB%AD%87%EC%9E%8E-%EC%9A%B0%EC%82%B0-%EB%AC%B4%EB%8B%B9%EB%B2%8C%EB%A0%88",
+      "permanent": true
+    },
+    {
+      "source": "/doan/bug/bantberry",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%A4%EC%B6%A9/%EB%94%B8%EA%B8%B0-%EB%82%98%EB%A5%B4%EB%8A%94-%EA%B0%9C%EB%AF%B8",
+      "permanent": true
+    },
+    {
+      "source": "/doan/bug/bapplecaterpillar",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%A4%EC%B6%A9/%EC%82%AC%EA%B3%BC%EC%A7%91-%EC%95%A0%EB%B2%8C%EB%A0%88",
+      "permanent": true
+    },
+    {
       "source": "/doan/ride",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%83%88%EA%B2%83",
       "permanent": true
@@ -719,6 +844,21 @@
       "permanent": true
     },
     {
+      "source": "/doan/ride/bicecreamtruck",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%83%88%EA%B2%83/%EC%95%84%EC%9D%B4%EC%8A%A4%ED%81%AC%EB%A6%BC-%ED%8A%B8%EB%9F%AD",
+      "permanent": true
+    },
+    {
+      "source": "/doan/ride/bcablecar",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%83%88%EA%B2%83/%EC%82%B0%EC%86%8D-%EC%BC%80%EC%9D%B4%EB%B8%94%EC%B9%B4",
+      "permanent": true
+    },
+    {
+      "source": "/doan/ride/bcatcanoe",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%83%88%EA%B2%83/%EC%B9%B4%EB%88%84-%ED%83%84-%EA%B3%A0%EC%96%91%EC%9D%B4",
+      "permanent": true
+    },
+    {
       "source": "/doan/fruit",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%BC%EC%9D%BC%EC%B1%84%EC%86%8C",
       "permanent": true
@@ -791,6 +931,21 @@
     {
       "source": "/doan/fruit/berryhouse",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%BC%EC%9D%BC%EC%B1%84%EC%86%8C/%EB%94%B8%EA%B8%B0%EC%A7%91-%EC%83%9D%EC%A5%90",
+      "permanent": true
+    },
+    {
+      "source": "/doan/fruit/bfruitbasket",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%BC%EC%9D%BC%EC%B1%84%EC%86%8C/%EA%B3%BC%EC%9D%BC-%EB%B0%94%EA%B5%AC%EB%8B%88",
+      "permanent": true
+    },
+    {
+      "source": "/doan/fruit/bavocadobaby",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%BC%EC%9D%BC%EC%B1%84%EC%86%8C/%EC%95%84%EB%B3%B4%EC%B9%B4%EB%8F%84-%EC%B9%9C%EA%B5%AC",
+      "permanent": true
+    },
+    {
+      "source": "/doan/fruit/blemonade",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%B3%BC%EC%9D%BC%EC%B1%84%EC%86%8C/%EB%A0%88%EB%AA%AC%EC%97%90%EC%9D%B4%EB%93%9C",
       "permanent": true
     },
     {
@@ -874,6 +1029,21 @@
       "permanent": true
     },
     {
+      "source": "/doan/halloween/bcandycorn",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%A0%EB%A1%9C%EC%9C%88/%EC%BA%94%EB%94%94%EC%BD%98-%EC%B9%9C%EA%B5%AC",
+      "permanent": true
+    },
+    {
+      "source": "/doan/halloween/bpumpkincottage",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%A0%EB%A1%9C%EC%9C%88/%ED%98%B8%EB%B0%95-%EC%98%A4%EB%91%90%EB%A7%89",
+      "permanent": true
+    },
+    {
+      "source": "/doan/halloween/bcostumebunny",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%95%A0%EB%A1%9C%EC%9C%88/%ED%95%A0%EB%A1%9C%EC%9C%88-%EA%BC%AC%EB%A7%88-%ED%86%A0%EB%81%BC",
+      "permanent": true
+    },
+    {
       "source": "/doan/xmas",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4",
       "permanent": true
@@ -954,6 +1124,26 @@
       "permanent": true
     },
     {
+      "source": "/doan/xmas/bscarfbear",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EB%AA%A9%EB%8F%84%EB%A6%AC-%EB%B6%81%EA%B7%B9%EA%B3%B0",
+      "permanent": true
+    },
+    {
+      "source": "/doan/xmas/bcocoamug",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EC%BD%94%EC%BD%94%EC%95%84-%EB%A8%B8%EA%B7%B8%EC%BB%B5",
+      "permanent": true
+    },
+    {
+      "source": "/doan/xmas/bnutcracker",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%ED%98%B8%EB%91%90%EA%B9%8C%EA%B8%B0-%EB%B3%91%EC%A0%95",
+      "permanent": true
+    },
+    {
+      "source": "/doan/xmas/bsantapuppy",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%ED%81%AC%EB%A6%AC%EC%8A%A4%EB%A7%88%EC%8A%A4/%EC%84%A0%EB%AC%BC%EC%83%81%EC%9E%90-%EC%82%B0%ED%83%80-%EA%B0%95%EC%95%84%EC%A7%80",
+      "permanent": true
+    },
+    {
       "source": "/doan/space",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%9A%B0%EC%A3%BC",
       "permanent": true
@@ -1029,6 +1219,26 @@
       "permanent": true
     },
     {
+      "source": "/doan/space/crocketpup",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%9A%B0%EC%A3%BC/%EB%A1%9C%EC%BC%93-%ED%83%84-%EA%B0%95%EC%95%84%EC%A7%80",
+      "permanent": true
+    },
+    {
+      "source": "/doan/space/csaturncat",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%9A%B0%EC%A3%BC/%ED%86%A0%EC%84%B1-%EC%9C%84-%EA%B3%A0%EC%96%91%EC%9D%B4",
+      "permanent": true
+    },
+    {
+      "source": "/doan/space/cmoonbear",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%9A%B0%EC%A3%BC/%EB%8B%AC%EC%97%90%EC%84%9C-%EB%B3%84-%EB%82%9A%EB%8A%94-%EA%B3%B0",
+      "permanent": true
+    },
+    {
+      "source": "/doan/space/ccometmouse",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%9A%B0%EC%A3%BC/%ED%98%9C%EC%84%B1-%ED%83%80%EB%8A%94-%EC%83%9D%EC%A5%90",
+      "permanent": true
+    },
+    {
       "source": "/doan/farm",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%86%8D%EC%9E%A5%EB%8F%99%EB%AC%BC",
       "permanent": true
@@ -1101,6 +1311,26 @@
     {
       "source": "/doan/farm/pigcart",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%86%8D%EC%9E%A5%EB%8F%99%EB%AC%BC/%EC%82%AC%EA%B3%BC-%EC%88%98%EB%A0%88-%EC%95%84%EA%B8%B0%EB%8F%BC%EC%A7%80",
+      "permanent": true
+    },
+    {
+      "source": "/doan/farm/chatchchick",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%86%8D%EC%9E%A5%EB%8F%99%EB%AC%BC/%EC%95%8C%EC%97%90%EC%84%9C-%EB%82%98%EC%98%A8-%EB%B3%91%EC%95%84%EB%A6%AC",
+      "permanent": true
+    },
+    {
+      "source": "/doan/farm/ccarrotbunny",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%86%8D%EC%9E%A5%EB%8F%99%EB%AC%BC/%EB%8B%B9%EA%B7%BC-%EB%BD%91%EB%8A%94-%ED%86%A0%EB%81%BC",
+      "permanent": true
+    },
+    {
+      "source": "/doan/farm/cmudpig",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%86%8D%EC%9E%A5%EB%8F%99%EB%AC%BC/%EC%A7%84%ED%9D%99-%EB%86%80%EC%9D%B4-%EC%95%84%EA%B8%B0%EB%8F%BC%EC%A7%80",
+      "permanent": true
+    },
+    {
+      "source": "/doan/farm/chaydog",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EB%86%8D%EC%9E%A5%EB%8F%99%EB%AC%BC/%EA%B1%B4%EC%B4%88%EB%8D%94%EB%AF%B8-%EA%B0%95%EC%95%84%EC%A7%80",
       "permanent": true
     },
     {
@@ -1184,6 +1414,26 @@
       "permanent": true
     },
     {
+      "source": "/doan/plant/cbouquet",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%BD%83%EC%8B%9D%EB%AC%BC/%EB%A6%AC%EB%B3%B8-%EA%BD%83%EB%8B%A4%EB%B0%9C",
+      "permanent": true
+    },
+    {
+      "source": "/doan/plant/cbootplant",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%BD%83%EC%8B%9D%EB%AC%BC/%EC%9E%A5%ED%99%94-%ED%99%94%EB%B6%84",
+      "permanent": true
+    },
+    {
+      "source": "/doan/plant/cpalmisland",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%BD%83%EC%8B%9D%EB%AC%BC/%EC%95%BC%EC%9E%90%EC%88%98-%EC%84%AC",
+      "permanent": true
+    },
+    {
+      "source": "/doan/plant/csucculents",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EA%BD%83%EC%8B%9D%EB%AC%BC/%EB%8B%A4%EC%9C%A1%EC%9D%B4-%EC%82%BC%ED%98%95%EC%A0%9C",
+      "permanent": true
+    },
+    {
       "source": "/doan/party",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%83%9D%EC%9D%BC%ED%8C%8C%ED%8B%B0",
       "permanent": true
@@ -1259,6 +1509,26 @@
       "permanent": true
     },
     {
+      "source": "/doan/party/cgiftcat",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%83%9D%EC%9D%BC%ED%8C%8C%ED%8B%B0/%EC%84%A0%EB%AC%BC%EC%83%81%EC%9E%90-%EA%B3%A0%EC%96%91%EC%9D%B4",
+      "permanent": true
+    },
+    {
+      "source": "/doan/party/cfirework",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%83%9D%EC%9D%BC%ED%8C%8C%ED%8B%B0/%EB%B6%88%EA%BD%83%EB%86%80%EC%9D%B4-%EA%B5%AC%EA%B2%BD%ED%95%98%EB%8A%94-%ED%86%A0%EB%81%BC",
+      "permanent": true
+    },
+    {
+      "source": "/doan/party/cpartytrain",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%83%9D%EC%9D%BC%ED%8C%8C%ED%8B%B0/%ED%8C%8C%ED%8B%B0-%EA%B8%B0%EC%B0%A8",
+      "permanent": true
+    },
+    {
+      "source": "/doan/party/cpartypup",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%83%9D%EC%9D%BC%ED%8C%8C%ED%8B%B0/%ED%8C%8C%ED%8B%B0-%EB%82%98%ED%8C%94-%EA%B0%95%EC%95%84%EC%A7%80",
+      "permanent": true
+    },
+    {
       "source": "/doan/music",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%95%85%EA%B8%B0",
       "permanent": true
@@ -1331,6 +1601,21 @@
     {
       "source": "/doan/music/harp",
       "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%95%85%EA%B8%B0/%ED%95%98%ED%94%84",
+      "permanent": true
+    },
+    {
+      "source": "/doan/music/cdrumbear",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%95%85%EA%B8%B0/%EB%B6%81-%EC%B9%98%EB%8A%94-%EC%95%84%EA%B8%B0%EA%B3%B0",
+      "permanent": true
+    },
+    {
+      "source": "/doan/music/cmusicbox",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%95%85%EA%B8%B0/%ED%86%A0%EB%81%BC-%EC%98%A4%EB%A5%B4%EA%B3%A8",
+      "permanent": true
+    },
+    {
+      "source": "/doan/music/cbirdnotes",
+      "destination": "/%EC%83%89%EC%B9%A0%EA%B3%B5%EB%B6%80/%EC%95%85%EA%B8%B0/%EB%85%B8%EB%9E%98%ED%95%98%EB%8A%94-%EC%95%84%EA%B8%B0%EC%83%88",
       "permanent": true
     }
   ]
