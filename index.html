@@ -561,18 +561,24 @@
   }
 
   #printSheets{display:none}
+  @page{size:A4 portrait;margin:10mm}
   @media print{
-    body{background:#fff}
-    .promo,.nav,.hero,aside.panel,.pack-area,.tools,.modebar,.cta-band,.site-footer,.toast,.modal,.confetti{display:none!important}
-    .stage{display:block}
+    body{background:#fff;margin:0}
+    /* 인쇄엔 그림만: .wrap 안의 그림 영역(.stage) 말고는 전부 숨김(구매평·요금·FAQ 등 새 섹션도 자동 제외) */
+    .wrap>*:not(.stage),.stage>*:not(.paper-card),.progress,.gwin,.toast,.modal,.confetti,.dock{display:none!important}
+    .wrap{max-width:none!important;width:100%!important;padding:0!important;margin:0!important}
+    .stage{display:block!important;width:100%!important;margin:0!important;padding:0!important}
+    .paper-card{margin:0 auto!important;padding:0!important}.paper-inner{margin:43mm auto 0!important}.paper-card,.paper-inner{width:190mm!important;max-width:none!important;padding:0!important;aspect-ratio:auto!important;height:auto!important}
+    .paper-inner .host:not(.hide){display:block!important;width:190mm!important;height:190mm!important;position:static!important}
+    .paper-inner .host svg,.paper-inner canvas{width:190mm!important;height:190mm!important;max-width:none!important}
     .paper-card{border:none;box-shadow:none;padding:0}
     .paper-inner{border:none}
     .art .fill,.art .ln,.art .dk,.art .wt{stroke:#000}
     body.print-pack .stage{display:none}
     body.print-pack #printSheets{display:block}
-    body.print-pack #printSheets .sheet{page-break-after:always;text-align:center;padding:12px}
+    body.print-pack #printSheets .sheet{page-break-after:always;break-after:page;text-align:center;padding:0}
     body.print-pack #printSheets .sheet .cap{font-family:'Jua',sans-serif;font-size:22px;margin-bottom:6px}
-    body.print-pack #printSheets svg{width:92%;height:auto;margin:0 auto}
+    body.print-pack #printSheets svg{width:190mm;height:190mm;margin:30mm auto 0;display:block}
   }
 </style>
 </head>
@@ -4066,6 +4072,20 @@ document.getElementById("navLogin").addEventListener("click",e=>{ if(window.__lo
     btn.disabled=false;
     if(!r.ok){M.textContent=r.msg||"저장하지 못했어요. 잠시 후 다시 시도해 주세요.";if(r.msg&&r.msg.startsWith("로그인"))openLogin("review");return;}
     all.unshift(r.review);draw();F.reset();stars=0;[...document.getElementById("rvStars").children].forEach(x=>x.classList.remove("on"));M.textContent="고마워요! 구매평이 등록됐어요 💛"; });
+}
+/* 뒤로가기: 사이트 밖으로 나가지 않고 이전 그림·놀이로 돌아가게 */
+{ let restoring=true; const cur=()=>({m:mode,p:curId});
+  const push=()=>{ if(restoring) return; const st=cur(), h=history.state||{}; if(h.m===st.m&&h.p===st.p) return; history.pushState(st,""); };
+  const _sm=setMode, _lp=loadPicture;
+  setMode=function(m){ _sm(m); push(); };
+  loadPicture=function(id){ _lp(id); push(); };
+  addEventListener("load",()=>{ history.replaceState({...cur(),guard:1},""); history.pushState(cur(),""); restoring=false; });
+  addEventListener("popstate",e=>{ const st=e.state||{}; restoring=true;
+    document.querySelectorAll(".modal.show").forEach(x=>x.classList.remove("show"));
+    if(st.m&&st.m!==mode) setMode(st.m);
+    if(st.p&&st.p!==curId) loadPicture(st.p);
+    if(st.guard) showToast("한 번 더 누르면 콕콕에서 나가요");
+    restoring=false; });
 }
 /* 토스트 · 반짝이 */
 let toT;
